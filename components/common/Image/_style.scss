@@ -1,0 +1,13 @@
+.imagen_ui {
+  @include opacity(0);
+  @include transition(opacity 500ms cubic-bezier(0.215, 0.61, 0.355, 1));
+  width: 100%;
+  
+  &-show {
+    @include opacity(1);
+  }
+
+  &_height {
+    height: 100%;
+  }
+}

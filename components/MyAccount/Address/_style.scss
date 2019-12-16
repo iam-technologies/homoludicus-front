@@ -1,0 +1,24 @@
+.app-my_address {
+  .list_address {
+    .address_box_map {
+      margin: 0 auto 30px;
+    }
+  }
+
+  .form_address {
+    @include flex-complete(space-between, center, wrap);
+    
+    @media #{$xs} {
+      @include flex-direction(column);
+    }
+
+    .select_input {
+      width: 48%;
+
+      @media #{$xs} {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+  }
+}

@@ -1,0 +1,155 @@
+
+
+.app_checkout {
+  @include flex-complete(space-between, stretch);
+  background-color: $color18;
+  margin          : 0 auto;
+  max-width       : 1440px;
+
+  @import './OrderMessage/_style';
+
+  @media #{$sm} {
+    display: block;
+  }
+
+  .app_checkout-left {
+    padding: 60px 80px 70px 170px;
+    width  : 100%;
+
+    @media #{$lg} {
+      max-width: calc(100% - 470px);
+    }
+
+    @media #{$sm} {
+      padding: 30px 30px 60px;
+    }
+
+    @media #{$xs} {
+      padding: 20px 15px 40px;
+    }
+
+    .link_login {
+      background-color: initial;
+      border          : none;
+      color           : $color13;
+      cursor          : pointer;
+      font-size       : 15px;
+      outline         : none;
+
+      @media #{$sm} {
+        margin-bottom: 30px;
+      }
+    }
+    
+    .app_checkout-header {
+      @include flex-complete(space-between);
+      height       : 30px;
+      margin-bottom: 80px;
+      padding-left : 10px;
+
+      .link { font-weight: 600; }
+      
+      img { height: 30px; }
+
+      @media #{$sm} {
+        @include flex-complete(flex-end);
+        margin-bottom: 0px;
+        padding-left : 0;
+        height: initial;
+
+        .link {
+          display: none;
+        }
+      }
+    }
+
+    .app_checkout-footer {
+      @include flex-complete(space-between);
+      margin-top: 35px;
+
+      .link {
+        background-color: initial;
+        border          : none;
+        color           : $color04;
+        cursor          : pointer;
+        font-size       : 16px;
+        outline         : none;
+        text-decoration : none;
+
+        @media #{$xs} {
+          font-size: 14px;
+        }
+      }
+
+      img { margin-right: 10px; }
+    }
+    
+    .app_checkout-step {
+      @include flex-complete(space-between, stretch);
+
+      @media #{$xs} {
+        display: none;
+      }
+
+      .step_header {
+        @include transition(all 500ms);
+        @include flex-grow(1);
+        border-bottom: 1px solid $color20;
+        color        : $color20;
+        font-size    : 15px;
+        font-weight  : 600;
+        height       : 51px;
+        margin-bottom: 40px;
+        text-align   : center;
+
+        &.active {
+          color              : $color13;
+          border-bottom-color: $color04;
+        }
+      }
+    }
+
+    @import './StepOne/_style.scss';
+    @import './StepTwo/_style.scss';
+    @import './StepThree/_style.scss';
+  }
+
+  .app_checkout-right {
+    max-width: 470px;
+    width    : 470px;
+    height   : 100%;
+    position: fixed;
+    right: 0;
+  
+
+    @media #{$sm} {
+      display: none;
+    }
+  }
+
+
+  .title-xs {
+    display      : none;
+    font-weight  : 600;
+    font-size    : 15px;
+    color        : $color13;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @media #{$xs} {
+      display: block;
+    }
+  }
+
+
+  .app_checkout-legal {
+    margin-top: 15px;
+    font-size: 12px;
+    padding: 5px;
+
+    a {
+      color: $color13;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.app-s_p-form {
+  border-bottom: 2px solid $color17;
+  padding      : 40px 0 25px;
+
+  @media #{$sm} {
+    padding: 15px 0 10px;
+  }
+
+  label {
+    @include flex-complete();
+    position: relative;
+    width   : 100%;
+  }
+
+  &-img {
+    height      : 32px;
+    margin-right: 30px;
+    width       : 32px;
+
+    img {
+      width : 32px;
+      height: 32px;
+    }
+
+    @media #{$sm} {
+      width       : 23px;
+      height      : 23px;
+      margin-right: 20px;
+
+      img {
+        width : 23px;
+        height: 23px;
+      }
+    }
+  }
+
+  &-text {
+    @include placeholder-color($color04);
+    border   : none;
+    color    : $color04;
+    font-size: 30px;
+    outline  : none;
+    width    : 100%;
+
+    @media #{$sm} {
+      font-size: 20px;
+    }
+  }
+}

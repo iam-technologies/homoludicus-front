@@ -1,0 +1,24 @@
+.product_list_ui {
+  margin   : 0 auto;
+  max-width: 1190px;
+  
+  
+  &-title {
+    font-size    : 25px;
+    margin-bottom: 60px;
+    text-align   : center;
+  }
+  
+  &-container {
+    @include flex-complete(start, center, wrap);
+    margin: 0px auto 0px;
+    
+    @media #{$sm} {
+      max-width: 740px;
+    }
+
+    @media #{$xs} {
+      @include justify-content(center);
+    }
+  }
+}

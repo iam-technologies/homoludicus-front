@@ -1,0 +1,112 @@
+@import './FormSearch/_style.scss';
+@import './FindResults/_style.scss';
+
+.app-search_popup {
+  @include transition(all 700ms);
+  @include opacity(0);
+  background-color: rgba($color11, 0);
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  bottom          : 0;
+  overflow-y      : auto;
+  right           : 0;
+  z-index         : -1;
+}
+
+.app-s_p {
+  @include transition(transform 800ms ease);
+  @include transform(translateY(-100%));
+  background-color: $color01;
+  padding         : 30px 0 60px;
+  position        : relative;
+
+  @media #{$sm} {
+    padding: 20px 30px 40px;
+  }
+  
+  @media #{$xs} {
+    padding: 15px 20px 30px;
+    min-height: 100%;
+  }
+
+  &-container {
+    margin   : 0 auto;
+    max-width: 1025px;
+  }
+
+  &-container_products {
+    .app-s_p-find {
+      padding: 0;
+      
+      &-title {
+        margin   : 0 auto;
+        max-width: 1021px;
+      }
+    }
+  }
+
+  &-header {
+    @include flex-complete(space-between);
+    position: relative;
+  }
+
+  &-div_hidden {
+    width: 16px;
+  }
+
+  &-logo {
+    max-width: 165px;
+    margin   : 0 auto;
+
+    @media #{$xs} {
+      max-width: 130px;
+    }
+
+    img { width: 100%; }
+  }
+
+  &-right_btn-close {
+    background-color: initial;
+    border          : none;
+    cursor          : pointer;
+    height          : 16px;
+    outline         : none;
+
+    img {
+      width : 16px;
+      height: 16px;
+    }
+
+    @media #{$xs} {
+      height: 12px;
+
+      img {
+        width : 12px;
+        height: 12px;
+      }
+    }
+  }
+
+}
+
+
+.app-search_popup-show {
+  @extend .app-search_popup;
+  @include opacity(1);
+  background-color: rgba($color11, 0.94);
+  z-index         : 40;
+
+  @media #{$xs} {
+    background-color: $color01;
+  }
+
+  .app-s_p {
+    @include transform(translateY(0%));
+  }
+
+  & ~ .app {
+    max-height: 100%;
+    overflow  : hidden;
+  }
+}

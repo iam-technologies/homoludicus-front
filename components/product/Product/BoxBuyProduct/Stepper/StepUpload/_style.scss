@@ -1,0 +1,44 @@
+.step-upload {
+  @include transform(translateY(-50%));
+  position  : absolute;
+  text-align: center;
+  top       : 50%;
+  width     : 100%;
+  
+  .upload_dropzone {
+    @include border-radius(2px);
+    @include placeholder-color(rgba($color19, 0.31));
+    border        : 1px solid #E1E1E1;
+    background    : $color01;
+    color         : $color19;
+    cursor        : pointer;
+    font-size     : 16px;
+    height        : 66px;
+    letter-spacing: 0.98px;
+    line-height   : 60px;
+    margin        : 0 auto;
+    outline       : none;
+    padding       : 0 10px;
+    text-align    : center;
+    width         : 325px;
+
+    @media #{$xs} {
+      font-size: 13px;
+      max-width: 300px;
+    }
+
+    &.active {
+      border-color    : $color03;
+      background-color: rgba($color01, 0.9);
+    }
+
+    .progress_upload {
+      @include flex-complete(center);
+      height: 64px;
+    }
+  }
+
+  .img_preview_upload {
+    max-height: 70px;
+  }
+}

@@ -1,0 +1,28 @@
+.btn_arrow_top_ui {
+  @include box-shadow(6px 2px 20px 0 rgba($color02, 0.06));
+  @include border-radius(50%);
+  @include opacity(0);
+  background-color: rgba($color01, 0.8);
+  border: none;
+  bottom: 20px;
+  cursor: pointer;
+  height: 50px;
+  outline: none;
+  position: fixed;
+  right: 10px;
+  width: 50px;
+  z-index: -1;
+  
+  img {
+    @include transform(translate(-50%, -50%));
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+  }
+
+  &.btn_arrow_top_ui-show {
+    @include opacity(1);
+    z-index: 40;
+  }
+}

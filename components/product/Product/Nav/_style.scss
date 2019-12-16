@@ -1,0 +1,40 @@
+.a_p-nav {
+  @include flex-complete(space-between);
+  margin: 25px 35px 20px;
+  height: 23px;
+
+  @media #{$sm} {
+    display: none;
+  }
+
+  .a_p-nav-btn_return {
+    @include flex-complete(space-between);
+    text-decoration: none;
+    width          : 125px;
+
+    .icon_preview {
+      @include transition(background-image 400ms cubic-bezier(0.165, 0.84, 0.44, 1));
+      background-image   : url('/static/images/icon_preview.png');
+      background-repeat  : no-repeat;
+      background-position: center;
+      height             : 23px;
+      width              : 28px;
+    }
+
+    p {
+      @include transition(color 400ms cubic-bezier(0.165, 0.84, 0.44, 1));
+      color    : $color04;
+      font-size: 13px;
+    }
+
+    &:hover {
+      .icon_preview {
+        background-image: url('/static/images/icon_preview_hover.png');
+      }
+  
+      p {
+        color: $color03;
+      }
+    }
+  }
+}

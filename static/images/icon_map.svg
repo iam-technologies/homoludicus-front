@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="37px" viewBox="0 0 37 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval 7</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="178.5" cy="114.5" r="7.5"></circle>
+    </defs>
+    <g id="Web-definitiva" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-Carrito-C" transform="translate(-692.000000, -763.000000)">
+            <g id="Group-5" transform="translate(176.000000, 666.000000)">
+                <g id="map" transform="translate(356.000000, 1.000000)">
+                    <g id="Oval-7">
+                        <use fill="#97DECC" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <circle stroke-opacity="0.397248641" stroke="#97DECC" stroke-width="11" cx="178.5" cy="114.5" r="13"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

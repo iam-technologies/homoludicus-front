@@ -1,0 +1,181 @@
+.main_order {
+  @include flex-complete(flex-start, flex-start);
+  padding: 25px 45px 35px;
+
+  @media #{$xs} {
+    @include flex-direction(column);
+    @include align-items(center);
+    padding: 20px 15px 30px;
+  }
+
+  .img_product {
+    @include flex-shrink(0);
+    background-color: $color16;
+    height          : 300px;
+    width           : 300px;
+    max-width       : 300px;
+
+    @media #{$xs} {
+      height: 220px;
+      width : 220px;
+    }
+  }
+
+  .info_product {
+    @include flex-grow(1);
+    color       : $color04;
+    padding-left: 35px;
+    
+    @media #{$xs} {
+      padding-left: 0;
+      padding-top: 20px;
+      width: 100%;
+    }
+  }
+
+  .title_product {
+    font-size  : 29px;
+    font-weight: 600;
+
+    @media #{$xs} {
+      font-size: 24px;
+    }
+  }
+
+  .short_description {
+    font-size : 17px;
+    margin-top: 10px;
+    
+    @media #{$xs} {
+      font-size: 15px;
+    }
+  }
+
+  .pack_config {
+    padding: 0 10px;
+
+    &.step-check {
+      margin: 15px 0 0;
+
+      @media #{$xs} {
+        div {
+          width: 100%;
+        }
+      }
+      
+      .type_check {
+        cursor        : initial;
+        font-size     : 15px;
+        font-weight   : 600;
+        letter-spacing: 0.99px;
+        margin-top    : 5px;
+      }
+    }
+  }
+
+  .config_product {
+    @include flex-complete(flex-start, center, wrap);
+    margin-top: 20px;
+    padding   : 0 10px;
+
+    @media #{$xs} {
+      @include flex-direction(column);
+    }
+
+    .config_item {
+      margin-bottom: 17px;
+      padding      : 0 2% 0 0;
+      width        : 50%;
+
+      @media #{$xs} {
+        width: 100%;
+      }
+    }
+
+    .config_title {
+      color         : $color14;
+      font-size     : 15px;
+      font-weight   : 600;
+      letter-spacing: 0.99px;
+      line-height   : 27px;
+      margin-bottom : 8px;
+      overflow      : hidden;
+      text-overflow : ellipsis;
+      white-space   : nowrap;
+      width         : 100%;
+    }
+
+    .config_text {
+      border       : 1px solid $color03;
+      color        : $color13;
+      font-size    : 16px;
+      overflow     : hidden;
+      line-height  : 38px;
+      text-align   : center;
+      text-overflow: ellipsis;
+      white-space  : nowrap;
+      width        : 80%;
+    }
+
+    .config_other {
+      @extend .config_text;
+      border     : none;
+      line-height: 40px;
+      text-align : left;
+    }
+
+    .config_color {
+      @extend .config_text;
+      @include flex-complete();
+      border     : none;
+      line-height: 40px;
+      text-align : left;
+      width      : 100%;
+
+      .color {
+        @include border-radius(50%);
+        display     : inline-block;
+        height      : 25px;
+        margin-right: 10px;
+        width       : 25px;
+      }
+    }
+
+    .config_font {
+      @extend .config_text;
+      @include flex-complete(center);
+      height: 40px;
+
+      img {
+        width: 100px
+      }
+    }
+
+    .config_image {
+      @extend .config_text;
+      border    : none;
+      height    : 40px;
+      text-align: left;
+      width     : 40px;
+    }
+
+  }
+
+  .ratings_edit {
+    margin: 0 0 15px;
+    text-align: right;
+
+    .ratings_edit-btn {
+      font-size: 14px;
+      font-weight: 600;
+      height: 35px;
+      line-height: 35px;
+      min-width: auto;
+      padding: 0 15px;
+    }
+
+    @media #{$xs} {
+      text-align: center;
+    }
+  }
+}

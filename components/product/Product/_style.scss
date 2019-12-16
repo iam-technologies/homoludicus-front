@@ -1,0 +1,53 @@
+@import './Nav/_style.scss';
+@import './BoxSlider/_style.scss';
+@import './BoxBuyProduct/_style.scss';
+@import './BoxDetails/_style.scss';
+@import './BoxRatings/_style.scss';
+@import './RelatedProduct/_style.scss';
+
+
+.app-product {
+  margin        : 0 auto;
+  max-width     : 1230px;
+  padding-bottom: 70px;
+
+  @media #{$sm} {
+    padding-bottom  : 50px;
+    background-color: $color26;
+  }
+
+  &-box_product {
+    @include flex-complete(flex-start, start);
+    @include box-shadow(0 0 20px 0 rgba(0,0,0,0.06));
+    @include border-radius(0 0 5px 5px);
+    background-color: $color01;
+    min-height      : 600px;
+    margin          : 0 15px;
+    
+    @media #{$sm} {
+      @include flex-direction(column);
+      @include box-shadow(none);
+      @include border-radius(0);
+      background-color: initial;
+      margin          : 25px 20px 10px;
+      min-height      : initial;
+    }
+
+    @media #{$xs} {
+      margin: 25px 20px 0;
+    }
+  }
+
+  &-box_information {
+    @include flex-complete(space-between, start);
+    margin   : 35px auto 70px;
+    padding  : 0 30px;
+    max-width: 1155px;
+
+    @media #{$sm} {
+      @include flex-complete(start, start, wrap, column);
+      padding: 0;
+      margin : 0 12px 50px;
+    }
+  }
+}

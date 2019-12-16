@@ -1,0 +1,60 @@
+// ACCOUNT STYLES
+
+@import './ForgotPassword/_style';
+@import './Login/_style';
+@import './ResetPassword/_style';
+
+
+.app_account {
+  padding: 0 0 190px;
+
+  
+  .title {
+    color        : $color13;
+    font-size    : 24px;
+    margin-bottom: 35px;
+    margin-top   : 60px;
+    text-align   : center;
+
+    @media #{$xs} {
+      font-size: 20px;
+      margin-bottom: 30px;
+      margin-top   : 40px;
+    }
+  }
+  
+  .text_input_ui-max_width {
+    margin-bottom: 15px;
+  }
+  
+  .btn_submit {
+    margin-top: 50px;
+    text-align: center;
+
+    @media #{$xs} {
+      .button_ui {
+        font-size: 14px;
+        line-height: 40px;
+        height: 40px;
+        min-width: 170px;
+      }
+    }
+  }
+  
+  &-form {
+    margin   : 0 auto;
+    max-width: 350px;
+
+    @media #{$xs} {
+      padding: $paddingXS;
+    }
+  }
+
+  .account_success {
+    color     : $color12;
+    font-size : 20px;
+    margin    : 0 auto;
+    max-width : 500px;
+    text-align: center;
+  }
+}

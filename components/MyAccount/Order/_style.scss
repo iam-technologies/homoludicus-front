@@ -1,0 +1,161 @@
+.my_order_item {
+  .my_order_item-container {
+    margin   : 0 auto;
+    max-width: 900px;
+    
+    @media #{$sm} {
+      padding: $paddingXS;
+    }
+  }
+
+  .title {
+    margin-bottom: 50px;
+  }
+
+  .bg_my_order {
+    @include border-radius(3px);
+    background-color: $color01;
+    border          : 1px solid $color20;
+    margin-bottom   : -1px;
+  }
+
+  .header_order {
+    @include flex-complete(space-between);
+    color    : $color04;
+    font-size: 16px;
+    height   : 60px;
+    padding  : 0 10px;
+    
+    @media #{$xs} {
+      @include flex-wrap(wrap);
+      min-height: 140px;
+      padding   : 10px;
+    }
+
+    .cell {
+      color        : $color04;
+      font-size    : 14px;
+      overflow     : hidden;
+      text-align   : center;
+      text-overflow: ellipsis;
+      white-space  : nowrap;
+      width        : 15%;
+
+      @media #{$xs} {
+        width: 33%;
+
+        &.cell_bill {
+          width: 100%;
+        }
+      }
+
+      &.cell_status {
+        width: 40%;
+
+        @media #{$xs} {
+          width: 100%;
+        }
+      }
+    }
+      
+
+    .price {
+      font-weight: 600;
+    }
+
+    .bill {
+      color      : $color03;
+      font-weight: 600;
+    }
+  }
+
+  @import './ProductOrder/_style';
+
+  .status_order {
+    padding: 30px 40px 60px;
+
+    @media #{$xs} {
+      padding: 30px 20px 40px;
+    }
+
+    .title_status {
+      color         : $color13;
+      font-size     : 17px;
+      font-weight   : 600;
+      letter-spacing: 1.12px;
+      text-align    : center;
+    }
+
+    .status_order_list {
+      margin-top: 35px;
+  
+      @media #{$xs} {
+        margin-top: 25px;
+      }
+
+
+      .status_item {
+        @include flex-complete(space-between);
+        height   : 40px;
+        margin   : 0 auto 20px;
+        max-width: 700px;
+
+        @media #{$xs} {
+          @include flex-wrap(wrap);
+          height: 80px;
+        }
+
+        .cell_status {
+          color        : $color04;
+          font-size    : 16px;
+          overflow     : hidden;
+          text-align   : center;
+          text-overflow: ellipsis;
+          white-space  : nowrap;
+          width        : 28%;
+
+          @media #{$xs} {
+            font-size: 15px;
+          }
+        }
+
+        .cell_center {
+          @media #{$xs} {
+            @include order(1);
+            width: 100%;
+          }
+        }
+
+        .cell_left {
+          text-align: left;
+        }
+
+        .cell_right {
+          font-size : 14px;
+          text-align: right;
+        }
+
+        .img_cell {
+          height        : 20px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .link_bill {
+    background     : initial;
+    border         : none;
+    color          : $color03;
+    cursor         : pointer;
+    font-size      : 16px;
+    font-weight    : 600;
+    outline        : none;
+    text-decoration: underline;
+  }
+
+  .repeat_order {
+    margin: 30px 5px 0 auto;
+    display: block;
+  }
+}

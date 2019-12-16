@@ -1,0 +1,294 @@
+.app_footer {
+  background-color: $color11;
+  padding         : 50px 14%;
+  position        : relative;
+  z-index         : 2;
+  
+  // @media #{$gt-xs} {
+  //   height: 305px;
+  // }
+  @media #{$xs} {
+    text-align: center;
+    padding: 60px 14% 90px;
+  }
+
+  .flex_box {
+    @media #{$gt-xs} {
+      @include flex-complete(space-between);
+    }
+    margin   : 0 auto;
+    max-width: 1036px;
+    color    : $color01;
+
+    h4 {
+      font-size    : 14px;
+      font-weight  : 600;
+      line-height  : 23px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size  : 14px;
+      line-height: 23px;
+      font-weight: 300;
+
+      a {
+        text-decoration: none;
+        color: $color01;
+      }
+
+      &.mail {
+        margin-top: 10px;
+      }
+
+      &.blog {
+        text-decoration: underline;
+      }
+
+      &.direction {
+        text-decoration: underline;
+      }
+    }
+
+    .left {
+      .logo {
+        @media #{$xs} {
+          margin: 0 auto;
+        }
+        width: 165px;
+  
+        img { width: 100%; }
+      }
+  
+      .valuation {
+        @media #{$gt-xs} {
+          @include display-flex();
+        }
+        margin: 20px 0;
+  
+        p {
+          font-size  : 13px;
+          margin-left: 13px;
+          line-height: normal;
+        }
+      }
+    }
+
+    .right {
+      @media #{$xs} {
+        margin-top: 45px;
+      }
+      p { 
+        @media #{$gt-xs} {
+          text-align: right;
+        }
+      }
+    }
+
+    .contact {
+      margin-top: 20px;
+
+      @media #{$xs} {
+        margin-top: 40px;
+      }
+    }
+
+  }
+
+  p.app_footer-title {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  &-img {
+    text-align: right;
+
+    @media #{$xs} {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    div {
+      margin-left: 30px;
+      display: inline-block;
+    }
+    .confianza-online {
+      width: 85px;
+    }
+    .paypal-white {
+      width: 100px;
+      margin-bottom: 15px;
+      display: block;
+      opacity: 0.6;
+    }
+    .pago-seguro {
+      width: 170px;
+      display: block;
+    }
+
+  }
+
+  &-social {
+    margin-top: 25px;
+
+    span {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin-right: 15px;
+      
+      &.facebook {
+        background: url('/static/images/icon_facebook.svg') $color05 center no-repeat;
+      }
+
+      &.twitter {
+        background: url('/static/images/icon_twitter.svg') $color05 center no-repeat;
+      }
+
+      &.instagram {
+        background: url('/static/images/icon_instagram.svg') $color05 center no-repeat;
+      }
+
+      &.pinterest {
+        background: url('/static/images/icon_pinterest.svg') $color05 center no-repeat;
+        background-size: 60%;
+      }
+
+      &:hover {
+        background-color: $color08;
+      }
+    }
+  }
+
+  &-legal {
+    margin-bottom: 25px;
+  }
+
+  &-mailchimp {
+    text-align: right;
+    margin-bottom: 30px;
+
+    p.app_footer-title {
+      margin-bottom: 5px;
+    }
+
+  }
+
+  .legal-line {
+    @include flex-complete(flex-start, flex-start);
+    max-width: 300px;
+    margin-top: 10px;
+    
+  }
+  .privacy {
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 300;
+    display:inline-block;
+    position:relative;
+    text-align:left;
+    vertical-align: super;
+    
+    .privacy-link{
+      cursor: pointer;
+      border-bottom:1px dotted #666;
+    }
+  }
+
+  #legal {
+    p {
+      text-align: left;
+    }
+  }
+  
+  .legal-tooltip {
+    min-width: 270px;
+    max-width: 100%;
+    margin-right: 20px;
+    transform: translate(0%,-75%);
+    padding: 35px 15px 10px;
+    background-color: $color05;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 10;
+    box-sizing: border-box;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.5);
+
+    @media #{$xs} {
+      padding: 10px 15px 35px;
+    }
+  }
+
+}
+
+.app_footer-mailchimp {
+  @media #{$xs} {
+    text-align: center;
+  }
+  #mc_embed_signup {
+    form {
+      display: block;
+
+      .container {
+        background-color: $color01;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        display: inline-block;
+      }
+      
+    }
+    input.email {
+      font-size: 16px;
+      border: none; 
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      color: $color04;
+      box-sizing:border-box;
+      height:45px;
+      padding: 0px 0.4em;
+      display: inline-block;
+      margin: 0;
+      width:255px;
+      max-width: 80%;
+      vertical-align:top;
+    }
+
+    input.button {
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      letter-spacing: .03em;
+      color: #fff;
+      background-color: $color05;
+      box-sizing:border-box;
+      height:35px;
+      line-height:35px;
+      display: inline-block;
+      margin: 5px;
+      transition: all 0.23s ease-in-out 0s;
+      width: 35px;
+
+      &:hover {
+        background-color: $color08;
+      }
+    }
+
+    input.checkbox {
+      height: 20px;
+      width: 20px;
+      margin-top: 5px;
+      margin-right: 2px;
+    }
+
+    .clear {
+      display: inline-block; /* positions button horizontally in line with input */
+    }
+  }
+}

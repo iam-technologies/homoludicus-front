@@ -1,0 +1,91 @@
+.header_mobile_ui {
+  &.fixed-nav {
+    position: fixed;
+  }
+    
+  @include box-shadow(6px 2px 20px 0 rgba($color02,0.06));
+  @include flex-complete(space-between);
+  background-color: $color01;
+  height          : 60px;
+  padding         : 0 20px;
+  width           : 100%;
+
+  .header_mobile_ui-sandwich {
+    background: none;
+    border    : none;
+    cursor    : pointer;
+    min-width : 26px;
+    outline   : none;
+    width     : 26px;
+
+    img { width: 100%; }
+  }
+
+  .header_mobile_ui-logo {
+    max-height: 25px;
+    width     : 126px;
+
+    img { width: 100%; }
+  }
+
+  &-center_text {
+    width     : 250px;
+    text-align: center;
+  }
+
+  .header_mobile_ui-subtext,
+  .header_mobile_ui-title {
+    color         : $color04;
+    font-size     : 17px;
+    letter-spacing: 0;
+    overflow      : hidden;
+    padding       : 0 20px;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+  }
+
+  .header_mobile_ui-subtext {
+    font-size     : 15px;
+    text-transform: initial;
+  }
+
+  .header_mobile_ui-icon_previous {
+    img { height: 16px }
+  }
+}
+
+.header_mobile_ui-home {
+  @extend .header_mobile_ui;
+  @include box-shadow(none);
+  background-color: initial;
+  height          : 50px;
+  left            : 0;
+  position        : absolute;
+  top             : 0;
+  z-index         : 1;
+}
+
+.header_mobile_ui-category {
+  @extend .header_mobile_ui;
+  background-color: $color03;
+  height          : 50px;
+  position        : fixed;
+  z-index         : 40;
+  top             : 0;
+
+  .header_mobile_ui-subtext,
+  .header_mobile_ui-title {
+    color         : $color01;
+    font-size     : 15px;
+    text-transform: uppercase;
+  }
+
+  .header_mobile_ui-subtext {
+    text-transform: initial;
+  }
+}
+
+// Fixed nav
+.app-main .app-category .app-filter {
+  margin-top: 50px;
+}

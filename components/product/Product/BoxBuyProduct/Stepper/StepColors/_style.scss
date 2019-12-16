@@ -1,0 +1,78 @@
+.step-colors {
+  $father: &;
+  @include flex-complete(flex-start, flex-start);
+  padding-top: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height    : 155px;
+
+  .type_color {
+    @include flex-complete(flex-start, center, nowrap, column);
+    width : 96px;
+    // height: 125px;
+    margin-right: 5px; 
+  }
+  
+  .type_color-text {
+    @include transition(border 400ms cubic-bezier(0.165, 0.84, 0.44, 1));
+    display     : block;
+    padding     : 0 5px;
+    color       : rgba($color04, 0.70);
+    font-size   : 13px;
+    font-weight : 300;
+    text-align  : center;
+  }
+
+  .type_color-circle {
+    @include border-radius(50%);
+    @include transition(border 400ms cubic-bezier(0.165, 0.84, 0.44, 1));
+    @include transition(background-size 400ms cubic-bezier(0.165, 0.84, 0.44, 1));
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: center center;
+    border             : 5px solid $color01;
+    cursor             : pointer;
+    height             : 80px;
+    margin             : 0 0 5px 0;
+    position           : relative;
+    width              : 80px;
+
+    p {
+      @include transform(translate(-50%, -50%));
+      height    : 55px;
+      left      : 50%;
+      overflow  : hidden;
+      position  : absolute;
+      text-align: center;
+      top       : 50%;
+      width     : 55px;
+      font-size : 14px;
+
+      span {
+        @include transform(translateY(-50%));
+        display : block;
+        position: absolute;
+        top     : 50%;
+        width   : 100%;
+      }
+    }
+
+    &:hover {
+      border: 10px solid $color04;
+  
+      & ~ .type_color-text {
+        color: $color04;
+      }
+    }
+  }
+
+  .checked {
+    .type_color-circle {
+      border: 10px solid $color04;
+    }
+
+    .type_color-text {
+      color: $color04;
+    }
+  }
+}

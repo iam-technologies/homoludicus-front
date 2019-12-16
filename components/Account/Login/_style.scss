@@ -1,0 +1,199 @@
+.login_app {
+  @include transition(all 700ms);
+  @include opacity(0);
+  background-color: rgba($color18, 0);
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  bottom          : 0;
+  overflow-y      : auto;
+  right           : 0;
+  z-index         : -1;
+
+  @media #{$sm} {
+    background-color: rgba($color01, 0);
+    padding: $paddingXS;
+  }
+
+  .header_login {
+    @include flex-complete(space-between);
+    padding : 20px 60px;
+    position: relative;
+    
+    @media #{$xs} {
+      padding: 15px 30px;
+    }
+
+    &-logo {
+      max-width: 165px;
+      margin   : 0 auto;
+  
+      img { width: 100%; }
+
+      @media #{$xs} {
+        max-width: 130px;
+      }
+    }
+  
+    &-right_btn-close {
+      background-color: initial;
+      border          : none;
+      cursor          : pointer;
+      height          : 16px;
+      outline         : none;
+      
+      img {
+        width : 16px;
+        height: 16px;
+      }
+
+      @media #{$xs} {
+        height: 12px;
+
+        img {
+          width : 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+
+  .login-form {
+    max-width: 350px;
+    margin   : 50px auto;
+
+    @media #{$xs} {
+      margin: 20px auto 40px;
+    }
+
+    .title {
+      color        : $color13;
+      font-size    : 24px;
+      margin-bottom: 35px;
+      text-align   : center;
+
+      @media #{$xs} {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .text_input_ui-max_width {
+      margin-bottom: 15px;
+    }
+
+    .link_forgot {
+      font-size  : 14px;
+      line-height: 24px;
+      text-align : right;
+      a {
+        color: $color04;
+      }
+    }
+
+    .btn_login {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .btns_width {
+      @media #{$xs} {
+        min-width: 140px;
+        font-size: 14px;
+        line-height: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  .signup {
+    margin-top: 50px;
+
+    .title {
+      margin-bottom: 10px;
+    }
+
+    .text { 
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+}
+
+.login_app-show {
+  @extend .login_app;
+  @include opacity(1);
+  background-color: rgba($color18, 0.9);
+  z-index         : 40;
+
+  @media #{$sm} {
+    background-color: rgba($color01, 1);
+  }
+
+  .app-s_p {
+    @include transform(translateY(0%));
+  }
+
+  & ~ .app {
+    max-height: 100%;
+    overflow  : hidden;
+  }
+}
+
+
+.login_app-to {
+  margin-bottom: 10%;
+
+  @media #{$sm} {
+    background-color: rgba($color01, 0);
+    padding: $paddingXS;
+  }
+
+  .login-form {
+    max-width: 350px;
+    margin   : 50px auto;
+
+    @media #{$xs} {
+      margin: 20px auto 40px;
+    }
+
+    .title {
+      color        : $color13;
+      font-size    : 24px;
+      margin-bottom: 35px;
+      text-align   : center;
+
+      @media #{$xs} {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .text_input_ui-max_width {
+      margin-bottom: 15px;
+    }
+
+    .link_forgot {
+      font-size  : 14px;
+      line-height: 24px;
+      text-align : right;
+      a {
+        color: $color04;
+      }
+    }
+
+    .btn_login {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .btns_width {
+      @media #{$xs} {
+        min-width: 140px;
+        font-size: 14px;
+        line-height: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

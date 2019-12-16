@@ -1,0 +1,126 @@
+.product_box_ui {
+  @include border-radius(6px);
+  @include box-shadow($boxShadow01);
+  background     : $color01;
+  display        : block;
+  height         : 335px;
+  margin         : 0 30px 30px;
+  position       : relative;
+  text-decoration: none;
+  width          : 335px;
+
+  @media #{$xs} {
+    width: 320px;
+  }
+
+  @media #{$sm} {
+    margin: 0 16px 30px;
+  }
+
+  &-img {
+    @include border-radius(6px 6px 0 0);
+    background-color: $color16;
+    height          : 255px;
+    overflow        : hidden;
+    
+    .p_b_ui-img {
+      @include transition(opacity 500ms cubic-bezier(0.215, 0.61, 0.355, 1));
+      @include opacity(0);
+      width: 100%;
+
+      &_show {
+        @include opacity(1);
+      }
+    }
+  }
+
+  &-desc {
+    @include border-radius(0 0 6px 6px);
+    @include flex-complete(space-between);
+    background-color: $color01;
+    height          : 80px;
+    overflow        : hidden;
+    padding         : 0 22px;
+
+    @media #{$sm} {
+      padding: 0 15px;
+    }
+  }
+
+  &-title {
+    color      : $color04;
+    font-size  : 18px;
+    line-height: 24px;
+    max-width  : 210px;
+    text-align : left;
+
+    @media #{$sm} {
+      font-size: 15px;
+      max-width  : 180px;
+    }
+  }
+
+  &-price {
+    color      : $color04;
+    font-size  : 17px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align : right;
+
+    @media #{$sm} {
+      font-size: 15px;
+    }
+  }
+
+  &-old_price {
+    color          : $color25;
+    letter-spacing : 0;
+    text-decoration: line-through;
+  }
+
+  &-offer_price {
+    color: $color24;
+  }
+}
+
+
+.product_box_ui-s_p {
+  @extend .product_box_ui;
+  height   : 300px;
+  margin   : 0 12px 24px;
+  width    : 185px;
+  min-width: 185px;
+
+  .product_box_ui-img {
+    height: 185px;
+  }
+
+  .product_box_ui-desc {
+    @include flex-complete(space-between, center, nowrap, column);
+    height : 115px;
+    padding: 15px;
+  }
+
+  .product_box_ui-title {
+    color      : $color04;
+    font-size  : 15px;
+    line-height: 19px;
+    text-align : center;
+    width      : 100%;
+  }
+
+  .product_box_ui-price {
+    text-align: center;
+    width     : 100%;
+  }
+
+  &-more_result {
+    @include transform(translateY(-50%));
+    color     : $color13;
+    font-size : 15px;
+    position  : absolute;
+    text-align: center;
+    top       : 50%;
+    width     : 100%;
+  }
+}

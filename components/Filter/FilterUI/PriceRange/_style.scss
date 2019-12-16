@@ -1,0 +1,66 @@
+.filter_ui-price_range {
+  @include flex-complete(flex-start, baseline);
+  height   : 21px;
+  min-width: 312px;
+
+  @media #{$xs} {
+    @include justify-content(center);
+  }
+
+  .filter_ui-title {
+    margin-right: 10px;
+    
+    @media #{$xs} {
+      display: none;
+    }
+  }
+
+  &-interval {
+    font-size: 15px !important;
+    min-width: 30px;
+    text-align: right;
+
+    &:last-child {
+      text-align: left;
+    }
+  }
+
+  &-slider {
+    @include align-self(center);
+    margin: 0 8px;
+    width : 185px !important;
+
+    .rc-slider-rail {
+      background-color: $color04;
+      height          : 3px;
+    }
+
+    .rc-slider-track {
+      background-color: $color03;
+      height          : 3px;
+    }
+
+    .rc-slider-handle {
+      @include box-shadow( 0 1px 2px 0 rgba(0,0,0,0.50));
+      border     : 1px solid $color01;
+      height     : 19px;
+      margin-left: -15px;
+      margin-top : -8px;
+      width      : 19px;
+
+      &.rc-slider-handle-1 {
+        margin-left: -5px;
+      }
+
+      &:hover {
+        border-color: $color03;
+      }
+
+      &:active,
+      &:focus {
+        @include box-shadow( 0 1px 2px 0 rgba(0,0,0,0.50));
+        border-color: $color03;
+      }
+    }
+  }
+}

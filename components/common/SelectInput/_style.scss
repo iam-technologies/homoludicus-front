@@ -1,0 +1,40 @@
+.select_input_ui {
+  margin-bottom: 30px;
+  position     : relative;
+  width        : 100%;
+  
+  .select_input_ui-label {
+    font-size     : 12px;
+    font-weight   : 600;
+    margin-bottom : 8px;
+    text-transform: uppercase;
+  }
+
+  & > div {
+    @include border-radius(3px !important);
+    background-color: $color01 !important;
+    border          : 1px solid $color20;
+
+    & > div {
+      color       : rgba(#4A4A4A, 0.5) !important;
+      font-size   : 16px;
+      padding-left: 30px;
+    }
+  }
+
+  .select_input_ui-error {
+    color    : $color21;
+    font-size: 14px;
+    left     : 0;
+    padding  : 1px 10px;
+    position : absolute;
+    top      : 90%;
+    width    : 100%;
+  }
+
+  &.error {
+    & > div {
+      border : 1px solid $color21;
+    }
+  }
+}

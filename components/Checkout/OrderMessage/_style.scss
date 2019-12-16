@@ -1,0 +1,60 @@
+.order_message {
+  min-height: 700px;
+  padding: 0 20px;
+  width     : 100%;
+
+  .app_checkout-header {
+    margin: 0 auto;
+    padding   : 30px 0 40px;
+    max-width: 165px;
+  }
+
+  .order_message_success {
+    margin    : 0 auto;
+    max-width : 700px;
+    text-align: center;
+
+    .order_message_img {
+      margin   : 0 auto 40px;
+      max-width: 160px;
+
+      img { width: 100%; }
+    }
+
+    .text {
+      color    : $color12;
+      font-size: 22px;
+
+      &.first {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .order_message_btn {
+    margin: 40px auto 100px;
+  }
+
+  .order_message_transfer {
+    @extend .order_message_success;
+    max-width: 650px;
+
+    .text {
+      margin-bottom: 20px;
+
+      strong {
+        font-weight: 600;
+      }
+
+      a {
+        color          : $color12;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .order_message_error {
+    @extend .order_message_success;
+  }
+
+}

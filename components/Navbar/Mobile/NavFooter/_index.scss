@@ -1,0 +1,57 @@
+// NAVBAR / MOBILE / FOOTER
+
+.nav_footer {
+  background-color: rgba($color22, 0.91);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  
+  &-btns_bottom {
+    height: 60px;
+    line-height: 60px;
+
+    .nav_footer-btns {
+      border-right: 1px solid $color01;
+      color: $color01;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      width: 50%;
+    }
+
+    .nav_footer-btn_right {
+      border: none;
+      border-left: 1px solid $color01;
+    }
+  }
+
+  &-btn_cart {
+    background-color: $color23;
+    
+    .cart_nav-btn {
+      @include flex-complete(space-between);
+      padding: 0 25px;
+      height: 60px;
+      width: 100%;
+
+      span {
+        color: $color01;
+        font-size: 16px;
+      }
+    }
+
+    .cart_nav-badge {
+      position: relative;
+      right: 0;
+      top: 0;
+      height: 26px;
+      width: 26px;
+
+      p {
+        font-size: 15px;
+        margin-top: 3px;
+      }
+    }
+  } 
+}

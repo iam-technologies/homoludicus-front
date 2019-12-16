@@ -1,0 +1,70 @@
+.step_shipping {
+  .title {
+    color        : $color13;
+    font-size    : 24px;
+    margin-bottom: 30px;
+
+    @media #{$xs} {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+
+  .select_shipping {
+    @include flex-complete(flex-start, stretch);
+    padding: 0 0 20px;
+
+    @media #{$xs} {
+      @include flex-direction(column);
+    }
+
+    .box_shipping {
+      @include border-radius(3px);
+      background-color: $color01;
+      border          : 1px solid $color20;
+      padding         : 33px 27px 33px 40px;
+      min-width       : 48.5%;
+      min-height      : 180px;
+
+      @media #{$xs} {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      &:nth-child(2n) {
+        margin-left: 3%;
+
+        @media #{$xs} {
+          margin-left: 0%;
+        }
+      }
+
+      .description_shipping {
+        width: 100%;
+
+        .title {
+          @include flex-complete(space-between);
+          color        : $color13;
+          font-size    : 18px;
+          font-weight  : 400;
+          margin-bottom: 0;
+
+          .price {
+            font-weight: 600;
+            white-space: nowrap;
+          }
+        }
+
+        .text {
+          color      : $color04;
+          font-size  : 18px;
+          line-height: 26px;
+          margin-top : 10px;
+        }
+      }
+    }
+  }
+}

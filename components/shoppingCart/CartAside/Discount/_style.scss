@@ -1,0 +1,69 @@
+.app_cart_aside {
+  &-discount {
+    border-bottom: 1px solid $color20;
+    padding      : 13px 3px 15px 0;
+    
+    .header {
+      @include flex-complete(space-between);
+  
+      .text {
+        cursor     : pointer;
+        font-size  : 14px;
+        line-height: 24px;
+      }
+  
+      .btn_code {
+        @include transition(transform 500ms);
+        background: initial;
+        border    : none;
+        cursor    : pointer;
+        outline   : none;
+  
+        &.show {
+          @include transform(rotate(180deg));
+        }
+      }
+    }
+  
+    .input_code {
+      @include transition(max-height 500ms);
+      max-height: 0;
+      padding: 0 10px;
+      overflow: hidden;
+
+      .flex_input {
+        @include flex-complete(space-between);
+      }
+      
+      .discount-input {
+        margin: 10px 0;
+        width: 65%;
+
+        .text_input_ui-field {
+          height: 40px;
+          padding: 5px 15px;
+        }
+      }
+
+      .button_ui {
+        font-size: 14px;
+        height: 40px;
+        line-height: 40px;
+        min-width: 30%;
+        
+        .ball-beat {
+          div {
+            height: 10px;
+            margin: 5px 4px 0;
+            width: 10px;
+          }
+        }
+      }
+  
+      &.show {
+        max-height: 88px;
+        height: 88px;
+      }
+    }
+  }
+}

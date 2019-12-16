@@ -1,0 +1,19 @@
+.carousel_home {
+  position: relative;
+
+  .carousel_btn {
+    @include border-radius(5px);
+    @include box-shadow($boxShadow01);
+    @include transform(translateX(-50%));
+    background-color: $color05;
+    bottom          : 10%;
+    color           : $color01;
+    font-size       : 16px;
+    font-weight     : 700;
+    left            : 50%;
+    line-height     : 54px;
+    padding         : 0 50px;
+    position        : absolute;
+    text-decoration : none;
+  }
+}

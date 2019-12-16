@@ -1,0 +1,56 @@
+.text_input_ui {
+  margin-bottom: 30px;
+  width        : 48%;
+  position     : relative;
+
+  @media #{$xs} {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .text_input_ui-label {
+    font-size     : 12px;
+    font-weight   : 600;
+    margin-bottom : 8px;
+    text-transform: uppercase;
+  }
+
+  .text_input_ui-field {
+    @include border-radius(3px);
+    @include placeholder-color(rgba($color13, 0.5));
+    background-color: $color01;
+    border          : 1px solid $color20;
+    color           : $color13;
+    font-size       : 16px;
+    height          : 54px;
+    outline         : none;
+    padding         : 17px 30px;
+    width           : 100%;
+
+    &:focus {
+      border: 1px solid $color03;
+    }
+
+  }
+
+  .text_input_ui-error {
+    color    : $color21;
+    font-size: 14px;
+    left     : 0;
+    padding  : 1px 10px;
+    position : absolute;
+    top      : 100%;
+    width    : 100%;
+  }
+
+  &.error {
+    .text_input_ui-field {
+      border: 1px solid $color21;
+    }
+  }
+}
+
+.text_input_ui-max_width {
+  @extend .text_input_ui;
+  width: 100%;
+}

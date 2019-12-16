@@ -1,0 +1,38 @@
+.app_cart_aside {
+  &-header {
+    @include flex-complete(space-between);
+    border-bottom: 1px solid $color20;
+    padding      : 0 0 26px;
+
+    @media #{$xs} {
+      padding: 0 0 15px;
+    }
+
+    .title {
+      color    : $color13;
+      font-size: 24px;
+
+      @media #{$xs} {
+        font-size: 20px;
+      }
+    }
+
+    .btn_close {
+      background: initial;
+      border    : none;
+      color     : $color04;
+      cursor    : pointer;
+      font-size : 14px;
+      outline   : none;
+
+      @media #{$xs} {
+        font-size: 12px;
+      }
+    }
+
+    .badge_ui {
+      @include box-shadow(none);
+      margin-right: 14px;
+    }
+  }
+}

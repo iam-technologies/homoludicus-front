@@ -1,0 +1,11 @@
+.filter_ui-size {
+  margin-bottom: 25px;
+
+  .content {
+    @include flex-complete(flex-start, center, wrap);
+    
+    .radio_input_ui {
+      margin: 8px 20px 0 0;
+    }
+  }
+}

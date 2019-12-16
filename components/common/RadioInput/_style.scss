@@ -1,0 +1,44 @@
+.radio_input_ui {
+  @include flex-complete(flex-start, start);
+  cursor: pointer;
+
+  .radio {
+    @include transition(border 500ms);
+    @include border-radius(50%);
+    @include flex-shrink(0);
+    background-color: $color01;
+    border          : 1px solid $color20;
+    height          : 18px;
+    margin-right    : 10px;
+    margin-top      : 3px;
+    position        : relative;
+    width           : 18px;
+
+    .circle {
+      @include transition(opacity 500ms);
+      @include opacity(0);
+      @include border-radius(50%);
+      @include transform(translate(-50%, -50%));
+      background-color: $color03;
+      display         : inline-block;
+      height          : 8px;
+      position        : absolute;
+      top             : 50%;
+      left            : 50%;
+      width           : 8px;
+    }
+
+
+    &.active {
+      border: 2px solid $color03;
+
+      .circle {
+        @include opacity(1);
+      }
+    }
+  }
+
+  .label {
+    font-size: 16px;
+  }
+}

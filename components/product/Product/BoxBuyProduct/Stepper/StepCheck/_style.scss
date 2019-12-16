@@ -1,0 +1,64 @@
+.step-check {
+  @include flex-complete(space-between, center, wrap);
+  margin: 0 40px;
+
+  div {
+    width: 48%;
+
+    @media #{$xs} {
+      width: 100%;
+    }
+  }
+
+  .type_check {
+    @include transition(color 400ms cubic-bezier(0.165, 0.84, 0.44, 1));
+    color         : $color19;
+    cursor        : pointer;
+    font-size     : 13px;
+    letter-spacing: 0.86px;
+    line-height   : 27px;
+    margin-top    : 10px;
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+    width         : 100%;
+
+
+    .icon_check {
+      @include transition(background-image 400ms cubic-bezier(0.165, 0.84, 0.44, 1));
+      background-image: url('/static/images/icon_uncheck.png');
+      display         : inline-block;
+      height          : 12px;
+      margin-right    : 10px;
+      vertical-align: middle;
+      width           : 12px;
+    }
+
+    &.checked,
+    &:hover {
+      color: $color14;
+
+      .icon_check {
+        background-image: url('/static/images/icon_check.png');
+      }
+    }
+
+    @media #{$sm} {
+      &:hover {
+        color: $color19;
+
+        .icon_check {
+          background-image: url('/static/images/icon_uncheck.png');
+        }
+      }
+
+      &.checked {
+        color: $color14;
+
+        .icon_check {
+          background-image: url('/static/images/icon_check.png');
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import './mixins';
+@import './vars';
+
+
+@import 'node_modules/loaders.css/src/animations/ball-pulse.scss';
+@import 'node_modules/loaders.css/src/animations/ball-beat.scss';
+@import 'node_modules/loaders.css/src/animations/ball-clip-rotate.scss';
+@import 'node_modules/loaders.css/src/animations/ball-spin-fade-loader.scss';
+@import 'node_modules/react-image-gallery/styles/scss/image-gallery-no-icon.scss';
+
+@import './tags';
+@import '../components/_index.scss';
+
+* {
+	box-sizing : border-box;
+	font-family: $fontFamily;
+	margin     : 0;
+	padding    : 0;
+}
+
+body, html {
+  background-color: $color01;
+  bottom          : 0;
+  font-size       : 17px;
+  color           : $color04;
+  left            : 0;
+  margin          : 0;
+  padding         : 0;
+  position        : absolute;
+  right           : 0;
+  top             : 0;
+
+  @media #{$xs} {
+    font-size: 15px;
+  }
+}
+
+.app {
+  background-color: $color01;
+  position        : absolute;
+  top             : 0;
+  width           : 100%;
+}
+
+.app-main {
+  background-color: $color01;
+  margin          : 0 auto;
+  max-width       : 1440px;
+  position        : relative;
+  z-index         : 5;
+}
+
+.animation_opacity {
+  @include transition(opacity 500ms);
+  @include opacity(0);
+}
+.animation_opacity-remove {
+  @extend .animation_opacity;
+  @include opacity(1);
+}
+.ball-beat {
+  div {
+    height: 13px;
+    margin: 5px 2px 0;
+    width : 13px;
+  }
+}

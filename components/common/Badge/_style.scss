@@ -1,0 +1,119 @@
+.badge_ui {
+  @include border-radius(16px);
+  @include box-shadow(4px 2px 10px 0 rgba(0,0,0,0.06));
+  background-color: $color03;
+  color           : $color01;
+  display         : inline-block;
+  font-size       : 14px;
+  line-height     : 24px;
+  padding         : 0 12px;
+  text-align      : center;
+  text-transform  : uppercase;
+  
+  &.small {
+    font-size     : 12px;
+    letter-spacing: 0;
+    line-height   : 20px;
+    padding       : 0 16px;
+  }
+}
+
+.badge_ui-products {
+  @extend .badge_ui;
+  font-size  : 12px;
+  font-weight: 500;
+  left       : -16px;
+  line-height: initial;
+  min-width  : 90px;
+  padding    : 8px 10px;
+  position   : absolute;
+  top        : 22px;
+  z-index    : 6;
+
+  &.badge_ui-discount {
+    background: $color24;
+  }
+}
+
+.badge_ui-orders {
+  @extend .badge_ui;
+  @include border-radius(100px);
+  @include box-shadow(none);
+  display      : block;
+  font-size    : 12px;
+  font-weight  : 600;
+  line-height  : 34px;
+  margin       : 0 auto;
+  max-width    : 85%;
+  overflow     : hidden;
+  padding      : 0 10px;
+  text-overflow: ellipsis;
+  white-space  : nowrap;
+
+  &.waitPaymentStripe,
+  &.waitPaymentPayPal,
+  &.waitPayment,
+  &.waitBudget,
+  &.save {
+    background: #FFEACC;
+    color     : #F4A12F;
+  }
+
+  &.offlineProducts {
+    background: #ffb7db;
+    color     : #FF69B4;
+  }
+
+  &.paymentAccept,
+  &.finalized {
+    background: #DCFFCC;
+    color     : #70C45F;
+  }
+
+  &.readyMRW,
+  &.readyToPick {
+    background: #fcd9b8;
+    color     : #FFA144;
+  }
+
+  &.inTransitMRW,
+  &.inTransit {
+    background: #b88de0;
+    color     : #8A2BE2;
+  }
+
+  &.entregado {
+    background: #63b263;
+    color     : #0b6b0b;
+  }
+
+  &.delivered {
+    background: #6bbf87;
+    color     : #009734;
+  }
+
+  &.sentBill {
+    background: #8dfcf1;
+    color     : #00CBB7;
+  }
+
+  &.jointBill {
+    background: #ECFF00;
+    color     : #7a8400;
+  }
+
+  &.canceled {
+    background: #db8393;
+    color     : #DC143C;
+  }
+
+  &.refund {
+    background: #f9bd79;
+    color     : #b36200;
+  }
+
+  &.abandoned {
+    background: #FFD8CC;
+    color     : #F43F2F;
+  }
+}

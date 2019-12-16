@@ -1,0 +1,134 @@
+.a_p-box_details {
+  padding-right: 40px;
+  width        : 50%;
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  ol, ul {
+    margin-left: 20px;
+
+    li {
+      padding-left: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  @media #{$sm} {
+    padding: 0;
+    width: 100%;
+  }
+
+  &-top {
+    @include flex-complete(flex-start);
+    width: 100%;
+    
+    @media #{$sm} {
+      display: block;
+    }
+
+    .title {
+      @include transition(border-bottom 400ms);
+      border-bottom : 4px solid $color01;
+      font-size     : 15px;
+      color         : $color13;
+      cursor        : pointer;
+      line-height   : 21px;
+      margin        : 0 40px 0 0;
+      min-width     : 70px;
+      padding       : 0;
+      text-align    : center;
+      text-transform: uppercase;
+
+      &.title_send {
+        min-width: 162px;
+        margin: 0;
+      }
+
+      &:hover {
+        font-weight: 700;
+      }
+      
+      &.active {
+        border-bottom: 4px solid $color03;
+        font-weight  : 700;
+      }
+
+      @media #{$sm} {
+        border-bottom: 2px solid $color03;
+        font-weight  : 700;
+        margin: 0 auto;
+
+        &.active {
+          border-bottom: 2px solid $color03;
+        }
+
+        &.title_send {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .details-top-content {
+    .btn_icon_bottom {
+      @include transition(transform 800ms);
+      @include transform(rotateZ(0deg));
+      display: none;
+      right: 0px;
+      position: absolute;
+      width: 16px;
+
+      &.active {
+        @include transform(rotateZ(180deg));
+      }
+    }
+
+    .tab {
+      display: none;
+      font-size: 15px;
+      padding  : 0 0 20px;
+    }
+
+    @media #{$sm} {
+      @include box-shadow(6px 0 20px 0 rgba(0,0,0,0.06));
+      background-color: $color01;
+      margin: 0 auto 15px;
+      max-width: 550px;
+      padding: 0 16px;
+      width: 100%;
+      
+      .details-top-content_btns {
+        @include flex-complete(start, center, wrap);
+        height: 60px;
+        position: relative;
+        width: 100%;
+      }
+
+      .btn_icon_bottom {        
+        display: inline-block;
+      }
+
+      .tab {
+        display: block;
+      }
+    }
+  }
+
+  &-bottom {
+    position: relative;
+    width   : 100%;
+
+    .tab {
+      font-size: 17px;
+      padding  : 30px 0 0;
+      width    : 100%;
+      
+      a{
+        color: $color04;
+        text-decoration: underline;
+      }
+    }
+  }
+}

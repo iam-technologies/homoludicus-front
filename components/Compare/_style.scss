@@ -1,0 +1,176 @@
+.app-filter {
+  .compare_ui {
+    max-width: 1101px;
+    margin: -30px auto 0 auto;
+    padding: 0 15px 20px;
+
+    @media #{$xs} {
+      margin-top: 0;
+    }
+
+    &-header {
+      span {
+        margin-left: 10px;
+        display: inline-block;
+      }
+
+      @media #{$xs} {
+        text-align: center;
+      }
+    }
+
+    &-button {
+      line-height: 30px;
+      height: 30px;
+      font-size: 15px;
+      min-width: 140px; 
+      padding-left: 15px;
+      padding-right: 15px;
+
+      img {
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+
+      &-inactive {
+        background-color: $color17;
+        border-color: $color25;
+      }
+    }
+  }
+
+  .icon_check {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background-color: $color01;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 2px solid $color03;
+    z-index: 1;
+
+    &-checked {
+      background: $color01 url('/static/images/icon-round.png') no-repeat center;
+      background-size: 60%;
+    }
+
+    &-disabled {
+      background-color: rgba(255, 255, 255, 0.4);
+      border-color: rgba(151, 222, 204, 0.4);
+    }
+  }
+
+  .relative {
+    position: relative;
+  }
+}
+
+
+.app-compare {
+  padding-bottom: 70px;
+
+  &-info {
+    @include flex-complete(space-between);
+    margin     : 0 auto 80px;
+    max-width  : 1030px;
+    padding-top: 40px;
+
+    @media #{$sm} {
+      margin: 30px 0 20px;
+      text-align: center;
+    }
+
+    .button_ui {
+      line-height: 30px;
+      height: 30px;
+      min-width: 140px; 
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 15px;
+
+      @media #{$sm} {
+        margin: 0 auto;
+        line-height: 30px;
+        height: 30px;
+      }
+
+      img {
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
+
+  }
+
+  &-title-h1,
+  &-title {
+    font-weight  : 600;
+    font-size    : 29px;
+    margin-bottom: 20px;
+  }
+
+  .product_list_ui {
+    max-width: 1101px;
+
+    &-container {
+      align-items: inherit;
+      height: inherit;
+      
+      @media #{$lg} {
+        flex-wrap: nowrap;
+      }
+
+      .button_ui {
+        position: absolute;
+        bottom: -80px;
+        left: 17%;
+        margin: 0 auto;
+        min-width: 200px;
+      }
+
+      .product_box_ui {
+        height: inherit;
+        margin: 0 16px 130px;
+        
+        &-desc {
+          display: block;
+          height : inherit;
+          padding-bottom: 35px;
+      
+          .product_box_ui-header {
+            @include flex-complete(space-between);
+            height: 80px;
+            overflow: hidden;
+          }
+        }
+        &-pack {
+          color: $color04;
+          font-size: 16px;
+      
+          ul {
+            list-style: none;
+      
+            li {
+              margin-left: 15px; 
+      
+              &::before {
+                content: '- ';
+                margin-left: -15px; 
+              }
+            }
+          }
+        }
+    
+        &-divider {
+          text-align: center;
+          margin: 0 auto 30px;
+          color: $color19;
+          width: 35px;
+        }
+      }
+    }
+
+    
+  }
+}

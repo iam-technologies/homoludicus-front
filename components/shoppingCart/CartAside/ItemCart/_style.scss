@@ -1,0 +1,208 @@
+.item_cart_ui {
+  // @include flex-complete();
+  display: flex;
+  justify-content: space-between;
+  color : $color04;
+  height: 90px;
+  margin: 35px 0;
+  @media #{$xs} {
+    height        : 90px;
+    margin        : 20px 0;
+  }
+
+  .left {
+    // background-color   : $color16;
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    // color              : $color04;
+    height             : 90px;
+    max-width          : 90px;
+    min-width          : 80px;
+    text-decoration    : none;
+
+    @media #{$xs} {
+      height   : 70px;
+      max-width: 70px;
+      min-width: 70px;
+      width    : 70px;
+    }
+    .left-img{
+      height             : 90px;
+      max-width          : 90px;
+      min-width          : 80px;
+      background-position: center;
+      background-repeat  : no-repeat;
+      background-size    : cover;
+    }
+  }
+
+  .center {
+    @include flex-complete(flex-start, start, wrap, column);
+    @include align-self(flex-start);
+    color          : $color04;
+    min-height     : 90px;
+    padding        : 2px 6px;
+    text-decoration: none;
+    width          : 230px;
+    position       : relative;
+
+    @media #{$xs} {
+      width: 220px;
+    }
+
+    .title {
+      font-size    : 18px;
+      padding-left : 4px;
+      font-weight  : 600;
+      line-height  : 24px;
+      max-width    : 100%;
+      overflow     : hidden;
+      text-overflow: ellipsis;
+      white-space  : nowrap;
+
+      @media #{$xs} {
+        font-size: 15px;
+        line-height: 20px;
+        z-index      : -1;
+      }
+    }
+
+    .personalizacion {
+      color           : $color04;
+      padding         : 2px 4px 4px;
+      text-decoration : none;
+      width           : 218px;
+      background      : white;
+      max-height      : 26px;
+      overflow        : hidden;
+      transition      : all .3s;
+
+      &:hover{
+        @include box-shadow(5px 5px 15px 2px rgba(0, 0, 0, 0.26));
+        max-height : 600px;
+
+        .text-expand{display: none;}
+
+        .text{
+          overflow     : visible;
+          text-overflow: none;
+          white-space  : normal;
+        }
+      }
+    }
+
+    .text, .text-expand {
+      font-size    : 15px;
+      max-width    : 100%;
+      overflow     : hidden;
+      text-overflow: ellipsis;
+      white-space  : nowrap;
+      line-height   : 17px;
+      margin-bottom : 5px;
+
+      @media #{$xs} {
+        font-size: 13px;
+      }
+    }
+
+    .price {
+      position    : absolute;
+      padding-left: 4px;
+      top         : 50px;
+      font-size   : 16px;
+      font-weight : 600;
+      line-height : 24px;
+      z-index     : -1;
+
+      @media #{$xs} {
+        font-size: 14px;
+        top      : 40px;
+      }
+    }
+  }
+  
+  .right {
+    @include flex-complete(flex-end, center, wrap);
+    text-align: center;
+    width     : 70px;
+
+    @media #{$xs} {
+      width: 43px;
+
+      @include flex-complete(center, center, wrap);
+    }
+
+    .btn_remove {
+      @include transition(background 500ms);
+      background         : initial;
+      background-image   : url('/static/images/icon_trash.png');
+      background-position: center;
+      background-repeat  : no-repeat;
+      background-size    : cover;
+      border             : none;
+      cursor             : pointer;
+      height             : 32px;
+      margin             : 5px;
+      outline            : none;
+      width              : 32px;
+
+      &:hover {
+        background-image: url('/static/images/icon_trash_hover.png');
+      }
+    }
+
+    .btn_plus {
+      @extend .btn_remove;
+      background-image: url('/static/images/icon_plus.png');
+      height          : 15px;
+      width           : 15px;
+
+      &:hover {
+        background-image: url('/images/icon_plus_hover.png');
+      }
+    }
+  }
+}
+
+.dialog_remove_item_cart {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
+
+  .remove_item_title_container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    padding: 20px 0px;
+
+    .dialog_title {
+      color        : $color04;
+      font-size    : 16px;
+    }
+  }
+
+  .btn_dialog {
+    // text-align: right;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .button_ui {
+      height      : 44px;
+      line-height : 44px;
+      margin-left : 30px;
+      margin-right: 20px;
+      min-width   : 160px;
+    }
+  }
+}

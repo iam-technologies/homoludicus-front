@@ -1,0 +1,48 @@
+// NAVBAR / MOBILE
+
+.nav_mobile_ui {
+  @include transition(all 700ms);
+  @include opacity(0);
+  background-color: rgba($color11, 0);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+
+  .nav_left {
+    @include transition(transform 800ms ease);
+    @include transform(translateX(-100%));
+    background-color: rgba($color22, 0.91);
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding: 0 34px;
+    position: absolute;
+    top: 0;
+    width: 90%;
+    max-width: 330px;
+
+    .logo {
+      padding: 10px 0 55px;
+      text-align: center;
+
+      img { height: 26px; }
+    }
+
+    @import './NavFooter/_index';
+    @import './ListCategories/_index';
+  }
+}
+
+.nav_mobile_ui-show {
+  @extend .nav_mobile_ui;
+  @include opacity(1);
+  background-color: rgba($color11, 0.85);
+  z-index: 40;
+
+  .nav_left {
+    @include transform(translateX(0%));
+  }
+}

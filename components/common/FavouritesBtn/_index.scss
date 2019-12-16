@@ -1,0 +1,16 @@
+.favourite_ui {
+  @include transition(background-image 400ms cubic-bezier(0.165, 0.84, 0.44, 1));
+  background-image   : url('/images/icon_heart.png');
+  background-position: center;
+  background-repeat  : no-repeat;
+  cursor             : pointer;
+  height             : 25px;
+  position           : absolute;
+  right              : 20px;
+  top                : 20px;
+  width              : 28px;
+
+  &-checked {
+    background-image: url('/images/icon_heart_clicked.png');
+  }
+}

@@ -1,0 +1,128 @@
+@import './StepCheck/_style.scss';
+@import './StepColors/_style.scss';
+@import './StepFonts/_style.scss';
+@import './StepInput/_style.scss';
+@import './StepSelect/_style.scss';
+@import './StepUpload/_style.scss';
+
+.a_p-stepper {
+  background: $color18;
+  border    : 1px dotted #979797;
+  height    : 295px;
+  margin: 0 auto;
+  max-height: 295px;
+  max-width: 500px;
+  overflow  : hidden;
+  position  : relative;
+  width     : 100%;
+
+  @media #{$sm} {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .stepper-top {
+    @include flex-complete(space-between);
+
+    height : 45px;
+    padding: 10px 17px;
+
+    h2 {
+      font-size: 13px;
+      font-weight: 600;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .stepper-step {
+      font-size  : 13px;
+      font-weight: 600;
+    }
+  }
+
+  .stepper-main {
+    height  : 195px;
+    margin  : 0 5px;
+    overflow: hidden;
+
+    .step-wrapper {
+      overflow: hidden;
+      
+      .step-title {
+        font-size    : 15px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+    
+      .step-container {
+        height  : 155px;
+        overflow: auto;
+        padding : 0 5px;
+        position: relative;
+      }
+    }
+  }
+
+  .stepper-bottom {
+    @include flex-complete(space-between);
+    height : 55px;
+    padding: 0 17px;
+
+    .stepper-next, .stepper-prev {
+      @include transition(opacity 400ms cubic-bezier(0.165, 0.84, 0.44, 1));
+      @include opacity(1);
+      background-color: initial;
+      border          : none;
+      color           : $color04;
+      cursor          : pointer;
+      font-size       : 13px;
+      font-weight     : 600;
+      height          : 23px;
+      outline         : none;
+      width           : 14px;
+
+      &.disable {
+        @include opacity(0.2);
+      }
+
+      .icon_stepper {
+        @include transition(background-image 400ms cubic-bezier(0.165, 0.84, 0.44, 1));
+        display: inline-block;
+        height : 23px;
+        width  : 14px;
+      }
+    }
+
+    .stepper-prev {
+      .icon_stepper {
+        background-image: url('/static/images/icon_step_prev.png');
+      }
+      
+      &:hover {
+        background-image: url('/static/images/icon_step_prev_hover.png');
+      }
+    }
+
+    .stepper-next {
+      width: 95px;
+      text-align: right;
+    } 
+    .stepper-next > span {
+      @include flex-complete(flex-end);
+      
+
+      .icon_stepper {
+        margin-left: 10px;
+        background-image: url('/static/images/icon_step_next.png');
+      }
+
+      &:hover {
+        .img_next {
+          background-image: url('/static/images/icon_step_next_hover.png');
+        }
+      }
+    }
+  }
+}

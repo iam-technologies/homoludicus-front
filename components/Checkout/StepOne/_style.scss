@@ -1,0 +1,108 @@
+.step_send_info {
+  @include flex-complete(space-between, center, wrap);
+
+  @media #{$xs} {
+    @include flex-direction(column);
+  }
+
+  .check_send_order {
+    @include flex-complete(space-between, center, wrap);
+    margin: 20px 0 30px;
+    width : 100%;
+
+    .title {
+      text-align   : center;
+      font-size    : 16px;
+      font-weight  : 600;
+      margin-bottom: 50px;
+      width        : 100%;
+
+      @media #{$xs} {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .radio_input_ui {
+    max-width: 32%;
+
+    @media #{$xs} {
+      margin: 0 auto;
+      margin-bottom: 25px;
+      max-width: initial;
+      width: 85%;
+    }
+  }
+
+  .container_send_addres {
+    @include flex-complete(space-between, center, wrap);
+    margin-top: 30px;
+    width     : 100%;
+
+    .check_dedication {
+      margin-bottom: 25px;
+      width: 100%;
+    }
+
+    .select_input {
+      width: 48%;
+
+      @media #{$xs} {
+        width: 100%;
+      }
+    }
+  }
+
+  .send_info_office {
+    @include flex-complete(space-between);
+    @include border-radius(3px);
+    background-color: $color01;
+    border          : 1px solid $color20;
+    margin-bottom   : 15px;
+    min-height      : 230px;
+    width           : 100%;
+
+    @media #{$xs} {
+      @include flex-complete(center, center, wrap, column-reverse);
+      max-width: 350px;
+    }
+
+    .flex_item {
+      @include align-self(stretch);
+      width: 50%;
+
+      @media #{$xs} {
+        width: 100%;
+      }
+    }
+
+    .address {
+      @include flex-complete(space-between, start, wrap, column);
+      border-right: 1px solid $color20;
+      font-size   : 16px;
+      line-height : 26px;
+      padding     : 35px 40px;
+
+      @media #{$xs} {
+        border-right: none;
+      }
+
+      .last {
+        color      : $color13;
+        font-size  : 14px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+    }
+
+    .flex_map {
+      position: relative;
+      overflow: hidden;
+
+      @media #{$xs} {
+        height: 220px;
+      }
+    }
+  }
+  
+}

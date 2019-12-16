@@ -1,0 +1,74 @@
+// NAVBAR / MOBILE / LIST CATEGORIES
+
+.nav_center {
+  @include calc(max-height, "100% - 187px");
+  overflow: hidden;
+
+  &-ul {
+    list-style: none;
+    height: calc(100vh - 217px);
+    overflow-y: auto;
+  }
+
+  .item_link {
+    margin: 0 0 30px;
+  }
+
+  .sub_link,
+  .sub_child,
+  .link_ui {
+    @include flex-grow(1);
+    color: $color01;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .main_link {
+    @include flex-complete();
+
+    .btn_more_categories {
+      background-color: initial;
+      border: none;
+      cursor: pointer;
+      margin: 0 0 0 auto;
+      outline: none;
+      padding: 5px;
+      
+      img {
+        @include transition(transform 500ms);
+        min-width: 12px;
+        width: 12px; 
+      }
+
+      &.active {
+        img {
+          @include transform(rotate(180deg));
+        }
+      }
+    }
+  }
+
+  .sub_link {
+    font-weight: 400;
+  }
+
+  .sub_child {
+    font-weight: 300;
+  }
+  
+  .list {
+    margin: 20px 0;
+    padding: 0 0 0 30px;
+
+    .sub_child_list {
+      margin: 10px 0;
+      padding: 0 0 0 20px;
+    }
+  }
+  
+}

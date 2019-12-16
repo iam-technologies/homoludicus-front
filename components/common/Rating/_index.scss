@@ -1,0 +1,42 @@
+.rating_ui {
+  height: 14px;
+
+  span {
+    height: 14px;
+  }
+
+  .icon_star {
+    vertical-align: top;
+    margin        : 0 1px;
+    width         : 14px;
+  }
+
+  &.rating_ui-edit {
+    .icon_star {
+      margin: 0 3px;
+    }
+  }
+}
+
+.rating_ui-bigger {
+  @extend .rating_ui;
+  height: 30px;
+  
+  span { height: 30px; }
+
+  .icon_star {
+    cursor: pointer;
+    width: 30px;
+  }
+}
+
+.rating_ui-medium {
+  @extend .rating_ui;
+  height: 18px;
+  
+  span { height: 18px; }
+
+  .icon_star {
+    width: 18px;
+  }
+}

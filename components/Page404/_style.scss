@@ -1,0 +1,112 @@
+// ATENCION ! ! ! ! css ideéntico al del legal advice (duplicidad de código)
+
+.not-found-container {
+    padding-bottom: 70px;
+  
+    &-info {
+      margin     : 0 auto;
+      max-width  : 1030px;
+      padding-top: 40px;
+  
+      @media #{$xs} {
+        padding: $paddingXS;
+        padding-top: 30px;
+      }
+  
+      @media #{$sm} {
+        padding: 30px 20px 0;
+      }
+    }
+  
+    &-title-h1,
+    &-title {
+      font-weight  : 600;
+      font-size    : 29px;
+      margin-bottom: 20px;
+  
+      @media #{$xs} {
+        font-size: 24px;
+      }
+    }
+    
+    &-description {
+      font-size: 17px;
+  
+      @media #{$xs} {
+        font-size: 15px;
+      }
+    }
+    
+    &-more_info {
+      padding-top: 0;
+      
+      h2, h3, h4 {
+        font-weight: 600;
+        font-size  : 29px;
+        margin     : 40px 0 20px;
+  
+        @media #{$xs} {
+          font-size: 24px;
+        }
+      }
+  
+      p {
+        font-size    : 17px;
+        margin-bottom: 10px;
+  
+        @media #{$xs} {
+          font-size: 15px;
+        }
+      }
+    }
+  
+    table {
+      margin-bottom: 50px;
+      border: 1px solid $color04;
+      border-collapse: collapse;
+      
+      @media #{$xs} {
+        margin: 0 auto 50px;
+      }
+  
+      td, th {
+        border: 1px solid $color04;
+        padding: 10px;
+        
+        @media #{$xs} {
+          padding: 3px;
+        }
+      }
+  
+      thead {
+        border-bottom: 1px solid $color04;
+      }
+    }
+  
+    ol, ul {
+      margin-left: 15px;
+  
+      li {
+        padding-left: 10px;
+        margin-bottom: 5px;
+      }
+    }
+  
+    a {
+      color          : $color04;
+      font-size      : 17px;
+      font-weight    : 400;
+      line-height    : normal;
+      text-decoration: underline;
+      word-wrap: break-word;
+  
+      @media #{$xs} {
+        font-size: 15px;
+      }
+    }
+  
+    @media #{$sm} {
+      margin-top: 50px;
+    }
+  }
+  

@@ -1,0 +1,72 @@
+.address_box_map {
+  @include border-radius(3px);
+  @include flex-complete(space-between);
+  background-color: $color01;
+  border          : 1px solid $color20;
+  margin-bottom   : 55px;
+  min-height      : 230px;
+  width           : 100%;
+
+  @media #{$xs} {
+    @include flex-complete(center, center, wrap, column-reverse);
+    max-width: 350px;
+  }
+
+  .flex_item {
+    @include align-self(stretch);
+    width: 50%;
+
+    @media #{$xs} {
+      width: 100%;
+    }
+  }
+
+  .address {
+    @include flex-complete(space-between, start, wrap, column);
+    border-right: 1px solid $color20;
+    font-size   : 16px;
+    line-height : 26px;
+    padding     : 30px 40px 35px;
+
+    @media #{$xs} {
+      border-right: none;
+    }
+
+    .last_btns {
+      @include flex-complete(flex-start);
+      margin: 10px 0 0;
+
+      img {
+        margin: 0 15px;
+      }
+    }
+
+    .btn_address {
+      background-color: initial;
+      border          : none;
+      color           : $color03;
+      cursor          : pointer;
+      font-size       : 14px;
+      font-weight     : 600;
+      line-height     : 24px;
+      outline         : none;
+
+      @media #{$xs} {
+        font-size: 13px;
+      }
+    }
+
+    &_billing {
+      border-right: none;
+    }
+  }
+
+  .shipping_map {
+    position: relative;
+    overflow: hidden;
+
+    @media #{$xs} {
+      height: 220px;
+    }
+  }
+}

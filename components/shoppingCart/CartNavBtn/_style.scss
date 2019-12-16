@@ -1,0 +1,33 @@
+.cart_nav_ui {
+  position: relative;
+  
+  .cart_nav-btn {
+    background: initial;
+    border    : none;
+    cursor    : pointer;
+    outline   : none;
+    position  : relative;
+  }
+
+  .cart_nav-badge {
+    @include border-radius(50%);
+    background-color: $color15;
+    display         : block;
+    height          : 16px;
+    position        : absolute;
+    right           : -6px;
+    top             : -1px;
+    width           : 16px;
+
+    p {
+      color     : $color01;
+      font-size : 11px;
+      text-align: center;
+    }
+
+    &.hidden {
+      @include opacity(0);
+    }
+  }
+
+}

@@ -1,0 +1,192 @@
+// NAVBAR / DESKTOP
+
+
+// FILTER UI TOP: Z-index: 9
+// modificar z-index en .app-header
+
+.nav_desk {
+  @include transition(all 800ms );
+  background-color: initial;
+  left            : 0;
+  padding         : 40px 0 0;
+  position        : absolute;
+  top             : 0;
+  width           : 100%;
+  z-index         : 1002;
+
+  .nav_top {
+    @include transition(all 800ms);
+    @include flex-complete(space-between);
+    margin: 0 8.7% 10px;
+    //max-width: 1190px;
+
+    .logo {
+      a {
+        @include transition(height 800ms);
+        display: block;
+        height : 30px;
+        
+        img { height: 100%; }
+      }
+    }
+
+    .right_btns {
+      @include flex-complete(space-between);
+      width: 140px;
+
+      .right_btns-search {
+        background: none;
+        border    : none;
+        cursor    : pointer;
+        outline   : none;
+      }
+
+      .right_btns-link {
+        background: none;
+        border    : none;
+        outline   : none;
+        position  : relative;
+      }
+    }
+
+    .profile_icon {
+      width: 20px;
+
+      img { width: 100%; }
+    }
+    
+  }
+
+  .nav_bottom {
+    @include transition(all 800ms);
+    @include box-shadow($boxShadow01);
+    background-color: $color01;
+    margin: 0 8.3%;
+    //max-width: 1200px;
+    position: relative;
+    
+    .flex_box {
+      @include flex-complete(space-between, center, wrap);
+      font-size  : 16px;
+      font-weight: 600;
+      line-height: 37px;
+      list-style : none;
+      margin     : 0 auto;
+      max-width  : 1200px;
+      padding    : 4px 65px 0;
+      position   : relative;
+      z-index    : 1002;
+  
+      .item_link {
+        border-bottom: 4px solid $color01;
+        
+        .link {
+          color          : $color03;
+          cursor         : pointer;
+          display        : inline-block;
+          line-height    : 37px;
+          text-decoration: none;
+          text-transform : uppercase;
+        }
+
+        .subnav {
+          @include opacity(0.95);
+          display         : none;
+          background-color: $color01;
+          left            : 0;
+          list-style      : none;
+          margin          : 0 auto;
+          max-width       : 1200px;
+          padding         : 30px 80px;
+          position        : absolute;
+          top             : 100%;
+          width           : 100%;
+          
+          .category {
+            .list {
+              float        : left;
+              margin-bottom: 20px;
+              width        : 33.33%;
+    
+              .title {
+                color          : $color04;
+                font-size      : 17px;
+                font-weight    : 600;
+                margin-bottom  : 15px;
+                text-decoration: none;
+                text-transform : uppercase;
+              }
+    
+              p { 
+                line-height: normal;
+                margin     : 8px 0 0px 15px;
+
+                .sub_link {
+                  color          : $color04;
+                  font-size      : 17px;
+                  font-weight    : 400;
+                  line-height    : normal;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+
+
+        &:hover {
+          @include transition(border 800ms);
+          border-bottom: 4px solid $color03;
+
+          .subnav {
+            display: block;
+          }
+        }
+
+        .hide:hover{
+          display: none;
+        } 
+      }
+    }
+  }
+
+
+  &.nav_relative {
+    background-color: $color03;
+    padding         : 0;
+    position        : relative;
+
+    .nav_top {
+      margin-bottom: 0;
+      height: 50px;
+  
+      .logo {
+        @include transform(translateX(-50%));
+        left    : 50%;
+        position: absolute;
+
+        a {
+          display: block;
+          height : 25px;
+          
+          img { height: 100%; }
+        }
+      }
+  
+      .right_btns {
+        @include flex-complete(space-between);
+        margin: 0 0 0 auto;
+      }
+    }
+
+    .nav_bottom {
+      background-color: $color01;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &.fixed-nav {
+    position: fixed;
+  }
+}

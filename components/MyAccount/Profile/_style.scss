@@ -1,0 +1,14 @@
+.app-profile {
+  .form_password,
+  .form_profile {
+    @include flex-complete(space-between, center, wrap);
+
+    @media #{$xs} {
+      @include flex-direction(column);
+    }
+  }
+
+  .app-my_account-container.form_password {
+    margin-top: 30px;
+  }
+}

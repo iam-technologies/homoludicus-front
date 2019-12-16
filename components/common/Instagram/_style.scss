@@ -1,0 +1,36 @@
+.instagram_ui {
+
+  &-title {
+    font-size: 28px;
+    margin-bottom: 60px;
+    text-align: center;
+
+    &__link{
+      font-size: 0.7em;
+      text-decoration:none;
+      color: $color03;
+    }
+  }
+
+
+  &-container {
+    @include flex-complete(center, center, wrap);
+    margin: 0px auto 0px;
+    
+    .lightwidget-widget{
+      width: 80%; 
+      border: 0;
+      overflow: hidden; 
+    }
+
+    .instagram_box_ui {
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

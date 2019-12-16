@@ -1,0 +1,68 @@
+.credit_card_ui {
+  margin-top: 30px;
+
+  &-input {
+    margin-bottom: 30px;
+    position     : relative;
+    width        : 100%;
+
+    .label {
+      font-size     : 12px;
+      font-weight   : 600;
+      margin-bottom : 8px;
+      text-transform: uppercase;
+    }
+
+    .stripe_input {
+      @include border-radius(3px);
+      background-color: $color01;
+      border          : 1px solid $color20;
+      height          : 54px;
+      padding         : 15px 25px;
+      width           : 100%;
+
+      &.focus {
+        border: 1px solid $color03;
+      }
+    }
+
+    .img_icon_card {
+      position: absolute;
+      right: 20px;
+      bottom: 18px;
+      height: 18px;
+
+      img {height: 100%;}
+    }
+
+    &_error {
+      color    : $color21;
+      font-size: 14px;
+      left     : 0;
+      padding  : 1px 10px;
+      position : absolute;
+      top      : 100%;
+      width    : 100%;
+    }
+  }
+
+  &-group {
+    @include flex-complete(space-between, center);
+
+    @media #{$xs} {
+      @include flex-wrap(wrap);
+    }
+
+    .credit_card_ui-input {
+      width: 22%;
+
+      @media #{$xs} {
+        width: 47%;
+      }
+    }
+  }
+
+  .btn_submit_buy {
+    margin-top: 0px;
+  }
+}

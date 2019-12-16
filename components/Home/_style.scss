@@ -1,0 +1,157 @@
+.app-home {
+  @import './Carousel/_style.scss';
+  @import './PriceSlider/_style.scss';
+
+  @media #{$gt-xs} {
+    padding-bottom: 70px;
+  }
+
+  &_hero {
+    background-color   : $color11;
+    background-position: center;
+    background-size    : cover;
+    height             : 275px;
+    
+  }
+
+  .home_categories {
+    @include flex-complete(space-between, center, wrap);
+    max-width: 1220px;
+
+    @media #{$gt-xs} {
+      margin : 90px auto 100px;
+      padding: 0 10px;
+    }
+  
+    .categories_link {
+      height   : 115px;
+      position : relative;
+      width    : 100%;
+
+      @media #{$gt-xs} {
+        @include border-radius(5px);
+        margin-bottom: 16px;
+        height       : 240px;
+      }
+
+      p {
+        @include transform(translate(-50%, -50%));
+        color      : $color01;
+        font-family: $fontHandOfSean;
+        font-size  : 25px;
+        line-height: 40px;
+        position   : absolute;
+        text-align : center;
+        top        : 50%;
+        left       : 50%;
+        min-width  : 80%;
+
+        @media #{$gt-xs} {
+          font-size  : 35px;
+          max-width  : 250px;
+        }
+      }
+    }
+
+    @media #{$gt-xs} {
+      &_1, &_2 {
+        a {
+          max-width: 100%;
+        }
+      }
+      &_3 {
+        a:nth-child(1) {
+          max-width: 32.8%;
+        }
+        a:nth-child(2) {
+          max-width: 65.8%;
+        }
+        a:nth-child(3) {
+          max-width: 100%;
+        }
+      }
+      &_4 {
+        a:nth-child(-n + 3) {
+          max-width: 32.4%;
+        }
+        a:last-child() {
+          max-width: 100%;
+        }
+      }
+      &_5 {
+        a:nth-child(-n + 3) {
+          max-width: 32.4%;;
+        }
+        a:nth-last-child(-n + 2) {
+          max-width: 49.3%;
+        }
+      }
+      &_6, &_7, &_8, &_9 {
+        a {
+          max-width: 32.4%;
+        }
+      }
+    }
+  }
+
+  .product_list_ui {
+    margin-bottom: 100px;
+    max-width    : 1220px;
+    
+    &-container {
+      @media #{$sm} {
+        @include justify-content(center);
+      }
+
+      .product_box_ui {
+        margin: 0 35px 35px;
+      }
+    }
+  }
+
+  &-info {
+    margin     : 0 auto;
+    max-width  : 1030px;
+    padding-top: 40px;
+
+    @media #{$sm} {
+      padding: $paddingXS;
+    }
+  }
+
+  &-more_info {
+    padding-top: 40px;
+    
+    h1{
+      font-weight: 600;
+      font-size  : 35px; 
+      margin     : 40px 0 20px;
+      text-align : center;
+    }
+
+    h2, h3, h4 {
+      font-weight: 600;
+      font-size  : 29px;
+      margin     : 40px 0 20px;
+
+      @media #{$xs} {
+        font-size: 22px;
+        margin: 30px 0 10px;
+      } 
+    }
+
+    p {
+      font-size    : 17px;
+      margin-bottom: 10px;
+
+      @media #{$xs} {
+        font-size: 15px;
+      } 
+    }
+
+    a{
+      color: $color04;
+      text-decoration: underline;
+    }
+  }
+}

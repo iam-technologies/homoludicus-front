@@ -1,0 +1,47 @@
+.address_box {
+  @include border-radius(3px);
+  background-color: $color01;
+  border          : 1px solid $color20;
+  margin-bottom   : 55px;
+  min-height      : 230px;
+  width           : 100%;
+
+  @media #{$xs} {
+    max-width: 350px;
+  }
+
+  .address {
+    border-right: 1px solid $color20;
+    font-size   : 16px;
+    line-height : 26px;
+    padding     : 30px 40px 35px;
+
+    @media #{$xs} {
+      border-right: none;
+    }
+
+    .last_btns {
+      @include flex-complete(flex-start);
+      margin: 10px 0 0;
+
+      img {
+        margin: 0 15px;
+      }
+    }
+
+    .btn_address {
+      background-color: initial;
+      border          : none;
+      color           : $color03;
+      cursor          : pointer;
+      font-size       : 14px;
+      font-weight     : 600;
+      line-height     : 24px;
+      outline         : none;
+
+      @media #{$xs} {
+        font-size: 13px;
+      }
+    }
+  }
+}

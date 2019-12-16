@@ -1,0 +1,70 @@
+.app-s_p-find {
+  padding: 30px 0 0;
+
+  &-title {
+    font-weight: 600;
+    font-size  : 20px;
+    color      : $color13;
+    margin-left: 2px;
+
+    @media #{$xs} {
+      font-size: 18px;
+    }
+  }
+
+  &-not_result {
+    color: rgba($color13, 0.4);
+  }
+
+  &-products,
+  &-categories {
+    min-height: 50px;
+  }
+
+  &-categories {
+    @include flex-complete(start, center, wrap);
+    padding: 40px 0;
+
+    @media #{$xs} {
+      padding: 20px 0;
+    }
+
+    &_btn {
+      @include border-radius(5px);
+      border         : 1px solid $color03;
+      color          : $color03;
+      font-size      : 13px;
+      font-weight    : 600;
+      line-height    : 30px;
+      margin         : 0 10px 10px 0;
+      padding        : 0 18px;
+      text-decoration: none;
+      text-transform : uppercase;
+    }
+  }
+
+  &-horizontal {
+    @media #{$xs} {
+      overflow: hidden;
+    }
+  }
+
+  &-products {
+    @include flex-complete(start, center, wrap);
+    margin: 0 auto;
+    max-width: 1045px;
+    padding: 15px 0 0;
+
+    @media #{$xs} {
+      @include flex-wrap(nowrap);
+      max-height: 340px;
+      max-width: initial;
+      overflow-y: hidden;
+    }
+
+    .loader,
+    .app-s_p-find-not_result {
+      margin: 0 0 0 10px;
+    }
+  }
+}

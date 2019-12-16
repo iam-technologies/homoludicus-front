@@ -1,0 +1,81 @@
+.my_orders {
+  .title {
+    margin-bottom: 25px;
+  }
+
+  .list_orders {
+    max-width: 768px !important;
+
+    .cell {
+      color        : $color04;
+      font-size    : 14px;
+      overflow     : hidden;
+      text-align   : center;
+      text-overflow: ellipsis;
+      white-space  : nowrap;
+      width        : 15%;
+
+      @media #{$xs} {
+        width: 33%;
+      }
+
+      &.cell_status {
+        width: 40%;
+
+        @media #{$xs} {
+          width: 66%;
+        }
+      }
+    }
+
+    .th-header {
+      @include flex-complete(space-between);
+      padding: 8px 10px;
+
+      @media #{$xs} {
+        @include flex-wrap(wrap);
+        min-height: 70px;
+      }
+    }
+
+    .th-body {
+      .orders_item {
+        @include flex-complete(space-between);
+        @include border-radius(3px);
+        background-color: $color01;
+        border          : 1px solid $color20;
+        color           : $color04;
+        font-size       : 16px;
+        min-height      : 50px;
+        margin-bottom   : 10px;
+        padding         : 0 10px;
+        text-decoration : none;
+
+        @media #{$xs} {
+          @include flex-wrap(wrap);
+          min-height: 80px;
+        }
+
+        .price {
+          font-weight: 600;
+        }
+
+        .bill {
+          color      : $color03;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .link_bill {
+    background     : initial;
+    border         : none;
+    color          : $color03;
+    cursor         : pointer;
+    font-size      : 16px;
+    font-weight    : 600;
+    outline        : none;
+    text-decoration: underline;
+  }
+}

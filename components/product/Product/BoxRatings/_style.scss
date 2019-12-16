@@ -1,0 +1,139 @@
+.a_p-box_ratings {
+  @include flex-complete(space-between, start, nowrap, column);
+  padding-left: 40px;
+  width: 50%;
+  
+  @media #{$sm} {
+    @include box-shadow(6px 0 20px 0 rgba(0,0,0,0.06));
+    background-color: $color01;
+    margin: 0 auto;
+    max-width: 550px;
+    padding         : 0 16px 20px;
+    width           : 100%;
+  }
+
+  &-top {
+    @include flex-complete(space-between, start);
+    width: 100%;
+
+    @media #{$sm} {
+      @include flex-complete(start, center);
+      height  : 60px;
+      position: relative;
+    }
+
+    .title {
+      border-bottom : 4px solid $color03;
+      color         : $color13;
+      font-size     : 15px;
+      font-weight   : 700;
+      line-height   : 21px;
+      padding       : 0 2px;
+      text-transform: uppercase;
+
+      @media #{$sm} {
+        margin: 0 auto 10px;
+      }
+    }
+
+    .num_rating {
+      color    : $color13;
+      font-size: 14px;
+
+      @media #{$sm} {
+        position  : absolute;
+        bottom    : 0;
+        width     : 100%;
+        text-align: center;
+      }
+    }
+
+    .btn_icon_bottom {        
+      @include transition(transform 800ms);
+      @include transform(rotateZ(0deg));
+      display : none;
+      right   : 0px;
+      position: absolute;
+      width   : 16px;
+
+      &.active {
+        @include transform(rotateZ(180deg));
+      }
+
+      @media #{$sm} {
+        display: inline-block;
+      }
+    }
+  }
+
+  &-rating {
+    margin: 25px 10px 0;
+
+    @media #{$sm} {
+      margin: 20px 0 0;
+    }
+
+    .header_rating {
+      @include flex-complete(flex-start, center, wrap);
+      margin-bottom: 10px;
+
+      .stars_rating {
+        height: 14px;
+
+        span {
+          height: 14px;
+        }
+
+        .icon_star {
+          width         : 14px;
+          vertical-align: top;
+        }
+
+        .hidden_rating-seo{
+          display: none;
+        }
+      }
+      
+      .title {
+        color        : $color02;
+        font-size    : 17px;
+        font-weight  : 700;
+        margin: 5px 0 0;
+        overflow     : hidden;
+        text-overflow: ellipsis;
+        white-space  : nowrap;
+        width    : 100%;
+      }
+
+      .date {
+        font-size: 15px;
+        margin-left: 20px;
+      }
+
+      @media #{$sm} {
+        .title {
+          @include order(1);
+          font-size: 15px;
+        }
+
+        .date {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .comment {
+      color    : $color13;
+      font-size: 15px;
+    }
+  }
+
+  &-btn_show_more {
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 20px auto 0;
+    min-width: initial;
+    padding: 0 15px;
+  }
+}
