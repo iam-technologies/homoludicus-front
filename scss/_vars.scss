@@ -9,10 +9,21 @@
 $fontFamily    : 'Source Sans Pro', sans-serif;
 $fontHandOfSean: hand_of_sean, $fontFamily;
 
+
+// FONT SIZES
+
+$xxl:50px;
+$xl:42px;
+$l: 18px; 
+$m: 13px;
+$s: 10px;
+
+
 //COLOR
+$black01: #1B2125;
 $color01: #FFFFFF;
 $color02: #000000;
-$color03: #97DECC;
+$color03: #FCCB1B;
 $color04: #808080;
 $color05: #AF8570;
 $color06: #B6CFD4;
@@ -21,7 +32,7 @@ $color08: #EFC7C7;
 $color09: #E4D1CC;
 $color10: #F8E1BB;
 $color11: #42332B;
-$color12: #1B2125;
+$color12: #42332B;
 $color13: #4A4A4A;
 $color14: #323C47;
 $color15: #8B572A;
@@ -37,7 +48,6 @@ $color24: #F5A623;
 $color25: #C7C7C7;
 $color26: #FEFEFE;
 $color27: #fbfbfb;
-
 
 //SHADOW
 $boxShadow01: 6px 2px 20px 0 rgba(0,0,0,0.06);
