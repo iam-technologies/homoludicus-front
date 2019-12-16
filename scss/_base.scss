@@ -1,0 +1,145 @@
+.content-limit{
+    max-width: 1200;
+    margin: 0 auto;
+}
+  
+  // TEXT
+  
+  h1,h2,h3,h4,h5{
+    margin-bottom:10px;
+  }
+  
+  h1{ 
+    font-size: $xxl;
+    line-height: 50px;
+  }
+  
+  h2{ 
+    font-size: $xl;
+    line-height: 50px;
+  }
+  
+  h3{ 
+    font-size: 24px;
+    line-height: 24px;
+  }
+  
+  h4{
+    font-size: $l;
+    line-height: 24px;
+  }
+  
+  h5{
+    font-size: $m;
+    line-height: 24px;
+  }
+  
+  .user-h1{
+    height: 67px;
+    font-size: 42px;
+    font-weight: 200;
+    color: $black01;
+  }
+  
+  .bold{
+    font-weight: 700;
+  }
+  
+  .light{
+    font-weight: 200;
+  }
+  
+  p, input{ 
+    font-size: $l;
+    line-height: 28px;
+  }
+  
+  input {
+    outline: none;
+    padding: 10px;
+  }
+  
+  .small-p{
+    font-size: $m;
+    line-height: 20px;
+    color: $black01;
+  }
+  
+  //BUTTONS
+  
+  button.button, a.button{ 
+    font-size: $l;
+    font-family: $fontFamily;
+    line-height: 20px;
+    font-weight: 700;
+    padding: 20px 20px;
+    border-radius: 50px;
+    border: none;
+    transition: all 0.3s;
+    cursor: pointer;
+  
+    &:hover{
+      padding: 25px 25px;
+    }
+  }
+  
+  .button-yellow, a.button-yellow {
+    border: solid 2px $color03; 
+    background-color: $color03;
+    color: $color01;
+    border: solid 2px $color03;
+  }
+  
+  .button-black, a.button-black{
+    background-color: $black01;
+    color: $color01;
+  }
+  
+  button.button-bw, a.button-bw{
+    border: $black01 solid 2px;
+    background-color: $color01;
+    color: $black01;
+  }
+  
+  .ghost-yellow, a.button-ghost-yellow{
+    border: solid 2px $color03; 
+    background-color: transparent;
+    color: $color03;
+  
+    &:hover{
+      background-color: $color03;
+      border: 0px; 
+      color: $color01;
+    }
+  }
+  
+  .ghost-black, a.button-ghost-black{
+    border: solid 2px $black01; 
+    background-color: transparent;
+    color: $black01;
+  
+    &:hover{
+      background-color: $black01;
+      border: 0px; 
+      color: $color01;
+    }
+  }
+  
+  a.button-green{
+    border: solid 2px $color03; 
+    background-color: $color03;
+    color: $color01;
+    border: solid 2px $color03;
+  }
+  
+  // LINKS
+  a{
+    font-weight: 700;
+    color: $black01;
+    font-size: $l;
+  }
+  
+  // Helpers
+  .disabled {
+    cursor: no-drop;
+  }

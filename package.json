@@ -1,5 +1,5 @@
 {
-  "name": "cocholate",
+  "name": "homoludicus",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/iamtech/boilerplate-__nextjs-router-redux-sass/src"
+    "url": "https://github.com/iam-technologies/homoludicus-front"
   },
   "keywords": [],
   "author": "",

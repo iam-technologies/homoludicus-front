@@ -1,5 +1,6 @@
 @import './mixins';
 @import './vars';
+@import './base';
 
 
 @import 'node_modules/loaders.css/src/animations/ball-pulse.scss';
@@ -19,6 +20,10 @@
 }
 
 body, html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
   background-color: $color01;
   bottom          : 0;
   font-size       : 17px;
