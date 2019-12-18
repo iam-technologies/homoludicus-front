@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @font-face {
   font-family: hand_of_sean;
   src        : url('/fonts/hand_of_sean_demo.ttf');
@@ -6,20 +6,44 @@
 }
 
 //FONT FAMILY
-$fontFamily    : 'Source Sans Pro', sans-serif;
+$fontFamily    : 'Roboto', sans-serif;
 $fontHandOfSean: hand_of_sean, $fontFamily;
 
+//COLOR
+
+$brand01: #fccb1b;
+$main-black: #1b1f24;
+$dark-grey: #4e5152;
+$middle-grey: #a4b3b7;
+$light-grey: #e6edef;
+$success: #9ce051;
+$error: #f55959;
 
 // FONT SIZES
 
-$xxl:50px;
-$xl:42px;
-$l: 18px; 
-$m: 13px;
-$s: 10px;
+$xxl:35px;
+$xl:28px;
+$l: 25px; 
+$m: 16px;
+$s: 13px;
 
+//SHADOW
+$boxShadow01: 6px 2px 20px 0 rgba(0,0,0,0.06);
 
-//COLOR
+//PADDING
+$paddingXS: 0 10px;
+
+//MEDIA QUERYS
+//Creation:   $sm: '(min-width: 600px) and (max-width: 959px)';
+//   Usage:   @media #{$sm} { rules.... }
+$xs    : '(max-width: 767px)';
+$gt-xs : '(min-width: 768px)';
+$sm    : '(max-width: 1023px)';
+$lg    : '(min-width: 1024px)';
+
+//<---------------------------------------------------------------->
+
+//COLORS (TO DELETE IN THE FUTURE)
 $black01: #1B2125;
 $color01: #FFFFFF;
 $color02: #000000;
@@ -49,16 +73,3 @@ $color25: #C7C7C7;
 $color26: #FEFEFE;
 $color27: #fbfbfb;
 
-//SHADOW
-$boxShadow01: 6px 2px 20px 0 rgba(0,0,0,0.06);
-
-//PADDING
-$paddingXS: 0 10px;
-
-//MEDIA QUERYS
-//Creation:   $sm: '(min-width: 600px) and (max-width: 959px)';
-//   Usage:   @media #{$sm} { rules.... }
-$xs    : '(max-width: 767px)';
-$gt-xs : '(min-width: 768px)';
-$sm    : '(max-width: 1023px)';
-$lg    : '(min-width: 1024px)';

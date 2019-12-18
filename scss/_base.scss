@@ -20,7 +20,7 @@
   }
   
   h3{ 
-    font-size: 24px;
+    font-size: 25px;
     line-height: 24px;
   }
   
@@ -34,13 +34,6 @@
     line-height: 24px;
   }
   
-  .user-h1{
-    height: 67px;
-    font-size: 42px;
-    font-weight: 200;
-    color: $black01;
-  }
-  
   .bold{
     font-weight: 700;
   }
@@ -50,8 +43,9 @@
   }
   
   p, input{ 
-    font-size: $l;
-    line-height: 28px;
+    font-size: $s;
+    line-height: 20px;
+    color: $dark-grey;
   }
   
   input {
@@ -59,77 +53,58 @@
     padding: 10px;
   }
   
-  .small-p{
-    font-size: $m;
-    line-height: 20px;
-    color: $black01;
-  }
-  
   //BUTTONS
-  
-  button.button, a.button{ 
-    font-size: $l;
+
+  button, a.button{
+    font-size: $m;
     font-family: $fontFamily;
     line-height: 20px;
-    font-weight: 700;
-    padding: 20px 20px;
-    border-radius: 50px;
     border: none;
-    transition: all 0.3s;
+    height: 47px;
+    width: 184px;
     cursor: pointer;
-  
+    margin: 10px;
+    border: 2px solid;
+
     &:hover{
-      padding: 25px 25px;
+      background-color: $middle-grey;
+      color: white;
+      border-color: $middle-grey;
     }
   }
   
-  .button-yellow, a.button-yellow {
-    border: solid 2px $color03; 
-    background-color: $color03;
-    color: $color01;
-    border: solid 2px $color03;
+  .button-yellow, a.button-yellow{
+    background-color: $brand01;
+    border-color: $brand01;
   }
   
   .button-black, a.button-black{
-    background-color: $black01;
-    color: $color01;
+    background-color: $main-black;
+    border-color: $main-black;
+    color: white;
   }
-  
-  button.button-bw, a.button-bw{
-    border: $black01 solid 2px;
-    background-color: $color01;
-    color: $black01;
-  }
-  
-  .ghost-yellow, a.button-ghost-yellow{
-    border: solid 2px $color03; 
+
+  .button-ghost-black, a.button-ghost-black{
     background-color: transparent;
-    color: $color03;
-  
+    border-color: $main-black;
+
     &:hover{
-      background-color: $color03;
-      border: 0px; 
-      color: $color01;
+      background-color: $main-black;
+      color: white;
+      border-color: white;
     }
   }
-  
-  .ghost-black, a.button-ghost-black{
-    border: solid 2px $black01; 
+
+  .button-ghost-white, a.button-ghost-white{
     background-color: transparent;
-    color: $black01;
-  
+    border-color: white;
+    color: white;
+
     &:hover{
-      background-color: $black01;
-      border: 0px; 
-      color: $color01;
+      background-color: white;
+      color: $main-black;
+      border-color: $main-black;
     }
-  }
-  
-  a.button-green{
-    border: solid 2px $color03; 
-    background-color: $color03;
-    color: $color01;
-    border: solid 2px $color03;
   }
   
   // LINKS
