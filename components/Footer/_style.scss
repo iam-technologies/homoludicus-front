@@ -149,21 +149,26 @@
     @include flex-complete(flex-start, flex-start);
     max-width: 300px;
     margin-top: 10px;
+
+    .privacy {
+      margin-left: 5px;
+      font-size: 12px;
+      font-weight: 300;
+      display:inline-block;
+      position:relative;
+      text-align:left;
+      vertical-align: super;
+      
+      span{
+        .privacy-link{
+          cursor: pointer;
+          border-bottom:1px dotted #666;
+          color: white;
+        }
+      }
     
   }
-  .privacy {
-    margin-left: 5px;
-    font-size: 12px;
-    font-weight: 300;
-    display:inline-block;
-    position:relative;
-    text-align:left;
-    vertical-align: super;
-    
-    .privacy-link{
-      cursor: pointer;
-      border-bottom:1px dotted #666;
-    }
+
   }
 
   #legal {
