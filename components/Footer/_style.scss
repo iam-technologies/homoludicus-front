@@ -1,12 +1,14 @@
 .app_footer {
-  background-color: $color11;
-  padding         : 50px 14%;
+  background-color: $main-black;
+  padding         :  10%;
   position        : relative;
   z-index         : 2;
+
+  h5, p{
+    color: white;
+    margin-right: 5px;
+  }
   
-  // @media #{$gt-xs} {
-  //   height: 305px;
-  // }
   @media #{$xs} {
     text-align: center;
     padding: 60px 14% 90px;
@@ -18,59 +20,26 @@
     }
     margin   : 0 auto;
     max-width: 1036px;
-    color    : $color01;
-
-    h4 {
-      font-size    : 14px;
-      font-weight  : 600;
-      line-height  : 23px;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size  : 14px;
-      line-height: 23px;
-      font-weight: 300;
-
-      a {
-        text-decoration: none;
-        color: $color01;
-      }
-
-      &.mail {
-        margin-top: 10px;
-      }
-
-      &.blog {
-        text-decoration: underline;
-      }
-
-      &.direction {
-        text-decoration: underline;
-      }
-    }
-
+   
     .left {
-      .logo {
-        @media #{$xs} {
-          margin: 0 auto;
-        }
-        width: 165px;
-  
-        img { width: 100%; }
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+
+      .footer-list{
+        display: flex;
+        flex-direction: row;
       }
-  
-      .valuation {
-        @media #{$gt-xs} {
-          @include display-flex();
-        }
-        margin: 20px 0;
-  
-        p {
-          font-size  : 13px;
-          margin-left: 13px;
-          line-height: normal;
-        }
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+      }
+      
+      .footer-legal{
+        display: flex;
+        flex-direction: row;
       }
     }
 

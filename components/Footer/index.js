@@ -77,47 +77,40 @@ class Footer extends Component {
         <section className="flex_box">
 
           <div className="left">
-
-            <div>
-              <div className="logo">
-                <Link route="/">
-                  <a>
-                    <img src="../../static/images/company/icon_logotipo_neutro.png" alt={infoSource.companyName} />
-                  </a>
-                </Link>
-              </div>
-
-              <div className="valuation">
-                {
-                  !loading && (
-                    <Rating
-                      readonly
-                      medium
-                      initialRating={avg}
-                    />
-                  )
-                }
-                <p>{total} valoraciones.</p>
-              </div>
+            <div className="footer-list">
+              <div className="column">
+              <h5>Title</h5>
+              <p>frase</p>
+              <p>frase</p>
+              <p>frase</p>
             </div>
-
-            <p className="blog"><a href="https://blog.es/" target="_blank" rel="noopener noreferrer">Visita nuestro blog</a></p>
-
-            {
-              screen !== 'xs' && contactoFooter
-            }
-
-            <div className="app_footer-social">
-              <a href={infoSource.fbUrl} target="_blank" rel="noopener noreferrer"><span className="facebook" /></a>
-              <a href={infoSource.twitterUrl} target="_blank" rel="noopener noreferrer"><span className="twitter" /></a>
-              <a href={infoSource.instagramUrl} target="_blank" rel="noopener noreferrer"><span className="instagram" /></a>
-              <a href={infoSource.pinterestUrl} target="_blank" rel="noopener noreferrer"><span className="pinterest" /></a>
+              <div className="column">
+              <h5>Title</h5>
+              <p>frase</p>
+              <p>frase</p>
+              <p>frase</p>
+            </div>
+              <div className="column">
+              <h5>Title</h5>
+              <p>frase</p>
+              <p>frase</p>
+              <p>frase</p>
+            </div>
+            </div>
+            <div className="footer-legal">
+              <p>AVISO LEGAL</p>
+              <p className="vertical-line">|</p>
+              <p>POLÍTICA DE COOKIES</p>
+              <p className="vertical-line">|</p>
+              <p>POLÍTICA DE PRIVACIDAD</p>
+              <p className="vertical-line">|</p>
+              <p>CONDICIONES DE USO</p>
             </div>
           </div>
 
           <div className="right">
 
-            <div className="app_footer-legal">
+            {/* <div className="app_footer-legal">
               <p className="app_footer-title">INFORMACIÓN DE COMPRA</p>
               <p>
                 <Link route="/legal/refunds"><a>Envío y devoluciones</a></Link>
@@ -128,26 +121,18 @@ class Footer extends Component {
               <p>
                 <Link route="/legal/cookies"><a>Política de Cookies</a></Link>
               </p>
-            </div>
+            </div> */}
 
             <div className="app_footer-mailchimp">
               <MailChimpForm legal={legal} />
             </div>
-
-            {
-              screen !== 'xs' && imgFooter
-            }
-
+            <div className="app_footer-social">
+              <a href={infoSource.fbUrl} target="_blank" rel="noopener noreferrer"><span className="facebook" /></a>
+              <a href={infoSource.twitterUrl} target="_blank" rel="noopener noreferrer"><span className="twitter" /></a>
+              <a href={infoSource.instagramUrl} target="_blank" rel="noopener noreferrer"><span className="instagram" /></a>
+              <a href={infoSource.pinterestUrl} target="_blank" rel="noopener noreferrer"><span className="pinterest" /></a>
+            </div>
           </div>
-
-          {
-            screen === 'xs' && contactoFooter
-          }
-
-          {
-            screen === 'xs' && imgFooter
-          }
-
         </section>
       </footer>
     );

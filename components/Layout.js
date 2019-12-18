@@ -21,7 +21,6 @@ class Layout extends React.Component {
   render() {
     const { children, pathname } = this.props;
     return (
-
       <Fragment>
         <NavBar pathname={pathname} />
         {children}
