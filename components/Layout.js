@@ -33,6 +33,7 @@ class Layout extends React.Component {
 export default connect()(withWindowResize(Layout));
 
 
+
 // import React, { Fragment } from 'react';
 
 // import Footer from './Footer';

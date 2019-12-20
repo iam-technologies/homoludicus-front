@@ -9,6 +9,7 @@ import { urlUtils } from '../../../utils';
 const Carousel = ({ items }) => {
   const getSlide = (elem) => {
     const imgUrl = _get(elem, 'imgUrl', '');
+    // const imgUrl = items[0]
     const btnText = _get(elem, 'btnText.es', '');
     const linkUrl = _get(elem, 'linkUrl', '');
 

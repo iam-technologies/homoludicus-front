@@ -5,7 +5,7 @@ import ProductList from '../product/ProductList';
 // import { api, getImageUrl } from '../../serverServices';
 import { withWindowResize } from '../hoc';
 import Carousel from './Carousel';
-import { MobileHeader, Instagram } from '../common';
+import { MobileHeader } from '../common';
 import Grid from './Grid';
 
 const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
@@ -29,15 +29,11 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
         (screen === 'xs') ? <div className="app-home_hero" style={{ backgroundImage: `url(${imgUrl})` }} />
           : <Carousel items={carouselItems} />
       }
+      <Carousel items={carouselItems} />
       <Grid items={grid} />
       {screen !== 'xs' && (
         <Fragment>
           <ProductList title={desc} items={products} />
-          <Instagram />
-          <div className="app-home-info app-home-more_info">
-            <div dangerouslySetInnerHTML={{ __html: seoHeading }} />
-            <div dangerouslySetInnerHTML={{ __html: seoText }} />
-          </div>
         </Fragment>
       )}
     </section>

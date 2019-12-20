@@ -6,7 +6,6 @@ import ButtonInput from './ButtonInput';
 import CheckInput from './CheckInput';
 import FavouritesBtn from './FavouritesBtn';
 import Image from './Image';
-import Instagram from './Instagram';
 import LinkCategory from './LinkCategory';
 import MobileHeader from './MobileHeader';
 import RadioInput from './RadioInput';
@@ -29,7 +28,6 @@ export {
   CheckInput,
   FavouritesBtn,
   Image,
-  Instagram,
   LinkCategory,
   MobileHeader,
   RadioInput,
