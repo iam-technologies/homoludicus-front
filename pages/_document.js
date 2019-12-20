@@ -64,8 +64,6 @@ class MyDocument extends Document {
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-WDPJN7K');` }}
           />
-
-
         </Head>
 
         <body>

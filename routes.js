@@ -26,9 +26,11 @@ module.exports = routes()
   .add('/orders', 'orders')
   .add('/orders/:id', 'orders/[id]')
   .add('/favourites', 'favourites')
-  .add('/styles', 'styles')
 
-// NOT FOUND
+  .add('/styles', 'styles')
+  .add('/shop', 'shop')
+
+  // NOT FOUND
   .add('/404', 'pageNotFound')
 
   // CATEGORIAS / PRODUCTOS

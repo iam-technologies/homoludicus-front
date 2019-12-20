@@ -17,7 +17,7 @@ const NavBarDesktop = () => {
             <p>Qui som</p>
           </a>
         </Link>
-        <Link href="/about">
+        <Link href="/shop">
           <a>
             <p>Botiga online</p>
           </a>
