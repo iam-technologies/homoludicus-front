@@ -79,54 +79,99 @@ class Footer extends Component {
           <div className="left">
             <div className="footer-list">
               <div className="column">
-              <h5>Title</h5>
-              <p>frase</p>
-              <p>frase</p>
-              <p>frase</p>
-            </div>
+                <h5>Destacats</h5>
+                <Link route="/legal/refunds">
+                  <a>
+                    <p>Ús de la plataforma</p>
+                  </a>
+                </Link>
+                <Link route="">
+                  <a>
+                    <p>Búsqueda de pràctiques</p>
+                  </a>
+                </Link>
+                <Link route="">
+                  <a>
+                    <p>Procediment de la reserva</p>
+                  </a>
+                </Link>
+              </div>
               <div className="column">
-              <h5>Title</h5>
-              <p>frase</p>
-              <p>frase</p>
-              <p>frase</p>
-            </div>
+                <Link route="">
+                  <a>
+                    <p>JOC DESTACAT</p>
+                  </a>
+                </Link>
+                <Link route="">
+                  <a>
+                    <p>JOC DESTACAT</p>
+                  </a>
+                </Link>
+                <Link route="">
+                  <a>
+                    <p>JOC DESTACAT</p>
+                  </a>
+                </Link>
+              </div>
               <div className="column">
-              <h5>Title</h5>
-              <p>frase</p>
-              <p>frase</p>
-              <p>frase</p>
-            </div>
+                <h5>Serveis</h5>
+                <Link route="">
+                  <a>
+                    <p>Estudiants</p>
+                  </a>
+                </Link>
+                <Link route="">
+                  <a>
+                    <p>Professionals</p>
+                  </a>
+                </Link>
+              </div>
+              <div className="column">
+                <h5>Sobre nosaltres</h5>
+                <Link route="">
+                  <a>
+                    <p>Qui som</p>
+                  </a>
+                </Link>
+                <Link route="">
+                  <a>
+                    <p>Events</p>
+                  </a>
+                </Link>
+              </div>
             </div>
             <div className="footer-legal">
-              <p>AVISO LEGAL</p>
+              <Link route="/legal/refunds">
+                <a>
+                  <p>AVÍS LEGAL</p>
+                </a>
+              </Link>
               <p className="vertical-line">|</p>
-              <p>POLÍTICA DE COOKIES</p>
+              <Link route="/legal/cookies">
+                <a>
+                  <p>POLITICA DE COOKIES</p>
+                </a>
+              </Link>
               <p className="vertical-line">|</p>
-              <p>POLÍTICA DE PRIVACIDAD</p>
+              <Link route="/legal/privacitat">
+                <a>
+                  <p>POLÍTICA DE PRIVACITAT</p>
+                </a>
+              </Link>
               <p className="vertical-line">|</p>
-              <p>CONDICIONES DE USO</p>
+              <Link route="/legal/terms-and-conditions">
+                <a>
+                  <p>CONDICIONS D'ÚS</p>
+                </a>
+              </Link>
             </div>
           </div>
-
           <div className="right">
-
-            {/* <div className="app_footer-legal">
-              <p className="app_footer-title">INFORMACIÓN DE COMPRA</p>
-              <p>
-                <Link route="/legal/refunds"><a>Envío y devoluciones</a></Link>
-              </p>
-              <p>
-                <Link route="/legal/terms-and-conditions"><a>Términos y condiciones</a></Link>
-              </p>
-              <p>
-                <Link route="/legal/cookies"><a>Política de Cookies</a></Link>
-              </p>
-            </div> */}
-
             <div className="app_footer-mailchimp">
               <MailChimpForm legal={legal} />
             </div>
             <div className="app_footer-social">
+              <h5>Síguenos en:</h5>
               <a href={infoSource.fbUrl} target="_blank" rel="noopener noreferrer"><span className="facebook" /></a>
               <a href={infoSource.twitterUrl} target="_blank" rel="noopener noreferrer"><span className="twitter" /></a>
               <a href={infoSource.instagramUrl} target="_blank" rel="noopener noreferrer"><span className="instagram" /></a>
