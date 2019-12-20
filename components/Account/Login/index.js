@@ -83,7 +83,7 @@ class Login extends Component {
         <header className="header_login">
           <Link route="/">
             <a onClick={this.onClose} className="header_login-logo">
-              <img src="../../../static/images/company/icon_logotipo_neutro.png" alt={infoSource.compNameCap} />
+              <img src="/images/company/icon_logotipo_neutro.png" alt={infoSource.compNameCap} />
             </a>
           </Link>
 
@@ -92,7 +92,7 @@ class Login extends Component {
             onClick={this.onClose}
             type="button"
           >
-            <img src="../../../static/images/icon_close.png" alt="Cross" />
+            <img src="/images/icon_close.png" alt="Cross" />
           </button>
         </header>
 

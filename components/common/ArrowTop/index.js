@@ -65,7 +65,7 @@ class ArrowTop extends Component {
         className={`${this.className} ${show ? `${this.className}-show` : ''}`}
         onClick={this.onClick}
       >
-        <img src="../../static/images/icon_arrow_top.png" alt="Subir" />
+        <img src="/images/icon_arrow_top.png" alt="Subir" />
       </button>
     );
   }

@@ -90,7 +90,7 @@ class Discount extends PureComponent {
             className={`btn_code ${showCode ? 'show' : ''}`}
             onClick={this.onClickCode}
           >
-            <img src="../../../static/images/icon_down.png" alt="Descuento" />
+            <img src="/images/icon_down.png" alt="Descuento" />
           </button>
         </div>
 

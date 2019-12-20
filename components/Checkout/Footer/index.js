@@ -100,7 +100,7 @@ export default class FooterCheckout extends Component {
               onClick={this.onPrevTab}
               type="button"
             >
-              <img src="../../../static/images/icon_back_checkout.png" alt="Volver a la tienda" />
+              <img src="/images/icon_back_checkout.png" alt="Volver a la tienda" />
               <span>Volver al paso anterior</span>
             </button>
           )
@@ -110,7 +110,7 @@ export default class FooterCheckout extends Component {
           (indexTab === 0) && !disabled && (
             <Link route="/">
               <a className="link">
-                <img src="../../../static/images/icon_back_checkout.png" alt="Volver a la tienda" />
+                <img src="/images/icon_back_checkout.png" alt="Volver a la tienda" />
                 <span>Volver a la tienda</span>
               </a>
             </Link>

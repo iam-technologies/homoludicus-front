@@ -125,7 +125,7 @@ class ShippingAddress extends Component {
           showForm && (
             <div className="app-my_account-container link_container">
               <button className="link_return" onClick={this.onChange} type="button">
-                <img src="../../../static/images/icon_back_checkout.png" alt="Volver a Mis Direcciones" />
+                <img src="/images/icon_back_checkout.png" alt="Volver a Mis Direcciones" />
                 <span>Volver a Mis Direcciones</span>
               </button>
             </div>

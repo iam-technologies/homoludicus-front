@@ -37,8 +37,8 @@ export default class SocialNav extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="link_icon" src="../../../static/images/icon_facebook.png" alt="Facebook" />
-          <img className="link_icon_hover" src="../../../static/images/icon_facebook_hover.png" alt="Facebook" />
+          <img className="link_icon" src="/images/facebook.png" alt="Facebook" />
+          <img className="link_icon_hover" src="/images/icon_facebook_hover.png" alt="Facebook" />
         </a>
         <a
           className="social_ui-link twitter"
@@ -46,8 +46,8 @@ export default class SocialNav extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="link_icon" src="../../../static/images/icon_twitter.png" alt="Twitter" />
-          <img className="link_icon_hover" src="../../../static/images/icon_twitter_hover.png" alt="Twitter" />
+          <img className="link_icon" src="/images/icon_twitter.png" alt="Twitter" />
+          <img className="link_icon_hover" src="/images/icon_twitter_hover.png" alt="Twitter" />
         </a>
         {/* <a
           className="social_ui-link instagram"
@@ -63,8 +63,8 @@ export default class SocialNav extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="link_icon" src="/../../../static/images/icon_email.png" alt="Email" />
-          <img className="link_icon_hover" src="../../../static/images/icon_email_hover.png" alt="Email" />
+          <img className="link_icon" src="/images/icon_email.png" alt="Email" />
+          <img className="link_icon_hover" src="/images/icon_email_hover.png" alt="Email" />
         </a>
       </div>
     );

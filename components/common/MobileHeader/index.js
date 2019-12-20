@@ -24,7 +24,7 @@ class MobileHeader extends Component {
       className, home, green, screen, text, subText, logo, hiddenSandwich, hiddenSearch, showCart, lastLocation
     } = this.props;
 
-    const sandwichImage = green || home ? '../../../static/images/sandwich.png' : '../../../static/images/sandwich_grey.png';
+    const sandwichImage = green || home ? '/images/sandwich.png' : '/images/sandwich_grey.png';
 
     if (screen === 'lg') return null;
 
@@ -45,7 +45,7 @@ class MobileHeader extends Component {
           lastLocation && (
             <Link route={lastLocation}>
               <a className="header_mobile_ui-icon_previous">
-                <img src="../../../static/images/icon_nav_previouw.png" alt="previos" />
+                <img src="/images/icon_nav_previouw.png" alt="previos" />
               </a>
             </Link>
           )
@@ -54,7 +54,7 @@ class MobileHeader extends Component {
           logo && (
             <Link route="/">
               <a className="header_mobile_ui-logo">
-                <img src="../../../static/images/company/icon_logotipo_neutro.png" alt={infoSource.companyName} />
+                <img src="/images/company/icon_logotipo_neutro.png" alt={infoSource.companyName} />
               </a>
             </Link>
           )

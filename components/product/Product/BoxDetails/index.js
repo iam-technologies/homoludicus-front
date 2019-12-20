@@ -78,7 +78,7 @@ class BoxDetails extends Component {
               >Detalles
               </p>
 
-              <img className={`btn_icon_bottom ${xsTab === 0 ? 'active' : ''}`} src="../../../static/images/icon_arrow_bottom.png" alt="Arrow bottom" />
+              <img className={`btn_icon_bottom ${xsTab === 0 ? 'active' : ''}`} src="/images/icon_arrow_bottom.png" alt="Arrow bottom" />
             </div>
 
             {
@@ -104,7 +104,7 @@ class BoxDetails extends Component {
                   >Envío y devoluciones
                   </p>
 
-                  <img className={`btn_icon_bottom ${xsTab === 1 ? 'active' : ''}`} src="../../../static/images/icon_arrow_bottom.png" alt="Arrow bottom" />
+                  <img className={`btn_icon_bottom ${xsTab === 1 ? 'active' : ''}`} src="/images/icon_arrow_bottom.png" alt="Arrow bottom" />
                 </div>
                 {
                   screen !== 'lg' && xsTab === 1 ? (

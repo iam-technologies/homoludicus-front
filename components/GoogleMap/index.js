@@ -31,7 +31,7 @@ export default compose(
         props.isMarkerShown
           && (
           <Marker
-            icon="../static/images/icon_map.svg"
+            icon="/images/icon_map.svg"
             clickable={false}
             position={props.position}
             draggable={false}

@@ -63,7 +63,7 @@
 
     &-img {
       @include transition(background-image 400ms cubic-bezier(0.165, 0.84, 0.44, 1));
-      background-image : url('/static/images/icon_filter.png');
+      background-image : url('/images/icon_filter.png');
       background-repeat: no-repeat;
       background-size  : cover;
       height           : 20px;
@@ -76,7 +76,7 @@
       }
 
       #{$father}-btn_show_filters-img {
-       background-image: url('/static/images/icon_filter_hover.png');
+       background-image: url('/images/icon_filter_hover.png');
       }
     }
   }

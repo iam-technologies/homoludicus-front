@@ -8,9 +8,9 @@ const Rating = ({ bigger, medium, className, readonly, initialRating, onChange }
     className={`rating_ui${bigger ? '-bigger' : ''}${medium ? '-medium' : ''} ${readonly ? '' : 'rating_ui-edit'} ${className}`}
   >
     <ReactRating
-      emptySymbol={<img src="../../../static/images/icon_star_empty.png" className="icon_star" alt="Star vacía" />}
+      emptySymbol={<img src="/images/icon_star_empty.png" className="icon_star" alt="Star vacía" />}
       fractions={2}
-      fullSymbol={<img src="../../../static/images/icon_star_full.png" className="icon_star" alt="Star completa" />}
+      fullSymbol={<img src="/images/icon_star_full.png" className="icon_star" alt="Star completa" />}
       initialRating={initialRating}
       stop={5}
       onChange={onChange}

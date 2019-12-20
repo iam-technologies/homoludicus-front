@@ -21,10 +21,10 @@ const contactoFooter = (
 
 const imgFooter = (
   <div className="app_footer-img">
-    <img className="confianza-online" src="../../static/images/confianza-online.svg" alt="Confianza online" />
+    <img className="confianza-online" src="/images/confianza-online.svg" alt="Confianza online" />
     <div>
-      <img className="paypal-white" src="../../static/images/paypal-white.svg" alt="PayPal" />
-      <img className="pago-seguro" src="../../static/images/pago-seguro-ok.png" alt="Pago seguro" />
+      <img className="paypal-white" src="/images/paypal-white.svg" alt="PayPal" />
+      <img className="pago-seguro" src="/images/pago-seguro-ok.png" alt="Pago seguro" />
     </div>
   </div>
 );

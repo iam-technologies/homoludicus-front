@@ -30,7 +30,7 @@ class MyAccountButton extends Component {
 
     return (
       <div onClick={this.onClick}>
-        <img src={`../../../static/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" />
+        <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" />
       </div>
     );
     // return (
@@ -38,7 +38,7 @@ class MyAccountButton extends Component {
     //     onClick={isLogin ? () => {} : this.onClick}
     //     href="/my-account"
     //   >
-    //     <img src={`../../../static/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" />
+    //     <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" />
     //   </Link>
     // );
   }

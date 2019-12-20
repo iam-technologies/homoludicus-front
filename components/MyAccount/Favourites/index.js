@@ -78,7 +78,7 @@ export default class Favourites extends Component {
         <div className="app-my_account-container link_container">
           <Link route="/my-account">
             <a className="link_return">
-              <img src="../../../static/images/icon_back_checkout.png" alt="Volver a mi cuenta" />
+              <img src="/images/icon_back_checkout.png" alt="Volver a mi cuenta" />
               <span>Volver a mi cuenta</span>
             </a>
           </Link>

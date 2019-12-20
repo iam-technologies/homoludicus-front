@@ -80,7 +80,7 @@ class BoxRatings extends Component {
             <span itemProp="ratingCount">{total}</span> valoraciones
           </p>
 
-          <img className={`btn_icon_bottom ${show ? 'active' : ''}`} src="../../../static/images/icon_arrow_bottom.png" alt="Arrow bottom" />
+          <img className={`btn_icon_bottom ${show ? 'active' : ''}`} src="/images/icon_arrow_bottom.png" alt="Arrow bottom" />
         </div>
         {
           screen === 'lg' || show ? (

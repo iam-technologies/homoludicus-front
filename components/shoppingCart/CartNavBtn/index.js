@@ -36,7 +36,7 @@ class CartNavBtn extends React.PureComponent {
           onClick={this.onClick}
           type="button"
         >
-          <img src={`../../static/images/icon_cart${iconGrey ? '_grey' : ''}.png`} alt="Shopping cart" />
+          <img src={`/images/icon_cart${iconGrey ? '_grey' : ''}.png`} alt="Shopping cart" />
           {
             text && <span>{text}</span>
           }

@@ -62,7 +62,7 @@ export default class Payment extends Component {
               <div className="check_flex_first">
                 <p className="title_method">Tarjeta de crédito o débito</p>
                 <div className="img_method">
-                  <img src="../../../../static/images/logo_credit_cards.png" alt="Targeta de crédito" />
+                  <img src="/images/logo_credit_cards.png" alt="Targeta de crédito" />
                 </div>
               </div>
               <p className="description">Pago seguro mediante tarjeta de crédito o débito a través de la plataforma de pago Stripe.</p>
@@ -93,7 +93,7 @@ export default class Payment extends Component {
               <div className="check_flex_first">
                 <p className="title_method">PayPal</p>
                 <div className="img_method">
-                  <img src="../../../../static/images/logo_paypal.png" alt="PayPal" />
+                  <img src="/images/logo_paypal.png" alt="PayPal" />
                 </div>
               </div>
               <p className="description">Si tienes cuenta con Paypal podrás hacer el pago de forma totalmente segura.</p>
@@ -127,7 +127,7 @@ export default class Payment extends Component {
               <div className="check_flex_first">
                 <p className="title_method">Transferencia Bancaria</p>
                 <div className="img_method">
-                  <img src="../../../../static/images/logo_wire_transfer.png" alt="Transferencia Bancaria" />
+                  <img src="/images/logo_wire_transfer.png" alt="Transferencia Bancaria" />
                 </div>
               </div>
               <p className="description">Realiza el ingreso integro desde tu banco al número de cuenta que te facilitaremos. </p>

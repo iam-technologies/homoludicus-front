@@ -102,7 +102,7 @@ class CreditCardForm extends Component {
         <InputCreditCard
           error={msgUI.get(errors, 'creditCardNumber')}
           label="Número de tarjeta"
-          srcImg="../../../../static/images/icon_card.png"
+          srcImg="/images/icon_card.png"
           onChange={this.onErrorCard}
         >
           <CardNumberElement
@@ -135,7 +135,7 @@ class CreditCardForm extends Component {
             error={msgUI.get(errors, 'creditCardCCV')}
             label="CVV"
             onChange={this.onErrorCard}
-            srcImg="../../../../static/images/icon_info_cvv.png"
+            srcImg="/images/icon_info_cvv.png"
           >
             <CardCVCElement
               style={styles.stripe}

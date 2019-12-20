@@ -178,7 +178,7 @@ class Order extends Component {
         <div className="my_order_item-container link_container">
           <Link route="/orders">
             <a className="link_return">
-              <img src="../../../static/images/icon_back_checkout.png" alt="Volver a mi cuenta" />
+              <img src="/images/icon_back_checkout.png" alt="Volver a mi cuenta" />
               <span>Volver a Mis Pedidos</span>
             </a>
           </Link>

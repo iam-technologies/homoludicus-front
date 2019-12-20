@@ -58,7 +58,7 @@ export default class ListCategories extends Component {
                           onClick={() => this.onClick(id)}
                           type="button"
                         >
-                          <img src="../../../../static/images/icon_down_white.png" alt="Mostrar más categorías" />
+                          <img src="/images/icon_down_white.png" alt="Mostrar más categorías" />
                         </button>
                       )
                     }

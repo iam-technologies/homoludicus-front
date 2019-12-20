@@ -97,11 +97,11 @@
 
     .stepper-prev {
       .icon_stepper {
-        background-image: url('/static/images/icon_step_prev.png');
+        background-image: url('/images/icon_step_prev.png');
       }
       
       &:hover {
-        background-image: url('/static/images/icon_step_prev_hover.png');
+        background-image: url('/images/icon_step_prev_hover.png');
       }
     }
 
@@ -115,12 +115,12 @@
 
       .icon_stepper {
         margin-left: 10px;
-        background-image: url('/static/images/icon_step_next.png');
+        background-image: url('/images/icon_step_next.png');
       }
 
       &:hover {
         .img_next {
-          background-image: url('/static/images/icon_step_next_hover.png');
+          background-image: url('/images/icon_step_next_hover.png');
         }
       }
     }

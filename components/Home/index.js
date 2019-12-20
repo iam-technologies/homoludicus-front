@@ -7,7 +7,6 @@ import { withWindowResize } from '../hoc';
 import Carousel from './Carousel';
 import { MobileHeader, Instagram } from '../common';
 import Grid from './Grid';
-import PriceSlider from './PriceSlider';
 
 const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
   const [show, setshow] = useState(false);
@@ -30,7 +29,6 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
         (screen === 'xs') ? <div className="app-home_hero" style={{ backgroundImage: `url(${imgUrl})` }} />
           : <Carousel items={carouselItems} />
       }
-      <PriceSlider />
       <Grid items={grid} />
       {screen !== 'xs' && (
         <Fragment>

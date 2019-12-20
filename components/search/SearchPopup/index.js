@@ -58,7 +58,7 @@ class Search extends Component {
                 onClick={this.onClose}
                 type="button"
               >
-                <img src="../../../static/images/icon_close.png" alt="Cross" />
+                <img src="/images/icon_close.png" alt="Cross" />
               </button>
             </header>
 

@@ -35,7 +35,7 @@ class CompareProducts extends PureComponent {
           <ButtonInput
             label="CERRAR COMPARATIVA"
             onClick={this.goBack}
-            icon="../../static/images/icon_compare.png"
+            icon="/images/icon_compare.png"
           />
         </div>
 

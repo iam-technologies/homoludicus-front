@@ -31,7 +31,7 @@ export default class FormSearch extends Component {
           <div
             className="app-s_p-form-img"
           >
-            <img src="../../../../static/images/icon_search_gray.png" alt="Search" />
+            <img src="/images/icon_search_gray.png" alt="Search" />
           </div>
 
           <input

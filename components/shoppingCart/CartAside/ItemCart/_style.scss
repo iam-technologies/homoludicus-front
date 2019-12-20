@@ -136,7 +136,7 @@
     .btn_remove {
       @include transition(background 500ms);
       background         : initial;
-      background-image   : url('/static/images/icon_trash.png');
+      background-image   : url('/images/icon_trash.png');
       background-position: center;
       background-repeat  : no-repeat;
       background-size    : cover;
@@ -148,13 +148,13 @@
       width              : 32px;
 
       &:hover {
-        background-image: url('/static/images/icon_trash_hover.png');
+        background-image: url('/images/icon_trash_hover.png');
       }
     }
 
     .btn_plus {
       @extend .btn_remove;
-      background-image: url('/static/images/icon_plus.png');
+      background-image: url('/images/icon_plus.png');
       height          : 15px;
       width           : 15px;
 
