@@ -4,8 +4,9 @@ import infoSource from '../utils/infoSource';
 export default {
   authRequire: true,
   // baseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:3001/api' : infoSource.baseUrl,
-  baseUrl: 'http://ec2-3-122-75-193.eu-central-1.compute.amazonaws.com:4000/api',
+  // baseUrl: 'http://ec2-3-122-75-193.eu-central-1.compute.amazonaws.com:4000/api',
+  baseUrl: 'http://localhost:3001/api',
   cookiesCart: 604800, // 7 días
   cookiesExpires: 2592000, // 30 días
-  urlImages: 'https://s3-eu-central-1.amazonaws.com/homoludicus/',
+  urlImages: 'https://s3-eu-central-1.amazonaws.com/homoludicus/'
 };

@@ -12,7 +12,7 @@ const styles = () => {
       <h5>Soy un h5</h5>
       <button type="button" className="button button-yellow">Button yellow</button>
       <button type="button" className="button button-black">Button black</button>
-      <div style={{ 'background-color': 'yellow' }}>
+      <div style={{ backgroundColor: 'yellow' }}>
         <button type="button" className="button-ghost-black">Button ghost</button>
         <button type="button" className="button-ghost-white">Button ghost</button>
       </div>
