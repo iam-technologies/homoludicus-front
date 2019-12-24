@@ -1,19 +1,50 @@
 .carousel_home {
   position: relative;
+  height: 333px;
+
+  h1{
+    position: absolute;
+    left: 121px;
+    line-height: 60px;
+    bottom: 60%;
+    color: white;
+  }
+
+  h5{
+    position: absolute;
+    left: 121px;
+    line-height: 60px;
+    bottom: 50%;
+    color: white;
+  }
 
   .carousel_btn {
-    @include border-radius(5px);
-    @include box-shadow($boxShadow01);
     @include transform(translateX(-50%));
-    background-color: $color05;
-    bottom          : 10%;
-    color           : $color01;
+    background-color: transparent;
+    color           : white;
     font-size       : 16px;
     font-weight     : 700;
-    left            : 50%;
-    line-height     : 54px;
+    line-height     : 60px;
     padding         : 0 50px;
     position        : absolute;
     text-decoration : none;
+    border: 2px solid white;
+    bottom: 20%;
+    left: 229px;
+  }
+
+  img{
+    height: 100%;
+  }
+
+}
+
+.image-gallery-bullet{
+  background-color: white;
+  width: 17px;
+  height: 17px;
+
+  &.active{
+    background-color: $brand01;
   }
 }

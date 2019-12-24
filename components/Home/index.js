@@ -30,7 +30,7 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
         (screen === 'xs') ? <div className="app-home_hero" style={{ backgroundImage: `url(${imgUrl})` }} />
           : <Carousel items={carouselItems} />
       }
-      <Carousel items={carouselItems} />
+      {/* <Carousel items={carouselItems} /> */}
       <Grid items={grid} />
       {screen !== 'xs' && (
         <Fragment>

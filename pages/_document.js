@@ -34,10 +34,10 @@ class MyDocument extends Document {
     return (
       <html lang="en-US">
         <Head>
-          {/* <meta
+          <meta
             name="theme-color"
             content={themeContext ? themeContext.theme.palette.primary.main : null}
-          /> */}
+          />
 
           <meta charSet="utf-8" />
           <meta name="description" content="añada descripción de su tienda" />

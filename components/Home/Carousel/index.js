@@ -12,7 +12,8 @@ const Carousel = ({ items }) => {
     // const imgUrl = items[0]
     const btnText = _get(elem, 'btnText.es', '');
     const linkUrl = _get(elem, 'linkUrl', '');
-
+    const titleImg = _get(elem, 'title.es', '');
+    const subtitleImg = _get(elem, 'subtitle.es', '');
     const link = linkUrl ? urlUtils.urlToPathLink(linkUrl) : '';
 
     if (!imgUrl) return null;
@@ -26,6 +27,8 @@ const Carousel = ({ items }) => {
           {imgFormat == 'webp' && <source srcSet={imgServices.getUrl(imgUrl)} type="image/webp" />}
           <img src={imgServices.getUrl(imgFallback)} alt={imgUrl} />
         </picture>
+        <h1>{titleImg}</h1>
+        <h5>{subtitleImg}</h5>
         {
           (link && btnText)
           && (
@@ -54,6 +57,7 @@ const Carousel = ({ items }) => {
       slideDuration={1200}
       slideInterval={6000}
       useTranslate3D={false}
+      showBullets
     />
   );
 };
