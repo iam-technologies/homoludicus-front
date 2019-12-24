@@ -80,6 +80,7 @@ class Product extends React.Component {
 
   render() {
     const { product, loaded, refundsText } = this.state;
+    console.log('TCL: Product -> render -> product', product);
     const { location, url } = this.props;
 
     // const productName = _.get(product, 'name.es', `Producto de ${infoSource.companyName}`);

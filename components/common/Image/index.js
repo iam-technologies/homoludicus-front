@@ -32,17 +32,18 @@ export default class Image extends React.PureComponent {
 
     if (!src) return null;
 
-    let newSize = size;
-    if (src.indexOf('.gif') !== -1) {
-      newSize = 'original';
-    }
+    // let newSize = size;
+    // if (src.indexOf('.gif') !== -1) {
+    //   newSize = 'original';
+    // }
 
     return (
       <img
         alt={alt}
         className={`imagen_ui ${showImg ? 'imagen_ui-show' : ''} ${fitContent ? fitClassName : ''} ${className} `}
         onLoad={this.onLoad}
-        src={imgServices.getUrl(src, newSize)}
+        // src={imgServices.getUrl(src, newSize)}
+        src={imgServices.getUrl(src, src)}
       />
     );
   }
