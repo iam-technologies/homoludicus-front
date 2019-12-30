@@ -14,7 +14,8 @@ export default class ButtonInput extends Component {
 
     return (
       <button
-        className={`button_${ghost ? 'ghost_' : ''}ui ${className}`}
+        className="button button-yellow"
+        // {`button_${ghost ? 'ghost_' : ''}ui ${className}`}
         disabled={disabled}
         onClick={this.onClick}
         type="button"

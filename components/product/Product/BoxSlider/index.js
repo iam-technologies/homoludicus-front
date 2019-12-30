@@ -14,11 +14,12 @@ const BoxSlider = ({ images, badge, imgAttr, item }) => {
 
   const renderImages = images.map((elem, index) => {
     const imgAlt = alt[index] || productName;
-    
+
     return {
-    renderItem: () => (<Image src={elem} alt={imgAlt} className="img_slider" />),
-    bulletClass: 'a_p-box_slider_bullets'
-  }});
+      renderItem: () => (<Image src={elem} alt={imgAlt} className="img_slider" />),
+      bulletClass: 'a_p-box_slider_bullets'
+    };
+  });
 
   const badgePrice = priceCalc.getBadgePrice(item);
   const textBadge = texts.getStates(badge);

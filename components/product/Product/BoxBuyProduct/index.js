@@ -32,7 +32,6 @@ class BoxBuyProduct extends Component {
     this.onClickMoreInfo = this.onClickMoreInfo.bind(this);
     this.onAddToCart = this.onAddToCart.bind(this);
     this.getConfig = this.getConfig.bind(this);
-    console.log('props.item del BoxBuyProduct', this.props.item);
   }
 
   componentDidMount() {
@@ -101,25 +100,34 @@ class BoxBuyProduct extends Component {
     const isPack = _.get(item, 'type') === 'pack';
     const btnText = index >= 0 ? 'Actualizar producto' : 'Añadir al carrito';
 
+
     return (
       <div className="a_p-buy_p">
-        {
-          screen === 'lg' && (<FavouritesBtn id={_.get(item, '_id', '')} />)
-        }
-
-        <div>
-          <span itemProp="category" className="hidden_prop-seo">{_.get(item, 'mainCategory.name.es', '')}</span>
-          <h1 className="a_p-buy_p-title" itemProp="name">{_.get(item, 'name.es', '')}</h1>
+        <div className="product-features">
+          <div className="product-features-div">
+            <div className="features-titles">
+              <p className="product-features-title">Referència</p>
+              <p className="product-features-title">Stock</p>
+              <p className="product-features-title">Disponibilitat</p>
+              <p className="product-features-title">Punts Homoludicus</p>
+              <p className="product-features-title">Resum:</p>
+            </div>
+            <div className="features">
+              <p className="product-feature">{item.reference}</p>
+              <p className="product-feature">{item.reference}</p>
+              <p className="product-feature">{item.reference}</p>
+              <p className="product-feature">{item.reference}</p>
+            </div>
+          </div>
           <p className="a_p-buy_p-small_info" itemProp="disambiguatingDescription">
             {_.get(item, 'shortDesc.es', '').substr(0, 110)}...
-            <span
+            <p
               className="link_to_info_product"
               onClick={this.onClickMoreInfo}
             >(+info)
-            </span>
+            </p>
           </p>
         </div>
-
         {
           (index !== -1 && cart.item === null) || loading ? null : (
             <Stepper
@@ -155,7 +163,7 @@ class BoxBuyProduct extends Component {
                     <Odometer value={priceCalc.get(item, config)} format="(.ddd),dd" />
                   </span>
                   <span itemProp="priceCurrency" content="EUR">€</span>
-                  <span className="small_text">iva incl.</span>
+                  <span className="small_text">impostos inclosos</span>
                 </div>
 
                 {

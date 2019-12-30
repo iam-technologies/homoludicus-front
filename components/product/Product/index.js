@@ -9,7 +9,6 @@ import Router from 'next/router';
 import { api } from '../../../serverServices';
 // import { urlUtils } from '../../../utils';
 import { MobileHeader } from '../../common';
-import Nav from './Nav';
 import BoxSlider from './BoxSlider';
 import BoxBuyProduct from './BoxBuyProduct';
 import BoxDetails from './BoxDetails';
@@ -30,12 +29,10 @@ class Product extends React.Component {
     this.getRefundsText = this.getRefundsText.bind(this);
   }
 
-
   componentDidMount() {
     this.getItems();
     this.getRefundsText();
   }
-
 
   // componentDidUpdate(prevProps) {
   //   const { location } = this.props;
@@ -77,10 +74,8 @@ class Product extends React.Component {
     });
   }
 
-
   render() {
     const { product, loaded, refundsText } = this.state;
-    console.log('TCL: Product -> render -> product', product);
     const { location, url } = this.props;
 
     // const productName = _.get(product, 'name.es', `Producto de ${infoSource.companyName}`);
@@ -90,7 +85,8 @@ class Product extends React.Component {
 
     // const indexEdit = urlUtils.getParamsUrl('index', this.props);
     const indexEdit = url.slice(1);
-
+    console.log(product);
+    console.log(url);
     return (
       <section className="app-product" itemScope itemType="http://schema.org/Product">
         {/*
@@ -106,12 +102,12 @@ class Product extends React.Component {
           lastLocation={_.get(location, 'state.lastLocation', '')}
           text={_.get(product, 'name.es', '')}
         />
-
-        <Nav
-          lastLocation={_.get(location, 'state.lastLocation', '')}
-          item={product}
-        />
-
+        <div className="product-header">
+          <h1>
+            {product.name.es}
+          </h1>
+          <p>Botiga/{url}</p>
+        </div>
         <section className="app-product-box_product">
           <BoxSlider
             badge={_.get(product, 'state', '')}
@@ -126,14 +122,14 @@ class Product extends React.Component {
         </section>
 
         <section className="app-product-box_information">
-          <BoxDetails
+          {/* <BoxDetails
             item={product}
             refundsText={refundsText}
-          />
+          /> */}
 
-          <BoxRatings
+          {/* <BoxRatings
             productId={product._id}
-          />
+          /> */}
         </section>
 
 

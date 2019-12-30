@@ -13,6 +13,37 @@
   position  : relative;
   width     : 50%;
 
+  .a_p-buy_p-buy{
+    width: max-content;
+  }
+  
+  .product-features{
+    @include flex-complete(space-between, start, wrap, column);
+
+    .a_p-buy_p-small_info{
+      margin-top: 0;
+    }
+
+    .product-features-div{
+      @include flex-complete( start, nowrap, row);
+
+      .features-titles{
+        margin-right: 40px;
+  
+        .product-features-title{
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+      }
+
+      .features{
+        .product-feature{
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
   @media #{$sm} {
     display   : block;
     min-height: initial;

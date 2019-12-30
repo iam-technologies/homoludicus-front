@@ -1,15 +1,24 @@
-@import './Nav/_style.scss';
 @import './BoxSlider/_style.scss';
 @import './BoxBuyProduct/_style.scss';
 @import './BoxDetails/_style.scss';
 @import './BoxRatings/_style.scss';
 @import './RelatedProduct/_style.scss';
 
-
 .app-product {
   margin        : 0 auto;
-  max-width     : 1230px;
+  // max-width     : 1230px;
   padding-bottom: 70px;
+  width: 100%;
+
+  .product-header{
+    background-color: $brand01;
+    background-color: #fccb1b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 121px;
+  }
 
   @media #{$sm} {
     padding-bottom  : 50px;

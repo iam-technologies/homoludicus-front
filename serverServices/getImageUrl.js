@@ -2,7 +2,6 @@ import _get from 'lodash/get';
 import imgServices from './imgServices';
 import { webpSupport } from '../utils/browser';
 
-
 async function getImageUrl(content) {
   const img = _get(content, 'slider.0.imgUrl', '');
   const imgUrl = imgServices.getUrl(img);
