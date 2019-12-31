@@ -58,7 +58,6 @@ class RelatedProduct extends Component {
     }
   }
 
-
   render() {
     const { settings, items, item } = this.state;
     const { screen } = this.props;

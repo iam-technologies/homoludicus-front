@@ -15,6 +15,8 @@ import BoxDetails from './BoxDetails';
 import BoxRatings from './BoxRatings';
 import RelatedProduct from './RelatedProduct';
 
+import Image from '../../common/Image';
+
 
 class Product extends React.Component {
   constructor(props) {
@@ -76,6 +78,7 @@ class Product extends React.Component {
 
   render() {
     const { product, loaded, refundsText } = this.state;
+    const { img, alt } = product;
     const { location, url } = this.props;
 
     // const productName = _.get(product, 'name.es', `Producto de ${infoSource.companyName}`);
@@ -85,8 +88,7 @@ class Product extends React.Component {
 
     // const indexEdit = urlUtils.getParamsUrl('index', this.props);
     const indexEdit = url.slice(1);
-    console.log(product);
-    console.log(url);
+
     return (
       <section className="app-product" itemScope itemType="http://schema.org/Product">
         {/*
@@ -102,22 +104,25 @@ class Product extends React.Component {
           lastLocation={_.get(location, 'state.lastLocation', '')}
           text={_.get(product, 'name.es', '')}
         />
+
         <div className="product-header">
           <h1>
             {product.name.es}
           </h1>
           <p>Botiga/{url}</p>
         </div>
+
         <section className="app-product-box_product">
-          <BoxSlider
+          {/* <BoxSlider
             badge={_.get(product, 'state', '')}
             images={_.get(product, 'img', [])}
             item={product}
-          />
-
+          /> */}
           <BoxBuyProduct
             item={product}
             index={indexEdit === '' ? -1 : Number(indexEdit)}
+            alt={_.get(alt, '0', name)} 
+            src={img} 
           />
         </section>
 

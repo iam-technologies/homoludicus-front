@@ -12,6 +12,8 @@ import { ButtonInput, FavouritesBtn } from '../../../common';
 import Stepper from './Stepper';
 import Notify from './Notify';
 import { isClient } from '../../../../serverServices/utils';
+import Image from '../../../common/Image';
+
 // import Odometer from 'react-odometerjs';
 const Odometer = (isClient) ? require('react-odometerjs').default : undefined;
 
@@ -90,7 +92,7 @@ class BoxBuyProduct extends Component {
 
   render() {
     const { index, loading } = this.state;
-    const { item, cart, config, screen } = this.props;
+    const { item, cart, config, screen, alt, src } = this.props;
     const productAvailable = _.get(item, 'available');
 
     const oldPrice = priceCalc.showPriceNotOffer(item);
@@ -103,6 +105,10 @@ class BoxBuyProduct extends Component {
 
     return (
       <div className="a_p-buy_p">
+        <div className="img-features-div">
+        <div className="a_p-buy_img">
+          <Image alt={ alt } src={ src } />
+        </div>
         <div className="product-features">
           <div className="product-features-div">
             <div className="features-titles">
@@ -127,6 +133,7 @@ class BoxBuyProduct extends Component {
             >(+info)
             </p>
           </p>
+        </div>
         </div>
         {
           (index !== -1 && cart.item === null) || loading ? null : (

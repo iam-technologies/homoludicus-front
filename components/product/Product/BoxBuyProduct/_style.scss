@@ -11,7 +11,17 @@
   min-height: 600px;
   padding   : 45px 50px 23px;
   position  : relative;
-  width     : 50%;
+  width     : 100%;
+
+  .img-features-div{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+    .a_p-buy_img{
+      width: 40%;
+    }
+  }
 
   .a_p-buy_p-buy{
     width: max-content;
@@ -19,7 +29,7 @@
   
   .product-features{
     @include flex-complete(space-between, start, wrap, column);
-
+    width: 40%;
     .a_p-buy_p-small_info{
       margin-top: 0;
     }
