@@ -43,7 +43,7 @@ export default class Image extends React.PureComponent {
         className={`imagen_ui ${showImg ? 'imagen_ui-show' : ''} ${fitContent ? fitClassName : ''} ${className} `}
         onLoad={this.onLoad}
         // src={imgServices.getUrl(src, newSize)}
-        src={imgServices.getUrl(src, src)}
+        src={imgServices.getUrl(src, size)}
       />
     );
   }

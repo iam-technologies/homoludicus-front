@@ -1,8 +1,10 @@
+import _ from 'lodash';
 import config from './config';
 
-
 const getUrl = (img, size = 'original', folder = '') => {
-  return `${config.urlImages}${folder ? `${folder}/` : ''}${size}/${img}`;
+  console.log('TCL: getUrl -> img', img);
+  const attachment = _.get(img[0], 'attachment', '');
+  return `${config.urlImages}${folder ? `${folder}/` : ''}original/${attachment}`;
 };
 
 
@@ -21,7 +23,6 @@ const encodeBase64 = (image, callback) => {
     };
   }
 };
-
 
 export default {
   encodeBase64,

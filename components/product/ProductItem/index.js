@@ -17,7 +17,7 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
   const badgePrice = priceCalc.getBadgePrice(item);
   const oldPrice = priceCalc.showPriceNotOffer(item);
   const textBadge = texts.getStates(state);
-
+  console.log(img);
   return (
     <div className="relative">
       {
@@ -50,13 +50,13 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
               img && img.length > 0 ? (
                 <Image
                   alt={_.get(alt, '0', name)}
-                  src={img[0]}
+                  src={img}
                 />
               ) : ''
             }
           </div>
           <div className="product_box_ui-desc">
-            <div className="product_box_ui-title">{name}</div>
+            <p className="product_box_ui-title">{name}</p>
             <div className="product_box_ui-price">
               {
                 oldPrice && <p className="product_box_ui-old_price">{oldPrice}</p>
