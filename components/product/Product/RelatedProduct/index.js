@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Slider from 'react-slick';
 
 import { routes } from '../../../../utils';
 import { api } from '../../../../serverServices';
@@ -83,16 +82,13 @@ class RelatedProduct extends Component {
       urlCategory = _.get(item, 'categories.0._id', '');
     }
 
-    const productName = _.get(item, 'name.es', 'este producto');
     const location = routes.getRoute(urlCategory);
 
     return (
       <section className="a_p-related_p">
-        <h2 className="a_p-related_p-title">Productos relacionados con {productName}</h2>
+        <h2 className="a_p-related_p-title">Productes relacionats:</h2>
 
-        <Slider
-          {...newSettings}
-        >
+        <div className="related-products-div">
           {
             items.map((elem) => {
               if (elem._id === item._id) return null;
@@ -106,7 +102,8 @@ class RelatedProduct extends Component {
               );
             })
           }
-        </Slider>
+        </div>
+
       </section>
     );
   }

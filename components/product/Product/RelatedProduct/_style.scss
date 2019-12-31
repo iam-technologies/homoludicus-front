@@ -22,6 +22,12 @@
     }
   }
 
+  .related-products-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   .product_box_ui {
     margin: 0 12px 30px;
     width: 284px;
