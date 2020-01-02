@@ -102,53 +102,43 @@ class BoxBuyProduct extends Component {
     const isPack = _.get(item, 'type') === 'pack';
     const btnText = index >= 0 ? 'Actualizar producto' : 'Añadir al carrito';
 
-
     return (
       <div className="a_p-buy_p">
         <div className="img-features-div">
-        <div className="a_p-buy_img">
-          <Image alt={ alt } src={ src } />
-        </div>
-        <div className="product-features">
-          <div className="product-features-div">
-            <div className="features-titles">
-              <p className="product-features-title">Referència</p>
-              <p className="product-features-title">Stock</p>
-              <p className="product-features-title">Disponibilitat</p>
-              <p className="product-features-title">Punts Homoludicus</p>
-              <p className="product-features-title">Resum:</p>
-            </div>
-            <div className="features">
-              <p className="product-feature">{item.reference}</p>
-              <p className="product-feature">{item.reference}</p>
-              <p className="product-feature">{item.reference}</p>
-              <p className="product-feature">{item.reference}</p>
-            </div>
+          <div className="a_p-buy_img">
+            <Image alt={alt} src={src} />
           </div>
-          <p className="a_p-buy_p-small_info" itemProp="disambiguatingDescription">
-            {_.get(item, 'shortDesc.es', '').substr(0, 110)}...
-            <p
-              className="link_to_info_product"
-              onClick={this.onClickMoreInfo}
-            >(+info)
+          <div className="product-features">
+            <div className="product-features-div">
+              <div className="features-titles">
+                <p className="product-features-title">Referència</p>
+                <p className="product-features-title">Stock</p>
+                <p className="product-features-title">Disponibilitat</p>
+                <p className="product-features-title">Punts Homoludicus</p>
+                <p className="product-features-title">Resum:</p>
+              </div>
+              <div className="features">
+                <p className="product-feature">{item.reference}</p>
+                <p className="product-feature">{item.reference}</p>
+                <p className="product-feature">{item.reference}</p>
+                <p className="product-feature">{item.reference}</p>
+              </div>
+            </div>
+            <p className="a_p-buy_p-small_info" itemProp="disambiguatingDescription">
+              {_.get(item, 'shortDesc.es', '').substr(0, 110)}...
+              <p
+                className="link_to_info_product"
+                onClick={this.onClickMoreInfo}
+              >
+                (+info)
+              </p>
             </p>
-          </p>
+          </div>
         </div>
+        {/* Contador productos añadidos, precio sumado */}
+        <div className="product-price-sum">
+          <input type="number" min="0" max="99" />
         </div>
-        {
-          (index !== -1 && cart.item === null) || loading ? null : (
-            <Stepper
-              config={config}
-              items={isPack ? _.get(item, 'configStepPack', []) : _.get(item, 'attributes', [])}
-              productName={_.get(item, 'name.es', 'artículo')}
-              isPack={isPack}
-              index={index}
-              typeNotAvailable={typeNotAvailable || !productAvailable}
-              onAddToCart={this.onAddToCart}
-            />
-          )
-        }
-
         <div className="a_p-buy_p-buy">
           {
             typeNotAvailable ? <p className="a_p-buy_p-not_available">{notAvailable}</p> : null
@@ -185,11 +175,11 @@ class BoxBuyProduct extends Component {
                       label={cart.loading ? <Loader type="ball-beat" color="#FFFFFF" /> : btnText}
                     />
                   ) : (
-                    <Notify
-                      id={item._id}
-                      notifyAvailability={_.get(item, 'notifyAvailability', [])}
-                    />
-                  )
+                      <Notify
+                        id={item._id}
+                        notifyAvailability={_.get(item, 'notifyAvailability', [])}
+                      />
+                    )
                 }
 
               </Fragment>
