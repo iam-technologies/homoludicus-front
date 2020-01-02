@@ -55,20 +55,23 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
               ) : ''
             }
           </div>
-          <div className="product_box_ui-desc">
-            <p className="product_box_ui-title">{name}</p>
-            <div className="product_box_ui-price">
-              {
-                oldPrice && <p className="product_box_ui-old_price">{oldPrice}</p>
-              }
-              <p
-                className={oldPrice ? 'product_box_ui-offer_price' : ''}
-              >{dataFormat.formatCurrency(priceCalc.get(item))}
-              </p>
-            </div>
-          </div>
-        </a>
+          </a>
       </Link>
+          <div className="product_box_ui-desc">
+            <div className="name-price-wrapper">
+              <p className="product_box_ui-title">{name}</p>
+              <div className="product_box_ui-price">
+                {
+                  oldPrice && <p className="product_box_ui-old_price">{oldPrice}</p>
+                }
+                <p
+                  className={oldPrice ? 'product_box_ui-offer_price' : ''}
+                >{dataFormat.formatCurrency(priceCalc.get(item))}
+                </p>
+              </div>
+            </div>
+            <img className="share-icon" src="/icon/icon-share-white.svg" alt="share-icon" />
+          </div>
     </div>
   );
 };

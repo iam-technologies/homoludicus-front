@@ -15,9 +15,6 @@ import BoxDetails from './BoxDetails';
 import BoxRatings from './BoxRatings';
 import RelatedProduct from './RelatedProduct';
 
-import Image from '../../common/Image';
-
-
 class Product extends React.Component {
   constructor(props) {
     super(props);

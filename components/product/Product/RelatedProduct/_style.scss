@@ -2,6 +2,12 @@
   margin: 0 auto;
   max-width: 960px;
 
+  img.share-icon{
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  
   @media #{$sm} {
     max-width: 650px;
   }
@@ -12,7 +18,7 @@
 
   &-title {
     font-size : 18px;
-    margin    : 0 0 40px 10px;
+    margin    : 0 0 10px 10px;
     font-weight: bold;
     color: $dark-grey;
 
@@ -26,19 +32,34 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
+    .relative{
+      width: 280px;
+    }
   }
 
   .product_box_ui {
-    margin: 0 12px 30px;
-    width: 284px;
+    margin: 0 12px 0;
+    width: 266px;
+    height: auto;
     background: black;
 
     &-desc {
       padding: 15px;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      flex-direction: row;
       background: $dark-black;
+      height: 60px;
+
+      width: 266px;
+      margin-left: 12px;
+      border-radius: 0;
+
+      .name-price-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     &-title {
@@ -52,6 +73,15 @@
       p{
         color: white;
         font-size: 13px;
+      }
+    }
+
+    &-img{
+      height: 196px;
+      border-radius: 0;
+
+      img{
+        height: -webkit-fill-available;
       }
     }
   }

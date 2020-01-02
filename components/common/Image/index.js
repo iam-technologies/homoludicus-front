@@ -36,7 +36,6 @@ export default class Image extends React.PureComponent {
     // if (src.indexOf('.gif') !== -1) {
     //   newSize = 'original';
     // }
-
     return (
       <img
         alt={alt}
