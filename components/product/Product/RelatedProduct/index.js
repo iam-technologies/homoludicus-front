@@ -86,7 +86,6 @@ class RelatedProduct extends Component {
     return (
       <section className="a_p-related_p">
         <h5 className="a_p-related_p-title">Productes relacionats:</h5>
-
         <div className="related-products-div">
           {
             items.map((elem) => {
@@ -102,7 +101,6 @@ class RelatedProduct extends Component {
             })
           }
         </div>
-
       </section>
     );
   }
