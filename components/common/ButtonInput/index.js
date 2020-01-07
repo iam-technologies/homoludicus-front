@@ -14,14 +14,14 @@ export default class ButtonInput extends Component {
 
     return (
       <button
-        className="button button-yellow"
+        className={`button-yellow ${className}`}
         // {`button_${ghost ? 'ghost_' : ''}ui ${className}`}
         disabled={disabled}
         onClick={this.onClick}
         type="button"
       >
-        { icon && <img src={icon} alt="icon" /> }
-        { label }
+        {icon && <img src={icon} alt="icon" />}
+        {label}
       </button>
     );
   }

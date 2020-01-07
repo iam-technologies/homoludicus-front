@@ -24,7 +24,8 @@ class BoxBuyProduct extends Component {
     this.state = {
       loading: true,
       index: Number.isNaN(props.index) ? -1 : props.index,
-      favorite: false
+      count: 0,
+      favorite: false,
     };
 
     this.onConfigAttr = bindActionCreators(configAttrActs, props.dispatch);
@@ -61,6 +62,20 @@ class BoxBuyProduct extends Component {
     ref.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
+  //Units counter
+
+  onSumUnits = () => {
+    const { count } = this.state;
+    this.setState({ count: count + 1 })
+  }
+
+  onSubstractUnits = () => {
+    const { count } = this.state;
+    if (count > 0) {
+      this.setState({ count: count - 1 })
+    }
+  }
+
   onAddToCart() {
     const { index } = this.state;
     const { item, cart, config } = this.props;
@@ -91,8 +106,10 @@ class BoxBuyProduct extends Component {
   }
 
   render() {
+
     const { index, loading } = this.state;
     const { item, cart, config, screen, alt, src } = this.props;
+    const { count } = this.state;
     const productAvailable = _.get(item, 'available');
 
     const oldPrice = priceCalc.showPriceNotOffer(item);
@@ -101,7 +118,27 @@ class BoxBuyProduct extends Component {
 
     const isPack = _.get(item, 'type') === 'pack';
     const btnText = index >= 0 ? 'Actualizar producto' : 'Añadir al carrito';
+    const price = parseFloat(item.price);
+    const totalPrice = (price * 1.21).toFixed(2);
 
+    const featureTitles = [
+      'Referència',
+      'Stock',
+      'Disponibilitat',
+      'Punts Homoludicus',
+      'Resum:'
+    ];
+
+    const disponible = item.available === true ? 'Disponible' : 'No disponible';
+
+    const features = [
+      item.reference,
+      item.stock,
+      disponible,
+      item.reference
+    ];
+
+    console.log(item)
     return (
       <div className="a_p-buy_p">
         <div className="img-features-div">
@@ -111,17 +148,24 @@ class BoxBuyProduct extends Component {
           <div className="product-features">
             <div className="product-features-div">
               <div className="features-titles">
-                <p className="product-features-title">Referència</p>
-                <p className="product-features-title">Stock</p>
-                <p className="product-features-title">Disponibilitat</p>
-                <p className="product-features-title">Punts Homoludicus</p>
-                <p className="product-features-title">Resum:</p>
+                {featureTitles.map((title, i) => {
+                  return <p
+                    className='product-features-title'
+                    key={i}
+                  >
+                    {title}
+                  </p>
+                })}
               </div>
               <div className="features">
-                <p className="product-feature">{item.reference}</p>
-                <p className="product-feature">{item.reference}</p>
-                <p className="product-feature">{item.reference}</p>
-                <p className="product-feature">{item.reference}</p>
+                {features.map((feature, i) => {
+                  <p
+                    className="product-feature"
+                    key={i}
+                  >
+                    {feature}
+                  </p>
+                })}
               </div>
             </div>
             <p className="a_p-buy_p-small_info" itemProp="disambiguatingDescription">
@@ -133,64 +177,52 @@ class BoxBuyProduct extends Component {
                 (+info)
               </p>
             </p>
-          </div>
-        </div>
-        {/* Contador productos añadidos, precio sumado */}
-        <div className="product-price-sum">
-          <input type="number" min="0" max="99" />
-        </div>
-        <div className="a_p-buy_p-buy">
-          {
-            typeNotAvailable ? <p className="a_p-buy_p-not_available">{notAvailable}</p> : null
-          }
-
-          {
-            typeNotAvailable ? null : (
-              <Fragment>
-                <div
-                  className={`a_p-buy_p-price ${oldPrice ? 'a_p-buy_p-offer_price' : ''}`}
-                  itemProp="offers"
-                  itemScope
-                  itemType="http://schema.org/Offer"
-                >
-                  {
-                    oldPrice && <p className="a_p-buy_p-old_price">{oldPrice}</p>
-                  }
-                  <span itemProp="price" content={priceCalc.getUnicode(item, config)}>
-                    <Odometer value={priceCalc.get(item, config)} format="(.ddd),dd" />
-                  </span>
-                  <span itemProp="priceCurrency" content="EUR">€</span>
-                  <span className="small_text">impostos inclosos</span>
+            {/* Contador productos añadidos, precio sumado */}
+            <div className="product-price-sum">
+              <div className="quantity-selector-div">
+                <p className="price-title">Quantitat:</p>
+                <div className="selector-wrapper">
+                  <input type="number" min="0" max="99" value={count} />
+                  <div className="arrows">
+                    <div className="button-div">
+                      <button className="up-arrow" type="button" onClick={this.onSumUnits}>
+                        <img src="/icon/icon-up-grey.svg" />
+                      </button>
+                    </div>
+                    <div className="button-div">
+                      <button className="up-arrow" type="button" onClick={this.onSubstractUnits}>
+                        <img src="/icon/icon-down-grey.svg" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-
-                {
-                  screen !== 'lg' && (<FavouritesBtn id={_.get(item, '_id', '')} />)
-                }
-
-                {
-                  productAvailable ? (
-                    <ButtonInput
-                      className="a_p-buy_p-add_cart"
-                      onClick={this.onAddToCart}
-                      label={cart.loading ? <Loader type="ball-beat" color="#FFFFFF" /> : btnText}
-                    />
-                  ) : (
-                      <Notify
-                        id={item._id}
-                        notifyAvailability={_.get(item, 'notifyAvailability', [])}
-                      />
-                    )
-                }
-
-              </Fragment>
-            )
-          }
+              </div>
+              <div className="product-price">
+                <p className="price-title">Preu:</p>
+                <p className="total-price">{totalPrice} €</p>
+                <p className="impostos">Impostos inclosos</p>
+              </div>
+            </div>
+            {//Add to Cart
+              productAvailable ? (
+                <ButtonInput
+                  className="add-to-cart-button"
+                  onClick={this.onAddToCart}
+                  label={cart.loading ? <Loader type="ball-beat" color="#FFFFFF" /> : btnText}
+                />
+              ) : (
+                  <Notify
+                    id={item._id}
+                    notifyAvailability={_.get(item, 'notifyAvailability', [])}
+                  />
+                )
+            }
+          </div>
         </div>
       </div>
     );
   }
 }
-
 
 BoxBuyProduct.propTypes = {
   cart: PropTypes.object.isRequired,
@@ -200,7 +232,6 @@ BoxBuyProduct.propTypes = {
 };
 
 BoxBuyProduct.defaultProps = { index: -1 };
-
 
 export default connect(state => ({
   config: state.configAttr.value,
