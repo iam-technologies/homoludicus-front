@@ -17,7 +17,8 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
   const badgePrice = priceCalc.getBadgePrice(item);
   const oldPrice = priceCalc.showPriceNotOffer(item);
   const textBadge = texts.getStates(state);
-  console.log(img);
+  const desc = item.shortDesc.es;
+
   return (
     <div className="relative">
       {
@@ -73,7 +74,16 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
           </div>
           <img className="share-icon" src="/icon/icon-share-white.svg" alt="share-icon" />
         </div>
-        <p className="">sldkfjañfdjslajdf</p>
+        <p className="desc">{desc}</p>
+        <Link
+          href={{
+            pathname: urlUtils.linkToProduct(location, item)
+          }}
+        >
+          <a onClick={onClick}>
+            <p className="see-more">Veure més > </p>
+          </a>
+        </Link>
       </div>
 
     </div>
