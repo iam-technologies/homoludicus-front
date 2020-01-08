@@ -14,6 +14,7 @@ import BoxBuyProduct from './BoxBuyProduct';
 import BoxDetails from './BoxDetails';
 import BoxRatings from './BoxRatings';
 import RelatedProduct from './RelatedProduct';
+import InfoSwitcher from './InfoSwitcher';
 
 class Product extends React.Component {
   constructor(props) {
@@ -106,7 +107,7 @@ class Product extends React.Component {
           <h1>
             {product.name.es}
           </h1>
-          <p>Botiga/{url}</p>
+          <p>Botiga{url}</p>
         </div>
 
         <section className="app-product-box_product">
@@ -118,21 +119,23 @@ class Product extends React.Component {
           <BoxBuyProduct
             item={product}
             index={indexEdit === '' ? -1 : Number(indexEdit)}
-            alt={_.get(alt, '0', name)} 
-            src={img} 
+            alt={_.get(alt, '0', name)}
+            src={img}
           />
         </section>
 
-        <section className="app-product-box_information">
-          {/* <BoxDetails
+        {/* <section className="app-product-box_information">
+          <BoxDetails
             item={product}
             refundsText={refundsText}
           /> */}
 
-          {/* <BoxRatings
+        {/* <BoxRatings
             productId={product._id}
-          /> */}
-        </section>
+          />
+        </section> */}
+
+        <InfoSwitcher product={product} />
 
 
         <RelatedProduct

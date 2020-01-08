@@ -1,0 +1,42 @@
+.info-switcher {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .switcher-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .switcher-titles-div{
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+        }
+
+        .rows-div {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .simple-row {
+                background-color: $light-grey;
+                width: 40%; height: 5px;
+
+                &.active {
+                    background-color: $middle-grey;
+                }
+            }
+        }
+    }
+
+    .info-window {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 250px;
+        padding: 10px 143px 20px 143px;
+    }
+}
