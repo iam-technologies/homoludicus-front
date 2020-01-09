@@ -21,9 +21,6 @@ const Carousel = ({ items }) => {
     const imgFormat = imgPath.pop();
     const imgFallback = `${imgPath.join('.')}.jpg`;
 
-    console.log('=>', imgServices.getUrl(imgFallback));
-
-
     return (
       <div className="carousel_home">
         <picture>
