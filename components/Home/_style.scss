@@ -1,3 +1,5 @@
+@import './FeaturedEvents/_style';
+
 .app-home {
   @import './Carousel/_style.scss';
   // @import './PriceSlider/_style.scss';
@@ -159,6 +161,6 @@
     display: flex;
     justify-content: space-around;
     height: 600px;
-
+    margin-top: 80px;
   }
 }
