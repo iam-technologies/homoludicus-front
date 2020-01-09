@@ -5,6 +5,8 @@ import Carousel from './Carousel';
 import { MobileHeader } from '../common';
 import FeaturedEvents from './FeaturedEvents';
 import FeaturedProducts from './FeaturedProducts';
+import ServicesHome from './ServicesHome';
+import ScheduleHome from './ScheduleHome';
 
 const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
   const [show, setshow] = useState(false);
@@ -33,6 +35,8 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
         {/* featured */}
         <FeaturedProducts />
       </div>
+      <ServicesHome />
+      <ScheduleHome />
     </section>
   );
 };

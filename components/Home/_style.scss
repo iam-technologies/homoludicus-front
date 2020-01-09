@@ -1,4 +1,7 @@
 @import './FeaturedEvents/_style';
+@import './FeaturedProducts/_style';
+@import './ServicesHome/_style';
+@import './ScheduleHome/_style';
 
 .app-home {
   @import './Carousel/_style.scss';
@@ -160,7 +163,9 @@
   .middle-page-div {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     height: 600px;
+    width: 80%;
     margin-top: 80px;
   }
 }

@@ -137,7 +137,6 @@ class Product extends React.Component {
 
         <InfoSwitcher product={product} />
 
-
         <RelatedProduct
           key={_.get(product, '_id', 'newkey')}
           item={product}
