@@ -12,15 +12,27 @@
         height: 246px;
         justify-content: space-between;
 
-        .bonus-div {
+        .bonus-div, .games-div {
+            display: flex;
+            flex-direction: column;
             width: 49%;
             background-color: $brand01;
             margin-right: 20px;
+            padding: 40px 20px 40px 20px;
+
+            h4 {
+                width: 45%;
+            }
+
+            a {
+                display: flex;
+                height: 100%;
+                align-items: flex-end;
+            }
         }
 
         .games-div {
-            width: 49%;
-            background: url("/images/event.jpeg");
+            background: url("/images/group@2x.jpg");
 
             h4 {
                 color: white;
