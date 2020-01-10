@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const FeaturedEvents = () => {
   return (
@@ -15,7 +16,11 @@ const FeaturedEvents = () => {
         </div>
         <div className="event-contact-share">
           <div className="event-contact">
-            <button className="button button-yellow">Apunta't</button>
+            <Link href="/erizos-a-la-carrera">
+              <a>
+                <button className="button button-yellow">Apunta't</button>
+              </a>
+            </Link>
           </div>
           <div className="event-share">
             <img src="/icon/icon-share-white.svg" alt="share" />

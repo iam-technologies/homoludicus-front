@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import { urlUtils, dataFormat, texts, priceCalc } from '../../../utils';
 import { Image, Badge } from '../../common';
 
-
 const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick, selected }) => {
   const isChecked = selected.indexOf(item._id) !== -1;
   const maxChecked = selected.length >= 3;

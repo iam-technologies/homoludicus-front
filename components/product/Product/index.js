@@ -47,8 +47,10 @@ class Product extends React.Component {
   getItems() {
     // const { history, user, url } = this.props;
     const { user, url } = this.props;
+    console.log('TCL: Product -> getItems -> url', url);
     // const paramUrl = urlUtils.getParamsUrl('product', this.props);
     const paramUrl = url.slice(1);
+
 
     let userId = 'unlogged_user';
     if (user) userId = user._id;

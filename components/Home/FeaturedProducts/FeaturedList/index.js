@@ -1,6 +1,8 @@
 import React from 'react';
 
-const FeaturedList = () => {
+const FeaturedList = (props) => {
+  const { imgUrl } = props;
+
   return <h2>FEATURED LIST</h2>;
 };
 

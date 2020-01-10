@@ -19,6 +19,9 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
   const desc = _get(selection, 'desc.es', '');
   const products = _get(selection, 'products', []);
 
+  // console.log('imgUrl', imgUrl);
+
+
   const seoHeading = _get(content, 'seoHeading.es', '');
   const seoText = _get(content, 'seoText.es', '');
 
@@ -33,7 +36,7 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
         {/* events */}
         <FeaturedEvents />
         {/* featured */}
-        <FeaturedProducts />
+        <FeaturedProducts imgUrl={imgUrl} />
       </div>
       <ServicesHome />
       <ScheduleHome />
