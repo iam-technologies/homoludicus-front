@@ -4,6 +4,7 @@
 @import './ScheduleHome/_style';
 
 .app-home {
+
   @import './Carousel/_style.scss';
   // @import './PriceSlider/_style.scss';
 
@@ -162,9 +163,14 @@
 
   .middle-page-div {
     display: flex;
-    justify-content: space-around;
+    padding: 0 100px 0 100px;
+    justify-content: space-between;
     align-items: center;
     height: 600px;
     width: 100%;
   }
+}
+
+.app-home.animation_opacity-remove {
+  padding-bottom: 0;
 }
