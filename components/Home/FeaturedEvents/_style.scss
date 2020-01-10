@@ -2,6 +2,14 @@
     height: 600px;
     width: 544px;
 
+    h2 {
+        top: 125px;
+        position: relative;
+        left: 30px;
+        color: white;
+        width: 40%;
+    }
+
     .event-info {
         display: flex;
         flex-direction: column;
