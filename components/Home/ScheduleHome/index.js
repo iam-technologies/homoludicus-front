@@ -23,7 +23,7 @@ const ScheduleHome = () => {
     <div className="schedule-div">
       <h2>Agenda 2019/20</h2>
       <div className="scheduled-events">
-        <
+        <div className="scheduled-event" />
         {events.map((event) => {
           return (
             <div key={event.title} className="scheduled-event">
@@ -40,7 +40,7 @@ const ScheduleHome = () => {
         })}
       </div>
     </div>
-      );
-    };
-    
-    export default ScheduleHome;
+  );
+};
+
+export default ScheduleHome;
