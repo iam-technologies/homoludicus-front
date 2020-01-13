@@ -7,13 +7,12 @@ import { api, getImageUrl } from '../serverServices';
 import { Home, Layout } from '../components';
 import { SEO } from '../components/common';
 
-
 const HomePage = ({ content = {}, selection = {}, loaded = true, imgUrl = '' }) => {
   const title = _get(content, 'seoTitle.es', '');
   const desc = _get(content, 'seoDesc.es', '');
   const attachment = _get(content, 'seoImg.attachment', '');
   const pathname = '/';
-
+  console.log('imgurl', imgUrl);
   return (
     <Layout pathname={pathname}>
       <SEO
@@ -49,6 +48,7 @@ HomePage.getInitialProps = async () => {
   const selection = await api.selections.getByKey('home', (err, res) => {
     return res ? res.data : null;
   });
+
 
   return { content, selection, loaded: true, imgUrl };
 };

@@ -43,7 +43,6 @@ class Product extends React.Component {
   //     this.getItems();
   //   }
   // }
-
   getItems() {
     // const { history, user, url } = this.props;
     const { user, url } = this.props;
