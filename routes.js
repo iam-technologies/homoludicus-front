@@ -29,6 +29,7 @@ module.exports = routes()
 
   .add('/styles', 'styles')
   .add('/shop', 'shop')
+  .add('/about-us', 'about-us')
 
   // NOT FOUND
   .add('/404', 'pageNotFound')

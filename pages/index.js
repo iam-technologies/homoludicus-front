@@ -12,7 +12,7 @@ const HomePage = ({ content = {}, selection = {}, loaded = true, imgUrl = '' }) 
   const desc = _get(content, 'seoDesc.es', '');
   const attachment = _get(content, 'seoImg.attachment', '');
   const pathname = '/';
-  console.log('imgurl', imgUrl);
+  console.log('selection', selection);
   return (
     <Layout pathname={pathname}>
       <SEO
@@ -45,9 +45,7 @@ HomePage.getInitialProps = async () => {
 
   const imgUrl = await getImageUrl(content);
 
-  const selection = await api.selections.getByKey('home', (err, res) => {
-    return res ? res.data : null;
-  });
+  const selection = content.selections || [];
 
 
   return { content, selection, loaded: true, imgUrl };

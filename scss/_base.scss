@@ -49,8 +49,11 @@
   }
   
   input {
-    outline: none;
+    border: $input-border solid 2px;
+    margin-bottom: 33px;
     padding: 10px;
+    font-size: 15px;
+    color: $input-text;
   }
 
   .subtitle {
