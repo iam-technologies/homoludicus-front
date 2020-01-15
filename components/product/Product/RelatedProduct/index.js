@@ -83,7 +83,7 @@ class RelatedProduct extends Component {
     }
 
     const location = routes.getRoute(urlCategory);
-    console.log('TCL: render -> location', location);
+    // console.log('TCL: render -> location', location);
 
 
     return (

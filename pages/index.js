@@ -12,7 +12,7 @@ const HomePage = ({ content = {}, selection = {}, loaded = true, imgUrl = '' }) 
   const desc = _get(content, 'seoDesc.es', '');
   const attachment = _get(content, 'seoImg.attachment', '');
   const pathname = '/';
-  console.log('selection', selection);
+  // console.log('selection', selection);
   return (
     <Layout pathname={pathname}>
       <SEO

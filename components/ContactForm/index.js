@@ -22,33 +22,35 @@ const ContactForm = () => {
   };
 
   return (
+    <div className="contact-form-div">
       <form onSubmit={handleSubmit}>
-          <input type="text" {...useInput('name', 'isRequired')} placeholder="Escriu el teu nom" />
-          <div className="form-errors">
-              {showErrors.name && errors.name && errors.name.map(err => <div key={err} className="form-errors-item">{ERRORS_TEXT[err]}</div>)}
-            </div>
-          <input type="text" {...useInput('email', 'isEmail,isRequired')} placeholder="El teu email" />
-          <div className="form-errors">
-              {showErrors.email && errors.email && errors.email.map(err => <div key={err} className="form-errors-item">{ERRORS_TEXT[err]}</div>)}
-            </div>
-          <input type="text" {...useInput('matter', 'isRequired')} placeholder="Asumpte" />
-          <div className="form-errors">
-              {showErrors.matter && errors.matter && errors.matter.map(err => <div key={err} className="form-errors-item">{ERRORS_TEXT[err]}</div>)}
-            </div>
-          <input type="text" className="message" {...useInput('message', 'isRequired')} placeholder="Escriu el teu missatge" />
-          <div className="form-errors">
-              {showErrors.message && errors.message && errors.message.map(err => <div key={err} className="form-errors-item">{ERRORS_TEXT[err]}</div>)}
-            </div>
-          <div className="button-div">
-              {isValid && (
-                <button
-                      type="submit"
-                      className="button-yellow"
-                    >Enviar
-                    </button>
-                )}
-            </div>
-        </form>
+        <input type="text" {...useInput('name', 'isRequired')} placeholder="Escriu el teu nom" />
+        <div className="form-errors">
+          {showErrors.name && errors.name && errors.name.map(err => <div key={err} className="form-errors-item">{ERRORS_TEXT[err]}</div>)}
+        </div>
+        <input type="text" {...useInput('email', 'isEmail,isRequired')} placeholder="El teu email" />
+        <div className="form-errors">
+          {showErrors.email && errors.email && errors.email.map(err => <div key={err} className="form-errors-item">{ERRORS_TEXT[err]}</div>)}
+        </div>
+        <input type="text" {...useInput('matter', 'isRequired')} placeholder="Asumpte" />
+        <div className="form-errors">
+          {showErrors.matter && errors.matter && errors.matter.map(err => <div key={err} className="form-errors-item">{ERRORS_TEXT[err]}</div>)}
+        </div>
+        <input type="text" className="message" {...useInput('message', 'isRequired')} placeholder="Escriu el teu missatge" />
+        <div className="form-errors">
+          {showErrors.message && errors.message && errors.message.map(err => <div key={err} className="form-errors-item">{ERRORS_TEXT[err]}</div>)}
+        </div>
+        <div className="button-div">
+          {isValid && (
+            <button
+              type="submit"
+              className="button-yellow"
+            >Enviar
+            </button>
+          )}
+        </div>
+      </form>
+    </div>
   );
 };
 
