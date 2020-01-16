@@ -1,13 +1,20 @@
 .featured-events {
-    height: 600px;
-    width: 544px;
+    height: 100%;
+    margin-right: 10px;
+
+    img {
+        width: -webkit-fill-available;
+        height: 601px;;
+    }
 
     h2 {
-        top: 125px;
+        top: 20px;
         position: relative;
         left: 30px;
         color: white;
         width: 40%;
+        height: 0;
+        margin: 0;
     }
 
     .event-info {
@@ -22,8 +29,8 @@
         margin: 0;
         top: -204px;
         height: 200px;
-        width: 445px;
         opacity: 85%;
+        width: 544px;
 
         h3 {
             font-weight: normal;
@@ -38,6 +45,14 @@
 
             button {
                 margin-left: 0;
+            }
+
+            .event-share {
+                height: 0;
+
+                img {
+                    height: fit-content;
+                }
             }
         }
     }
