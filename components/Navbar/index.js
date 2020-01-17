@@ -37,6 +37,22 @@ class Navbar extends Component {
     const { /* location, */ screen, pathname } = this.props;
     let styles = {};
 
+    const mainMenu = [{
+      title: 'Qui som', url: '/about-us'
+    },
+    {
+      title: 'Botiga online', url: '/shop'
+    },
+    {
+      title: 'Activitats', url: '/about-us'
+    },
+    {
+      title: 'Serveis', url: '/about-us'
+    },
+    {
+      title: 'Contacte', url: '/contact'
+    }];
+
     if (screen === 'lg') {
       if (pathname === '/checkout') return null;
       if (pathname !== '/') styles = { height: '95px' };
@@ -46,17 +62,17 @@ class Navbar extends Component {
           className={`app-header animation_opacity${!loading ? '-remove' : ''}`}
           style={styles}
         >
-          <NavbarDesktop items={items} pathname={pathname} />
+          <NavbarDesktop items={items} pathname={pathname} mainMenu={mainMenu} />
         </header>
       );
     }
 
     return (
-      <Fragment>
+      <>
         {isClient && (
-          <NavbarMobile items={items} pathname={pathname} />
+          <NavbarMobile items={items} pathname={pathname} mainMenu={mainMenu} />
         )}
-      </Fragment>
+      </>
     );
   }
 }
