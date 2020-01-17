@@ -38,10 +38,18 @@ const SingleEvent = () => {
     place: 'Carrer Sant Jaume, 73, Granollers'
   };
 
+  const headerImg = '/images/header-event.jpg';
+
   return (
     <section className="event-sec">
-      <header className="event-header">
-        <img src="/images/group@2x.jpg" />
+      <header
+        className="event-header"
+        style={{
+          backgroundImage: `url(${headerImg})`,
+          backgroundSize: 'cover'
+        }}
+      >
+        <div className="darken" />
       </header>
       <div className="event-content-div">
         <div className="event-data">
