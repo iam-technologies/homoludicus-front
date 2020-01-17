@@ -12,6 +12,7 @@ const dynamicPage = ({ content = {}, serverUrl, categoryId = '' }) => {
   const desc = _get(content, categoryId ? 'descSeo.es' : 'seoDesc.es', '');
   const attachment = _get(content, 'seoImg.attachment', '');
   console.log(content);
+
   const getItems = (id) => {
     if (id) return <Category id={categoryId} pathname={serverUrl} />;
     return <Product url={serverUrl} />;
