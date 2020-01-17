@@ -29,7 +29,6 @@ const texts = {
   }
 };
 
-
 const get = (path, text) => _.get(texts, `${path}.${text}`, '');
 
 const getStates = text => _.get(texts, `product.states.${text}`, '');
@@ -38,4 +37,3 @@ export default {
   get,
   getStates
 };
-

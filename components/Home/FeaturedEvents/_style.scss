@@ -1,0 +1,59 @@
+.featured-events {
+    height: 100%;
+    margin-right: 10px;
+
+    img {
+        width: -webkit-fill-available;
+        height: 601px;;
+    }
+
+    h2 {
+        top: 20px;
+        position: relative;
+        left: 30px;
+        color: white;
+        width: 40%;
+        height: 0;
+        margin: 0;
+    }
+
+    .event-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 30px;
+        color: white;
+        background-color: black;
+        position: relative;
+        margin: 0;
+        top: -204px;
+        height: 200px;
+        opacity: 85%;
+        width: 544px;
+
+        h3 {
+            font-weight: normal;
+        }
+
+        .event-contact-share {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-right: 0;
+
+            button {
+                margin-left: 0;
+            }
+
+            .event-share {
+                height: 0;
+
+                img {
+                    height: fit-content;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.services-div {
+    width: 100%;
+    height: 325px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .services-titles {
+        margin-left: 150px;
+    }
+
+    .bonus-games-div {
+        display: flex;
+        width: 100%;
+        height: 246px;
+        justify-content: center;
+        margin-bottom: 100px;
+
+        .bonus-div, .games-div {
+            display: flex;
+            flex-direction: column;
+            width: 543px;
+            background: url("/images/servicio-escuelas@2x.jpg");
+            background-repeat: round;
+            margin-right: 20px;
+            padding: 40px 20px 40px 20px;
+
+            h4 {
+                width: 45%;
+            }
+
+            a {
+                display: flex;
+                height: 100%;
+                align-items: flex-end;
+            }
+        }
+
+        .games-div {
+            background: url("/images/group@2x.jpg");
+            background-repeat: round;
+
+            h4 {
+                color: white;
+            }
+        }
+    }
+}

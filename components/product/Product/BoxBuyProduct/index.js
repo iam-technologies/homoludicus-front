@@ -138,7 +138,6 @@ class BoxBuyProduct extends Component {
       item.reference
     ];
 
-    console.log(item)
     return (
       <div className="a_p-buy_p">
         <div className="img-features-div">
@@ -159,7 +158,7 @@ class BoxBuyProduct extends Component {
               </div>
               <div className="features">
                 {features.map((feature, i) => {
-                  <p
+                  return <p
                     className="product-feature"
                     key={i}
                   >

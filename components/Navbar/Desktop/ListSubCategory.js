@@ -43,6 +43,7 @@ class ListSubCategory extends React.Component {
   render() {
     const { shown } = this.state;
     const { items = [] } = this.props;
+    console.log(items);
 
     return (
       <ul

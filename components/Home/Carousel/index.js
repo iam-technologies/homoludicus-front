@@ -25,16 +25,16 @@ const Carousel = ({ items }) => {
       <div className="carousel_home">
         <picture>
           {imgFormat == 'webp' && <source srcSet={imgServices.getUrl(imgUrl)} type="image/webp" />}
-          <img src={imgServices.getUrl(imgFallback)} alt={imgUrl} />
+          <img src={imgServices.getHomeUrl(imgFallback)} alt={imgUrl} />
         </picture>
         <h1>{titleImg}</h1>
         <h5>{subtitleImg}</h5>
         {
           (link && btnText)
           && (
-          <Link route={link}>
-            <a className="carousel_btn">{btnText}</a>
-          </Link>
+            <Link route={link}>
+              <a className="carousel_btn">{btnText}</a>
+            </Link>
           )
         }
       </div>

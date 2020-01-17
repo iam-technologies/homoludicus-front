@@ -2,11 +2,14 @@ import _ from 'lodash';
 import config from './config';
 
 const getUrl = (img, size = 'original', folder = '') => {
-  console.log('TCL: getUrl -> img', img);
   const attachment = _.get(img[0], 'attachment', '');
   return `${config.urlImages}${folder ? `${folder}/` : ''}original/${attachment}`;
 };
 
+const getHomeUrl = (img, size = 'original', folder = '') => {
+  const attachment = _.get(img[0], 'attachment', '');
+  return `${config.urlImages}${folder ? `${folder}/` : ''}${size}/${img}`;
+};
 
 const encodeBase64 = (image, callback) => {
   const reader = new FileReader();
@@ -26,5 +29,6 @@ const encodeBase64 = (image, callback) => {
 
 export default {
   encodeBase64,
-  getUrl
+  getUrl,
+  getHomeUrl
 };

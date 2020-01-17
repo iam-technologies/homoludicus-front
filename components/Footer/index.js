@@ -174,8 +174,8 @@ class Footer extends Component {
               <h5>Síguenos en:</h5>
               <a href={infoSource.fbUrl} target="_blank" rel="noopener noreferrer"><span className="facebook" /></a>
               <a href={infoSource.twitterUrl} target="_blank" rel="noopener noreferrer"><span className="twitter" /></a>
-              <a href={infoSource.instagramUrl} target="_blank" rel="noopener noreferrer"><span className="instagram" /></a>
-              <a href={infoSource.pinterestUrl} target="_blank" rel="noopener noreferrer"><span className="pinterest" /></a>
+              <a href={infoSource.googleUrl} target="_blank" rel="noopener noreferrer"><span className="google" /></a>
+              <a href={infoSource.linkedinUrl} target="_blank" rel="noopener noreferrer"><span className="linkedin" /></a>
             </div>
           </div>
         </section>
