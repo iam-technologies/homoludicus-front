@@ -1,11 +1,10 @@
 import React from 'react';
 import GameZoneCalendar from '../components/GameZoneCalendar';
 
-const gameZoneBooking = () => {
+const gameZone = () => {
   return (
-
     <GameZoneCalendar />
   );
 };
 
-export default gameZoneBooking;
+export default gameZone;
