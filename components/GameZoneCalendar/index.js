@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import resourceTimeGridPlugin from '@fullcalendar/resource-timegrid';
+import caLocale from '@fullcalendar/core/locales/ca';
 
 class GameZoneCalendar extends Component {
   constructor(props) {
@@ -18,11 +20,16 @@ class GameZoneCalendar extends Component {
     const { events } = this.state;
     return (
       <FullCalendar
-        defaultView="dayGridMonth"
-        plugins={[dayGridPlugin, interactionPlugin]}
+        defaultView="dayGridWeek"
+        plugins={[
+          dayGridPlugin,
+          interactionPlugin,
+          resourceTimeGridPlugin
+        ]}
         selectable
         unselectAuto
         events={events}
+        locale={caLocale}
       />
     );
   }
