@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import resourceTimeGridPlugin from '@fullcalendar/resource-timegrid';
 import caLocale from '@fullcalendar/core/locales/ca';
@@ -11,25 +12,35 @@ class GameZoneCalendar extends Component {
 
     this.state = {
       events: [
-        { title: 'event 1', date: '2020-01-20' }
-      ]
+        {
+          title: 'event 1',
+          start: '2020-01-20T14:30:00',
+          end: '2020-01-20T15:30:00'
+        }
+      ],
+      defaultView: 'dayGridWeek'
     };
   }
 
   render() {
-    const { events } = this.state;
+    const { events, defaultView } = this.state;
+
     return (
       <FullCalendar
-        defaultView="dayGridWeek"
+        defaultView={defaultView}
         plugins={[
           dayGridPlugin,
           interactionPlugin,
-          resourceTimeGridPlugin
+          resourceTimeGridPlugin,
+          timeGridPlugin
         ]}
         selectable
         unselectAuto
         events={events}
         locale={caLocale}
+        displayEventEnd
+        allDaySlot
+        allDayText
       />
     );
   }
