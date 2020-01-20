@@ -32,7 +32,7 @@ module.exports = routes()
   .add('/about-us', 'about-us')
   .add('/contact', 'contact')
   .add('/event', 'event')
-  .add('/game-zone-booking', 'game-zone-booking')
+  .add('/game-zone', 'game-zone')
 
   // NOT FOUND
   .add('/404', 'pageNotFound')
