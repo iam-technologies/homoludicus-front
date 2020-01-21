@@ -4,9 +4,9 @@ import { Layout } from '../components';
 
 const EventPage = () => {
   return (
-      <Layout>
-          <SingleEvent />
-        </Layout>
+    <Layout>
+      <SingleEvent />
+    </Layout>
   );
 };
 
