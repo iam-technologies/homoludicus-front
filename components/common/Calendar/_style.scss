@@ -40,6 +40,7 @@
     }
 
     button.fc-timeGridWeek-button.fc-button.fc-button-primary,
+    .fc-dayGridMonth-button.fc-button.fc-button-primary,
     .fc-listWeek-button.fc-button.fc-button-primary {
         width: 90px;
         height: 47px;
@@ -55,9 +56,5 @@
         background-color: $middle-grey;
         color: white;
         }
-
-
-
     }
-
 }

@@ -10,27 +10,11 @@ class Calendar extends Component {
   constructor(props) {
     super(props);
     const { calendarSettings } = this.props;
-    const { defaultView } = calendarSettings;
+    const { defaultView, header, events } = calendarSettings;
 
     this.state = {
-      header: {
-        left: 'prev,next',
-        center: 'title',
-        right: 'timeGridWeek listWeek'
-        // right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-      },
-      events: [
-        {
-          title: 'event 1',
-          start: '2020-01-20T14:00:00',
-          end: '2020-01-20T15:00:00'
-        },
-        {
-          title: 'event 2',
-          start: '2020-01-22T14:30:00',
-          end: '2020-01-22T15:30:00'
-        }
-      ],
+      header,
+      events,
       defaultView,
       calendarWeekends: true,
       buttonText: { list: 'Llista' }
