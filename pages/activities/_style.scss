@@ -4,23 +4,33 @@
         height: 120px;
     }
 
-    .section-selector {
+    .section-wrapper {
         width: 100%;
-        margin: 20px;
         display: flex;
-        
-        .select-button {
-            width: 50%;
-            background-color: white;
-            color: $middle-grey;
-            border-color: $middle-grey;
+        justify-content: center;
+        align-items: center;
 
-            &.-clicked {
-                background-color: $middle-grey;
-                color: white;
-
-            }
+        .section-selector {
+            width: 80%;
+            margin: 20px;
+            display: flex;
             
+            .select-button {
+                width: 50%;
+                background-color: white;
+                color: $middle-grey;
+                border-color: $middle-grey;
+                outline: none;
+                margin:5px;
+
+                &.-clicked {
+                    background-color: $middle-grey;
+                    color: white;
+
+                }
+                
+            }
         }
     }
+
 }

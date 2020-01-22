@@ -10,7 +10,7 @@ class Calendar extends Component {
   constructor(props) {
     super(props);
     const { calendarSettings } = this.props;
-    const { defaultView, header, events } = calendarSettings;
+    const { header, events, defaultView } = calendarSettings;
 
     this.state = {
       header,
