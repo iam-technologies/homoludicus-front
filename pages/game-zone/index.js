@@ -13,7 +13,7 @@ const gameZone = () => {
   return (
       <Layout>
           <SectionHeader title={title} text={text} />
-          <div className="game-page">
+          <div className="calendar-page-wrapper">
               <div className="calendar-div">
                   <Calendar calendarSettings={calendarSettings} />
                 </div>

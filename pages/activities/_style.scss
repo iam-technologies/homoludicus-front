@@ -1,0 +1,26 @@
+.activities-div {
+
+    .section-header {
+        height: 120px;
+    }
+
+    .section-selector {
+        width: 100%;
+        margin: 20px;
+        display: flex;
+        
+        .select-button {
+            width: 50%;
+            background-color: white;
+            color: $middle-grey;
+            border-color: $middle-grey;
+
+            &.-clicked {
+                background-color: $middle-grey;
+                color: white;
+
+            }
+            
+        }
+    }
+}

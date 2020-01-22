@@ -21,7 +21,7 @@ const ServicesHome = () => {
         </div>
         <div className="games-div">
           <h4>Zona de Jocs</h4>
-          <Link href="/erizos-a-la-carrera">
+          <Link href="/game-zone">
             <a>
               <button className="button-black">Veure més</button>
             </a>
