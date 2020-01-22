@@ -5,13 +5,7 @@ import SectionHeader from '../../components/SectionHeader';
 
 const ContactPage = () => {
   const title = 'No dubtis en contactar-nos';
-  const text = (
-    <p>
-      Si tens algun dubte, proposta o simplement vols conèixer més sobre nosaltres…
-      <br />
-      no dubtis en contactactar-nos, estarem encantats de saber de tu.
-    </p>
-  );
+  const text = 'Si tens algun dubte, proposta o simplement vols conèixer més sobre nosaltres… no dubtis en contactactar - nos, estarem encantats de saber de tu.';
 
   const dir = 'Carrer de Sant Jaume, 73, 08400 Granollers-Barcelona';
   const tel = '930 13 86 10';
