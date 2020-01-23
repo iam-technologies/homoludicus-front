@@ -34,39 +34,40 @@ const activities = () => {
 
   const onEvents = currentSec === 'eventos' ? '-clicked' : '';
   const onCampaigns = currentSec === 'eventos' ? '' : '-clicked';
+
   return (
-      <Layout>
-          <div className="activities-div">
-              <SectionHeader title={title} text={text} />
-              <div className="section-wrapper">
-                  <div className="section-selector">
-                      <button
-                          className={`select-button ${onEvents}`}
-                          onClick={() => setCurrentSec('eventos')}
-                        >
-                            Eventos
-                        </button>
-                      <button
-                          className={`select-button ${onCampaigns}`}
-                          onClick={() => setCurrentSec('campañas')}
-                        >
-                            Ligas y campañas
-                        </button>
-                    </div>
-                </div>
-              {currentSec === 'eventos'
-                  ? (
-                      <div className="calendar-page-wrapper">
-                          <div className="calendar-div">
-                              <Calendar calendarSettings={calendarSettings} />
-                            </div>
-                        </div>
-                  )
-                  : <p>LIGAS Y CAMPAÑAS</p>}
-
+    <Layout>
+      <div className="activities-div">
+        <SectionHeader title={title} text={text} />
+        <div className="section-wrapper">
+          <div className="section-selector">
+            <button
+              className={`select-button ${onEvents}`}
+              onClick={() => setCurrentSec('eventos')}
+            >
+              Eventos
+            </button>
+            <button
+              className={`select-button ${onCampaigns}`}
+              onClick={() => setCurrentSec('campañas')}
+            >
+              Ligas y campañas
+            </button>
+          </div>
+        </div>
+        {currentSec === 'eventos'
+          ? (
+            <div className="calendar-page-wrapper">
+              <div className="calendar-div">
+                <Calendar calendarSettings={calendarSettings} />
+              </div>
             </div>
+          )
+          : <p>LIGAS Y CAMPAÑAS</p>}
 
-        </Layout>
+      </div>
+
+    </Layout>
   );
 };
 

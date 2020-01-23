@@ -9,7 +9,7 @@ import list from '@fullcalendar/list';
 class Calendar extends Component {
   constructor(props) {
     super(props);
-    const { calendarSettings } = this.props;
+    const { calendarSettings, onClicked } = this.props;
     const { header, events, defaultView } = calendarSettings;
 
     this.state = {
@@ -17,7 +17,8 @@ class Calendar extends Component {
       events,
       defaultView,
       calendarWeekends: true,
-      buttonText: { list: 'Llista' }
+      buttonText: { list: 'Llista' },
+      onClicked
     };
   }
 
@@ -34,31 +35,32 @@ class Calendar extends Component {
   // }
 
   render() {
-    const { events, defaultView, header, calendarWeekends, buttonText } = this.state;
+    const { events, defaultView, header, calendarWeekends, buttonText, onClicked } = this.state;
     return (
-          <FullCalendar
-              defaultView={defaultView}
-              plugins={[
-                  dayGridPlugin,
-                  interactionPlugin,
-                  timeGridPlugin,
-                  list
-                ]}
-              selectable
-              unselectAuto
-              events={events}
-              locale={caLocale}
-              displayEventEnd
-                // schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
-              weekends={calendarWeekends}
-              header={header}
-              minTime="06:00:00"
-              maxTime="21:00:00"
-              buttonText={buttonText}
-              allDayDefault={false}
-              allDay={false}
-            // dateClick={this.handleDateClick}
-            />
+      <FullCalendar
+        onClick={onClicked}
+        defaultView={defaultView}
+        plugins={[
+          dayGridPlugin,
+          interactionPlugin,
+          timeGridPlugin,
+          list
+        ]}
+        selectable
+        unselectAuto
+        events={events}
+        locale={caLocale}
+        displayEventEnd
+        weekends={calendarWeekends}
+        header={header}
+        minTime="06:00:00"
+        maxTime="21:00:00"
+        buttonText={buttonText}
+        allDayDefault={false}
+        allDay={false}
+        eventClick // Conduce directamente a la url del evento. Se le puede pasar una función y anular el default de redirigir.
+        select={onClicked}
+      />
     );
   }
 }

@@ -11,7 +11,10 @@ import NavBar from './Navbar';
 class Layout extends React.Component {
   constructor(props) {
     super(props);
-    this.onWindowResize = bindActionCreators(windowResizeActs, props.dispatch);
+    this.onWindowResize = bindActionCreators(
+      windowResizeActs,
+      props.dispatch
+    );
   }
 
   componentDidMount() {
@@ -21,17 +24,16 @@ class Layout extends React.Component {
   render() {
     const { children, pathname } = this.props;
     return (
-      <Fragment>
+      <>
         <NavBar pathname={pathname} />
         {children}
         <Footer />
-      </Fragment>
+      </>
     );
   }
 }
 
 export default connect()(withWindowResize(Layout));
-
 
 
 // import React, { Fragment } from 'react';

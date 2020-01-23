@@ -44,10 +44,10 @@ class Navbar extends Component {
       title: 'Botiga online', url: '/shop'
     },
     {
-      title: 'Activitats', url: '/about-us'
+      title: 'Activitats', url: '/activities'
     },
     {
-      title: 'Serveis', url: '/about-us'
+      title: 'Serveis', url: '/services'
     },
     {
       title: 'Contacte', url: '/contact'

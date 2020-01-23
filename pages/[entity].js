@@ -1,6 +1,7 @@
 import React from 'react';
 import _get from 'lodash/get';
-
+import Layout from '../components/Layout';
+import Product from '../components/product/Product';
 import { api } from '../serverServices';
 import { routes as utilsRoutes } from '../utils';
 import { SEO } from '../components/common';

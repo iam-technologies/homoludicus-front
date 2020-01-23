@@ -1,0 +1,51 @@
+.booking-modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 3000;
+
+    .modal-layer {
+        background: rgba(0, 0, 0, 0.8);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .center-modal {
+            width: 80%;
+            height: 600px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .modal-header {
+                display: flex;
+                justify-content: flex-end;
+                width: 80%;
+                align-items: flex-start;
+                height: 60px;
+                margin-top: 60px;
+                padding-top: 30px;
+                padding: 30px;
+
+                .modal-title {
+                    width: 100%;
+                    margin: 0;
+                    text-align: center;
+                }
+
+                .close-icon-div {
+                    width: 35px;
+                    height: 35px;
+                    border: $light-grey 2px solid;
+                    padding: 4px;
+                    display: flex;
+                    justify-content: center;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
