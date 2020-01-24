@@ -1,7 +1,7 @@
 
 .contact-form-div {
     
-    input, .button-div {
+    input, .button-div, textarea {
         width: 100%;
     }
 
@@ -12,7 +12,6 @@
 
     .message {
         height: 142px;
-        overflow: scroll;
-
     }
+
 }

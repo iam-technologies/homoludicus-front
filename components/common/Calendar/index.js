@@ -34,6 +34,8 @@ class Calendar extends Component {
   //   }
   // }
 
+
+
   render() {
     const { events, defaultView, header, calendarWeekends, buttonText, onClicked } = this.state;
     return (

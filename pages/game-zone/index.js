@@ -33,16 +33,27 @@ const gameZone = () => {
   const modalTitle = 'Reserva el teu espai !';
   const defaultModalState = false;
   const [currentSec, setModalState] = useState(defaultModalState);
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+
   const onBook = (info) => {
-    console.log(`selected ${info.startStr} to ${info.endStr}`);
-    console.log(info.start, '=>', info.end);
     setModalState(true);
-    console.log(currentSec, 'currentSec');
+    const start = info.startStr;
+    const end = info.endStr;
+    setStartDate(start);
+    setEndDate(end);
   };
 
   return (
     <>
-      {currentSec && <Modal modalTitle={modalTitle} setModalState={setModalState} />}
+      {currentSec && (
+        <Modal
+          modalTitle={modalTitle}
+          setModalState={setModalState}
+          startDate={startDate}
+          endDate={endDate}
+        />
+      )}
       <Layout>
         <SectionHeader title={title} text={text} />
         <div className="calendar-page-wrapper">

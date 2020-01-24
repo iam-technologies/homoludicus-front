@@ -2,7 +2,7 @@ import React from 'react';
 import BookingForm from '../../BookingForm';
 
 const Modal = (props) => {
-  const { modalTitle, setModalState } = props;
+  const { modalTitle, setModalState, startDate, endDate } = props;
   return (
       <div className="booking-modal">
           <div className="modal-layer">
@@ -13,7 +13,7 @@ const Modal = (props) => {
                           <h3>X</h3>
                         </div>
                     </div>
-                  <BookingForm />
+                  <BookingForm startDate={startDate} endDate={endDate} />
                 </div>
             </div>
         </div>
