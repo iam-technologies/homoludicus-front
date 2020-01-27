@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import _get from 'lodash/get';
-
+import { useSelector, useDispatch } from 'react-redux';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
-
+import { getGeneric } from '../redux/actions/genericActs';
 import { api, getImageUrl } from '../serverServices';
 import { Home, Layout } from '../components';
 import { SEO } from '../components/common';
@@ -12,6 +12,18 @@ const HomePage = ({ content = {}, selection = {}, loaded = true, imgUrl = '' }) 
   const desc = _get(content, 'seoDesc.es', '');
   const attachment = _get(content, 'seoImg.attachment', '');
   const pathname = '/';
+
+  const shopProducts = () => {
+    const genericLoad = useSelector(state => state.generic.load);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      if (!genericLoad) {
+        dispatch(getGeneric());
+      }
+    }, [genericLoad]);
+  };
+
   // console.log('selection', selection);
   return (
     <Layout pathname={pathname}>

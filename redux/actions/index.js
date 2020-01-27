@@ -8,6 +8,7 @@ import showLoginActs from './showLoginActs';
 import userActs from './userActs';
 import windowResizeActs from './windowResizeActs';
 import showSearchActs from './showSearchActs';
+import genericActs from './genericActs';
 
 
 export {
@@ -20,5 +21,6 @@ export {
   showLoginActs,
   userActs,
   windowResizeActs,
-  showSearchActs
+  showSearchActs,
+  genericActs
 };
