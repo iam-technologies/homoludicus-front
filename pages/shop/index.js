@@ -10,7 +10,7 @@ const shop = ({ selection, content }) => {
   const { products } = selection;
 
   const carouselItems = _get(content, 'slider', []);
-
+  console.log(products);
   return (
     <Layout>
       <Carousel items={carouselItems} />
@@ -28,16 +28,6 @@ const shop = ({ selection, content }) => {
       </div>
     </Layout>
   );
-};
-
-shop.getInitialProps = async () => {
-  const content = await api.contents.getByKey('home', (err, res) => {
-    return res ? res.data : null;
-  });
-  const imgUrl = await getImageUrl(content);
-  const selection = content.selections || [];
-
-  return { content, selection, loaded: true, imgUrl };
 };
 
 export default shop;
