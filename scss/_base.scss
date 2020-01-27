@@ -95,6 +95,17 @@
     color: white;
   }
 
+  .button-ghost-grey {
+    background-color: transparent;
+    border-color: $middle-grey;
+    color: $middle-grey;
+
+    &:hover {
+      background-color: $middle-grey;
+      color: white;
+    }
+  }
+
   .button-ghost-black, a.button-ghost-black {
     background-color: transparent;
     border-color: $main-black;

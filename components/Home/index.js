@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import _get from 'lodash/get';
 import { withWindowResize } from '../hoc';
-import Carousel from './Carousel';
+import Carousel from '../common/Carousel';
 import { MobileHeader } from '../common';
 import FeaturedEvents from './FeaturedEvents';
 import FeaturedProducts from './FeaturedProducts';

@@ -1,0 +1,15 @@
+.age-searcher-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        align-self: center;
+    }
+    .search-buttons {
+        button {
+            width: 141px;
+            height: 46px;
+        }
+    }
+}
