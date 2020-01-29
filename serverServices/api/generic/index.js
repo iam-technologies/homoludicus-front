@@ -22,16 +22,4 @@ const getGeneric = async (callback) => {
   }
 };
 
-
-// export default async (callback) => {
-//   const url = '/generic';
-//   const headers = addHeaders();
-
-//   try {
-//     const response = await axios({ method: 'get', url, headers });
-//     return catchResponse.api(response, callback);
-//   } catch (error) {
-//     return catchErrors.api(error, callback);
-//   }
-// };
 export default { getGeneric };

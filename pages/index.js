@@ -22,7 +22,6 @@ const HomePage = ({ content = {}, selection = {}, loaded = true, imgUrl = '' }) 
       dispatch(getGeneric());
     }
   }, [genericLoad]);
-  console.log('selection', selection);
 
   return (
     <Layout pathname={pathname}>
@@ -56,9 +55,7 @@ HomePage.getInitialProps = async () => {
 
   const imgUrl = await getImageUrl(content);
 
-  const selection = content.selections || [];
-
-  return { content, selection, loaded: true, imgUrl };
+  return { content, loaded: true, imgUrl };
 };
 
 export default HomePage;
