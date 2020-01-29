@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
 import SwipeableViews from 'react-swipeable-views';
-import { Link } from '../../routes';
+import Link from 'next/link';
 
 import { cartsActs, showLoginActs } from '../../redux/actions';
 import { MobileHeader } from '../common';
@@ -81,7 +81,7 @@ class BudgetCheckout extends Component {
       }
 
       this.setState({ item: { ...item } });
-    // if changeState is true.
+      // if changeState is true.
     } else {
       const newValue = { ...finalValue };
 

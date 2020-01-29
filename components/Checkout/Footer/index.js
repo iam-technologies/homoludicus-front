@@ -3,7 +3,7 @@ import PropsTypes from 'prop-types';
 import Loader from 'react-loaders';
 import _ from 'lodash';
 import Alert from 'react-s-alert';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { api } from '../../../serverServices';
 import { validateStep } from '../helpers';

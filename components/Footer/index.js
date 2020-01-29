@@ -5,7 +5,7 @@ import { api } from '../../serverServices';
 import { withWindowResize } from '../hoc';
 import { Rating } from '../common';
 import MailChimpForm from './MailChimpForm';
-import { Link } from '../../routes';
+import Link from 'next/link';
 
 import infoSource from '../../utils/infoSource';
 

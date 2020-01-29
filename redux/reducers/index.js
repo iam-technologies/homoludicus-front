@@ -36,3 +36,4 @@ export default combineReducers({
   windowResize,
   generic
 });
+

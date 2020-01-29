@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Link } from '../../routes';
+import Link from 'next/link';
 import { ButtonInput } from '../common';
 
 class Compare extends Component {
@@ -42,7 +42,7 @@ class Compare extends Component {
                     />
                   </a>
                 </Link>
-                { clickCompare && <span> Selecciona hasta 3 productos para comparar</span> }
+                {clickCompare && <span> Selecciona hasta 3 productos para comparar</span>}
               </React.Fragment>
             )
           }
@@ -55,7 +55,7 @@ class Compare extends Component {
                   className={`compare_ui-button ${clickCompare ? 'compare_ui-button-active' : 'compare_ui-button-inactive'}`}
                   onClick={this.onClick}
                 />
-                { clickCompare && <span> Selecciona hasta 3 productos para comparar</span> }
+                {clickCompare && <span> Selecciona hasta 3 productos para comparar</span>}
               </React.Fragment>
             )
           }

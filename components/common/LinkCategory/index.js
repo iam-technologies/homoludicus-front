@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Link } from '../../../routes';
+import Link from 'next/link';
 import { urlUtils } from '../../../utils';
 
 const LinkCategory = ({ id, className, children, onClick }) => {

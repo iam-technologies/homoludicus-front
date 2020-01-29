@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { navMobileActs } from '../../../redux/actions';
 import { withWindowResize } from '../../hoc';

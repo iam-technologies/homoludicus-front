@@ -2,14 +2,14 @@ import _ from 'lodash';
 import React, { PureComponent } from 'react';
 import Router from 'next/router'
 
-import { Link } from '../../routes';
+import Link from 'next/link';
 //import Name from './Name';
 import { withWindowResize } from '../hoc';
 import { MobileHeader, Image, Badge, ButtonInput } from '../common';
 import { dataFormat, texts, priceCalc, urlUtils } from '../../utils';
 
 class CompareProducts extends PureComponent {
-  
+
   goBack = e => {
     Router.push('/');
   };
@@ -78,7 +78,7 @@ class CompareProducts extends PureComponent {
                         ) : ''
                       }
                     </div>
-      
+
                     <div className="product_box_ui-desc">
                       <div className="product_box_ui-header">
                         <div className="product_box_ui-title">{name}</div>
@@ -108,7 +108,7 @@ class CompareProducts extends PureComponent {
                       <a>
                         <ButtonInput
                           label="AÑADIR AL CARRITO"
-                          onClick={() => {}}
+                          onClick={() => { }}
                         />
                       </a>
                     </Link>

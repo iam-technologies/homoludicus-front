@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
 import settings from '../../../settings';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { dataFormat } from '../../../utils';
 import { ButtonInput } from '../../common';

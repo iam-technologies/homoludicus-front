@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { navMobileActs } from '../../../redux/actions';
 import NavFooter from './NavFooter';

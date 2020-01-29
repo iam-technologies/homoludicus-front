@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Alert from 'react-s-alert';
 import React, { Component } from 'react';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { showLoginActs, isLoginActs, userActs } from '../../../redux/actions';
 import { msgUI, checkFields } from '../../../utils';

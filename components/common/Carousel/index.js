@@ -1,7 +1,7 @@
 import _get from 'lodash/get';
 import ImageGallery from 'react-image-gallery';
 import React from 'react';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { imgServices } from '../../../serverServices';
 import { urlUtils } from '../../../utils';

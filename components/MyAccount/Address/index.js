@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { MobileHeader } from '../../common';
 import ShippingAddress from './ShippingAddress';

@@ -1,22 +1,37 @@
 import axios from 'axios';
+import configApi from '../../config';
 
 import { addHeaders, catchErrors, catchResponse } from '../../utils';
 
 /**
  * Generic
  *
- * @param {String} id
  * @param {function} callback
  *
  */
-export default async (callback) => {
-  const url = '/generic';
+const getGeneric = async (callback) => {
+  const apiUrl = configApi.baseUrl;
+  const url = `${apiUrl}/generic`;
   const headers = addHeaders();
 
   try {
     const response = await axios({ method: 'get', url, headers });
-    return catchResponse.api(response, callback);
+    catchResponse.api(response, callback);
   } catch (error) {
-    return catchErrors.api(error, callback);
+    catchErrors.api(error, callback);
   }
 };
+
+
+// export default async (callback) => {
+//   const url = '/generic';
+//   const headers = addHeaders();
+
+//   try {
+//     const response = await axios({ method: 'get', url, headers });
+//     return catchResponse.api(response, callback);
+//   } catch (error) {
+//     return catchErrors.api(error, callback);
+//   }
+// };
+export default { getGeneric };

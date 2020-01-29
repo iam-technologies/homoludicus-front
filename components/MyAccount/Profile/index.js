@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Alert from 'react-s-alert';
 import React, { Component } from 'react';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { userActs } from '../../../redux/actions';
 import { api } from '../../../serverServices';

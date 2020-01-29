@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import moment from 'moment';
 import React from 'react';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { dataFormat, texts } from '../../../utils';
 import { Badge } from '../../common';

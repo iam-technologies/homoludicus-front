@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Layout, OrderList, PrivateRoute } from '../components';
+import { Layout, OrderList, PrivateRoute } from '../../components';
 
 const orders = ({ isServer }) => (
   <Layout>

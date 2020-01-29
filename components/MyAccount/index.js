@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { Link } from '../../routes';
+import Link from 'next/link';
 
 import { MobileHeader } from '../common';
 import { showLoginActs } from '../../redux/actions';
