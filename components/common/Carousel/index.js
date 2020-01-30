@@ -32,7 +32,7 @@ const Carousel = ({ items }) => {
         {
           (link && btnText)
           && (
-            <Link route={link}>
+            <Link href={link}>
               <a className="carousel_btn">{btnText}</a>
             </Link>
           )

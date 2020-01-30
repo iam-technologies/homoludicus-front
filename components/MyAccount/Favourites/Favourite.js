@@ -7,7 +7,7 @@ import { Image } from '../../common';
 
 
 export default ({ item, onRemove }) => (
-  <Link route={urlUtils.linkToProduct('', item)}>
+  <Link href={urlUtils.linkToProduct('', item)}>
     <a className="favourite_item">
       <div className="favourite_item__img">
         <Image

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import _get from 'lodash/get';
 import { useSelector, useDispatch } from 'react-redux';
 import { api, getImageUrl } from '../../serverServices';
@@ -8,12 +8,14 @@ import CategoryFilter from '../../components/common/CategoryFilter';
 import Carousel from '../../components/common/Carousel';
 import getGeneric from '../../redux/actions/genericActs';
 
-const shop = ({ content }) => {
+const shop = ({ content, selection, categories }) => {
 
   const carouselItems = _get(content, 'slider', [])
-
+  const { products } = selection
+  // console.log('products', products)
+  // console.log('content', content)
   const genericLoad = useSelector(state => state.generic.load);
-  const products = useSelector(state => state.generic.doc);
+  const generics = useSelector(state => state.generic.doc);
 
   const dispatch = useDispatch();
 
@@ -21,21 +23,30 @@ const shop = ({ content }) => {
     if (!genericLoad) {
       dispatch(getGeneric());
     }
-  }, [genericLoad]);
+  }, []);
+
+  const initialValue = '';
+
+  const [inputValue, setInputValue] = useState(initialValue);
+
+  const handleInputChange = (e) => {
+    const { value } = e.target;
+    setInputValue(value);
+  };
 
   return (
     <Layout>
       <Carousel items={carouselItems} />
       <div className="shop-page">
         <section className="left-side">
-          <CategoryFilter />
+          <CategoryFilter inputValue={inputValue} handleInputChange={handleInputChange} />
         </section>
         <section className="right-side">
-          <SearchByAge products={products} />
+          <SearchByAge generics={generics} />
           <p>SHOP</p>
-          {/* {products.map((product) => {
+          {products.map((product) => {
             return <p key={product._id}>{product._id}</p>;
-          })} */}
+          })}
         </section>
       </div>
     </Layout>
@@ -47,8 +58,11 @@ shop.getInitialProps = async () => {
     return res ? res.data : null;
   });
   const imgUrl = await getImageUrl(content);
-
-  return { content, loaded: true, imgUrl };
+  const selection = content.selections || [];
+  const categories = await api.categories.getAll({}, (err, res) => {
+    return res ? res.data : null;
+  })
+  return { content, selection, loaded: true, imgUrl, categories };
 };
 
 export default shop;

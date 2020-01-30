@@ -7,7 +7,7 @@ import { urlUtils } from '../../../utils';
 const LinkCategory = ({ id, className, children, onClick }) => {
   const pathname = urlUtils.linkToCategory(id);
   return (
-    <Link route={`${pathname}`}>
+    <Link href={`${pathname}`}>
       <a
         className={className}
         onClick={onClick}
@@ -27,7 +27,7 @@ LinkCategory.propTypes = {
 
 LinkCategory.defaultProps = {
   className: 'link_ui',
-  onClick: () => {}
+  onClick: () => { }
 };
 
 LinkCategory.displayName = 'LinkCategory';

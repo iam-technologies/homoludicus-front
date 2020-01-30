@@ -108,7 +108,7 @@ export default class FooterCheckout extends Component {
 
         {
           (indexTab === 0) && !disabled && (
-            <Link route="/">
+            <Link href="/">
               <a className="link">
                 <img src="/images/icon_back_checkout.png" alt="Volver a la tienda" />
                 <span>Volver a la tienda</span>

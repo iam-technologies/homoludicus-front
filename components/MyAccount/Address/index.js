@@ -17,7 +17,7 @@ export default () => (
     <BillingAddress />
 
     <div className="app-my_account-container link_container">
-      <Link route="/my-account">
+      <Link href="/my-account">
         <a className="link_return">
           <img src="/images/icon_back_checkout.png" alt="Volver a mi cuenta" />
           <span>Volver a mi cuenta</span>

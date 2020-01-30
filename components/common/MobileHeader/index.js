@@ -43,7 +43,7 @@ class MobileHeader extends Component {
         }
         {
           lastLocation && (
-            <Link route={lastLocation}>
+            <Link href={lastLocation}>
               <a className="header_mobile_ui-icon_previous">
                 <img src="/images/icon_nav_previouw.png" alt="previos" />
               </a>
@@ -52,7 +52,7 @@ class MobileHeader extends Component {
         }
         {
           logo && (
-            <Link route="/">
+            <Link href="/">
               <a className="header_mobile_ui-logo">
                 <img src="/images/company/icon_logotipo_neutro.png" alt={infoSource.companyName} />
               </a>

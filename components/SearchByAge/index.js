@@ -1,9 +1,7 @@
 import React from 'react';
 
-const SearchByAge = ({ products }) => {
-  const ages = products.age
-  // ['0 - 12 Mesos', '12 - 24 Mesos', '3 + Anys', '4 - 7 Anys', '7 - 12 Anys', '12 + Anys'];
-  console.log(products)
+const SearchByAge = ({ generics }) => {
+  const ages = generics.age || [];
   return (
     <div className="age-searcher-div">
       <h2>Filtrar jocs per edat</h2>

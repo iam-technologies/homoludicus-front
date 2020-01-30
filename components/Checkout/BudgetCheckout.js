@@ -182,7 +182,7 @@ class BudgetCheckout extends Component {
 
         <div className="app_checkout-left">
           <header className="app_checkout-header">
-            <Link route="/">
+            <Link href="/">
               <a className="link">
                 <img src="/images/logo_search.png" alt={infoSource.companyName} />
               </a>
@@ -259,27 +259,27 @@ class BudgetCheckout extends Component {
           <div className="app_checkout-legal">
             <strong>Información básica sobre protección de datos</strong><br />
             <strong>Responsable:</strong> {infoSource.compNameCap} &nbsp;(
-            <Link route="/legal/cookies" target="_blank">
+            <Link href="/legal/cookies" target="_blank">
               <a>+info</a>
             </Link>)<br />
             <strong>Finalidad:</strong> Informarle sobre descuentos y nuevos productos&nbsp;(
-            <Link route="/legal/privacy" target="_blank">
+            <Link href="/legal/privacy" target="_blank">
               <a>+info</a>
             </Link>
             )<br />
             <strong>Legitimación:</strong> Consentimiento del interesado<br />
             <strong>Destinatarios:</strong> No se comunican datos a terceros, salvo obligación legal&nbsp;(
-            <Link route="/legal/privacy" target="_blank">
+            <Link href="/legal/privacy" target="_blank">
               <a>+info</a>
             </Link>
             )<br />
             <strong>Derechos:</strong> Acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional&nbsp;(
-            <Link route="/legal/privacy" target="_blank">
+            <Link href="/legal/privacy" target="_blank">
               <a>+info</a>
             </Link>
             )<br />
             <strong>Información adicional:</strong> Puede consultar información adicional y detallada en nuestra página sobre Términos de Privacidad&nbsp;(
-            <Link route="/legal/privacy" target="_blank">
+            <Link href="/legal/privacy" target="_blank">
               <a>+info</a>
             </Link>
             )

@@ -32,7 +32,7 @@ class Compare extends Component {
           {
             showCompare && (
               <React.Fragment>
-                <Link route={{ pathname, query: { selectedItems: idString, catName } }}>
+                <Link href={{ pathname, query: { selectedItems: idString, catName } }}>
                   <a>
                     <ButtonInput
                       label="VER COMPARATIVA"

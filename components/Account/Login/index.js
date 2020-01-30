@@ -81,7 +81,7 @@ class Login extends Component {
     return (
       <div className={`login_app${show ? '-show' : ''}`}>
         <header className="header_login">
-          <Link route="/">
+          <Link href="/">
             <a onClick={this.onClose} className="header_login-logo">
               <img src="/images/company/icon_logotipo_neutro.png" alt={infoSource.compNameCap} />
             </a>
@@ -124,7 +124,7 @@ class Login extends Component {
           />
 
           <p className="link_forgot">
-            <Link route="/forgot-password">
+            <Link href="/forgot-password">
               <a onClick={this.onClose}>Recuperar contraseña</a>
             </Link>
           </p>

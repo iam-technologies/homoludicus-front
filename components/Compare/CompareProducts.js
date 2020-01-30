@@ -104,7 +104,7 @@ class CompareProducts extends PureComponent {
                         </ul> */}
                       </div>
                     </div>
-                    <Link route={{ pathname: urlUtils.linkToProduct('', item) }}>
+                    <Link href={{ pathname: urlUtils.linkToProduct('', item) }}>
                       <a>
                         <ButtonInput
                           label="AÑADIR AL CARRITO"
