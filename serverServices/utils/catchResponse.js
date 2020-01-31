@@ -1,6 +1,5 @@
 import sessionCart from './sessionCart';
 
-
 const api = (response, callback) => {
   const { data } = response;
 
@@ -9,7 +8,6 @@ const api = (response, callback) => {
   }
   return callback(response.data, null);
 };
-
 
 const carts = (response, callback) => {
   const { data } = response;
@@ -32,7 +30,6 @@ const carts = (response, callback) => {
     callback(response.data, null);
   }
 };
-
 
 export default {
   api,

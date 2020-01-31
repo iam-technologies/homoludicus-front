@@ -12,8 +12,7 @@ const shop = ({ content, selection, categories }) => {
 
   const carouselItems = _get(content, 'slider', [])
   const { products } = selection
-  // console.log('products', products)
-  // console.log('content', content)
+
   const genericLoad = useSelector(state => state.generic.load);
   const generics = useSelector(state => state.generic.doc);
 
@@ -37,12 +36,12 @@ const shop = ({ content, selection, categories }) => {
   return (
     <Layout>
       <Carousel items={carouselItems} />
+      <SearchByAge generics={generics} />
       <div className="shop-page">
         <section className="left-side">
-          <CategoryFilter inputValue={inputValue} handleInputChange={handleInputChange} />
+          <CategoryFilter inputValue={inputValue} handleInputChange={handleInputChange} categories={categories} />
         </section>
         <section className="right-side">
-          <SearchByAge generics={generics} />
           <p>SHOP</p>
           {products.map((product) => {
             return <p key={product._id}>{product._id}</p>;
@@ -59,9 +58,10 @@ shop.getInitialProps = async () => {
   });
   const imgUrl = await getImageUrl(content);
   const selection = content.selections || [];
-  const categories = await api.categories.getAll({}, (err, res) => {
+  const categories = await api.categories.getAll({ query: { idFather: '0' } }, (err, res) => {
     return res ? res.data : null;
-  })
+  });
+
   return { content, selection, loaded: true, imgUrl, categories };
 };
 
