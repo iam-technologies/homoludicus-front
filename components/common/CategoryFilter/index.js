@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import SearchBar from '../../SearchBar';
 
 const CategoryFilter = (props) => {
   const { inputValue, handleInputChange, categories } = props;
-  console.log(categories)
+  // console.log(categories)
+
+  const defaultState = false;
+  const [menuState, setMenuState] = useState(defaultState);
+
+  const toggleMenu = (state) => {
+    setMenuState(!state);
+    console.log(state);
+  };
+
+  const menuClass = menuState ? '-active' : '';
+
 
   return (
     <>
@@ -15,15 +26,16 @@ const CategoryFilter = (props) => {
             <>
               <div className="category-div">
                 <p key={category._id}>{category.name.es}</p>
+                <p onClick={() => toggleMenu(menuState)}>+</p>
                 <hr />
               </div>
-              <div className="sub-category-div">
-                {category.childrens.map(child => {
-                  return <p>{child.name.es}</p>
+              <div className={`sub-category-div${menuClass}`}>
+                {category.childrens.map((child) => {
+                  return <p>{child.name.es}</p>;
                 })}
               </div>
             </>
-          )
+          );
         })}
       </div>
     </>
@@ -31,4 +43,3 @@ const CategoryFilter = (props) => {
 };
 
 export default CategoryFilter;
-

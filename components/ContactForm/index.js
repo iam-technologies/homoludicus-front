@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import useForm from '@bit/iamtechnologies.iamtech-js.use-form';
 
 const ContactForm = () => {
@@ -27,16 +27,56 @@ const ContactForm = () => {
     </div>
   );
 
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const issueRef = useRef(null);
+  const messageRef = useRef(null);
+
+  const handleKeyPress = (event, ref) => {
+    if (event.key === 'Enter') {
+      if (ref === nameRef) {
+        emailRef.current.focus();
+      } else if (ref === emailRef) {
+        issueRef.current.focus();
+      } else if (ref === issueRef) {
+        messageRef.current.focus();
+      }
+    }
+  };
+
   return (
     <div className="contact-form-div">
       <form onSubmit={handleSubmit}>
-        <input type="text" {...useInput('name', 'isRequired')} placeholder="Escriu el teu nom" />
+        <input
+          type="text"
+          {...useInput('name', 'isRequired')}
+          placeholder="Escriu el teu nom"
+          onKeyDown={e => handleKeyPress(e, nameRef)}
+          ref={nameRef}
+        />
         {formErrors}
-        <input type="text" {...useInput('email', 'isEmail,isRequired')} placeholder="El teu email" />
+        <input
+          type="text"
+          {...useInput('email', 'isEmail,isRequired')}
+          placeholder="El teu email"
+          onKeyDown={e => handleKeyPress(e, emailRef)}
+          ref={emailRef}
+        />
         {formErrors}
-        <input type="text" {...useInput('matter', 'isRequired')} placeholder="Asumpte" />
+        <input
+          type="text"
+          {...useInput('matter', 'isRequired')}
+          placeholder="Asumpte"
+          onKeyDown={e => handleKeyPress(e, issueRef)}
+          ref={issueRef}
+        />
         {formErrors}
-        <textarea className="message" {...useInput('message', 'isRequired')} placeholder="Escriu el teu missatge" />
+        <textarea
+          className="message"
+          {...useInput('message', 'isRequired')}
+          placeholder="Escriu el teu missatge"
+          ref={messageRef}
+        />
         {formErrors}
         <div className="button-div">
           {isValid && (

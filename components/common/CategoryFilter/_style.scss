@@ -2,4 +2,25 @@
     h5 {
         font-size: 18px;
     }
+    .category-div {
+        &.-active {
+            font-weight: bold;
+
+        }
+    }
+
+    .sub-category-div {
+        height: 0;
+        overflow: hidden;
+
+        // &.active {
+        //     display: block;
+        //     height: 100%;
+        // }
+    }
+
+    .active {
+        height: 0;
+        overflow: hidden;
+    }
 }
