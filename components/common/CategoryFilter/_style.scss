@@ -1,26 +1,63 @@
 .categories-div {
     h5 {
         font-size: 18px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $light-grey;
     }
+// acordion
     .category-div {
-        &.-active {
-            font-weight: bold;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 2px solid $light-grey;
+        padding: 20px 0 20px 0;
 
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
         }
+
+        .tab-label {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+
+            &::after {
+                content: url("/icon/icon-more.svg");
+            }
+        }
+
+        .tab-content {
+            display: none;
+            height: 0;
+            transition: all .35s;
+            margin-top: 10px;
+
+            p {
+                cursor: pointer;
+                line-height: 22px;
+                padding-left: 20px;
+
+                &:hover, &:active {
+                    text-decoration: underline;
+                    font-weight: bold;
+                }
+            }
+        }   
     }
+// :checked
+    input:checked {
 
-    .sub-category-div {
-        height: 0;
-        overflow: hidden;
+        ~ .tab-label {
+            &::after {
+                content: url("/icon/icon-less.svg");
+            }
+        }
 
-        // &.active {
-        //     display: block;
-        //     height: 100%;
-        // }
-    }
-
-    .active {
-        height: 0;
-        overflow: hidden;
+        ~ .tab-content {
+            display: block;
+            height: fit-content;
+            transition: all .35s;
+        }
     }
 }

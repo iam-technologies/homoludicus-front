@@ -15,6 +15,7 @@ import BoxDetails from './BoxDetails';
 import BoxRatings from './BoxRatings';
 import RelatedProduct from './RelatedProduct';
 import InfoSwitcher from './InfoSwitcher';
+import ShopLayout from '../../common/ShopLayout';
 
 class Product extends React.Component {
   constructor(props) {
@@ -117,12 +118,14 @@ class Product extends React.Component {
             images={_.get(product, 'img', [])}
             item={product}
           /> */}
-          <BoxBuyProduct
-            item={product}
-            index={indexEdit === '' ? -1 : Number(indexEdit)}
-            alt={_.get(alt, '0', name)}
-            src={img}
-          />
+          <ShopLayout>
+            <BoxBuyProduct
+              item={product}
+              index={indexEdit === '' ? -1 : Number(indexEdit)}
+              alt={_.get(alt, '0', name)}
+              src={img}
+            />
+          </ShopLayout>
         </section>
 
         {/* <section className="app-product-box_information">
