@@ -79,8 +79,8 @@ class Product extends React.Component {
   render() {
     const { product, loaded, refundsText } = this.state;
     const { img, alt } = product;
-    const { location, url } = this.props;
-
+    const { location, url, categories } = this.props;
+    console.log('categories', categories);
     // const productName = _.get(product, 'name.es', `Producto de ${infoSource.companyName}`);
     // const productDesc = _.get(product, 'shortDesc.es', `Producto de ${infoSource.companyName}`);
 
@@ -111,41 +111,41 @@ class Product extends React.Component {
           </h1>
           <p>Botiga{url}</p>
         </div>
-
-        <section className="app-product-box_product">
-          {/* <BoxSlider
+        <ShopLayout categories={categories}>
+          <section className="app-product-box_product">
+            {/* <BoxSlider
             badge={_.get(product, 'state', '')}
             images={_.get(product, 'img', [])}
             item={product}
           /> */}
-          <ShopLayout>
             <BoxBuyProduct
               item={product}
               index={indexEdit === '' ? -1 : Number(indexEdit)}
               alt={_.get(alt, '0', name)}
               src={img}
             />
-          </ShopLayout>
-        </section>
+          </section>
 
-        {/* <section className="app-product-box_information">
+          {/* <section className="app-product-box_information">
           <BoxDetails
             item={product}
             refundsText={refundsText}
           /> */}
 
-        {/* <BoxRatings
+          {/* <BoxRatings
             productId={product._id}
           />
         </section> */}
 
-        <InfoSwitcher product={product} />
+          <InfoSwitcher product={product} />
 
-        <RelatedProduct
-          key={_.get(product, '_id', 'newkey')}
-          item={product}
-        />
+          <RelatedProduct
+            key={_.get(product, '_id', 'newkey')}
+            item={product}
+          />
+        </ShopLayout>
       </section>
+
     );
   }
 }
