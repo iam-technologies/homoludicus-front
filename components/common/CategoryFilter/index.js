@@ -24,7 +24,11 @@ const CategoryFilter = (props) => {
           return (
             <>
               <div className="category-div">
-                <input type="checkbox" className="category-in" id={category.name.es} name="rd" />
+                <input
+                  type="checkbox"
+                  className="category-in"
+                  id={category.name.es}
+                />
                 <label className="tab-label" htmlFor={category.name.es}>
                   {category.name.es}
                 </label>
@@ -37,6 +41,36 @@ const CategoryFilter = (props) => {
             </>
           );
         })}
+        <div className="category-div">
+          <input
+            type="checkbox"
+            className="category-in"
+            id="Habilidad"
+          />
+          <label className="tab-label" htmlFor="Habilidad">
+            Habilidad
+          </label>
+        </div>
+        <div className="category-div">
+          <input
+            type="checkbox"
+            className="category-in"
+            id="Edad"
+          />
+          <label className="tab-label" htmlFor="Edad">
+            Edad
+          </label>
+        </div>
+        <div className="category-div">
+          <input
+            type="checkbox"
+            className="category-in"
+            id="Jugadores"
+          />
+          <label className="tab-label" htmlFor="Jugadores">
+            Número de jugadores
+          </label>
+        </div>
       </div>
     </>
   );

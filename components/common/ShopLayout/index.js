@@ -14,18 +14,18 @@ const ShopLayout = (props) => {
   };
 
   return (
-      <div className="shop-page">
-          <section className="left-side">
-              <CategoryFilter
-                  inputValue={inputValue}
-                  handleInputChange={handleInputChange}
-                  categories={categories}
-                />
-            </section>
-          <section className="right-side">
-              {children}
-            </section>
-        </div>
+    <div className="shop-page">
+      <section className="left-side">
+        <CategoryFilter
+          inputValue={inputValue}
+          handleInputChange={handleInputChange}
+          categories={categories}
+        />
+      </section>
+      <section className="right-side">
+        {children}
+      </section>
+    </div>
   );
 };
 

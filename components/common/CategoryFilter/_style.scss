@@ -30,7 +30,6 @@
         .tab-content {
             display: none;
             height: 0;
-            transition: all .35s;
             margin-top: 10px;
 
             p {
@@ -57,7 +56,6 @@
         ~ .tab-content {
             display: block;
             height: fit-content;
-            transition: all .35s;
         }
     }
 }
