@@ -47,7 +47,6 @@ class Product extends React.Component {
   getItems() {
     // const { history, user, url } = this.props;
     const { user, url } = this.props;
-    console.log('TCL: Product -> getItems -> url', url);
     // const paramUrl = urlUtils.getParamsUrl('product', this.props);
     const paramUrl = url.slice(1);
 
@@ -80,7 +79,7 @@ class Product extends React.Component {
     const { product, loaded, refundsText } = this.state;
     const { img, alt } = product;
     const { location, url, categories } = this.props;
-    console.log('categories', categories);
+
     // const productName = _.get(product, 'name.es', `Producto de ${infoSource.companyName}`);
     // const productDesc = _.get(product, 'shortDesc.es', `Producto de ${infoSource.companyName}`);
 

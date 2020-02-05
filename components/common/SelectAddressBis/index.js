@@ -17,7 +17,7 @@ export default class SelectAddressBis extends Component {
 
 
   onChange(path, key) {
-    console.log('SelectAddress path, key: ', path, key);
+
     const { items, onChange } = this.props;
 
     const value = _.get(items, key, {});
@@ -32,7 +32,7 @@ export default class SelectAddressBis extends Component {
 
   render() {
     const { className, items, label, path, value } = this.props;
-    console.log('SelectAddress Render path, value: ', path, value);
+
 
     const newItems = items.map(elem => dataFormat.getTextAddress(elem));
 

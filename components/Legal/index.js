@@ -17,7 +17,7 @@ export default class Legal extends Component {
     };
 
     this.getContent = this.getContent.bind(this);
-    console.log('this.props', this.props);
+
   }
 
   componentDidMount() {
@@ -68,7 +68,7 @@ export default class Legal extends Component {
         />
 
         <div className="app-legal-info">
-          <h1 className="app-legal-title-h1">{ _.get(content, 'title.es', '') }</h1>
+          <h1 className="app-legal-title-h1">{_.get(content, 'title.es', '')}</h1>
         </div>
 
         <div

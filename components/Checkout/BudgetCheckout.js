@@ -58,7 +58,7 @@ class BudgetCheckout extends Component {
 
   // Update info in item
   onChange(path, value, changeState = false) {
-    console.log('path / value =', path, ' / ', value);
+    // console.log('path / value =', path, ' / ', value);
     const { item } = this.state;
     let finalValue = value;
 

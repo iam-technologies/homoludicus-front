@@ -18,7 +18,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('values', values);
+    // console.log('values', values);
   };
 
   const formErrors = (

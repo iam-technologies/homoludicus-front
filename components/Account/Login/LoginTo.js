@@ -35,7 +35,7 @@ class LoginTo extends Component {
   }
 
   componentDidMount() {
-    console.log('this.props = ', this.props);
+
     const { login } = this.props;
 
     if (login) this.getRedirect();

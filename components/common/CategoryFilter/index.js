@@ -41,6 +41,7 @@ const CategoryFilter = (props) => {
             </>
           );
         })}
+        {/* Tendrán otras llamadas */}
         <div className="category-div">
           <input
             type="checkbox"
