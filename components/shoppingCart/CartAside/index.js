@@ -66,7 +66,7 @@ class CartAside extends Component {
 
     const discount = _.get(cart, 'item.discount', '');
     const priceDiscount = priceCalc.getDiscount(price, discount, _.get(cart, 'item', {}));
-    console.log('props', this.props)
+
     return (
       <section className={`app_cart_aside ${className}`}>
 
