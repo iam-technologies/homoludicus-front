@@ -6,7 +6,6 @@ import React from 'react';
 
 import { showCartPopupActs } from '../../../redux/actions';
 
-
 class CartNavBtn extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -23,7 +22,6 @@ class CartNavBtn extends React.PureComponent {
     onCloseNav();
   }
 
-
   render() {
     const { className, item, text, iconGrey } = this.props;
 
@@ -36,7 +34,7 @@ class CartNavBtn extends React.PureComponent {
           onClick={this.onClick}
           type="button"
         >
-          <img src={`/images/icon_cart${iconGrey ? '_grey' : ''}.png`} alt="Shopping cart" />
+          <img src="/icon/shopping-cart.svg" alt="Shopping cart" />
           {
             text && <span>{text}</span>
           }
@@ -58,6 +56,6 @@ CartNavBtn.propTypes = {
   iconGrey: PropTypes.bool
 };
 
-CartNavBtn.defaultProps = { className: '', text: '', onCloseNav: () => {}, iconGrey: false };
+CartNavBtn.defaultProps = { className: '', text: '', onCloseNav: () => { }, iconGrey: false };
 
 export default connect(state => ({ item: _.get(state.carts.item, 'products', []).length }))(CartNavBtn);
