@@ -284,7 +284,6 @@ class BudgetCheckout extends Component {
             </Link>
             )
           </div>
-
         </div>
 
         <div className="app_checkout-right">
