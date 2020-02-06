@@ -147,9 +147,11 @@ class CartAside extends Component {
                       <div
                         onClick={this.onClosePopup}
                       >
-                        <a className="btn_buy" href="/checkout">
-                          REALIZAR PEDIDO
-                      </a>
+                        <a href="/checkout">
+                          <button className="button button-yellow">
+                            REALIZAR PEDIDO
+                          </button>
+                        </a>
                       </div>
                     </div>
                   ) : null

@@ -42,10 +42,10 @@ const infoSource = {
   socialUrl: 'cocholate.es',
 
   // components>CookiesPopup>index.js  ATENCION VER ESTE CASO ! ! ! ! !
-  name: 'cocholate',
+  name: 'Homoludicus',
 
-  // components>Footer>index.js
-  tel: '930 13 86 10',
+  // components>Footer>index.js // components>Checkout>StepOne>SendOffice.js
+  tel: '930 138 610',
   address: 'Carrer de Sant Jaume, 73, 08400 Granollers - Barcelona',
   fbUrl: 'https://www.facebook.com/',
   twitterUrl: 'https://twitter.com/',

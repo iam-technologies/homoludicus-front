@@ -12,7 +12,7 @@
 
   .cart_nav-badge {
     @include border-radius(50%);
-    background-color: $color15;
+    background-color: $brand01 ;
     display         : block;
     height          : 16px;
     position        : absolute;
@@ -21,7 +21,7 @@
     width           : 16px;
 
     p {
-      color     : $color01;
+      color     : $brand01;
       font-size : 11px;
       text-align: center;
     }

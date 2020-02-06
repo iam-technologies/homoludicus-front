@@ -1,5 +1,3 @@
-
-
 .app_checkout {
   @include flex-complete(space-between, stretch);
   background-color: $color18;
@@ -127,7 +125,6 @@
     }
   }
 
-
   .title-xs {
     display      : none;
     font-weight  : 600;
@@ -140,7 +137,6 @@
       display: block;
     }
   }
-
 
   .app_checkout-legal {
     margin-top: 15px;

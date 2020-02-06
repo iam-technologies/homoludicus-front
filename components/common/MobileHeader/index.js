@@ -54,7 +54,7 @@ class MobileHeader extends Component {
           logo && (
             <Link href="/">
               <a className="header_mobile_ui-logo">
-                <img src="/images/company/icon_logotipo_neutro.png" alt={infoSource.companyName} />
+                <img src="/logos/homoludicus_logo.png" alt={infoSource.companyName} />
               </a>
             </Link>
           )
@@ -62,8 +62,8 @@ class MobileHeader extends Component {
         {
           text || subText ? (
             <div className="header_mobile_ui-center_text">
-              { text && <p className="header_mobile_ui-title">{text}</p> }
-              { subText && <p className="header_mobile_ui-subtext">{subText}</p> }
+              {text && <p className="header_mobile_ui-title">{text}</p>}
+              {subText && <p className="header_mobile_ui-subtext">{subText}</p>}
             </div>
           ) : null
         }

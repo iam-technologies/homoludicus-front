@@ -244,11 +244,6 @@ class Checkout extends Component {
         <div className="app_checkout-left">
 
           <header className="app_checkout-header">
-            <Link href="/">
-              <a className="link">
-                <img src="/images/company/icon_logotipo_neutro.png" alt={infoSource.companyName} />
-              </a>
-            </Link>
 
             {
               isLogin ? null : (

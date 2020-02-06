@@ -101,36 +101,37 @@ export default class StepOne extends Component {
           !disabled ? (
             <div className="check_send_order">
               <p className="title">¿El pedido lo debe recibir otra persona?</p>
-
-              <RadioInput
-                active={sendOrderType === 'anotherPerson'}
-                path="sendOrderType"
-                onChange={onChange}
-                value="anotherPerson"
-              >Sí, quiero enviarlo directamente a otra persona.
+              <div className="order-reception">
+                <RadioInput
+                  active={sendOrderType === 'anotherPerson'}
+                  path="sendOrderType"
+                  onChange={onChange}
+                  value="anotherPerson"
+                >Sí, quiero enviarlo directamente a otra persona.
               </RadioInput>
 
-              <RadioInput
-                active={sendOrderType === 'myAddress'}
-                path="sendOrderType"
-                onChange={onChange}
-                value="myAddress"
-              >No, quiero recibirlo en mi dirección.
+                <RadioInput
+                  active={sendOrderType === 'myAddress'}
+                  path="sendOrderType"
+                  onChange={onChange}
+                  value="myAddress"
+                >No, quiero recibirlo en mi dirección.
               </RadioInput>
 
-              <RadioInput
-                active={sendOrderType === infoSource.companyName}
-                path="sendOrderType"
-                onChange={onChange}
-                value={infoSource.companyName}
-              >Quiero recogerlo en las oficinas de {`${infoSource.companyName}`}.
+                <RadioInput
+                  active={sendOrderType === infoSource.companyName}
+                  path="sendOrderType"
+                  onChange={onChange}
+                  value={infoSource.companyName}
+                >Quiero recogerlo en las oficinas de {`${infoSource.companyName}`}.
               </RadioInput>
+              </div>
             </div>
           ) : (
-            <div className="check_send_order">
-              <p className="title">Dirección de envío</p>
-            </div>
-          )
+              <div className="check_send_order">
+                <p className="title">Dirección de envío</p>
+              </div>
+            )
         }
 
         {
