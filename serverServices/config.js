@@ -6,8 +6,7 @@ export default {
   // baseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:3001/api' : infoSource.baseUrl,
 
   // producción =>
-  baseUrl: 'http://ec2-3-122-75-193.eu-central-1.compute.amazonaws.com:4000/api',
-
+  baseUrl: 'https://admin-homoludicus.admin-iam.com/api',
   // local =>
   // baseUrl: 'http://localhost:3001/api',
 
