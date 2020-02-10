@@ -1,26 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic'
 
 import { Layout } from '../../components';
 import SectionHeader from '../../components/SectionHeader';
-
-let FullCalendar;
+import Calendar from '../../components/common/Calendar/dynamic';
 
 const activities = () => {
   const defaultSec = 'eventos';
   const [currentSec, setCurrentSec] = useState(defaultSec);
-  const [calendarLoaded, setCalendarLoaded] = useState(false);
-
-  useEffect(() => {
-    FullCalendar = dynamic({
-      modules: () => ({ calendar: import('../../components/common/Calendar') }),
-      render: (props, { calendar: CustomCalendar, ...plugins }) => (
-        <CustomCalendar {...props} plugins={Object.values(plugins)} ref={props.myRef} />
-      ),
-      ssr: false
-    })
-    setCalendarLoaded(true)
-  })
 
 
   const calendarSettings = {
@@ -75,7 +61,7 @@ const activities = () => {
           ? (
             <div className="calendar-page-wrapper">
               <div className="calendar-div">
-                {calendarLoaded && <FullCalendar calendarSettings={calendarSettings} />}
+                <Calendar calendarSettings={calendarSettings} />
               </div>
             </div>
           )

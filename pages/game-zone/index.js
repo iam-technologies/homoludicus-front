@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Layout } from '../../components';
 import SectionHeader from '../../components/SectionHeader';
-import Calendar from '../../components/common/Calendar';
+import Calendar from '../../components/common/Calendar/dynamic';
 import Modal from '../../components/common/Modal';
 
 const gameZone = () => {
