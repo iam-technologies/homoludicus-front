@@ -27,6 +27,7 @@
       min-width: 70px;
       width    : 70px;
     }
+    
     .left-img{
       height             : 90px;
       max-width          : 90px;
@@ -136,7 +137,7 @@
     .btn_remove {
       @include transition(background 500ms);
       background         : initial;
-      background-image   : url('/images/icon_trash.png');
+      background-image   : url('/icon/icon_trash.png');
       background-position: center;
       background-repeat  : no-repeat;
       background-size    : cover;
@@ -148,18 +149,18 @@
       width              : 32px;
 
       &:hover {
-        background-image: url('/images/icon_trash_hover.png');
+        background-image: url('/icon/icon_trash_hover.png');
       }
     }
 
     .btn_plus {
       @extend .btn_remove;
-      background-image: url('/images/icon_plus.png');
+      background-image: url('/icon/icon_plus.png');
       height          : 15px;
       width           : 15px;
 
       &:hover {
-        background-image: url('/images/icon_plus_hover.png');
+        background-image: url('/icon/icon_plus_hover.png');
       }
     }
   }
@@ -173,6 +174,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  border-radius: none;
   
 
   .remove_item_title_container{

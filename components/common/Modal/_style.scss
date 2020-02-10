@@ -36,20 +36,6 @@
                     text-align: center;
                 }
 
-                .close-icon-div {
-                    width: 35px;
-                    height: 35px;
-                    border: $light-grey 2px solid;
-                    padding: 4px;
-                    display: flex;
-                    justify-content: center;
-                    cursor: pointer;
-                    
-                    &:hover {
-                        background-color: $light-grey;
-                    }
-
-                }
             }
         }
     }

@@ -13,7 +13,6 @@ import Header from './Header';
 import ItemCart from './ItemCart';
 import Discount from './Discount';
 
-
 class CartAside extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +24,6 @@ class CartAside extends Component {
     this.onRemoveItem = this.onRemoveItem.bind(this);
     this.onAddCart = this.onAddCart.bind(this);
   }
-
 
   onRemoveItem(index) {
     const { cart } = this.props;
@@ -80,83 +78,85 @@ class CartAside extends Component {
           numItem <= 0 ? (
             <div className="app_cart_aside-cart_empty">Tu carrito está vacío.</div>
           ) : (
-            <Fragment>
-              <div className="app_cart_aside-list">
-                {
-                  !disabled && _.get(cart, 'item.products', []).map((elem, index) => (
-                    <ItemCart
-                      index={index}
-                      item={elem}
-                      key={`${_.get(elem, 'product._id', '')}/${index.toString()}`}
-                      onClosePopup={isPopup ? this.onClosePopup : undefined}
-                      onAddCart={this.onAddCart}
-                      onRemove={this.onRemoveItem}
-                      removeBtns={removeBtns}
-                    />
-                  ))
-                }
-                {
-                  disabled && _.get(cart, 'item.products', []).map((elem, index) => (
-                    <ItemCart
-                      index={index}
-                      item={elem}
-                      key={`${_.get(elem, 'product._id', '')}/${index.toString()}`}
-                      onClosePopup={isPopup ? this.onClosePopup : undefined}
-                      onAddCart={this.onAddCart}
-                      onRemove={this.onRemoveItem}
-                      removeBtns
-                    />
-                  ))
-                }
-              </div>
-
-              {
-                !disabled && numItem > 0 && (screen === 'xs' || screen === 'sm' || showDiscount)
-                  ? (<Discount item={cart.item} />) : null
-              }
-
-              <div className="app_cart_aside-summary_purchase">
-                <div className="line">
-                  <p>Subtotal</p>
-                  <p>{dataFormat.formatCurrency(price)}</p>
+              <Fragment>
+                <div className="app_cart_aside-list">
+                  {
+                    !disabled && _.get(cart, 'item.products', []).map((elem, index) => (
+                      <ItemCart
+                        index={index}
+                        item={elem}
+                        key={`${_.get(elem, 'product._id', '')}/${index.toString()}`}
+                        onClosePopup={isPopup ? this.onClosePopup : undefined}
+                        onAddCart={this.onAddCart}
+                        onRemove={this.onRemoveItem}
+                        removeBtns={removeBtns}
+                      />
+                    ))
+                  }
+                  {
+                    disabled && _.get(cart, 'item.products', []).map((elem, index) => (
+                      <ItemCart
+                        index={index}
+                        item={elem}
+                        key={`${_.get(elem, 'product._id', '')}/${index.toString()}`}
+                        onClosePopup={isPopup ? this.onClosePopup : undefined}
+                        onAddCart={this.onAddCart}
+                        onRemove={this.onRemoveItem}
+                        removeBtns
+                      />
+                    ))
+                  }
                 </div>
 
                 {
-                  discount && discount.code && discount.amount > 0 ? (
-                    <div className="line">
-                      <p>Descuento{discount.type === 'percent' ? ` ${discount.amount}%` : ''}</p>
-                      <p>-{dataFormat.formatCurrency(priceDiscount)}</p>
+                  !disabled && numItem > 0 && (screen === 'xs' || screen === 'sm' || showDiscount)
+                    ? (<Discount item={cart.item} />) : null
+                }
+
+                <div className="app_cart_aside-summary_purchase">
+                  <div className="line">
+                    <p>Subtotal</p>
+                    <p>{dataFormat.formatCurrency(price)}</p>
+                  </div>
+
+                  {
+                    discount && discount.code && discount.amount > 0 ? (
+                      <div className="line">
+                        <p>Descuento{discount.type === 'percent' ? ` ${discount.amount}%` : ''}</p>
+                        <p>-{dataFormat.formatCurrency(priceDiscount)}</p>
+                      </div>
+                    ) : null
+                  }
+
+                  <div className="line">
+                    <p>Envío</p>
+
+                    {renderShipping}
+                  </div>
+
+                  <div className="line total_pay">
+                    <p>Total</p>
+                    <p>{dataFormat.formatCurrency(priceCalc.getCartTotal(price, shipping, priceDiscount))}</p>
+                  </div>
+                </div>
+
+                {
+                  isPopup && !disabled ? (
+                    <div className="app_cart_aside-btn_to_buy">
+                      <div
+                        onClick={this.onClosePopup}
+                      >
+                        <a href="/checkout">
+                          <button className="button button-yellow">
+                            REALIZAR PEDIDO
+                          </button>
+                        </a>
+                      </div>
                     </div>
                   ) : null
                 }
-
-                <div className="line">
-                  <p>Envío</p>
-
-                  {renderShipping}
-                </div>
-
-                <div className="line total_pay">
-                  <p>Total</p>
-                  <p>{dataFormat.formatCurrency(priceCalc.getCartTotal(price, shipping, priceDiscount))}</p>
-                </div>
-              </div>
-
-              {
-                isPopup && !disabled ? (
-                  <div className="app_cart_aside-btn_to_buy">
-                    <div
-                      onClick={this.onClosePopup}
-                    >
-                      <a className="btn_buy" href="/checkout">
-                      REALIZAR PEDIDO
-                      </a>
-                    </div>
-                  </div>
-                ) : null
-              }
-            </Fragment>
-          )
+              </Fragment>
+            )
         }
       </section>
     );

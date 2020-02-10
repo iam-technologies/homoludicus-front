@@ -31,11 +31,11 @@ export default class OrderMessage extends Component {
       <section className="app_checkout">
         <div className="order_message">
           <header className="app_checkout-header">
-            <Link href="/">
+            {/* <Link href="/">
               <a className="link">
                 <img src="/images/logo_search.png" alt={infoSource.companyName} />
               </a>
-            </Link>
+            </Link> */}
           </header>
 
           {

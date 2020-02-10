@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import _get from 'lodash/get';
 import { useSelector, useDispatch } from 'react-redux';
-import { api, getImageUrl } from '../../../serverServices';
-import { Layout } from '../../../components';
-import SearchByAge from '../../../components/SearchByAge';
-import Carousel from '../../../components/common/Carousel';
-import getGeneric from '../../../redux/actions/genericActs';
-import ShopLayout from '../../../components/common/ShopLayout';
+import { api, getImageUrl } from '../../serverServices';
+import { Layout } from '../../components';
+import SearchByAge from '../../components/SearchByAge';
+import Carousel from '../../components/common/Carousel';
+import getGeneric from '../../redux/actions/genericActs';
+import ShopLayout from '../../components/common/ShopLayout';
 
 const shop = ({ content, selection, categories }) => {
   const carouselItems = _get(content, 'slider', []);

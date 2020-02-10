@@ -182,11 +182,11 @@ class BudgetCheckout extends Component {
 
         <div className="app_checkout-left">
           <header className="app_checkout-header">
-            <Link href="/">
+            {/* <Link href="/">
               <a className="link">
                 <img src="/images/logo_search.png" alt={infoSource.companyName} />
               </a>
-            </Link>
+            </Link> */}
           </header>
 
           <div className="app_checkout-main">
@@ -284,7 +284,6 @@ class BudgetCheckout extends Component {
             </Link>
             )
           </div>
-
         </div>
 
         <div className="app_checkout-right">

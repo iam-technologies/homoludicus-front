@@ -58,30 +58,30 @@
   &-btn_to_buy {
     text-align: center;
 
-    .btn_buy {
-      @include transition(background-color 500ms);
-      @include border-radius(5px);
-      background-color: rgba($color03, 0.7);
-      border          : 1px solid $color03;
-      color           : $color01;
-      display         : inline-block;
-      font-size       : 16px;
-      font-weight     : 600;
-      height          : 48px;
-      line-height     : 48px;
-      text-decoration : none;
-      width           : 227px;
+    // .btn_buy {
+    //   @include transition(background-color 500ms);
+    //   @include border-radius(5px);
+    //   background-color: rgba($color03, 0.7);
+    //   border          : 1px solid $color03;
+    //   color           : $color01;
+    //   display         : inline-block;
+    //   font-size       : 16px;
+    //   font-weight     : 600;
+    //   height          : 48px;
+    //   line-height     : 48px;
+    //   text-decoration : none;
+    //   width           : 227px;
 
-      @media #{$xs} {
-        width      : 170px;
-        line-height: 40px;
-        height     : 40px;
-        font-size  : 14px;
-      }
+    //   @media #{$xs} {
+    //     width      : 170px;
+    //     line-height: 40px;
+    //     height     : 40px;
+    //     font-size  : 14px;
+    //   }
 
-      &:hover {
-        background-color: rgba($color03, 1);
-      }
-    }
+    //   &:hover {
+    //     background-color: rgba($color03, 1);
+    //   }
+    // }
   }
 }

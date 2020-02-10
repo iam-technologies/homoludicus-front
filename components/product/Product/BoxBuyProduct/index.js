@@ -176,7 +176,6 @@ class BoxBuyProduct extends Component {
                 (+info)
               </p>
             </p>
-            {/* Contador productos añadidos, precio sumado */}
             <div className="product-price-sum">
               <div className="quantity-selector-div">
                 <p className="price-title">Quantitat:</p>

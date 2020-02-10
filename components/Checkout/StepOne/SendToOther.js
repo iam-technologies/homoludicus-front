@@ -54,7 +54,6 @@ export default class SendToOther extends Component {
           value={_.get(item, 'sendOrder.address', '')}
           disabled={disabled}
         />
-
         <SelectInputBis
           className="select_input"
           error={msgUI.get(errors, 'sendOrder.country')}
