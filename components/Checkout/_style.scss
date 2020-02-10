@@ -27,12 +27,10 @@
     }
 
     .link_login {
-      background-color: initial;
-      border          : none;
-      color           : $color13;
       cursor          : pointer;
       font-size       : 15px;
-      outline         : none;
+      width: 100%;
+      text-align: right;
 
       @media #{$sm} {
         margin-bottom: 30px;

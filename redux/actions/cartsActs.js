@@ -7,7 +7,6 @@ export const CARTS_SUCCESS = 'CARTS_SUCCESS';
 export const CARTS_FAILURE = 'CARTS_FAILURE';
 export const CARTS_REMOVE = 'CARTS_REMOVE';
 
-
 const cartsBegin = () => ({ type: CARTS_BEGIN });
 
 const cartsSuccess = cart => ({
@@ -36,7 +35,6 @@ const cartsUpsert = (dispatch, newItem, isPopup = false) => {
   });
 };
 
-
 /**
  * ACTIONS FOR REDUCER
  */
@@ -64,7 +62,6 @@ const addRepeatOrder = (products = []) => (dispatch, getOldState) => {
   }
 };
 
-
 const addPayOrder = (order = {}) => (dispatch) => {
   dispatch(cartsBegin());
 
@@ -75,7 +72,6 @@ const addPayOrder = (order = {}) => (dispatch) => {
 
   return dispatch(cartsSuccess(newItem));
 };
-
 
 const removeProduct = index => (dispatch, getOldState) => {
   const { item } = getOldState().carts;
@@ -88,7 +84,6 @@ const removeProduct = index => (dispatch, getOldState) => {
   cartsUpsert(dispatch, newItem, false);
 };
 
-
 const updateProduct = (newProduct, index) => (dispatch, getOldState) => {
   const { item } = getOldState().carts;
   const newItem = { ...item };
@@ -100,7 +95,6 @@ const updateProduct = (newProduct, index) => (dispatch, getOldState) => {
   }
 };
 
-
 const addDiscount = discount => (dispatch, oldStates) => {
   const { item } = oldStates().carts;
 
@@ -110,7 +104,6 @@ const addDiscount = discount => (dispatch, oldStates) => {
     cartsUpsert(dispatch, newItem, false);
   }
 };
-
 
 const removeDiscount = () => (dispatch, oldStates) => {
   const { item } = oldStates().carts;
@@ -122,7 +115,6 @@ const removeDiscount = () => (dispatch, oldStates) => {
     cartsUpsert(dispatch, newItem, false);
   }
 };
-
 
 const getCart = () => (dispatch) => {
   dispatch(cartsBegin());
@@ -136,7 +128,6 @@ const getCart = () => (dispatch) => {
   });
 };
 
-
 const removeCart = () => (dispatch) => {
   api.carts.remove((error, res) => {
     if (res) {
@@ -146,7 +137,6 @@ const removeCart = () => (dispatch) => {
     return dispatch(cartsFailure(error.data));
   });
 };
-
 
 export default {
   addDiscount,

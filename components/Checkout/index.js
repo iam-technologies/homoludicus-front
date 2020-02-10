@@ -247,12 +247,11 @@ class Checkout extends Component {
 
             {
               isLogin ? null : (
-                <button
+                <p
                   className="link_login"
                   onClick={() => this.showLogin(false)}
-                  type="button"
                 >¿Ya tienes una cuenta?
-                </button>
+                </p>
               )
             }
 

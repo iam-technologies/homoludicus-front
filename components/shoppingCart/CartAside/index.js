@@ -43,7 +43,6 @@ class CartAside extends Component {
 
   render() {
     const { className, isPopup, cart, shipping, showDiscount, removeBtns, screen } = this.props;
-    console.log("TCL: CartAside -> render -> className", className)
 
     // Disabled and shippingPrice come from budgetSent orders, they are fixed.
     const disabled = _.get(cart, 'item.disabled', false);

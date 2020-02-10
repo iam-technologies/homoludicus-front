@@ -19,6 +19,7 @@
     @include flex-complete(space-between);
     padding : 20px 60px;
     position: relative;
+    justify-content: flex-end;
     
     @media #{$xs} {
       padding: 15px 30px;

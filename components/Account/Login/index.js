@@ -81,11 +81,6 @@ class Login extends Component {
     return (
       <div className={`login_app${show ? '-show' : ''}`}>
         <header className="header_login">
-          <Link href="/">
-            <a onClick={this.onClose} className="header_login-logo">
-              <img src="/logos/homoludicus_logo.png" alt={infoSource.compNameCap} />
-            </a>
-          </Link>
 
           <div
             className="close-icon-div"

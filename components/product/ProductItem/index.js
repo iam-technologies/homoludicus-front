@@ -16,7 +16,7 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
   const badgePrice = priceCalc.getBadgePrice(item);
   const oldPrice = priceCalc.showPriceNotOffer(item);
   const textBadge = texts.getStates(state);
-  const desc = item.shortDesc.es;
+  const desc = _.get(item, 'shortDesc.es', '');
 
   return (
     <div className="relative">
