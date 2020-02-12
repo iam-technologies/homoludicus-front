@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
+import PropTypes, { element } from 'prop-types';
 import React, { Component, Fragment } from 'react';
 
 import { showCartPopupActs, cartsActs } from '../../../redux/actions';
@@ -12,6 +12,7 @@ import { Badge } from '../../common';
 import Header from './Header';
 import ItemCart from './ItemCart';
 import Discount from './Discount';
+import formatCartItems from '../helpers/formatCartItems';
 
 class CartAside extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class CartAside extends Component {
     this.onClosePopup = this.onShowCartPopup.hidden.bind(this);
     this.onRemoveItem = this.onRemoveItem.bind(this);
     this.onAddCart = this.onAddCart.bind(this);
+
   }
 
   onRemoveItem(index) {
@@ -39,10 +41,19 @@ class CartAside extends Component {
     if (cart.loading) return;
 
     this.onCart.addProduct(item, isPopup);
+
   }
 
   render() {
-    const { className, isPopup, cart, shipping, showDiscount, removeBtns, screen } = this.props;
+    const {
+      className,
+      isPopup,
+      cart,
+      shipping,
+      showDiscount,
+      removeBtns,
+      screen
+    } = this.props;
 
     // Disabled and shippingPrice come from budgetSent orders, they are fixed.
     const disabled = _.get(cart, 'item.disabled', false);
@@ -50,6 +61,10 @@ class CartAside extends Component {
 
     const numItem = _.get(cart, 'item.products', []).length;
     const price = priceCalc.getCartSubTotal(_.get(cart, 'item.products', []));
+    const productAdded = _.get(cart, 'item.products', []);
+    console.log('TCL: CartAside -> render -> productAdded', productAdded);
+    const formatProducts = formatCartItems(productAdded);
+    console.log("TCL: CartAside -> render -> formatProducts", formatProducts)
 
     let renderShipping = null;
 
@@ -81,20 +96,25 @@ class CartAside extends Component {
               <Fragment>
                 <div className="app_cart_aside-list">
                   {
-                    !disabled && _.get(cart, 'item.products', []).map((elem, index) => (
-                      <ItemCart
-                        index={index}
-                        item={elem}
-                        key={`${_.get(elem, 'product._id', '')}/${index.toString()}`}
-                        onClosePopup={isPopup ? this.onClosePopup : undefined}
-                        onAddCart={this.onAddCart}
-                        onRemove={this.onRemoveItem}
-                        removeBtns={removeBtns}
-                      />
-                    ))
+                    !disabled && formatProducts.map((elem, index) => {
+
+                      return (
+                        <>
+                          <ItemCart
+                            index={index}
+                            item={elem}
+                            key={`${_.get(elem, 'product._id', '')}/${index.toString()}`}
+                            onClosePopup={isPopup ? this.onClosePopup : undefined}
+                            onAddCart={this.onAddCart}
+                            onRemove={this.onRemoveItem}
+                            removeBtns={removeBtns}
+                          />
+                        </>
+                      );
+                    })
                   }
                   {
-                    disabled && _.get(cart, 'item.products', []).map((elem, index) => (
+                    disabled && productAdded.map((elem, index) => (
                       <ItemCart
                         index={index}
                         item={elem}

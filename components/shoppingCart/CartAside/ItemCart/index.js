@@ -10,7 +10,6 @@ import { urlUtils, dataFormat, priceCalc } from '../../../../utils';
 import { imgServices } from '../../../../serverServices';
 import { ButtonInput } from '../../../common';
 
-
 export default class ItemCart extends Component {
   constructor(props) {
     super(props);
@@ -64,7 +63,6 @@ export default class ItemCart extends Component {
     // return <p className="text">Personalizado</p>;
   }
 
-
   render() {
     const { open } = this.state;
     const { item, index, removeBtns } = this.props;
@@ -74,10 +72,10 @@ export default class ItemCart extends Component {
     const linkTo = urlUtils.linkToEditProduct(_.get(item, 'product', {}), index);
     const price = priceCalc.get(_.get(item, 'product', {}), _.get(item, 'config', {}));
     const itemConfig = this.getConfig(item);
-
     const Transition = React.forwardRef((props, ref) => {
       return <Slide direction="down" ref={ref} {...props} />;
     });
+    const count = _.get(item, 'count', 1)
 
     return (
       <div className="item_cart_ui">
@@ -94,7 +92,9 @@ export default class ItemCart extends Component {
             >
               <div className="dialog_remove_item_cart">
                 <div className="remove_item_title_container">
-                  <p className="dialog_title">¿Está seguro de que desea eliminar el producto del carrito?</p>
+                  <p className="dialog_title">
+                    ¿Está seguro de que desea eliminar el producto del carrito?
+                  </p>
                 </div>
                 <div className="btn_dialog">
                   <ButtonInput
@@ -134,12 +134,38 @@ export default class ItemCart extends Component {
             style={{ zIndex: 1000 - index }}
           >
             <p className="title">{_.get(item, 'product.name.es')}</p>
-            {numItems > 0 && <div className="personalizacion" onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}>{ itemConfig }</div>}
+            {numItems > 0 && (
+              <div
+                className="personalizacion"
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); }
+                }
+              >
+                {itemConfig}
+              </div>
+            )
+            }
             <div className="price">
-              <p className="text-expand">{ numItems > 1 ? '...' : ''}</p>
-              { dataFormat.formatCurrency(price) }
+              <p className="text-expand">{numItems > 1 ? '...' : ''}</p>
+              {dataFormat.formatCurrency(price)}
             </div>
           </a>
+        </div>
+        <div className="quantity-div">
+          <div
+            className="less-product"
+            onClick={this.onRemove}
+          >
+            -
+          </div>
+          <div className="number-product">
+            {count}
+          </div>
+          <div
+            className="more-product"
+            onClick={this.onAddCart}
+          >
+            +
+          </div>
         </div>
 
         <div className="right">
@@ -176,4 +202,4 @@ ItemCart.propTypes = {
   onAddCart: PropTypes.func.isRequired
 };
 
-ItemCart.defaultProps = { onClosePopup: () => {} };
+ItemCart.defaultProps = { onClosePopup: () => { } };
