@@ -17,16 +17,28 @@
       }
     }
 
-    .btn_close {
-      background: initial;
-      border    : none;
-      color     : $color04;
-      cursor    : pointer;
-      font-size : 14px;
-      outline   : none;
+    .button-div {
+      width: 90px;
+      display: flex;
+      justify-content: center;
 
-      @media #{$xs} {
-        font-size: 12px;
+      .btn_close {
+        background: initial;
+        border    : none;
+        cursor    : pointer;
+        font-size : 14px;
+        outline   : none;
+        width: fit-content;
+        color: $dark-grey;
+
+        &:hover {
+          font-size: 18px;
+
+        }
+
+        @media #{$xs} {
+          font-size: 12px;
+        }
       }
     }
 

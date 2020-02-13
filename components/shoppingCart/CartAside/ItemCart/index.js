@@ -121,7 +121,7 @@ export default class ItemCart extends Component {
           >
             <div
               className="left-img"
-              style={{ backgroundImage: `url(${imgServices.getUrl(_.get(item, 'product.img.0', ''), 'mobile_2x')})` }}
+              style={{ backgroundImage: `url(${imgServices.getUrl(_.get(item, 'product.img', ''), 'mobile_2x')})` }}
             />
           </a>
         </div>
@@ -169,15 +169,7 @@ export default class ItemCart extends Component {
         </div>
 
         <div className="right">
-          {
-            !removeBtns && (
-              <button
-                className="btn_plus"
-                onClick={this.onAddCart}
-                type="button"
-              />
-            )
-          }
+
           {
             !removeBtns && (
               <button
