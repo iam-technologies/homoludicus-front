@@ -84,6 +84,7 @@ const removeProduct = index => (dispatch, getOldState) => {
   cartsUpsert(dispatch, newItem, false);
 };
 
+
 const updateProduct = (newProduct, index) => (dispatch, getOldState) => {
   const { item } = getOldState().carts;
   const newItem = { ...item };

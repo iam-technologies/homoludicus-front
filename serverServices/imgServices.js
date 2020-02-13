@@ -7,7 +7,6 @@ const getUrl = (img, size = 'original', folder = '') => {
 };
 
 const getHomeUrl = (img, size = 'original', folder = '') => {
-  const attachment = _.get(img[0], 'attachment', '');
   return `${config.urlImages}${folder ? `${folder}/` : ''}${size}/${img}`;
 };
 

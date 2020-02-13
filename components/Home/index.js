@@ -19,6 +19,7 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
   console.log("TCL: Home -> content", content)
   const desc = _get(selection, 'desc.es', '');
   const products = _get(selection, 'products', []);
+  console.log("TCL: Home -> selection", selection)
 
   const seoHeading = _get(content, 'seoHeading.es', '');
   const seoText = _get(content, 'seoText.es', '');

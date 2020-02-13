@@ -1,28 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import _get from 'lodash/get';
-import { useSelector, useDispatch } from 'react-redux';
+
 import MessengerCustomerChat from 'react-messenger-customer-chat';
+
 import { api, getImageUrl } from '../serverServices';
 import { Home, Layout } from '../components';
 import { SEO } from '../components/common';
-import getGeneric from '../redux/actions/genericActs';
 
 const HomePage = ({ content = {}, selection = {}, loaded = true, imgUrl = '' }) => {
   const title = _get(content, 'seoTitle.es', '');
   const desc = _get(content, 'seoDesc.es', '');
   const attachment = _get(content, 'seoImg.attachment', '');
   const pathname = '/';
-
-  const genericLoad = useSelector(state => state.generic.load);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!genericLoad) {
-      dispatch(getGeneric());
-    }
-  }, [genericLoad]);
-
+  // console.log('selection', selection);
   return (
     <Layout pathname={pathname}>
       <SEO
@@ -55,7 +45,11 @@ HomePage.getInitialProps = async () => {
 
   const imgUrl = await getImageUrl(content);
 
-  return { content, loaded: true, imgUrl };
+  const selection = content.selections || [];
+
+  return { content, selection, loaded: true, imgUrl };
 };
 
 export default HomePage;
+
+

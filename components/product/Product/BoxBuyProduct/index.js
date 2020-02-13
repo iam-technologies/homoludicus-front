@@ -24,7 +24,7 @@ class BoxBuyProduct extends Component {
     this.state = {
       loading: true,
       index: Number.isNaN(props.index) ? -1 : props.index,
-      count: 0,
+      count: 1,
       favorite: false,
     };
 
@@ -71,13 +71,13 @@ class BoxBuyProduct extends Component {
 
   onSubstractUnits = () => {
     const { count } = this.state;
-    if (count > 0) {
+    if (count > 1) {
       this.setState({ count: count - 1 })
     }
   }
 
   onAddToCart() {
-    const { index } = this.state;
+    const { index, count } = this.state;
     const { item, cart, config } = this.props;
 
     if (cart.loading) return;
@@ -85,11 +85,19 @@ class BoxBuyProduct extends Component {
     const product = { product: item, config };
 
     if (index !== -1) {
+
       this.onCart.updateProduct(product, index);
       return;
     }
 
-    this.onCart.addProduct(product);
+    this.onCountItems(count, product)
+
+  }
+
+  onCountItems = (state, item) => {
+    for (let i = 1; i <= state; i++) {
+      this.onCart.addProduct(item);
+    }
   }
 
   getConfig() {
@@ -106,7 +114,6 @@ class BoxBuyProduct extends Component {
   }
 
   render() {
-
     const { index, loading } = this.state;
     const { item, cart, config, screen, alt, src } = this.props;
     const { count } = this.state;
