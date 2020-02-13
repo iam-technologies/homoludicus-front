@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import { Layout } from '../../components';
 import SectionHeader from '../../components/SectionHeader';
-import Calendar from '../../components/common/Calendar';
+import Calendar from '../../components/common/Calendar/dynamic';
 
 const activities = () => {
   const defaultSec = 'eventos';
   const [currentSec, setCurrentSec] = useState(defaultSec);
+
 
   const calendarSettings = {
     defaultView: 'dayGridMonth',

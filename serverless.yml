@@ -1,0 +1,5 @@
+homoludicusDevHosting:
+  component: serverless-next.js
+
+provider:
+  profile: homoludicus
