@@ -18,6 +18,7 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
   const carouselItems = _get(content, 'slider', []);
   const desc = _get(selection, 'desc.es', '');
   const products = _get(selection, 'products', []);
+  console.log("TCL: Home -> selection", selection)
 
   const seoHeading = _get(content, 'seoHeading.es', '');
   const seoText = _get(content, 'seoText.es', '');
