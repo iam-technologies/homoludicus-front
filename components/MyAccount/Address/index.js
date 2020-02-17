@@ -4,15 +4,16 @@ import Link from 'next/link';
 import { MobileHeader } from '../../common';
 import ShippingAddress from './ShippingAddress';
 import BillingAddress from './BillingAddress';
+import SectionHeader from '../../SectionHeader';
 
-
+const title='Mis direcciones'
 export default () => (
   <section className="app-my_account app-my_address">
     <MobileHeader
       green
       logo
     />
-
+    <SectionHeader title={title} />
     <ShippingAddress />
     <BillingAddress />
 

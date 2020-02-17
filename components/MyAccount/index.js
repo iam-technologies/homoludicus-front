@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import { MobileHeader } from '../common';
 import { showLoginActs } from '../../redux/actions';
-
+import SectionHeader from '../SectionHeader';
 
 class MyAccount extends PureComponent {
   constructor(props) {
@@ -19,6 +19,7 @@ class MyAccount extends PureComponent {
   }
 
   render() {
+    const title = 'Mi cuenta';
     return (
       <section className="app-my_account">
         <MobileHeader
@@ -26,7 +27,7 @@ class MyAccount extends PureComponent {
           logo
         />
 
-        <p className="title">Mi cuenta</p>
+        <SectionHeader title={title} />
 
         <div className="my_account-section">
           <Link href="/orders">
@@ -36,12 +37,12 @@ class MyAccount extends PureComponent {
             </a>
           </Link>
 
-          <Link href="/favourites">
+          {/* <Link href="/favourites">
             <a className="my_account-link">
               <span className="icon icon_favorites" />
               <p>Mis Favoritos</p>
             </a>
-          </Link>
+          </Link> */}
 
           <Link href="/addresses">
             <a className="my_account-link">

@@ -64,6 +64,7 @@ class BillingAddress extends Component {
   renderAddress() {
     const { user } = this.props;
 
+
     const paymentInfo = _.get(user, 'profile.paymentInfo', {});
     let otherPaymentInfo = _.get(user, 'profile.otherPaymentInfo', []);
 
@@ -85,6 +86,7 @@ class BillingAddress extends Component {
     const items = otherPaymentInfo;
 
     return items.map((elem, i) => (
+
       <AddressBillingBox
         hiddenSaveAddress
         showRemove
@@ -107,7 +109,6 @@ class BillingAddress extends Component {
 
     return (
       <React.Fragment>
-
         <header className="app-my_account-container my_account-header">
           <p className="title">{textTitle}</p>
           {
@@ -133,7 +134,7 @@ class BillingAddress extends Component {
               onChange={this.onChange}
               address={_.get(user, `profile.otherPaymentInfo.${addressEdit}`, {})}
             />
-          ) : <div className="app-my_account-container list_address">{ this.renderAddress() }</div>
+          ) : <div className="app-my_account-container list_address">{this.renderAddress()}</div>
         }
         {
           showForm && (

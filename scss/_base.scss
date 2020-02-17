@@ -66,6 +66,14 @@
   
   //BUTTONS
 
+  button, a {
+    transition: all 0.5s;
+    
+    &:hover {
+      transition: all 0.5s;
+    }
+  }
+
   button, a.button {
     font-size: $m;
     font-family: $fontFamily;

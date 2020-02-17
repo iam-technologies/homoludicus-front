@@ -11,7 +11,7 @@ import { msgUI, checkFields } from '../../../utils';
 import { TextInput, ButtonInput, MobileHeader } from '../../common';
 import Logout from '../../Account/Logout';
 import FormPassword from './FormPassword';
-
+import SectionHeader from '../../SectionHeader';
 
 class Profile extends Component {
   constructor(props) {
@@ -87,16 +87,15 @@ class Profile extends Component {
 
   render() {
     const { user, updating, errors, loading } = this.state;
-
+    const title = 'Mis Datos'
     return (
       <section className="app-my_account app-profile">
         <MobileHeader
           green
           logo
         />
-
+        <SectionHeader title={title} />
         <header className="app-my_account-container my_account-header">
-          <p className="title">Mis Datos</p>
 
           <p className="align_right">
             <Logout

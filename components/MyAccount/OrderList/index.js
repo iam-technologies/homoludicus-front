@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { api } from '../../../serverServices';
 import { MobileHeader } from '../../common';
 import ItemOrderList from './ItemOrderList';
-
+import SectionHeader from '../../SectionHeader';
 
 export default class OrderList extends Component {
   constructor(props) {
@@ -49,6 +49,7 @@ export default class OrderList extends Component {
 
   render() {
     const { orders } = this.state;
+    const title = 'Mis pedidos'
 
     return (
       <section className="app-my_account my_orders">
@@ -57,7 +58,7 @@ export default class OrderList extends Component {
           logo
         />
 
-        <p className="title">Mis Pedidos</p>
+        <SectionHeader title={title} />
 
         <div className="app-my_account-container list_orders">
           <div className="th-header">
