@@ -37,8 +37,10 @@ class MyAccountButton extends Component {
         onClick={isLogin ? () => { } : this.onClick}
         href="/my-account"
       >
-        {/* <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" /> */}
-        <img src="/icon/icon-account.svg" alt="cart" />
+        <div className="user-icon">
+          {/* <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" /> */}
+          <img src="/icon/icon-account.svg" alt="cart" />
+        </div>
       </Link>
     );
   }
