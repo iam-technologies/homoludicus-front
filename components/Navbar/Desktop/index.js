@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import CartNavBtn from '../../shoppingCart/CartNavBtn';
 import CartPopup from '../../shoppingCart/CartPopup';
+import MyAccountButton from './MyAccountButton';
 
 const NavBarDesktop = (props) => {
   const { mainMenu } = props;
@@ -28,13 +29,14 @@ const NavBarDesktop = (props) => {
         <div className="cart-icon">
           <CartNavBtn />
         </div>
-        <div className="user-icon-div">
+        {/* <div className="user-icon-div">
           <Link href="/">
             <a>
               <img src="/icon/icon-account.svg" alt="cart" />
             </a>
           </Link>
-        </div>
+        </div> */}
+        <MyAccountButton />
         <div className="lang-div">
           <p>cat</p>
           <p className="vertical-lign">|</p>

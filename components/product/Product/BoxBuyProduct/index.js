@@ -89,16 +89,10 @@ class BoxBuyProduct extends Component {
       this.onCart.updateProduct(product, index);
       return;
     }
-
-    this.onCountItems(count, product)
+    this.onCart.addProduct(product, true, count);
 
   }
 
-  onCountItems = (state, item) => {
-    for (let i = 1; i <= state; i++) {
-      this.onCart.addProduct(item);
-    }
-  }
 
   getConfig() {
     const { cart } = this.props;
@@ -114,9 +108,9 @@ class BoxBuyProduct extends Component {
   }
 
   render() {
-    const { index, loading } = this.state;
+    const { index, loading, count } = this.state;
     const { item, cart, config, screen, alt, src } = this.props;
-    const { count } = this.state;
+    console.log('count', count);
     const productAvailable = _.get(item, 'available');
 
     const oldPrice = priceCalc.showPriceNotOffer(item);

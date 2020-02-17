@@ -1,5 +1,6 @@
 import _ from 'lodash';
 // import { Link, Redirect } from 'react-router-dom';
+import Link from 'next/link';
 import Router from 'next/router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -18,7 +19,6 @@ import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 import OrderMessage from './OrderMessage';
 import LegalInfo from './LegalInfo';
-import Link from 'next/link';
 import infoSource from '../../utils/infoSource';
 
 class Checkout extends Component {
@@ -61,7 +61,6 @@ class Checkout extends Component {
       api.orders.upsert({ item, cancel: true }, _.get(item, '_id', ''), () => { });
     }
   }
-
 
   // Update info in item
   onChange(path, value, changeState = false) {

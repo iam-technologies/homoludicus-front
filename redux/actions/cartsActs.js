@@ -38,15 +38,17 @@ const cartsUpsert = (dispatch, newItem, isPopup = false) => {
 /**
  * ACTIONS FOR REDUCER
  */
-const addProduct = (newProduct = '', isPopup = true) => (dispatch, getOldState) => {
+const addProduct = (newProduct = '', isPopup = true, count = 1) => (dispatch, getOldState) => {
   const item = getOldState().carts.item || {};
   const newItem = { ...item };
 
   if (!newItem.products) newItem.products = [];
   if (newProduct) {
-    newItem.products.push(newProduct);
+    for (let i = 1; i <= count; i++) {
+      newItem.products.push(newProduct);
 
-    cartsUpsert(dispatch, newItem, isPopup);
+      cartsUpsert(dispatch, newItem, isPopup);
+    }
   }
 };
 

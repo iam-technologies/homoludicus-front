@@ -178,6 +178,9 @@
       font-size  : 14px;
       line-height: 24px;
       text-align : right;
+      display: flex;
+      justify-content: center;
+
       a {
         color: $color04;
       }
@@ -197,4 +200,8 @@
       }
     }
   }
+}
+.link_forgot {
+  display: flex;
+  justify-content: center;
 }
