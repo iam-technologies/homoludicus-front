@@ -8,7 +8,7 @@ import Carousel from '../../components/common/Carousel';
 import getGeneric from '../../redux/actions/genericActs';
 import ShopLayout from '../../components/common/ShopLayout';
 
-const shop = ({ content, selection, categories }) => {
+const shop = ({ content, selection, categories, allProducts }) => {
   const carouselItems = _get(content, 'slider', []);
   const { products } = selection;
 
@@ -16,7 +16,7 @@ const shop = ({ content, selection, categories }) => {
   const generics = useSelector(state => state.generic.doc);
 
   const dispatch = useDispatch();
-
+  console.log('allproducts', allProducts)
   useEffect(() => {
     if (!genericLoad) {
       dispatch(getGeneric());
@@ -37,9 +37,8 @@ const shop = ({ content, selection, categories }) => {
       <Carousel items={carouselItems} />
       <SearchByAge generics={generics} />
       <ShopLayout inputValue={inputValue} handleInputChange={handleInputChange} categories={categories}>
-        <p>SHOP</p>
-        {products.map((product) => {
-          return <p key={product._id}>{product._id}</p>;
+        {allProducts.products.map((product) => {
+          return <div key={product.name.es}>{product.name.es}</div>;
         })}
       </ShopLayout>
     </Layout>
@@ -56,8 +55,12 @@ shop.getInitialProps = async () => {
     return res ? res.data : null;
   });
 
+  const allProducts = await api.products.getAll({}, (err, res) => {
+    return res ? res.data : null;
+  });
 
-  return { content, selection, loaded: true, imgUrl, categories };
+
+  return { content, selection, loaded: true, imgUrl, categories, allProducts };
 };
 
 export default shop;
