@@ -12,7 +12,7 @@ import { addHeaders, catchErrors, catchResponse } from '../../utils';
 export default (newUrl = '', paramsQuery, callback) => {
   const { lang, options, filters } = { lang: '', options: '', filters: '', ...paramsQuery };
 
-  const url = `/products/category/${newUrl}`;
+  const url = `/products-by-cat/${newUrl}`;
   const headers = addHeaders();
 
   const params = {};

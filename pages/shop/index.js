@@ -7,16 +7,18 @@ import SearchByAge from '../../components/SearchByAge';
 import Carousel from '../../components/common/Carousel';
 import getGeneric from '../../redux/actions/genericActs';
 import ShopLayout from '../../components/common/ShopLayout';
+import ShopList from '../../components/ShopList';
+import BonusSection from '../../components/BonusSection';
 
 const shop = ({ content, selection, categories, allProducts }) => {
   const carouselItems = _get(content, 'slider', []);
-  const { products } = selection;
+  // const { products } = selection;
 
   const genericLoad = useSelector(state => state.generic.load);
   const generics = useSelector(state => state.generic.doc);
 
   const dispatch = useDispatch();
-  console.log('allproducts', allProducts)
+  // console.log('allproducts', allProducts)
   useEffect(() => {
     if (!genericLoad) {
       dispatch(getGeneric());
@@ -37,9 +39,8 @@ const shop = ({ content, selection, categories, allProducts }) => {
       <Carousel items={carouselItems} />
       <SearchByAge generics={generics} />
       <ShopLayout inputValue={inputValue} handleInputChange={handleInputChange} categories={categories}>
-        {allProducts.products.map((product) => {
-          return <div key={product.name.es}>{product.name.es}</div>;
-        })}
+        <ShopList products={allProducts.products} />
+        <BonusSection />
       </ShopLayout>
     </Layout>
   );
@@ -55,10 +56,10 @@ shop.getInitialProps = async () => {
     return res ? res.data : null;
   });
 
-  const allProducts = await api.products.getAll({}, (err, res) => {
+  const options = { limit: 6, skip: 0 };
+  const allProducts = await api.products.getAll({ options }, (err, res) => {
     return res ? res.data : null;
   });
-
 
   return { content, selection, loaded: true, imgUrl, categories, allProducts };
 };

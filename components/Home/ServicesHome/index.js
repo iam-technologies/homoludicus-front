@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import BonusSection from '../../BonusSection';
 
 const ServicesHome = () => {
   return (
@@ -11,14 +12,7 @@ const ServicesHome = () => {
         </h5>
       </div>
       <div className="bonus-games-div">
-        <div className="bonus-div">
-          <h4>Bonus per a escoles, associacions i professionals</h4>
-          <Link href="/erizos-a-la-carrera">
-            <a>
-              <button className="button-black">Veure més</button>
-            </a>
-          </Link>
-        </div>
+        <BonusSection />
         <div className="games-div">
           <h4>Zona de Jocs</h4>
           <Link href="/game-zone">

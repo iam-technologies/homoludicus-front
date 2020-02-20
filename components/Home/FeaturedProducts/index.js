@@ -16,3 +16,4 @@ const FeaturedProducts = (props) => {
 };
 
 export default FeaturedProducts;
+
