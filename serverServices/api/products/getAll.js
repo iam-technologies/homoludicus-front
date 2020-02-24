@@ -11,7 +11,7 @@ import { addHeaders, catchErrors, catchResponse } from '../../utils';
  * @description paramsQuery contains two objects, query and options. By default is empty.
  */
 export default (paramsQuery = {}, callback) => {
-  const { query, options } = { query: '', options: '', ...paramsQuery };
+  const { query, options, filters } = { query: '', options: '', filters: '', ...paramsQuery };
 
   const url = '/products-by-cat/todos';
   const headers = addHeaders();
@@ -23,6 +23,10 @@ export default (paramsQuery = {}, callback) => {
 
   if (options) {
     params.options = JSON.stringify(options);
+  }
+
+  if (filters) {
+    params.filters = JSON.stringify(filters);
   }
 
   return axios({ method: 'get', url, headers, params })

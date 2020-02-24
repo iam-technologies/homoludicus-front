@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CategoryFilter from '../CategoryFilter';
 
 const ShopLayout = (props) => {
-  const { children, categories } = props;
+  const { children, categories, categorySelected, onSetCategory } = props;
 
   const initialValue = '';
 
@@ -20,6 +20,8 @@ const ShopLayout = (props) => {
           inputValue={inputValue}
           handleInputChange={handleInputChange}
           categories={categories}
+          onSetCategory={onSetCategory}
+          categorySelected={categorySelected}
         />
       </section>
       <section className="right-side">

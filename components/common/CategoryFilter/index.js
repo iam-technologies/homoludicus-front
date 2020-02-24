@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SearchBar from '../../SearchBar';
 
 const CategoryFilter = (props) => {
-  const { inputValue, handleInputChange, categories } = props;
+  const { inputValue, handleInputChange, categories, onSetCategory } = props;
   // console.log(categories)
 
   const onShowClick = (e) => {
@@ -11,7 +11,7 @@ const CategoryFilter = (props) => {
     } else if (e.target.className === 'category-title-open') {
       e.target.className = 'category-title';
     }
-    console.log(e.target.className);
+    // console.log(e.target.className);
   };
 
   return (
@@ -34,14 +34,14 @@ const CategoryFilter = (props) => {
                 </label>
                 <div className="tab-content">
                   {category.childrens.map((child) => {
-                    return <p>{child.name.es}</p>;
+                    return <p onClick={() => onSetCategory(child.url.es)} >{child.name.es}</p>;
                   })}
                 </div>
               </div>
             </>
           );
         })}
-        {/* Tendrán otras llamadas */}
+        {/* Tendrán otras llamadas, diferentes a la de category */}
         <div className="category-div">
           <input
             type="checkbox"
