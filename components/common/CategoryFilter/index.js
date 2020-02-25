@@ -1,18 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SearchBar from '../../SearchBar';
 
 const CategoryFilter = (props) => {
   const { inputValue, handleInputChange, categories, onSetCategory } = props;
   // console.log(categories)
-
-  const onShowClick = (e) => {
-    if (e.target.className === 'category-title') {
-      e.target.className = 'category-title-open';
-    } else if (e.target.className === 'category-title-open') {
-      e.target.className = 'category-title';
-    }
-    // console.log(e.target.className);
-  };
 
   return (
     <>
@@ -20,6 +11,17 @@ const CategoryFilter = (props) => {
 
       <div className="categories-div">
         <h5>Filtrar per categoria</h5>
+        <div className="category-div">
+          <input
+            type="checkbox"
+            className="category-in"
+            id="Totes"
+            onClick={() => onSetCategory('todos')}
+          />
+          <label className="all-label" htmlFor="Totes">
+            Totes
+          </label>
+        </div>
         {categories.map((category, i) => {
           return (
             <>
@@ -28,6 +30,7 @@ const CategoryFilter = (props) => {
                   type="checkbox"
                   className="category-in"
                   id={category.name.es}
+                  onClick={() => onSetCategory(category.url.es)}
                 />
                 <label className="tab-label" htmlFor={category.name.es}>
                   {category.name.es}

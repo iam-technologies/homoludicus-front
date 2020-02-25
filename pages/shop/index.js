@@ -15,6 +15,7 @@ const shop = ({ content, selection, categories, allProducts, asPath }) => {
   const carouselItems = _get(content, 'slider', []);
   const genericLoad = useSelector(state => state.generic.load);
   const generics = useSelector(state => state.generic.doc);
+
   const router = useRouter();
 
   const dispatch = useDispatch();
@@ -27,21 +28,25 @@ const shop = ({ content, selection, categories, allProducts, asPath }) => {
     }
   }, []);
 
+  // searchBar
   const initialValue = '';
-
   const [inputValue, setInputValue] = useState(initialValue);
 
   const [categorySelected, setCategory] = useState('todos');
 
+  const [age, setAge] = useState('');
+
   const [filteredProducts, setProducts] = useState({});
+
+  const [page, setPage] = useState(1);
 
   const handleInputChange = (e) => {
     const { value } = e.target;
     setInputValue(value);
   };
 
-  async function getData(newUrl) {
-    const newData = await api.products.getByCategory(newUrl, {}, (err, res) => {
+  async function getData(newUrl, options) {
+    const newData = await api.products.getByCategory(newUrl, { options }, (err, res) => {
       return res ? res.data : null;
     });
 
@@ -50,21 +55,31 @@ const shop = ({ content, selection, categories, allProducts, asPath }) => {
 
   const onSetCategory = (newCategory) => {
     setCategory(newCategory);
-    getData(categorySelected);
+    const options = { limit: 12, skip: 0 };
+    getData(categorySelected, options);
   };
 
-  // useEffect(() => {
-  //   getData(categorySelected);
-  // });
+  const onSetAge = (newAge) => {
+    setAge(newAge);
+    const ageQuery = newAge.replace('+', 'mas');
+    console.log(ageQuery);
+    const options = { age: ageQuery, limit: 12, skip: 0 };
+    getData(categorySelected, options);
+  };
 
-  console.log('categorySelected', categorySelected);
-  console.log('filteredProducts', filteredProducts);
-  // console.log('allproducts', allProducts);
+  useEffect(() => {
+    getData(categorySelected);
+  }, [categorySelected, age]);
+
+  const productList = filteredProducts.products || allProducts.products;
+  const numProducts = !filteredProducts ? allProducts.numProducts : filteredProducts.numProducts;
+
+  console.log('filteredProducts', filteredProducts.products);
 
   return (
     <Layout>
       <Carousel items={carouselItems} />
-      <SearchByAge generics={generics} />
+      <SearchByAge generics={generics} onSetAge={onSetAge} />
       <ShopLayout
         inputValue={inputValue}
         handleInputChange={handleInputChange}
@@ -72,31 +87,7 @@ const shop = ({ content, selection, categories, allProducts, asPath }) => {
         onSetCategory={onSetCategory}
         categorySelected={categorySelected}
       >
-        <div className="product-list-header">
-          <div className="order">
-            <p>Ordenar per</p>
-          </div>
-          <div className="results">
-            <p>Resultats:</p>
-            {
-              !filteredProducts
-                ? (
-                  <p className="num-results">
-                    {allProducts.numProducts}
-                  </p>
-                )
-                : (
-                  <p className="num-results">
-                    {filteredProducts.numProducts
-                    }
-                  </p>
-                )}
-          </div>
-          <div className="pagination-div">
-            1-2-3
-          </div>
-        </div>
-        <ShopList products={filteredProducts.products || allProducts.products} />
+        <ShopList products={productList} numProducts={numProducts} />
         <BonusSection />
       </ShopLayout>
     </Layout>
@@ -113,20 +104,21 @@ shop.getInitialProps = async ({ asPath }) => {
     return res ? res.data : null;
   });
 
-  // const newUrl = 'magic-the-gathering';
-  // const subCat = categorySelected;
   const options = { limit: 12, skip: 0 };
-  // const filters = { 'category.es': 'todos' };
 
   const allProducts = await api.products.getAll({ options }, (err, res) => {
     return res ? res.data : null;
   });
 
-  // const filteredProducts = await api.products.getByCategory(newUrl, {}, (err, res) => {
-  //   return res ? res.data : null;
-  // });
-
-  return { content, selection, loaded: true, imgUrl, categories, allProducts, asPath };
+  return {
+    content,
+    selection,
+    loaded: true,
+    imgUrl,
+    categories,
+    allProducts,
+    asPath
+  };
 };
 
 export default shop;

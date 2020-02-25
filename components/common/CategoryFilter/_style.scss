@@ -17,10 +17,12 @@
             z-index: -1;
         }
 
-        .tab-label {
+        .all-label, .tab-label {
             display: flex;
             justify-content: space-between;
             cursor: pointer;
+        }
+        .tab-label {
 
             &::after {
                 content: url("/icon/icon-more.svg");
