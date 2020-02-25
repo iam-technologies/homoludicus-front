@@ -62,6 +62,9 @@ class CartAside extends Component {
     const numItem = _.get(cart, 'item.products', []).length;
     const price = priceCalc.getCartSubTotal(_.get(cart, 'item.products', []));
     const productAdded = _.get(cart, 'item.products', []);
+    console.log('TCL: CartAside -> render -> productAdded', productAdded);
+    const formatProducts = formatCartItems(productAdded);
+    console.log("TCL: CartAside -> render -> formatProducts", formatProducts)
 
     let renderShipping = null;
 
