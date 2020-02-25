@@ -76,9 +76,7 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
         </div>
         <p className="desc">{desc}</p>
         <Link
-          href={{
-            pathname: urlUtils.linkToProduct(location, item)
-          }}
+          href={{pathname: urlUtils.linkToProduct(location, item)}}
         >
           <a onClick={onClick}>
             <p className="see-more">Veure més > </p>
