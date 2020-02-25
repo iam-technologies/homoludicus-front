@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -35,20 +35,3 @@ class Layout extends React.Component {
 
 export default connect()(withWindowResize(Layout));
 
-
-// import React, { Fragment } from 'react';
-
-// import Footer from './Footer';
-// import NavBar from './Navbar';
-
-// const Layout = ({ children, pathname }) => {
-//   return (
-//     <Fragment>
-//       <NavBar pathname={pathname} />
-//       {children}
-//       <Footer />
-//     </Fragment>
-//   );
-// };
-
-// export default (Layout);

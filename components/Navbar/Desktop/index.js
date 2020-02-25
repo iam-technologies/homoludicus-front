@@ -29,13 +29,6 @@ const NavBarDesktop = (props) => {
         <div className="cart-icon">
           <CartNavBtn />
         </div>
-        {/* <div className="user-icon-div">
-          <Link href="/">
-            <a>
-              <img src="/icon/icon-account.svg" alt="cart" />
-            </a>
-          </Link>
-        </div> */}
         <MyAccountButton />
         <div className="lang-div">
           <p>cat</p>
