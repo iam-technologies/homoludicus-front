@@ -34,58 +34,79 @@ const shop = ({ content, selection, categories, allProducts, asPath }) => {
 
   const [categorySelected, setCategory] = useState('todos');
 
-  const [age, setAge] = useState('');
+  const [filters, setFilters] = useState({});
 
-  const [filteredProducts, setProducts] = useState({});
+  const [filteredProducts, setProducts] = useState(allProducts);
 
-  const [page, setPage] = useState(1);
+  const defaultOptions = { limit: 12, skip: 0 };
+  const [options, setOptions] = useState(defaultOptions);
+
+  // const [page, setPage] = useState(1);
 
   const handleInputChange = (e) => {
     const { value } = e.target;
     setInputValue(value);
   };
 
-  async function getData(newUrl, options) {
-    const newData = await api.products.getByCategory(newUrl, { options }, (err, res) => {
+  async function getData(newUrl) {
+    const newData = await api.products.getByCategory(newUrl, { options, filters }, (err, res) => {
       return res ? res.data : null;
     });
+    console.log('TCL: getData -> options', options);
 
     setProducts(newData);
+    console.log('products getdata', filteredProducts);
   }
 
   const onSetCategory = (newCategory) => {
     setCategory(newCategory);
-    const options = { limit: 12, skip: 0 };
-    getData(categorySelected, options);
+    getData(categorySelected);
   };
 
   const onSetAge = (newAge) => {
-    setAge(newAge);
     const ageQuery = newAge.replace('+', 'mas');
-    console.log(ageQuery);
-    const options = { age: ageQuery, limit: 12, skip: 0 };
-    getData(categorySelected, options);
+    setFilters({ age: ageQuery });
+    getData(categorySelected);
   };
 
+  const onSetHability = (newHability) => {
+    setFilters({ ...filters, productTags: newHability });
+    console.log(filters);
+  };
+
+  const onDeleteFilter = (filter) => {
+    if (filter === 'age') {
+      delete filters.age;
+    } else if (filter === 'hability') {
+      delete filters.productTags;
+    }
+    getData(categorySelected);
+  };
+
+
+  console.log('filters ', filters);
   useEffect(() => {
     getData(categorySelected);
-  }, [categorySelected, age]);
+  }, [categorySelected, options, filters]);
 
-  const productList = filteredProducts.products || allProducts.products;
-  const numProducts = !filteredProducts ? allProducts.numProducts : filteredProducts.numProducts;
+  const productList = filteredProducts.products;
+  const numProducts = filteredProducts.numProducts;
 
   console.log('filteredProducts', filteredProducts.products);
-
   return (
     <Layout>
       <Carousel items={carouselItems} />
-      <SearchByAge generics={generics} onSetAge={onSetAge} />
+      <SearchByAge generics={generics} onSetAge={onSetAge} onDeleteFilter={onDeleteFilter} />
       <ShopLayout
         inputValue={inputValue}
         handleInputChange={handleInputChange}
         categories={categories}
         onSetCategory={onSetCategory}
         categorySelected={categorySelected}
+        generics={generics}
+        onSetHability={onSetHability}
+        onSetAge={onSetAge}
+        onDeleteFilter={onDeleteFilter}
       >
         <ShopList products={productList} numProducts={numProducts} />
         <BonusSection />

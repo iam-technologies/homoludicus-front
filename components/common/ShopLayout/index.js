@@ -2,10 +2,18 @@ import React, { useState } from 'react';
 import CategoryFilter from '../CategoryFilter';
 
 const ShopLayout = (props) => {
-  const { children, categories, categorySelected, onSetCategory } = props;
+  const {
+    children,
+    categories,
+    categorySelected,
+    onSetCategory,
+    generics,
+    onSetHability,
+    onSetAge,
+    onDeleteFilter
+  } = props;
 
   const initialValue = '';
-
   const [inputValue, setInputValue] = useState(initialValue);
 
   const handleInputChange = (e) => {
@@ -22,6 +30,10 @@ const ShopLayout = (props) => {
           categories={categories}
           onSetCategory={onSetCategory}
           categorySelected={categorySelected}
+          generics={generics}
+          onSetHability={onSetHability}
+          onSetAge={onSetAge}
+          onDeleteFilter={onDeleteFilter}
         />
       </section>
       <section className="right-side">

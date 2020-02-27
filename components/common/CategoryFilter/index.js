@@ -2,8 +2,18 @@ import React from 'react';
 import SearchBar from '../../SearchBar';
 
 const CategoryFilter = (props) => {
-  const { inputValue, handleInputChange, categories, onSetCategory } = props;
-  // console.log(categories)
+  const {
+    inputValue,
+    handleInputChange,
+    categories,
+    onSetCategory,
+    generics,
+    onSetHability,
+    onSetAge,
+    onDeleteFilter } = props;
+
+  const hability = generics.productTags || [];
+  const ages = generics.age || [];
 
   return (
     <>
@@ -54,6 +64,12 @@ const CategoryFilter = (props) => {
           <label className="tab-label" htmlFor="Habilidad">
             Habilidad
           </label>
+          <div className="tab-content">
+            {hability.map((hab) => {
+              return <p onClick={() => onSetHability(hab)} >{hab}</p>;
+            })}
+            <p onClick={() => onDeleteFilter('hability')} >Totes</p>
+          </div>
         </div>
         <div className="category-div">
           <input
@@ -64,6 +80,12 @@ const CategoryFilter = (props) => {
           <label className="tab-label" htmlFor="Edad">
             Edad
           </label>
+          <div className="tab-content">
+            {ages.map((age) => {
+              return <p onClick={() => onSetAge(age)} >{age}</p>;
+            })}
+            <p onClick={() => onDeleteFilter('age')} >Totes</p>
+          </div>
         </div>
         <div className="category-div">
           <input

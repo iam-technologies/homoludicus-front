@@ -1,6 +1,8 @@
 import React from 'react';
 
-const SearchByAge = ({ generics, onSetAge, ageDePrueba }) => {
+// agregar category age "totes"
+// arreglar hacer la búsqueda con filtro category "todos"
+const SearchByAge = ({ generics, onSetAge, onDeleteFilter }) => {
   const ages = generics.age || [];
   return (
     <div className="age-searcher-div">
@@ -16,6 +18,12 @@ const SearchByAge = ({ generics, onSetAge, ageDePrueba }) => {
             </button>
           );
         })}
+        <button
+          className="button-ghost-grey"
+          onClick={() => onDeleteFilter('age')}
+        >
+          Totes
+        </button>
       </div>
     </div>
   );
