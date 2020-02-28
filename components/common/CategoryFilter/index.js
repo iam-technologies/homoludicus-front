@@ -10,10 +10,13 @@ const CategoryFilter = (props) => {
     generics,
     onSetHability,
     onSetAge,
-    onDeleteFilter } = props;
+    onSetPlayers,
+    onDeleteFilter
+  } = props;
 
   const hability = generics.productTags || [];
   const ages = generics.age || [];
+  const players = generics.players || [];
 
   return (
     <>
@@ -96,6 +99,12 @@ const CategoryFilter = (props) => {
           <label className="tab-label" htmlFor="Jugadores">
             Número de jugadores
           </label>
+          <div className="tab-content">
+            {players.map((player) => {
+              return <p onClick={() => onSetPlayers(player)} >{player}</p>;
+            })}
+            <p onClick={() => onDeleteFilter('players')} >Tots</p>
+          </div>
         </div>
       </div>
     </>

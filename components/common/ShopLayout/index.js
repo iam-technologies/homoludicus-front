@@ -10,6 +10,7 @@ const ShopLayout = (props) => {
     generics,
     onSetHability,
     onSetAge,
+    onSetPlayers,
     onDeleteFilter
   } = props;
 
@@ -33,6 +34,7 @@ const ShopLayout = (props) => {
           generics={generics}
           onSetHability={onSetHability}
           onSetAge={onSetAge}
+          onSetPlayers={onSetPlayers}
           onDeleteFilter={onDeleteFilter}
         />
       </section>

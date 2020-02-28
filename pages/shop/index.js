@@ -71,6 +71,10 @@ const shop = ({ content, selection, categories, allProducts, asPath }) => {
 
   const onSetHability = (newHability) => {
     setFilters({ ...filters, productTags: newHability });
+  };
+
+  const onSetPlayers = (numPlayers) => {
+    setFilters({ ...filters, players: numPlayers });
     console.log(filters);
   };
 
@@ -79,6 +83,8 @@ const shop = ({ content, selection, categories, allProducts, asPath }) => {
       delete filters.age;
     } else if (filter === 'hability') {
       delete filters.productTags;
+    } else if (filter === 'players') {
+      delete filters.players;
     }
     getData(categorySelected);
   };
@@ -106,6 +112,7 @@ const shop = ({ content, selection, categories, allProducts, asPath }) => {
         generics={generics}
         onSetHability={onSetHability}
         onSetAge={onSetAge}
+        onSetPlayers={onSetPlayers}
         onDeleteFilter={onDeleteFilter}
       >
         <ShopList products={productList} numProducts={numProducts} />
