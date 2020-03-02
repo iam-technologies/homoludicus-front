@@ -11,9 +11,16 @@ const ShopLayout = (props) => {
     onSetHability,
     onSetAge,
     onSetPlayers,
-    onDeleteFilter
+    onDeleteFilter,
+    category,
+    filterSelected,
+    setFilterSelected
   } = props;
 
+
+  console.log(category, 'category');
+
+  // Searcher
   const initialValue = '';
   const [inputValue, setInputValue] = useState(initialValue);
 
@@ -36,6 +43,8 @@ const ShopLayout = (props) => {
           onSetAge={onSetAge}
           onSetPlayers={onSetPlayers}
           onDeleteFilter={onDeleteFilter}
+          filterSelected={filterSelected}
+          setFilterSelected={setFilterSelected}
         />
       </section>
       <section className="right-side">

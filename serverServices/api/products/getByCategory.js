@@ -11,7 +11,6 @@ import { addHeaders, catchErrors, catchResponse } from '../../utils';
  */
 export default (newUrl = '', paramsQuery = {}, callback) => {
   const { lang, query, options, filters, search } = { lang: '', query: '', options: '', filters: '', ...paramsQuery };
-
   const url = `/products-by-cat/${newUrl}`;
   const headers = addHeaders();
 

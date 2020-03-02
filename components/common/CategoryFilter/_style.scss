@@ -1,4 +1,10 @@
 .categories-div {
+
+    p.selected {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
     h5 {
         font-size: 18px;
         padding-bottom: 10px;
@@ -17,15 +23,35 @@
             z-index: -1;
         }
 
-        .all-label, .tab-label {
+        .all-label {
             display: flex;
             justify-content: space-between;
             cursor: pointer;
+
+            &-selected {
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                font-weight: bold;
+            }
+
         }
         .tab-label {
-
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
             &::after {
                 content: url("/icon/icon-more.svg");
+            }
+
+            &-selected {
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                font-weight: bold;
+                &::after {
+                content: url("/icon/icon-more.svg");
+                }
             }
         }
 
@@ -49,7 +75,7 @@
 // :checked
     input:checked {
             
-        ~ .tab-label {
+        ~ .tab-label-selected {
             &::after {
                 content: url("/icon/icon-less.svg");
             }

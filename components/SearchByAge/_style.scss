@@ -14,4 +14,10 @@
             height: 46px;
         }
     }
+
+    button.selected {
+        background-color: $middle-grey;
+        color: white;
+        outline: none;
+    }
 }

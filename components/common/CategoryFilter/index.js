@@ -11,12 +11,22 @@ const CategoryFilter = (props) => {
     onSetHability,
     onSetAge,
     onSetPlayers,
-    onDeleteFilter
+    onDeleteFilter,
+    categorySelected,
+    filterSelected,
+    setFilterSelected,
   } = props;
 
   const hability = generics.productTags || [];
   const ages = generics.age || [];
   const players = generics.players || [];
+
+  const allSelected = categorySelected === 'todos' ? '-selected' : '';
+
+  const selectedFilter = (filter) => {
+    const selected = filter === filterSelected ? '-selected' : '';
+    return selected;
+  }
 
   return (
     <>
@@ -31,11 +41,12 @@ const CategoryFilter = (props) => {
             id="Totes"
             onClick={() => onSetCategory('todos')}
           />
-          <label className="all-label" htmlFor="Totes">
+          <label className={`all-label${allSelected}`} htmlFor="Totes">
             Totes
           </label>
         </div>
         {categories.map((category, i) => {
+          const selected = category.url.es === categorySelected ? '-selected' : '';
           return (
             <>
               <div className="category-div">
@@ -45,29 +56,30 @@ const CategoryFilter = (props) => {
                   id={category.name.es}
                   onClick={() => onSetCategory(category.url.es)}
                 />
-                <label className="tab-label" htmlFor={category.name.es}>
+                <label className={`tab-label${selected}`} htmlFor={category.name.es}>
                   {category.name.es}
                 </label>
                 <div className="tab-content">
                   {category.childrens.map((child) => {
-                    return <p onClick={() => onSetCategory(child.url.es)} >{child.name.es}</p>;
+                    const selected = child.url.es === categorySelected ? 'selected' : '';
+                    return <p className={`${selected}`} onClick={() => onSetCategory(child.url.es)} >{child.name.es}</p>;
                   })}
                 </div>
               </div>
             </>
           );
         })}
-        {/* Tendrán otras llamadas, diferentes a la de category */}
         <div className="category-div">
           <input
             type="checkbox"
             className="category-in"
             id="Habilidad"
+            onClick={() => setFilterSelected('Habilidad')}
           />
-          <label className="tab-label" htmlFor="Habilidad">
+          <label className={`tab-label${selectedFilter('Habilidad')}`} htmlFor="Habilidad">
             Habilidad
           </label>
-          <div className="tab-content">
+          <div className="tab-content" >
             {hability.map((hab) => {
               return <p onClick={() => onSetHability(hab)} >{hab}</p>;
             })}
@@ -79,8 +91,9 @@ const CategoryFilter = (props) => {
             type="checkbox"
             className="category-in"
             id="Edad"
+            onClick={() => setFilterSelected('Edad')}
           />
-          <label className="tab-label" htmlFor="Edad">
+          <label className={`tab-label${selectedFilter('Edad')}`} htmlFor="Edad">
             Edad
           </label>
           <div className="tab-content">
@@ -95,8 +108,9 @@ const CategoryFilter = (props) => {
             type="checkbox"
             className="category-in"
             id="Jugadores"
+            onClick={() => setFilterSelected('Players')}
           />
-          <label className="tab-label" htmlFor="Jugadores">
+          <label className={`tab-label${selectedFilter('Players')}`} htmlFor="Jugadores">
             Número de jugadores
           </label>
           <div className="tab-content">

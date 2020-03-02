@@ -41,7 +41,7 @@ class Navbar extends Component {
       title: 'Qui som', url: '/about-us'
     },
     {
-      title: 'Botiga online', url: '/shop'
+      title: 'Botiga online', url: '/shop/todos'
     },
     {
       title: 'Activitats', url: '/activities'
