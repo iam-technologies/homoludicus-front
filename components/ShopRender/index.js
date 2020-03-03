@@ -11,7 +11,16 @@ import BonusSection from '../../components/BonusSection';
 import getBrowserUrl from '../../components/common/helpers';
 import { api } from '../../serverServices';
 
-const ShopRender = ({ content, selection, categories, allProducts, asPath, category = 'todos', newFilters }) => {
+const ShopRender = ({
+    content,
+    selection,
+    categories,
+    allProducts,
+    asPath,
+    category = 'todos',
+    newFilters
+}) => {
+
     const carouselItems = _get(content, 'slider', []);
     const genericLoad = useSelector(state => state.generic.load);
     const generics = useSelector(state => state.generic.doc);
@@ -47,10 +56,33 @@ const ShopRender = ({ content, selection, categories, allProducts, asPath, categ
     const [playersSelected, setPlayersSelected] = useState('');
 
     // const [page, setPage] = useState(1);
+    console.log(inputValue)
+
+    async function getData() {
+        const search = inputValue;
+        const newData =
+            await api.products.getByCategory(category, { options, filters }, (err, res) => {
+                console.log(res.data)
+                return res ? res.data : null;
+            });
+        setProducts(newData);
+    }
+
+    async function getSearch() {
+        const search = inputValue;
+        console.log("getSearch -> search", search.lenght)
+
+        const newData = await api.products.getBySearch({ options, search }, (err, res) => {
+            return res ? res.data : null;
+        });
+        console.log('newData', newData)
+        setProducts(newData)
+    }
 
     const handleInputChange = (e) => {
         const { value } = e.target;
         setInputValue(value);
+        getSearch()
     };
 
     useEffect(() => {
@@ -63,16 +95,9 @@ const ShopRender = ({ content, selection, categories, allProducts, asPath, categ
         router.push('/shop/[category]', newUrl);
     }, [newUrl]);
 
-    async function getData() {
-        const newData = await api.products.getByCategory(category, { options, filters }, (err, res) => {
-            return res ? res.data : null;
-        });
-        setProducts(newData);
-    }
-
     useEffect(() => {
         getData()
-    }, [category, options, filters]);
+    }, [category, options, filters, inputValue]);
 
     const onSetCategory = (newCategory) => {
         setCategory(newCategory);

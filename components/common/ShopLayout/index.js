@@ -3,6 +3,8 @@ import CategoryFilter from '../CategoryFilter';
 
 const ShopLayout = (props) => {
   const {
+    handleInputChange,
+    inputValue,
     children,
     categories,
     categorySelected,
@@ -19,18 +21,6 @@ const ShopLayout = (props) => {
     habilitySelected,
     playersSelected
   } = props;
-
-
-  console.log(category, 'category');
-
-  // Searcher
-  const initialValue = '';
-  const [inputValue, setInputValue] = useState(initialValue);
-
-  const handleInputChange = (e) => {
-    const { value } = e.target;
-    setInputValue(value);
-  };
 
   return (
     <div className="shop-page">
