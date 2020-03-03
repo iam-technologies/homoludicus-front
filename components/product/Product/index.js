@@ -110,39 +110,37 @@ class Product extends React.Component {
           </h1>
           <p>Botiga{url}</p>
         </div>
-        <ShopLayout categories={categories}>
-          <section className="app-product-box_product">
-            {/* <BoxSlider
+        <section className="app-product-box_product">
+          {/* <BoxSlider
             badge={_.get(product, 'state', '')}
             images={_.get(product, 'img', [])}
             item={product}
           /> */}
-            <BoxBuyProduct
-              item={product}
-              index={indexEdit === '' ? -1 : Number(indexEdit)}
-              alt={_.get(alt, '0', name)}
-              src={img}
-            />
-          </section>
+          <BoxBuyProduct
+            item={product}
+            index={indexEdit === '' ? -1 : Number(indexEdit)}
+            alt={_.get(alt, '0', name)}
+            src={img}
+          />
+        </section>
 
-          {/* <section className="app-product-box_information">
+        {/* <section className="app-product-box_information">
           <BoxDetails
             item={product}
             refundsText={refundsText}
           /> */}
 
-          {/* <BoxRatings
+        {/* <BoxRatings
             productId={product._id}
           />
         </section> */}
 
-          <InfoSwitcher product={product} />
+        <InfoSwitcher product={product} />
 
-          <RelatedProduct
-            key={_.get(product, '_id', 'newkey')}
-            item={product}
-          />
-        </ShopLayout>
+        <RelatedProduct
+          key={_.get(product, '_id', 'newkey')}
+          item={product}
+        />
       </section>
 
     );
@@ -152,6 +150,4 @@ class Product extends React.Component {
 
 Product.propTypes = { location: PropTypes.object.isRequired };
 
-export default connect(state => ({
-  user: state.user.user
-}))(Product);
+export default connect(state => ({ user: state.user.user }))(Product);
