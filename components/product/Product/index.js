@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 // import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-
+import Link from 'next/link';
 import Router from 'next/router';
 import { api } from '../../../serverServices';
 // import { urlUtils } from '../../../utils';
@@ -49,7 +49,6 @@ class Product extends React.Component {
     const { user, url } = this.props;
     // const paramUrl = urlUtils.getParamsUrl('product', this.props);
     const paramUrl = url.slice(1);
-
 
     let userId = 'unlogged_user';
     if (user) userId = user._id;
@@ -109,6 +108,13 @@ class Product extends React.Component {
             {product.name.es}
           </h1>
           <p>Botiga{url}</p>
+        </div>
+        <div className="return-to-shop">
+          <Link href="/shop/todos">
+            <a>
+              <h4> &lt;&lt; Tornar a la Botiga</h4>
+            </a>
+          </Link>
         </div>
         <section className="app-product-box_product">
           {/* <BoxSlider
