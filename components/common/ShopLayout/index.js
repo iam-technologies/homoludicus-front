@@ -14,7 +14,10 @@ const ShopLayout = (props) => {
     onDeleteFilter,
     category,
     filterSelected,
-    setFilterSelected
+    setFilterSelected,
+    ageSelected,
+    habilitySelected,
+    playersSelected
   } = props;
 
 
@@ -45,6 +48,9 @@ const ShopLayout = (props) => {
           onDeleteFilter={onDeleteFilter}
           filterSelected={filterSelected}
           setFilterSelected={setFilterSelected}
+          ageSelected={ageSelected}
+          habilitySelected={habilitySelected}
+          playersSelected={playersSelected}
         />
       </section>
       <section className="right-side">

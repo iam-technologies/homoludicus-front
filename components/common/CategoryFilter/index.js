@@ -15,6 +15,9 @@ const CategoryFilter = (props) => {
     categorySelected,
     filterSelected,
     setFilterSelected,
+    ageSelected,
+    habilitySelected,
+    playersSelected
   } = props;
 
   const hability = generics.productTags || [];
@@ -22,6 +25,9 @@ const CategoryFilter = (props) => {
   const players = generics.players || [];
 
   const allSelected = categorySelected === 'todos' ? '-selected' : '';
+  const allAges = ageSelected === 'todos' ? 'selected' : '';
+  const allHabilities = habilitySelected === 'todos' ? 'selected' : '';
+  const allPlayers = playersSelected === 'todos' ? 'selected' : '';
 
   const selectedFilter = (filter) => {
     const selected = filter === filterSelected ? '-selected' : '';
@@ -81,9 +87,10 @@ const CategoryFilter = (props) => {
           </label>
           <div className="tab-content" >
             {hability.map((hab) => {
-              return <p onClick={() => onSetHability(hab)} >{hab}</p>;
+              const selected = hab === habilitySelected ? 'selected' : '';
+              return <p className={selected} onClick={() => onSetHability(hab)} >{hab}</p>;
             })}
-            <p onClick={() => onDeleteFilter('hability')} >Totes</p>
+            <p className={allHabilities} onClick={() => onDeleteFilter('hability')} >Totes</p>
           </div>
         </div>
         <div className="category-div">
@@ -98,9 +105,10 @@ const CategoryFilter = (props) => {
           </label>
           <div className="tab-content">
             {ages.map((age) => {
-              return <p onClick={() => onSetAge(age)} >{age}</p>;
+              const selected = age === ageSelected ? 'selected' : '';
+              return <p className={selected} onClick={() => onSetAge(age)} >{age}</p>;
             })}
-            <p onClick={() => onDeleteFilter('age')} >Totes</p>
+            <p className={allAges} onClick={() => onDeleteFilter('age')} >Totes</p>
           </div>
         </div>
         <div className="category-div">
@@ -115,9 +123,10 @@ const CategoryFilter = (props) => {
           </label>
           <div className="tab-content">
             {players.map((player) => {
-              return <p onClick={() => onSetPlayers(player)} >{player}</p>;
+              const selected = player === playersSelected ? 'selected' : '';
+              return <p className={selected} onClick={() => onSetPlayers(player)} >{player}</p>;
             })}
-            <p onClick={() => onDeleteFilter('players')} >Tots</p>
+            <p className={allPlayers} onClick={() => onDeleteFilter('players')} >Tots</p>
           </div>
         </div>
       </div>

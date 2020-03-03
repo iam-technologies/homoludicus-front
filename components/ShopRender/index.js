@@ -43,6 +43,8 @@ const ShopRender = ({ content, selection, categories, allProducts, asPath, categ
 
     const [filterSelected, setFilterSelected] = useState('');
     const [ageSelected, setAgeSelected] = useState('');
+    const [habilitySelected, setHabilitySelected] = useState('');
+    const [playersSelected, setPlayersSelected] = useState('');
 
     // const [page, setPage] = useState(1);
 
@@ -83,20 +85,25 @@ const ShopRender = ({ content, selection, categories, allProducts, asPath, categ
     };
 
     const onSetHability = (newHability) => {
+        setHabilitySelected(newHability)
         setFilters({ ...filters, productTags: newHability });
     };
 
     const onSetPlayers = (numPlayers) => {
+        setPlayersSelected(numPlayers)
         setFilters({ ...filters, players: numPlayers });
     };
 
     const onDeleteFilter = (filter) => {
         if (filter === 'age') {
             delete filters.age;
+            setAgeSelected('todos')
         } else if (filter === 'hability') {
             delete filters.productTags;
+            setHabilitySelected('todos')
         } else if (filter === 'players') {
             delete filters.players;
+            setPlayersSelected('todos')
         }
         getData();
     };
@@ -126,10 +133,13 @@ const ShopRender = ({ content, selection, categories, allProducts, asPath, categ
                 generics={generics}
                 onSetHability={onSetHability}
                 onSetAge={onSetAge}
+                ageSelected={ageSelected}
                 onSetPlayers={onSetPlayers}
                 onDeleteFilter={onDeleteFilter}
                 filterSelected={filterSelected}
                 setFilterSelected={setFilterSelected}
+                habilitySelected={habilitySelected}
+                playersSelected={playersSelected}
             >
                 <ShopList
                     products={productList}
