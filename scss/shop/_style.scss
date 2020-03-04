@@ -8,20 +8,55 @@
         margin-right: 50px;
     }
 
-    .bonus-div {
-        margin: 20px 10px;
-        height: 246px;
+    .bonus-section {
         width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-left: 16px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+        .bonus-div {
+            width: 88%;
+        }
     }
 
     .product-list-header {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
 
         .results {
             display: flex;
 
             .num-results {font-size: 18px;}
+        }
+    }
+
+    .pagination-div {
+        display: flex;
+        max-width: 153.28px;
+        max-height: 37px;
+
+        .pagination-arrow {
+            width: 37px;
+            height: 37px;
+            border-color: $light-grey;
+            margin: 0;
+        }
+
+        .page-numbers-div {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            margin-right: 10px;
+
+            p {
+                &:hover {
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+            }
         }
     }
 }

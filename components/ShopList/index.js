@@ -17,8 +17,16 @@ const ShopList = (props) => {
           </p>
         </div>
         <div className="pagination-div">
-          1-2-3
+          <button className='pagination-arrow'>
+            <img src="/icon/left.svg" />
+          </button>
+          <div className="page-numbers-div">
+            <p>1 - 2 - 3 - 4</p>
           </div>
+          <button className='pagination-arrow'>
+            <img src="/icon/right.svg" />
+          </button>
+        </div>
       </div>
       <section className="shop-product_list_ui">
         {products.map((product) => {

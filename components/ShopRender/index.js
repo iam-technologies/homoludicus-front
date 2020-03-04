@@ -47,16 +47,17 @@ const ShopRender = ({
 
     const [filteredProducts, setProducts] = useState(allProducts);
 
-    const defaultOptions = { limit: 12, skip: 0 };
+    const defaultOptions = { limit: 6, skip: 0 };
     const [options, setOptions] = useState(defaultOptions);
+    console.log("options", options)
 
     const [filterSelected, setFilterSelected] = useState('');
     const [ageSelected, setAgeSelected] = useState('');
     const [habilitySelected, setHabilitySelected] = useState('');
     const [playersSelected, setPlayersSelected] = useState('');
 
-    // const [page, setPage] = useState(1);
-    console.log(inputValue)
+    const [page, setPage] = useState(1);
+    console.log('page', page)
 
     async function getData() {
         const search = inputValue;
@@ -70,12 +71,10 @@ const ShopRender = ({
 
     async function getSearch() {
         const search = inputValue;
-        console.log("getSearch -> search", search.lenght)
 
         const newData = await api.products.getBySearch({ options, search }, (err, res) => {
             return res ? res.data : null;
         });
-        console.log('newData', newData)
         setProducts(newData)
     }
 
@@ -170,7 +169,9 @@ const ShopRender = ({
                     products={productList}
                     numProducts={numProducts}
                 />
-                <BonusSection />
+                <div className="bonus-section">
+                    <BonusSection />
+                </div>
             </ShopLayout>
         </>
     );
