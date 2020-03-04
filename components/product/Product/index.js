@@ -15,7 +15,7 @@ import BoxDetails from './BoxDetails';
 import BoxRatings from './BoxRatings';
 import RelatedProduct from './RelatedProduct';
 import InfoSwitcher from './InfoSwitcher';
-import ShopLayout from '../../common/ShopLayout';
+import ShopLayout from '../../shopComponents/ShopLayout';
 
 class Product extends React.Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { api, getImageUrl } from '../../../serverServices';
 import { Layout } from '../../../components';
-import ShopRender from '../../../components/ShopRender';
+import ShopRender from '../../../components/shopComponents/ShopRender';
 
 const shop = (props) => {
   return (
@@ -28,9 +28,14 @@ shop.getInitialProps = async ({ query, asPath }) => {
     return res ? res.data : null;
   });
 
-  const options = { limit: 12, skip: 0 };
+  const options = { limit: 6, skip: 0 };
+  const options2 = { limit: 6, skip: 6 };
 
   const allProducts = await api.products.getByCategory(category, { options, filters }, (err, res) => {
+    return res ? res.data : null;
+  });
+
+  const allProducts2 = await api.products.getByCategory(category, { options2, filters }, (err, res) => {
     return res ? res.data : null;
   });
 
@@ -41,6 +46,7 @@ shop.getInitialProps = async ({ query, asPath }) => {
     imgUrl,
     categories,
     allProducts,
+    allProducts2,
     category,
     newFilters: filters,
     asPath

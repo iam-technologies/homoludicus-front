@@ -2,20 +2,22 @@ import React, { useState, useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 import _get from 'lodash/get';
 import { useSelector, useDispatch } from 'react-redux';
-import SearchByAge from '../../components/SearchByAge';
-import Carousel from '../../components/common/Carousel';
-import getGeneric from '../../redux/actions/genericActs';
-import ShopLayout from '../../components/common/ShopLayout';
-import ShopList from '../../components/ShopList';
-import BonusSection from '../../components/BonusSection';
-import getBrowserUrl from '../../components/common/helpers';
-import { api } from '../../serverServices';
+import SearchByAge from '../../SearchByAge';
+import Carousel from '../../common/Carousel';
+import getGeneric from '../../../redux/actions/genericActs';
+import ShopLayout from '../ShopLayout';
+import ShopList from '../ShopList';
+import BonusSection from '../../BonusSection';
+import getBrowserUrl from '../../common/helpers';
+import { api } from '../../../serverServices';
+import ProductListHeader from '../ProductListHeader';
 
 const ShopRender = ({
     content,
     selection,
     categories,
     allProducts,
+    allProducts2,
     asPath,
     category = 'todos',
     newFilters
@@ -42,14 +44,17 @@ const ShopRender = ({
     const [inputValue, setInputValue] = useState(initialValue);
 
     const [categorySelected, setCategory] = useState(category);
-
     const [filters, setFilters] = useState(newFilters);
 
     const [filteredProducts, setProducts] = useState(allProducts);
+    console.log("filteredProducts", filteredProducts)
+    const [filteredProducts2, setProducts2] = useState(allProducts2);
+    // console.log("filteredProducts2", filteredProducts2)
 
     const defaultOptions = { limit: 6, skip: 0 };
     const [options, setOptions] = useState(defaultOptions);
-    console.log("options", options)
+    const defaultOptions2 = { limit: 6, skip: 6 };
+    const [options2, setOptions2] = useState(defaultOptions2)
 
     const [filterSelected, setFilterSelected] = useState('');
     const [ageSelected, setAgeSelected] = useState('');
@@ -60,13 +65,18 @@ const ShopRender = ({
     console.log('page', page)
 
     async function getData() {
-        const search = inputValue;
         const newData =
             await api.products.getByCategory(category, { options, filters }, (err, res) => {
                 console.log(res.data)
                 return res ? res.data : null;
             });
-        setProducts(newData);
+        const newData2 =
+            await api.products.getByCategory(category, { options2, filters }, (err, res) => {
+                console.log(res.data)
+                return res ? res.data : null;
+            });
+        setProducts(newData)
+        setProducts2(newData2)
     }
 
     async function getSearch() {
@@ -94,28 +104,32 @@ const ShopRender = ({
         router.push('/shop/[category]', newUrl);
     }, [newUrl]);
 
-    useEffect(() => {
-        getData()
-    }, [category, options, filters, inputValue]);
+    // useEffect(() => {
+    //     getData()
+    // }, [category, options, filters, inputValue]);
 
     const onSetCategory = (newCategory) => {
         setCategory(newCategory);
+        getData();
     };
 
     const onSetAge = (newAge) => {
         setAgeSelected(newAge)
         const ageQuery = newAge.replace('+', 'mas');
         setFilters({ age: ageQuery });
+        getData();
     };
 
     const onSetHability = (newHability) => {
         setHabilitySelected(newHability)
         setFilters({ ...filters, productTags: newHability });
+        getData();
     };
 
     const onSetPlayers = (numPlayers) => {
         setPlayersSelected(numPlayers)
         setFilters({ ...filters, players: numPlayers });
+        getData();
     };
 
     const onDeleteFilter = (filter) => {
@@ -135,10 +149,14 @@ const ShopRender = ({
     const onDeleteAge = () => {
         onDeleteFilter('age');
         setAgeSelected('todos')
+        getData();
     }
 
     const productList = filteredProducts.products;
     const numProducts = filteredProducts.numProducts;
+    const productList2 = filteredProducts2.products;
+
+    console.log(productList.length)
     return (
         <>
             <Carousel items={carouselItems} />
@@ -165,13 +183,12 @@ const ShopRender = ({
                 habilitySelected={habilitySelected}
                 playersSelected={playersSelected}
             >
-                <ShopList
-                    products={productList}
-                    numProducts={numProducts}
-                />
+                <ProductListHeader numProducts={numProducts} />
+                <ShopList products={productList} />
                 <div className="bonus-section">
                     <BonusSection />
                 </div>
+                <ShopList products={productList2} />
             </ShopLayout>
         </>
     );
