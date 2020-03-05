@@ -15,14 +15,14 @@ const ProductListHeader = (props) => {
 
     const translateRight = () => {
         if (length > countPages) {
-            setTranslate(translate - 100)
+            setTranslate(translate - 80)
             setCountPages(countPages + 1)
         }
     }
 
     const translateLeft = () => {
         if (countPages > 1) {
-            setTranslate(translate + 100)
+            setTranslate(translate + 80)
             setCountPages(countPages - 1)
         }
     }
