@@ -17,10 +17,10 @@ const ShopRender = ({
     selection,
     categories,
     allProducts,
-    allProducts2,
     asPath,
     category = 'todos',
-    newFilters
+    newFilters,
+    totalPages
 }) => {
 
     const carouselItems = _get(content, 'slider', []);
@@ -30,8 +30,6 @@ const ShopRender = ({
     const router = useRouter();
 
     const dispatch = useDispatch();
-
-    // console.log('asPath', asPath);
 
     useEffect(() => {
         if (!genericLoad) {
@@ -47,36 +45,33 @@ const ShopRender = ({
     const [filters, setFilters] = useState(newFilters);
 
     const [filteredProducts, setProducts] = useState(allProducts);
-    console.log("filteredProducts", filteredProducts)
-    const [filteredProducts2, setProducts2] = useState(allProducts2);
-    // console.log("filteredProducts2", filteredProducts2)
+    // console.log("filteredProducts", filteredProducts)
 
-    const defaultOptions = { limit: 6, skip: 0 };
+    const defaultOptions = { limit: 12, skip: 0 };
     const [options, setOptions] = useState(defaultOptions);
-    const defaultOptions2 = { limit: 6, skip: 6 };
-    const [options2, setOptions2] = useState(defaultOptions2)
 
     const [filterSelected, setFilterSelected] = useState('');
     const [ageSelected, setAgeSelected] = useState('');
     const [habilitySelected, setHabilitySelected] = useState('');
     const [playersSelected, setPlayersSelected] = useState('');
 
+    //Pagination
     const [page, setPage] = useState(1);
-    console.log('page', page)
+
+    let arrayPages = [];
+
+    for (var i = 1; i <= totalPages; i++) {
+        arrayPages.push(i)
+    }
+
+    console.log(arrayPages)
 
     async function getData() {
         const newData =
             await api.products.getByCategory(category, { options, filters }, (err, res) => {
-                console.log(res.data)
-                return res ? res.data : null;
-            });
-        const newData2 =
-            await api.products.getByCategory(category, { options2, filters }, (err, res) => {
-                console.log(res.data)
                 return res ? res.data : null;
             });
         setProducts(newData)
-        setProducts2(newData2)
     }
 
     async function getSearch() {
@@ -94,42 +89,30 @@ const ShopRender = ({
         getSearch()
     };
 
-    useEffect(() => {
-        setCategory(category);
-    }, [category]);
-
     const newUrl = getBrowserUrl(categorySelected, filters);
 
     useEffect(() => {
         router.push('/shop/[category]', newUrl);
     }, [newUrl]);
 
-    // useEffect(() => {
-    //     getData()
-    // }, [category, options, filters, inputValue]);
-
     const onSetCategory = (newCategory) => {
         setCategory(newCategory);
-        getData();
     };
 
     const onSetAge = (newAge) => {
         setAgeSelected(newAge)
         const ageQuery = newAge.replace('+', 'mas');
         setFilters({ age: ageQuery });
-        getData();
     };
 
     const onSetHability = (newHability) => {
         setHabilitySelected(newHability)
         setFilters({ ...filters, productTags: newHability });
-        getData();
     };
 
     const onSetPlayers = (numPlayers) => {
         setPlayersSelected(numPlayers)
         setFilters({ ...filters, players: numPlayers });
-        getData();
     };
 
     const onDeleteFilter = (filter) => {
@@ -143,7 +126,6 @@ const ShopRender = ({
             delete filters.players;
             setPlayersSelected('todos')
         }
-        getData();
     };
 
     const onDeleteAge = () => {
@@ -152,11 +134,25 @@ const ShopRender = ({
         getData();
     }
 
-    const productList = filteredProducts.products;
-    const numProducts = filteredProducts.numProducts;
-    const productList2 = filteredProducts2.products;
+    const setCurrentPage = (newPage) => {
+        if (newPage == 1) {
+            setOptions({ ...options, skip: 0 })
+        } else {
+            const newSkip = (newPage - 1) * 12;
+            setOptions({ ...options, skip: newSkip });
+        }
+        setPage(newPage)
+    }
 
-    console.log(productList.length)
+    useEffect(() => {
+        getData();
+    }, [options, category, filters]);
+
+    const numProducts = filteredProducts.numProducts;
+    const productList = filteredProducts.products;
+    const productList1 = productList.slice(0, 6)
+    const productList2 = productList.slice(6, 13)
+
     return (
         <>
             <Carousel items={carouselItems} />
@@ -183,8 +179,12 @@ const ShopRender = ({
                 habilitySelected={habilitySelected}
                 playersSelected={playersSelected}
             >
-                <ProductListHeader numProducts={numProducts} />
-                <ShopList products={productList} />
+                <ProductListHeader
+                    numProducts={numProducts}
+                    arrayPages={arrayPages}
+                    setCurrentPage={setCurrentPage}
+                />
+                <ShopList products={productList1} />
                 <div className="bonus-section">
                     <BonusSection />
                 </div>

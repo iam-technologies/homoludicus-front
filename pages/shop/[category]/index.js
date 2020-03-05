@@ -28,16 +28,17 @@ shop.getInitialProps = async ({ query, asPath }) => {
     return res ? res.data : null;
   });
 
-  const options = { limit: 6, skip: 0 };
-  const options2 = { limit: 6, skip: 6 };
+  const options = { limit: 12, skip: 0 };
 
   const allProducts = await api.products.getByCategory(category, { options, filters }, (err, res) => {
     return res ? res.data : null;
   });
 
-  const allProducts2 = await api.products.getByCategory(category, { options2, filters }, (err, res) => {
+  const totalProducts = await api.products.getAll({}, (err, res) => {
     return res ? res.data : null;
   });
+
+  const totalPages = Math.ceil(totalProducts.numProducts / 12);
 
   return {
     content,
@@ -46,9 +47,9 @@ shop.getInitialProps = async ({ query, asPath }) => {
     imgUrl,
     categories,
     allProducts,
-    allProducts2,
     category,
     newFilters: filters,
+    totalPages,
     asPath
   };
 };

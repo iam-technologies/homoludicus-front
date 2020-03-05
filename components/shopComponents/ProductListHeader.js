@@ -1,7 +1,11 @@
 import React from 'react';
 
 const ProductListHeader = (props) => {
-    const { numProducts } = props;
+    const {
+        numProducts,
+        arrayPages,
+        setCurrentPage,
+    } = props;
 
     return (
         <>
@@ -20,7 +24,9 @@ const ProductListHeader = (props) => {
                         <img src="/icon/left.svg" />
                     </button>
                     <div className="page-numbers-div">
-                        <p>1 - 2 - 3 - 4</p>
+                        {arrayPages.map(page => {
+                            return <p onClick={() => setCurrentPage(page)}>{`${page} - `}</p>
+                        })}
                     </div>
                     <button className='pagination-arrow'>
                         <img src="/icon/right.svg" />

@@ -14,13 +14,11 @@ export default (newUrl = '', paramsQuery = {}, callback) => {
     lang,
     query,
     options,
-    options2,
     filters
   } = {
     lang: '',
     query: '',
     options: '',
-    options2: '',
     filters: '',
     ...paramsQuery
   };
@@ -38,10 +36,6 @@ export default (newUrl = '', paramsQuery = {}, callback) => {
 
   if (options) {
     params.options = JSON.stringify(options);
-  }
-
-  if (options2) {
-    params.options = JSON.stringify(options2);
   }
 
   if (filters) {
