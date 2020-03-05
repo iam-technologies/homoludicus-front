@@ -196,7 +196,7 @@
   }
 
   &-box_product {
-    @include flex-complete(flex-start, start);
+    @include flex-complete(center, start);
     background-color: white;
     min-height      : 600px;
     margin          : 0 15px;
