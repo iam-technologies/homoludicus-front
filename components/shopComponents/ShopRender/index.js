@@ -64,8 +64,6 @@ const ShopRender = ({
         arrayPages.push(i)
     }
 
-    console.log(arrayPages)
-
     async function getData() {
         const newData =
             await api.products.getByCategory(category, { options, filters }, (err, res) => {
@@ -183,6 +181,7 @@ const ShopRender = ({
                     numProducts={numProducts}
                     arrayPages={arrayPages}
                     setCurrentPage={setCurrentPage}
+                    page={page}
                 />
                 <ShopList products={productList1} />
                 <div className="bonus-section">

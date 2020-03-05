@@ -23,11 +23,14 @@
 
     .product-list-header {
         display: flex;
-        justify-content: space-around;
         align-items: center;
 
         .results {
             display: flex;
+            margin-left: auto;
+            p {
+                margin-right: 10px;
+            }
 
             .num-results {font-size: 18px;}
         }
@@ -35,26 +38,41 @@
 
     .pagination-div {
         display: flex;
-        max-width: 153.28px;
         max-height: 37px;
+        width: 155px;
+        margin-left: auto;
 
         .pagination-arrow {
             width: 37px;
             height: 37px;
             border-color: $light-grey;
             margin: 0;
+            outline: none;
         }
 
-        .page-numbers-div {
-            display: flex;
-            align-items: center;
-            margin-left: 10px;
-            margin-right: 10px;
+        .page-numbers-cont {
+            width: 100px;
+            overflow: hidden;
 
-            p {
-                &:hover {
-                    font-size: 15px;
-                    font-weight: bold;
+            .page-numbers-div {
+                display: flex;
+                align-items: center;
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 0 20px;
+                width: fit-content;
+                padding-top: 10px;
+                .page-number {
+                    width: 20px;
+
+                    &:hover {
+                        font-size: 15px;
+                        font-weight: bold;
+                    }
+
+                    &.selected {
+                        font-weight: bold;
+                    }
                 }
             }
         }
