@@ -4,55 +4,10 @@
 @import './BoxRatings/_style.scss';
 @import './RelatedProduct/_style.scss';
 
-.app-product {
-  margin        : 0 auto;
-  // max-width     : 1230px;
-  padding-bottom: 70px;
-  width: 100%;
-
-  .product-header{
-    background-color: #fccb1b;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 121px;
-  }
-
-  @media #{$sm} {
-    padding-bottom  : 50px;
-  }
-
-  &-box_product {
-    @include flex-complete(flex-start, start);
-    background-color: white;
-    min-height      : 600px;
-    margin          : 0 15px;
+.return-to-shop {
+    margin: 40px;
     
-    @media #{$sm} {
-      @include flex-direction(column);
-      @include box-shadow(none);
-      @include border-radius(0);
-      background-color: initial;
-      margin          : 25px 20px 10px;
-      min-height      : initial;
+    h4 {
+        font-size: 18px;
     }
-
-    @media #{$xs} {
-      margin: 25px 20px 0;
-    }
-  }
-
-  &-box_information {
-    @include flex-complete(space-between, start);
-    margin   : 35px auto 70px;
-    padding  : 0 30px;
-    max-width: 1155px;
-
-    @media #{$sm} {
-      @include flex-complete(start, start, wrap, column);
-      padding: 0;
-      margin : 0 12px 50px;
-    }
-  }
 }

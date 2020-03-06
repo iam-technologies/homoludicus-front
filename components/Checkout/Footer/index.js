@@ -3,7 +3,7 @@ import PropsTypes from 'prop-types';
 import Loader from 'react-loaders';
 import _ from 'lodash';
 import Alert from 'react-s-alert';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { api } from '../../../serverServices';
 import { validateStep } from '../helpers';
@@ -108,7 +108,7 @@ export default class FooterCheckout extends Component {
 
         {
           (indexTab === 0) && !disabled && (
-            <Link route="/">
+            <Link href="/">
               <a className="link">
                 <img src="/images/icon_back_checkout.png" alt="Volver a la tienda" />
                 <span>Volver a la tienda</span>

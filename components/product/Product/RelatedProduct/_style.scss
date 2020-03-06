@@ -58,7 +58,7 @@
       margin-left: 12px;
       margin-bottom: 15px;
       border-radius: 0;
-      z-index: 11000;
+      // z-index: 11000;
       top: -60px;
       position: relative;
       transition: 0.5s;
@@ -73,7 +73,7 @@
       &:hover {
         height: 100%;
         position: relative;
-        top: -254px;
+        top: -255px;
         margin-bottom: 0;
         opacity: 0.9;
         padding-top: 20px;
@@ -172,6 +172,59 @@
           content: url('/images/icon_next_hover.png');
         }
       }
+    }
+  }
+}
+
+.app-product {
+  margin        : 0 auto;
+  // max-width     : 1230px;
+  padding-bottom: 70px;
+  width: 100%;
+
+  .product-header{
+    background-color: #fccb1b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 121px;
+  }
+
+  @media #{$sm} {
+    padding-bottom  : 50px;
+  }
+
+  &-box_product {
+    @include flex-complete(center, start);
+    background-color: white;
+    min-height      : 600px;
+    margin          : 0 15px;
+    
+    @media #{$sm} {
+      @include flex-direction(column);
+      @include box-shadow(none);
+      @include border-radius(0);
+      background-color: initial;
+      margin          : 25px 20px 10px;
+      min-height      : initial;
+    }
+
+    @media #{$xs} {
+      margin: 25px 20px 0;
+    }
+  }
+
+  &-box_information {
+    @include flex-complete(space-between, start);
+    margin   : 35px auto 70px;
+    padding  : 0 30px;
+    max-width: 1155px;
+
+    @media #{$sm} {
+      @include flex-complete(start, start, wrap, column);
+      padding: 0;
+      margin : 0 12px 50px;
     }
   }
 }

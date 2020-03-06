@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Alert from 'react-s-alert';
 import React, { Component } from 'react';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { userActs } from '../../../redux/actions';
 import { api } from '../../../serverServices';
@@ -11,7 +11,7 @@ import { msgUI, checkFields } from '../../../utils';
 import { TextInput, ButtonInput, MobileHeader } from '../../common';
 import Logout from '../../Account/Logout';
 import FormPassword from './FormPassword';
-
+import SectionHeader from '../../SectionHeader';
 
 class Profile extends Component {
   constructor(props) {
@@ -87,16 +87,15 @@ class Profile extends Component {
 
   render() {
     const { user, updating, errors, loading } = this.state;
-
+    const title = 'Mis Datos'
     return (
       <section className="app-my_account app-profile">
         <MobileHeader
           green
           logo
         />
-
+        <SectionHeader title={title} />
         <header className="app-my_account-container my_account-header">
-          <p className="title">Mis Datos</p>
 
           <p className="align_right">
             <Logout
@@ -158,7 +157,7 @@ class Profile extends Component {
         />
 
         <div className="app-my_account-container link_container">
-          <Link route="/my-account">
+          <Link href="/my-account">
             <a className="link_return">
               <img src="/images/icon_back_checkout.png" alt="Volver a mi cuenta" />
               <span>Volver a mi cuenta</span>

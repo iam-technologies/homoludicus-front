@@ -44,7 +44,7 @@ class Paypal extends Component {
 
     if (item !== '') {
       if (!clickButton) {
-        api.orders.upsert({ item, cancel: true }, _.get(item, '_id', ''), () => {});
+        api.orders.upsert({ item, cancel: true }, _.get(item, '_id', ''), () => { });
       }
 
       item._id = '';
@@ -118,14 +118,14 @@ class Paypal extends Component {
     if (this.props.item && this.props.item.acceptTerms) {
       if (!this.state.showButton) this.validate();
     } else {
-      if (this.state.showButton) this.setState({showButton: false});
+      if (this.state.showButton) this.setState({ showButton: false });
     }
   }
 
 
   render() {
     const { item, showButton } = this.state;
-    console.log('TCL: render -> item', item);
+
     const { onSubmitOrder, onChange } = this.props;
 
     if (item !== '' && showButton) {

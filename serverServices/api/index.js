@@ -15,6 +15,7 @@ import search from './search';
 import selections from './selections';
 import seo from './seo';
 import users from './users';
+import generic from './generic';
 
 // Config axios url base
 axios.defaults.baseURL = configApi.baseUrl;
@@ -33,5 +34,6 @@ export default {
   search,
   selections,
   seo,
-  users
+  users,
+  generic
 };

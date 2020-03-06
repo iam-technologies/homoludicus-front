@@ -24,7 +24,7 @@ class BoxBuyProduct extends Component {
     this.state = {
       loading: true,
       index: Number.isNaN(props.index) ? -1 : props.index,
-      count: 0,
+      count: 1,
       favorite: false,
     };
 
@@ -71,13 +71,13 @@ class BoxBuyProduct extends Component {
 
   onSubstractUnits = () => {
     const { count } = this.state;
-    if (count > 0) {
+    if (count > 1) {
       this.setState({ count: count - 1 })
     }
   }
 
   onAddToCart() {
-    const { index } = this.state;
+    const { index, count } = this.state;
     const { item, cart, config } = this.props;
 
     if (cart.loading) return;
@@ -85,12 +85,14 @@ class BoxBuyProduct extends Component {
     const product = { product: item, config };
 
     if (index !== -1) {
+
       this.onCart.updateProduct(product, index);
       return;
     }
+    this.onCart.addProduct(product, true, count);
 
-    this.onCart.addProduct(product);
   }
+
 
   getConfig() {
     const { cart } = this.props;
@@ -106,10 +108,9 @@ class BoxBuyProduct extends Component {
   }
 
   render() {
-
-    const { index, loading } = this.state;
+    const { index, loading, count } = this.state;
     const { item, cart, config, screen, alt, src } = this.props;
-    const { count } = this.state;
+    console.log('count', count);
     const productAvailable = _.get(item, 'available');
 
     const oldPrice = priceCalc.showPriceNotOffer(item);
@@ -138,7 +139,6 @@ class BoxBuyProduct extends Component {
       item.reference
     ];
 
-    console.log(item)
     return (
       <div className="a_p-buy_p">
         <div className="img-features-div">
@@ -159,7 +159,7 @@ class BoxBuyProduct extends Component {
               </div>
               <div className="features">
                 {features.map((feature, i) => {
-                  <p
+                  return <p
                     className="product-feature"
                     key={i}
                   >
@@ -177,7 +177,6 @@ class BoxBuyProduct extends Component {
                 (+info)
               </p>
             </p>
-            {/* Contador productos añadidos, precio sumado */}
             <div className="product-price-sum">
               <div className="quantity-selector-div">
                 <p className="price-title">Quantitat:</p>

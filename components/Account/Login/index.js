@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Alert from 'react-s-alert';
 import React, { Component } from 'react';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { showLoginActs, isLoginActs, userActs } from '../../../redux/actions';
 import { msgUI, checkFields } from '../../../utils';
@@ -81,19 +81,14 @@ class Login extends Component {
     return (
       <div className={`login_app${show ? '-show' : ''}`}>
         <header className="header_login">
-          <Link route="/">
-            <a onClick={this.onClose} className="header_login-logo">
-              <img src="/images/company/icon_logotipo_neutro.png" alt={infoSource.compNameCap} />
-            </a>
-          </Link>
 
-          <button
-            className="header_login-right_btn-close"
+          <div
+            className="close-icon-div"
             onClick={this.onClose}
-            type="button"
           >
-            <img src="/images/icon_close.png" alt="Cross" />
-          </button>
+            <h3>X</h3>
+
+          </div>
         </header>
 
         <div className="login-form">
@@ -124,7 +119,7 @@ class Login extends Component {
           />
 
           <p className="link_forgot">
-            <Link route="/forgot-password">
+            <Link href="/forgot-password">
               <a onClick={this.onClose}>Recuperar contraseña</a>
             </Link>
           </p>

@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import React, { Component } from 'react';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { api } from '../../../serverServices';
 import { urlUtils } from '../../../utils';
@@ -176,7 +176,7 @@ class Order extends Component {
         </div>
 
         <div className="my_order_item-container link_container">
-          <Link route="/orders">
+          <Link href="/orders">
             <a className="link_return">
               <img src="/images/icon_back_checkout.png" alt="Volver a mi cuenta" />
               <span>Volver a Mis Pedidos</span>

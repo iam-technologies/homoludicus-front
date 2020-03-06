@@ -29,18 +29,20 @@ class MyAccountButton extends Component {
     const { isLogin } = this.props;
 
     return (
-      <div onClick={this.onClick}>
-        <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" />
-      </div>
+      // <div onClick={this.onClick}>
+      //   <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" />
+      // </div>
+
+      <Link
+        onClick={isLogin ? () => { } : this.onClick}
+        href="/my-account"
+      >
+        <div className="user-icon">
+          {/* <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" /> */}
+          <img src="/icon/icon-account.svg" alt="cart" />
+        </div>
+      </Link>
     );
-    // return (
-    //   <Link
-    //     onClick={isLogin ? () => {} : this.onClick}
-    //     href="/my-account"
-    //   >
-    //     <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" />
-    //   </Link>
-    // );
   }
 }
 

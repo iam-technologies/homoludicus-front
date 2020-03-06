@@ -25,12 +25,14 @@ class Header extends PureComponent {
         {
           isPopup
             ? (
-              <button
-                className ="btn_close"
-                onClick ={this.onClosePopup}
-                type ="button"
-              >Cerrar
+              <div className="button-div">
+                <button
+                  className="btn_close"
+                  onClick={this.onClosePopup}
+                  type="button"
+                >Cerrar
               </button>
+              </div>
             ) : (
               <Badge>{numItems}</Badge>
             )
@@ -48,4 +50,4 @@ Header.propTypes = {
 
 
 export default connect()(Header)
-;
+  ;

@@ -5,7 +5,7 @@ import { api } from '../../serverServices';
 import { withWindowResize } from '../hoc';
 import { Rating } from '../common';
 import MailChimpForm from './MailChimpForm';
-import { Link } from '../../routes';
+import Link from 'next/link';
 
 import infoSource from '../../utils/infoSource';
 
@@ -80,34 +80,34 @@ class Footer extends Component {
             <div className="footer-list">
               <div className="column">
                 <h5>Destacats</h5>
-                <Link route="/legal/refunds">
+                <Link href="/legal/refunds">
                   <a>
                     <p>Ús de la plataforma</p>
                   </a>
                 </Link>
-                <Link route="">
+                <Link href="">
                   <a>
                     <p>Búsqueda de pràctiques</p>
                   </a>
                 </Link>
-                <Link route="">
+                <Link href="">
                   <a>
                     <p>Procediment de la reserva</p>
                   </a>
                 </Link>
               </div>
               <div className="column">
-                <Link route="">
+                <Link href="">
                   <a>
                     <p>JOC DESTACAT</p>
                   </a>
                 </Link>
-                <Link route="">
+                <Link href="">
                   <a>
                     <p>JOC DESTACAT</p>
                   </a>
                 </Link>
-                <Link route="">
+                <Link href="">
                   <a>
                     <p>JOC DESTACAT</p>
                   </a>
@@ -115,12 +115,12 @@ class Footer extends Component {
               </div>
               <div className="column">
                 <h5>Serveis</h5>
-                <Link route="">
+                <Link href="">
                   <a>
                     <p>Estudiants</p>
                   </a>
                 </Link>
-                <Link route="">
+                <Link href="">
                   <a>
                     <p>Professionals</p>
                   </a>
@@ -128,12 +128,12 @@ class Footer extends Component {
               </div>
               <div className="column">
                 <h5>Sobre nosaltres</h5>
-                <Link route="">
+                <Link href="">
                   <a>
                     <p>Qui som</p>
                   </a>
                 </Link>
-                <Link route="">
+                <Link href="">
                   <a>
                     <p>Events</p>
                   </a>
@@ -141,25 +141,25 @@ class Footer extends Component {
               </div>
             </div>
             <div className="footer-legal">
-              <Link route="/legal/refunds">
+              <Link href="/legal/refunds">
                 <a>
                   <p>AVÍS LEGAL</p>
                 </a>
               </Link>
               <p className="vertical-line">|</p>
-              <Link route="/legal/cookies">
+              <Link href="/legal/cookies">
                 <a>
                   <p>POLITICA DE COOKIES</p>
                 </a>
               </Link>
               <p className="vertical-line">|</p>
-              <Link route="/legal/privacitat">
+              <Link href="/legal/privacitat">
                 <a>
                   <p>POLÍTICA DE PRIVACITAT</p>
                 </a>
               </Link>
               <p className="vertical-line">|</p>
-              <Link route="/legal/terms-and-conditions">
+              <Link href="/legal/terms-and-conditions">
                 <a>
                   <p>CONDICIONS D'ÚS</p>
                 </a>
@@ -174,8 +174,8 @@ class Footer extends Component {
               <h5>Síguenos en:</h5>
               <a href={infoSource.fbUrl} target="_blank" rel="noopener noreferrer"><span className="facebook" /></a>
               <a href={infoSource.twitterUrl} target="_blank" rel="noopener noreferrer"><span className="twitter" /></a>
-              <a href={infoSource.instagramUrl} target="_blank" rel="noopener noreferrer"><span className="instagram" /></a>
-              <a href={infoSource.pinterestUrl} target="_blank" rel="noopener noreferrer"><span className="pinterest" /></a>
+              <a href={infoSource.googleUrl} target="_blank" rel="noopener noreferrer"><span className="google" /></a>
+              <a href={infoSource.linkedinUrl} target="_blank" rel="noopener noreferrer"><span className="linkedin" /></a>
             </div>
           </div>
         </section>

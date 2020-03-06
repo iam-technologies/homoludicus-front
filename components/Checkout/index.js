@@ -1,5 +1,6 @@
 import _ from 'lodash';
 // import { Link, Redirect } from 'react-router-dom';
+import Link from 'next/link';
 import Router from 'next/router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -18,7 +19,6 @@ import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 import OrderMessage from './OrderMessage';
 import LegalInfo from './LegalInfo';
-import { Link } from '../../routes';
 import infoSource from '../../utils/infoSource';
 
 class Checkout extends Component {
@@ -58,10 +58,9 @@ class Checkout extends Component {
     const { item } = this.state;
 
     if (item._id) {
-      api.orders.upsert({ item, cancel: true }, _.get(item, '_id', ''), () => {});
+      api.orders.upsert({ item, cancel: true }, _.get(item, '_id', ''), () => { });
     }
   }
-
 
   // Update info in item
   onChange(path, value, changeState = false) {
@@ -73,9 +72,9 @@ class Checkout extends Component {
     }
 
     if (path !== 'paymentMethod'
-        && path !== 'acceptTerms'
-        && path !== 'newsletter'
-        && _.get(item, 'paymentMethod', '') !== '') {
+      && path !== 'acceptTerms'
+      && path !== 'newsletter'
+      && _.get(item, 'paymentMethod', '') !== '') {
       const paymentMethod = _.get(item, 'paymentMethod', '');
       if (paymentMethod === 'paypal') delete item.paymentMethod;
     }
@@ -93,7 +92,7 @@ class Checkout extends Component {
       }
 
       this.setState({ item: { ...item } });
-    // if changeState is true.
+      // if changeState is true.
     } else {
       const newValue = { ...finalValue };
 
@@ -244,20 +243,14 @@ class Checkout extends Component {
         <div className="app_checkout-left">
 
           <header className="app_checkout-header">
-            <Link route="/">
-              <a className="link">
-                <img src="/images/company/icon_logotipo_neutro.png" alt={infoSource.companyName} />
-              </a>
-            </Link>
 
             {
               isLogin ? null : (
-                <button
+                <p
                   className="link_login"
                   onClick={() => this.showLogin(false)}
-                  type="button"
                 >¿Ya tienes una cuenta?
-                </button>
+                </p>
               )
             }
 
@@ -268,7 +261,7 @@ class Checkout extends Component {
               <div
                 className={`step_header ${indexTab === 0 ? 'active' : ''}`}
               >01 INFORMACIÓN DE ENVÍO
-
+  
               </div>
               {
                 !country && (

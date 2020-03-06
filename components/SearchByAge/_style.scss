@@ -1,0 +1,23 @@
+.age-searcher-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        align-self: center;
+        padding: 60px 0 40px 0;
+    }
+    .search-buttons {
+        button {
+            width: 141px;
+            height: 46px;
+        }
+    }
+
+    button.selected {
+        background-color: $middle-grey;
+        color: white;
+        outline: none;
+    }
+}

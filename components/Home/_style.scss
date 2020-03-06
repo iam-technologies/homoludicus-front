@@ -1,6 +1,10 @@
+@import './FeaturedEvents/_style';
+@import './FeaturedProducts/_style';
+@import './ServicesHome/_style';
+@import './ScheduleHome/_style';
+@import '../../components/common/Carousel/_style';
+
 .app-home {
-  @import './Carousel/_style.scss';
-  // @import './PriceSlider/_style.scss';
 
   @media #{$gt-xs} {
     padding-bottom: 70px;
@@ -154,4 +158,20 @@
       text-decoration: underline;
     }
   }
+
+  .middle-page-div {
+    width: 100%;
+    display: flex;
+    height: 601px;
+    margin: 100px;
+    justify-content: center;
+  }
+}
+
+.app-home.animation_opacity-remove {
+  padding-bottom: 0;
+}
+
+img.imagen_ui.imagen_ui-show {
+    height: 100%;
 }

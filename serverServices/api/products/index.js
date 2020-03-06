@@ -6,7 +6,7 @@ import getOne from './getOne';
 import getRelated from './getRelated';
 import maxAndMinPrice from './maxAndMinPrice';
 import updateById from './updateById';
-
+import getAll from './getAll';
 
 export default {
   getByCategory,
@@ -16,5 +16,6 @@ export default {
   getOne,
   getRelated,
   maxAndMinPrice,
-  updateById
+  updateById,
+  getAll
 };

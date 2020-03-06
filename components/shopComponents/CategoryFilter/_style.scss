@@ -1,0 +1,92 @@
+.categories-div {
+
+    p.selected {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    h5 {
+        font-size: 18px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $light-grey;
+    }
+// acordion
+    .category-div {
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 2px solid $light-grey;
+        padding: 20px 0 20px 0;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .all-label {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+
+            &-selected {
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                font-weight: bold;
+            }
+
+        }
+        .tab-label {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            &::after {
+                content: url("/icon/icon-more.svg");
+            }
+
+            &-selected {
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                font-weight: bold;
+                &::after {
+                content: url("/icon/icon-more.svg");
+                }
+            }
+        }
+
+        .tab-content {
+            opacity: 0;
+            height: 0;
+            margin-top: 10px;
+
+            p {
+                cursor: pointer;
+                line-height: 22px;
+                padding-left: 20px;
+
+                &:hover, &:active {
+                    text-decoration: underline;
+                    font-weight: bold;
+                }
+            }
+        }   
+    }
+// :checked
+    input:checked {
+            
+        ~ .tab-label-selected {
+            &::after {
+                content: url("/icon/icon-less.svg");
+            }
+        }
+
+        ~ .tab-content {
+            opacity: 1;
+            height: auto;
+            transition: 1s;
+        }
+    }
+
+
+}

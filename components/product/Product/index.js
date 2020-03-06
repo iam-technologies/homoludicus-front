@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 // import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-
+import Link from 'next/link';
 import Router from 'next/router';
 import { api } from '../../../serverServices';
 // import { urlUtils } from '../../../utils';
@@ -15,6 +15,7 @@ import BoxDetails from './BoxDetails';
 import BoxRatings from './BoxRatings';
 import RelatedProduct from './RelatedProduct';
 import InfoSwitcher from './InfoSwitcher';
+import ShopLayout from '../../shopComponents/ShopLayout';
 
 class Product extends React.Component {
   constructor(props) {
@@ -43,7 +44,6 @@ class Product extends React.Component {
   //     this.getItems();
   //   }
   // }
-
   getItems() {
     // const { history, user, url } = this.props;
     const { user, url } = this.props;
@@ -77,7 +77,7 @@ class Product extends React.Component {
   render() {
     const { product, loaded, refundsText } = this.state;
     const { img, alt } = product;
-    const { location, url } = this.props;
+    const { location, url, categories } = this.props;
 
     // const productName = _.get(product, 'name.es', `Producto de ${infoSource.companyName}`);
     // const productDesc = _.get(product, 'shortDesc.es', `Producto de ${infoSource.companyName}`);
@@ -109,7 +109,13 @@ class Product extends React.Component {
           </h1>
           <p>Botiga{url}</p>
         </div>
-
+        <div className="return-to-shop">
+          <Link href="/shop/todos">
+            <a>
+              <h4> &lt;&lt; Tornar a la Botiga</h4>
+            </a>
+          </Link>
+        </div>
         <section className="app-product-box_product">
           {/* <BoxSlider
             badge={_.get(product, 'state', '')}
@@ -137,12 +143,12 @@ class Product extends React.Component {
 
         <InfoSwitcher product={product} />
 
-
         <RelatedProduct
           key={_.get(product, '_id', 'newkey')}
           item={product}
         />
       </section>
+
     );
   }
 }
@@ -150,6 +156,4 @@ class Product extends React.Component {
 
 Product.propTypes = { location: PropTypes.object.isRequired };
 
-export default connect(state => ({
-  user: state.user.user
-}))(Product);
+export default connect(state => ({ user: state.user.user }))(Product);

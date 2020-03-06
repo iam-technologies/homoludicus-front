@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
-    "restart": "rm -rf ./node_modules && rm -rf ./.next && rm package-lock.json && npm install && npm run dev"
+    "start": "NODE_ENV=production next start",
+    "restart": "rm -rf ./node_modules && rm -rf ./.next && npm install && npm run dev"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@bit/iamtechnologies.iamtech-js.use-form": "0.0.1",
+    "@fullcalendar/core": "^4.3.1",
+    "@fullcalendar/daygrid": "^4.3.0",
+    "@fullcalendar/interaction": "^4.3.0",
+    "@fullcalendar/list": "^4.3.0",
+    "@fullcalendar/react": "^4.3.0",
+    "@fullcalendar/resource-timegrid": "^4.3.0",
+    "@fullcalendar/timegrid": "^4.3.0",
     "@material-ui/core": "^4.3.0",
     "@material-ui/styles": "^4.3.0",
+    "@types/googlemaps": "^3.39.2",
+    "@types/markerclustererplus": "^2.1.33",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.19.0",
@@ -26,13 +36,15 @@
     "currency-formatter": "^1.4.3",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
+    "indexof": "0.0.1",
+    "jquery": "^3.4.1",
     "loaders.css": "^0.1.2",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "next": "^9.1.5",
     "next-redux-wrapper": "^3.0.0-alpha.2",
     "next-routes": "^1.4.2",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "odometer": "^0.4.8",
     "prop-types": "^15.6.2",
     "rc-slider": "^8.6.13",
@@ -47,7 +59,7 @@
     "react-messenger-customer-chat": "^0.7.2",
     "react-odometerjs": "^2.1.1",
     "react-rating": "^1.3.0",
-    "react-redux": "^6.0.1",
+    "react-redux": "^7.1.1",
     "react-s-alert": "^1.4.1",
     "react-slick": "^0.24.0",
     "react-stripe-elements": "^4.0.0",
@@ -60,11 +72,12 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "eslint": "^6.7.2",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
+    "serverless-next.js": "^1.9.0",
     "url-loader": "^2.0.1"
   }
 }

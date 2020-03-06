@@ -9,7 +9,6 @@ import userActs from './userActs';
 import windowResizeActs from './windowResizeActs';
 import showSearchActs from './showSearchActs';
 
-
 export {
   cartsActs,
   configAttrActs,

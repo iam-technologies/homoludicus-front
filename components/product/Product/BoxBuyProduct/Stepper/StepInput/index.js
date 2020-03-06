@@ -8,7 +8,6 @@ import { dataFormat, priceCalc } from '../../../../../../utils';
 import { configAttrActs } from '../../../../../../redux/actions';
 import WrapperStep from '../WrapperStep';
 
-
 class StepInput extends Component {
   constructor(props) {
     super(props);
@@ -61,7 +60,7 @@ class StepInput extends Component {
 
           {
             price !== 0 && _.get(item, 'refProduct', '') === '' ? (
-              <p className="type_input-text">{ dataFormat.formatCurrency(price) }</p>
+              <p className="type_input-text">{dataFormat.formatCurrency(price)}</p>
             ) : null
           }
         </div>
@@ -69,7 +68,6 @@ class StepInput extends Component {
     );
   }
 }
-
 
 StepInput.propTypes = {
   config: PropTypes.object,

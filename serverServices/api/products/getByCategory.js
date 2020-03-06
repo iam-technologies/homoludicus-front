@@ -7,17 +7,31 @@ import { addHeaders, catchErrors, catchResponse } from '../../utils';
  * @param {String} newUrl
  * @param {Object} paramsQuery
  * @param {function} callback
- * @description paramsQuery contains two objects, lang and options. By default is empty.
+ * @description paramsQuery contains 4 objects, lang, query, options, filters. By default is empty.
  */
-export default (newUrl = '', paramsQuery, callback) => {
-  const { lang, options, filters } = { lang: '', options: '', filters: '', ...paramsQuery };
+export default (newUrl = '', paramsQuery = {}, callback) => {
+  const {
+    lang,
+    query,
+    options,
+    filters
+  } = {
+    lang: '',
+    query: '',
+    options: '',
+    filters: '',
+    ...paramsQuery
+  };
 
-  const url = `/products/category/${newUrl}`;
+  const url = `/products-by-cat/${newUrl}`;
   const headers = addHeaders();
 
   const params = {};
   if (lang) {
     params.lang = lang;
+  }
+  if (query) {
+    params.query = JSON.stringify(query);
   }
 
   if (options) {

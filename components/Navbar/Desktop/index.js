@@ -1,7 +1,12 @@
 import React from 'react';
-import { Link } from '../../../routes';
+import Link from 'next/link';
+import CartNavBtn from '../../shoppingCart/CartNavBtn';
+import CartPopup from '../../shoppingCart/CartPopup';
+import MyAccountButton from './MyAccountButton';
 
-const NavBarDesktop = () => {
+const NavBarDesktop = (props) => {
+  const { mainMenu } = props;
+
   return (
     <div className="navbar-div">
       <div className="logo-div">
@@ -12,50 +17,25 @@ const NavBarDesktop = () => {
         </Link>
       </div>
       <div className="nav-items">
-        <Link href="/about">
-          <a>
-            <p>Qui som</p>
-          </a>
-        </Link>
-        <Link href="/shop">
-          <a>
-            <p>Botiga online</p>
-          </a>
-        </Link>
-        <Link href="/about">
-          <a>
-            <p>Activitats</p>
-          </a>
-        </Link>
-        <Link href="/about">
-          <a>
-            <p>Serveis</p>
-          </a>
-        </Link>
-        <Link href="/about">
-          <a>
-            <p>Contacte</p>
-          </a>
-        </Link>
+        {mainMenu.map((item) => {
+          return (
+            <Link key={item.title} href={item.url}>
+              <a>
+                <p>{item.title}</p>
+              </a>
+            </Link>
+          );
+        })}
         <div className="cart-icon">
-          <Link href="/">
-            <a>
-              <img src="/icon/shopping-cart.svg" alt="cart" />
-            </a>
-          </Link>
+          <CartNavBtn />
         </div>
-        <div className="user-icon-div">
-          <Link href="/">
-            <a>
-              <img src="/icon/icon-account.svg" alt="cart" />
-            </a>
-          </Link>
-        </div>
+        <MyAccountButton />
         <div className="lang-div">
           <p>cat</p>
           <p className="vertical-lign">|</p>
           <p>esp</p>
         </div>
+        <CartPopup />
       </div>
     </div>
   );

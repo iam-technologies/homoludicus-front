@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { navMobileActs } from '../../../redux/actions';
 import { withWindowResize } from '../../hoc';
@@ -43,7 +43,7 @@ class MobileHeader extends Component {
         }
         {
           lastLocation && (
-            <Link route={lastLocation}>
+            <Link href={lastLocation}>
               <a className="header_mobile_ui-icon_previous">
                 <img src="/images/icon_nav_previouw.png" alt="previos" />
               </a>
@@ -52,9 +52,9 @@ class MobileHeader extends Component {
         }
         {
           logo && (
-            <Link route="/">
+            <Link href="/">
               <a className="header_mobile_ui-logo">
-                <img src="/images/company/icon_logotipo_neutro.png" alt={infoSource.companyName} />
+                <img src="/logos/homoludicus_logo.png" alt={infoSource.companyName} />
               </a>
             </Link>
           )
@@ -62,8 +62,8 @@ class MobileHeader extends Component {
         {
           text || subText ? (
             <div className="header_mobile_ui-center_text">
-              { text && <p className="header_mobile_ui-title">{text}</p> }
-              { subText && <p className="header_mobile_ui-subtext">{subText}</p> }
+              {text && <p className="header_mobile_ui-title">{text}</p>}
+              {subText && <p className="header_mobile_ui-subtext">{subText}</p>}
             </div>
           ) : null
         }

@@ -1,7 +1,7 @@
 const infoSource = {
   // serviceServices>config.js
-  baseUrl: 'http://new184119.cocholate.es/api',
-  urlImages: 'https://s3-eu-central-1.amazonaws.com/cocholate-product-images/',
+  baseUrl: 'http://ec2-3-122-75-193.eu-central-1.compute.amazonaws.com:4000/api',
+  urlImages: 'https://s3-eu-central-1.amazonaws.com/homoludicus/',
 
   // components>product>Product>index.js
   // components>Account>Login>index.js
@@ -15,8 +15,8 @@ const infoSource = {
   // components>Footer.index.js
   // components>NavBar>Mobile>index.js
   // components>search>SearchPopup>index.js
-  companyName: 'cocholate',
-  compNameCap: 'Cocholate',
+  companyName: 'homoludicus',
+  compNameCap: 'Homoludicus',
 
   // components>Checkout>OrderMessage>index.js
   emailInfoAddress: 'info@cocholate.es',
@@ -27,14 +27,14 @@ const infoSource = {
   instaRef: '@cocholate',
 
   // components>common>SEO.js
-  siteName: 'Cocholate',
+  siteName: 'Homoludicus',
   title: `Canastillas y cestas regalo bebé | Regalos
   personalizados recién nacidos - Cocholate Decoración S.L.`,
   compDesc: `Canastillas y cestas regalo personalizadas para bebé, 
   regalos para recién nacidos y para la familia, cesta gemelar, 
   cuadros nombre, detalles bordados,...y mucho más`,
   content: '',
-  rootUrl: 'www.cocholate.es',
+  rootUrl: 'www.homoludicus.org',
   path: '',
 
   // components>common>socialNav/index.js
@@ -42,15 +42,15 @@ const infoSource = {
   socialUrl: 'cocholate.es',
 
   // components>CookiesPopup>index.js  ATENCION VER ESTE CASO ! ! ! ! !
-  name: 'cocholate',
+  name: 'Homoludicus',
 
-  // components>Footer>index.js
-  tel: '914 415 645 | 654 633 778 | 673 608 997 (WhatsApp)',
-  address: 'C/ Espronceda 27, 1ºC – 28003 Madrid',
-  fbUrl: 'https://www.facebook.com/Cocholate.es/',
-  twitterUrl: 'https://twitter.com/cocholateD',
-  instagramUrl: 'https://www.instagram.com/regalosbebecocholate/',
-  pinterestUrl: 'https://www.pinterest.com/cocholated/',
+  // components>Footer>index.js // components>Checkout>StepOne>SendOffice.js
+  tel: '930 138 610',
+  address: 'Carrer de Sant Jaume, 73, 08400 Granollers - Barcelona',
+  fbUrl: 'https://www.facebook.com/',
+  twitterUrl: 'https://twitter.com/',
+  googleUrl: 'https://www.google.com/',
+  linkedinUrl: 'https://www.linkedin.com/',
 
   // components>Footer>MailChimpForm.js
   action: 'https://cocholate.us6.list-manage.com/subscribe/post',

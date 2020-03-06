@@ -70,9 +70,6 @@ class PaypalBtn extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     const { isScriptLoaded, isScriptLoadSucceed } = nextProps;
 
-    console.log('TCL: staticgetDerivedStateFromProps -> prevState.showButton', prevState.showButton);
-    console.log('TCL: staticgetDerivedStateFromProps -> isScriptLoaded', isScriptLoaded);
-    console.log('TCL: staticgetDerivedStateFromProps -> isScriptLoadSucceed', isScriptLoadSucceed);
     if (!prevState.showButton && isScriptLoaded && isScriptLoadSucceed) {
       return { showButton: true };
     }

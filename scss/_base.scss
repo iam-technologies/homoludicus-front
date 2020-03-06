@@ -1,61 +1,80 @@
-.content-limit{
+.content-limit {
     max-width: 1200;
     margin: 0 auto;
 }
   
   // TEXT
   
-  h1,h2,h3,h4,h5{
+  h1,h2,h3,h4,h5 {
     margin-bottom:10px;
   }
   
-  h1{ 
+  h1 { 
     font-size: $xxl;
     line-height: 50px;
   }
   
-  h2{ 
+  h2 { 
     font-size: $xl;
-    line-height: 50px;
   }
   
-  h3{ 
-    font-size: 25px;
-    line-height: 24px;
-  }
-  
-  h4{
+  h3 { 
     font-size: $l;
     line-height: 24px;
   }
   
-  h5{
+  h4 {
+    font-size: 23px;
+    line-height: 24px;
+    font-weight: normal;
+  }
+  
+  h5 { 
     font-size: $m;
     line-height: 24px;
   }
   
-  .bold{
+  .bold {
     font-weight: 700;
   }
   
-  .light{
+  .light {
     font-weight: 200;
   }
   
-  p, input{ 
+  p, input, textarea { 
     font-size: $s;
     line-height: 20px;
     color: $dark-grey;
   }
   
-  input {
-    outline: none;
+  input, textarea {
+    border: $input-border solid 2px;
+    margin-bottom: 33px;
     padding: 10px;
+    font-size: 15px;
+    resize: vertical;
+  }
+  
+  ::placeholder {
+    color: $input-text;
+  }
+
+  .subtitle {
+    color: $dark-grey;
   }
   
   //BUTTONS
 
-  button, a.button{
+  button, a {
+    transition: all 0.5s;
+    
+    &:hover {
+      transition: all 0.5s;
+    }
+  }
+
+  button, a.button {
     font-size: $m;
     font-family: $fontFamily;
     line-height: 20px;
@@ -66,49 +85,75 @@
     margin: 10px;
     border: 2px solid;
 
-    &:hover{
+    &:hover {
       background-color: $middle-grey;
       color: white;
       border-color: $middle-grey;
     }
   }
   
-  .button-yellow, a.button-yellow{
+  .button-yellow, a.button-yellow {
     background-color: $brand01;
     border-color: $brand01;
   }
   
-  .button-black, a.button-black{
+  .button-black, a.button-black {
     background-color: $main-black;
     border-color: $main-black;
     color: white;
   }
 
-  .button-ghost-black, a.button-ghost-black{
+  .button-ghost-grey {
+    background-color: transparent;
+    border-color: $middle-grey;
+    color: $middle-grey;
+
+    &:hover {
+      background-color: $middle-grey;
+      color: white;
+    }
+  }
+
+  .button-ghost-black, a.button-ghost-black {
     background-color: transparent;
     border-color: $main-black;
 
-    &:hover{
+    &:hover {
       background-color: $main-black;
       color: white;
       border-color: white;
     }
   }
 
-  .button-ghost-white, a.button-ghost-white{
+  .button-ghost-white, a.button-ghost-white {
     background-color: transparent;
     border-color: white;
     color: white;
 
-    &:hover{
+    &:hover {
       background-color: white;
       color: $main-black;
       border-color: $main-black;
     }
   }
+
+  .close-icon-div {
+    width: 35px;
+    height: 35px;
+    border: $light-grey 2px solid;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+                    
+    &:hover {
+      background-color: $light-grey;
+    }
+
+  }
   
   // LINKS
-  a{
+  a {
     font-weight: 700;
     color: $black01;
     font-size: $l;
@@ -118,3 +163,5 @@
   .disabled {
     cursor: no-drop;
   }
+
+  

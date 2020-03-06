@@ -4,28 +4,41 @@ import { addHeaders, catchErrors, catchResponse } from '../../utils';
 
 /**
  *
- * @param {String} text
  * @param {Object} paramsQuery
  * @param {function} callback
- * @description paramsQuery contains two objects, lang and options. By default is empty.
+ * @description By default is empty.
  */
-export default (text, paramsQuery, callback) => {
-  const { lang, options, filters } = { lang: '', options: '', filters: '', ...paramsQuery };
+export default (paramsQuery = {}, callback) => {
+  const {
+    lang,
+    query,
+    options,
+    search
+  } = {
+    lang: '',
+    query: '',
+    options: '',
+    search: '',
+    ...paramsQuery
+  };
 
-  const url = `/products/search/${text}`;
+  const url = '/products-by-cat/todos';
   const headers = addHeaders();
 
   const params = {};
   if (lang) {
     params.lang = lang;
   }
+  if (query) {
+    params.query = JSON.stringify(query);
+  }
 
   if (options) {
     params.options = JSON.stringify(options);
   }
 
-  if (filters) {
-    params.filters = JSON.stringify(filters);
+  if (search) {
+    params.search = search;
   }
 
   return axios({ method: 'get', url, headers, params })

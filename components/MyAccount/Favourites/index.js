@@ -1,6 +1,6 @@
 import Alert from 'react-s-alert';
 import React, { Component } from 'react';
-import { Link } from '../../../routes';
+import Link from 'next/link';
 
 import { api } from '../../../serverServices';
 import { MobileHeader } from '../../common';
@@ -76,7 +76,7 @@ export default class Favourites extends Component {
         </div>
 
         <div className="app-my_account-container link_container">
-          <Link route="/my-account">
+          <Link href="/my-account">
             <a className="link_return">
               <img src="/images/icon_back_checkout.png" alt="Volver a mi cuenta" />
               <span>Volver a mi cuenta</span>

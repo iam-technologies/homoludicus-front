@@ -1,10 +1,10 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Link from 'next/link';
 
 import Router from 'next/router';
 import Alert from 'react-s-alert';
 import React, { Component } from 'react';
-import Link from '../../../routes';
 
 import { showLoginActs, isLoginActs, userActs } from '../../../redux/actions';
 import { msgUI, checkFields } from '../../../utils';
@@ -35,7 +35,6 @@ class LoginTo extends Component {
   }
 
   componentDidMount() {
-    console.log('this.props = ', this.props);
     const { login } = this.props;
 
     if (login) this.getRedirect();
@@ -133,7 +132,7 @@ class LoginTo extends Component {
 
           <p className="link_forgot">
             <Link
-              route="/forgot-password"
+              href="/forgot-password"
             >
               <a onClick={this.onClose}>Recuperar contraseña</a>
             </Link>

@@ -27,17 +27,22 @@
       min-width: 70px;
       width    : 70px;
     }
+    
     .left-img{
       height             : 90px;
       max-width          : 90px;
       min-width          : 80px;
       background-position: center;
       background-repeat  : no-repeat;
-      background-size    : cover;
+      background-size    : contain;
     }
   }
 
-  .center {
+  a.center {
+    width: 100px;
+  }
+
+    .center {
     @include flex-complete(flex-start, start, wrap, column);
     @include align-self(flex-start);
     color          : $color04;
@@ -125,7 +130,7 @@
   .right {
     @include flex-complete(flex-end, center, wrap);
     text-align: center;
-    width     : 70px;
+    width: fit-content;
 
     @media #{$xs} {
       width: 43px;
@@ -136,7 +141,7 @@
     .btn_remove {
       @include transition(background 500ms);
       background         : initial;
-      background-image   : url('/images/icon_trash.png');
+      background-image   : url('/icon/icon_trash.png');
       background-position: center;
       background-repeat  : no-repeat;
       background-size    : cover;
@@ -148,19 +153,58 @@
       width              : 32px;
 
       &:hover {
-        background-image: url('/images/icon_trash_hover.png');
+        background-image: url('/icon/icon_trash_hover.png');
       }
     }
 
     .btn_plus {
       @extend .btn_remove;
-      background-image: url('/images/icon_plus.png');
+      background-image: url('/icon/icon_plus.png');
       height          : 15px;
       width           : 15px;
 
       &:hover {
-        background-image: url('/images/icon_plus_hover.png');
+        background-image: url('/icon/icon_plus_hover.png');
       }
+    }
+  }
+
+  .quantity-div {
+    display:flex;
+    width: 100px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    
+    .less-product, .more-product {
+      font-size: 20px;
+      height: 26px;
+      background-color: $dark-grey;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      border-radius: 100%;
+      margin-right: 5px;
+      margin-left: 5px;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: $light-grey;
+        color: $dark-grey;
+        transition: all 0.5s;
+      }
+    }
+
+    .number-product {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div {
+      width: 30px;
     }
   }
 }
@@ -173,6 +217,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  border-radius: none;
   
 
   .remove_item_title_container{

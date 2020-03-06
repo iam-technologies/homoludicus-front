@@ -26,6 +26,8 @@ export default (paramsQuery = {}, callback) => {
   }
 
   return axios({ method: 'get', url, headers, params })
-    .then(response => catchResponse.api(response, callback))
+    .then(response => {
+      return catchResponse.api(response, callback)
+    })
     .catch(error => catchErrors.api(error, callback));
 };

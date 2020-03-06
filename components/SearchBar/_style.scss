@@ -1,0 +1,22 @@
+
+.searcher-div {
+        @include flex-complete ($direction: row, $justify: center, $align: center);
+        background-color: transparent;
+        margin-bottom: 40px;
+        width: 231px;
+        height: 30px;
+        border: solid 2px $light-grey;
+    
+        input {
+                background-color: transparent;
+                width: 77%;
+                height: 100%;
+                border: none;
+                margin: 0;
+        }
+    
+        img {
+                margin-right: 20px;
+                width: 20px;
+        }
+}

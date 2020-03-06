@@ -19,7 +19,7 @@ import showLogin from './showLogin';
 import user from './user';
 import windowResize from './windowResize';
 import pageReducer from './pageReducers';
-
+import generic from './generic';
 
 export default combineReducers({
   carts,
@@ -33,5 +33,7 @@ export default combineReducers({
   pageReducer,
   showSearch,
   user,
-  windowResize
+  windowResize,
+  generic
 });
+

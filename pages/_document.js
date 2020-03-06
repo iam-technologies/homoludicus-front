@@ -7,9 +7,7 @@ class MyDocument extends Document {
     const sheets = new ServerStyleSheets();
     const originalRenderPage = ctx.renderPage;
 
-    ctx.renderPage = () => originalRenderPage({
-      enhanceApp: App => props => sheets.collect(<App {...props} />)
-    });
+    ctx.renderPage = () => originalRenderPage({ enhanceApp: App => props => sheets.collect(<App {...props} />) });
 
     const { isServer } = ctx;
     const isProduction = process.env.NODE_ENV === 'production';
@@ -44,7 +42,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#97DECC" />
           <meta name="theme-color" content="#ffffff" />
 
-          <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+          {/* <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
           <link rel="manifest" href="/favicon/site.webmanifest" />
@@ -52,24 +50,27 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
 
           <meta name="msapplication-TileColor" content="#97DECC" />
-          <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+          <meta name="msapplication-config" content="/favicon/browserconfig.xml" /> */}
 
           <meta name="viewport" content="minimum-scale=1, width=device-width, initial-scale=1, shrink-to-fit=no" />
 
           {/* Google Tag Manager */}
-          <script dangerouslySetInnerHTML={{ __html: `
+          <script dangerouslySetInnerHTML={{
+            __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-WDPJN7K');` }}
+            })(window,document,'script','dataLayer','GTM-WDPJN7K');`
+          }}
           />
         </Head>
 
         <body>
           <Main />
           <NextScript />
-          <script dangerouslySetInnerHTML={{ __html: `
+          <script dangerouslySetInnerHTML={{
+            __html: `
             !function (f, b, e, v, n, t, s) {
               if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
@@ -83,20 +84,23 @@ class MyDocument extends Document {
               'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '2182242768456596');
             fbq('track', 'PageView');
-          ` }}
+          `
+          }}
           />
           {isProduction && (
-          <Fragment>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22194548-1" />
-            <noscript dangerouslySetInnerHTML={{ __html: `
+            <Fragment>
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22194548-1" />
+              <noscript dangerouslySetInnerHTML={{
+                __html: `
               <iframe 
               src="https://www.googletagmanager.com/ns.html?id=GTM-WDPJN7K"
               height="0" 
               width="0" 
               style="display:none;visibility:hidden"
-              ></iframe>` }}
-            />
-          </Fragment>
+              ></iframe>`
+              }}
+              />
+            </Fragment>
           )}
           <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPgiPZzi-sVuuuw6pKhiVpAPcQDp5P3nI&libraries=places&language=es"
