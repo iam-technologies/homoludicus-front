@@ -126,12 +126,6 @@ const ShopRender = ({
         }
     };
 
-    const onDeleteAge = () => {
-        onDeleteFilter('age');
-        setAgeSelected('todos')
-        getData();
-    }
-
     const setCurrentPage = (newPage) => {
         if (newPage == 1) {
             setOptions({ ...options, skip: 0 })
@@ -150,7 +144,7 @@ const ShopRender = ({
     const productList = filteredProducts.products;
     const productList1 = productList.slice(0, 6)
     const productList2 = productList.slice(6, 13)
-
+    console.log('filters', filters)
     return (
         <>
             <Carousel items={carouselItems} />
@@ -158,7 +152,7 @@ const ShopRender = ({
                 generics={generics}
                 onSetAge={onSetAge}
                 ageSelected={ageSelected}
-                onDeleteAge={onDeleteAge}
+                onDeleteFilter={onDeleteFilter}
             />
             <ShopLayout
                 inputValue={inputValue}
