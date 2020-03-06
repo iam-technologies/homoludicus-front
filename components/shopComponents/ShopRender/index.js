@@ -124,6 +124,7 @@ const ShopRender = ({
             delete filters.players;
             setPlayersSelected('todos')
         }
+        getData()
     };
 
     const setCurrentPage = (newPage) => {
