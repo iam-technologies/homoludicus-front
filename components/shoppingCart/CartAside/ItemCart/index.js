@@ -66,6 +66,7 @@ export default class ItemCart extends Component {
   render() {
     const { open } = this.state;
     const { item, index, removeBtns } = this.props;
+    console.log('ItemCart -> render -> index', index);
 
     const configs = dataFormat.getTextConfigCart(item);
     const numItems = configs.length;
@@ -75,42 +76,10 @@ export default class ItemCart extends Component {
     const Transition = React.forwardRef((props, ref) => {
       return <Slide direction="down" ref={ref} {...props} />;
     });
-    const count = _.get(item, 'count', 1)
+    const count = _.get(item, 'count', 1);
 
     return (
       <div className="item_cart_ui">
-        {
-          open ? (
-            <Dialog
-              title={null}
-              actions={null}
-              modal={false}
-              open={open}
-              fullWidth
-              onRequestClose={this.onClose}
-              TransitionComponent={Transition}
-            >
-              <div className="dialog_remove_item_cart">
-                <div className="remove_item_title_container">
-                  <p className="dialog_title">
-                    ¿Está seguro de que desea eliminar el producto del carrito?
-                  </p>
-                </div>
-                <div className="btn_dialog">
-                  <ButtonInput
-                    label="CANCELAR"
-                    onClick={this.onClose}
-                  />
-
-                  <ButtonInput
-                    label="ACEPTAR"
-                    onClick={this.onRemove}
-                  />
-                </div>
-              </div>
-            </Dialog>
-          ) : null
-        }
 
         <div
           onClick={this.onClosePopup}
@@ -168,18 +137,6 @@ export default class ItemCart extends Component {
           </div>
         </div>
 
-        <div className="right">
-
-          {
-            !removeBtns && (
-              <button
-                className="btn_remove"
-                onClick={this.onOpen}
-                type="button"
-              />
-            )
-          }
-        </div>
       </div>
     );
   }

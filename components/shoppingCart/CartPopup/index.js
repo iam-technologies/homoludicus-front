@@ -2,7 +2,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
-import { showCartPopupActs } from '../../../redux/actions';
+import { showCartPopupActs, cartsActs } from '../../../redux/actions';
 import CartAside from '../CartAside';
 
 
@@ -11,7 +11,12 @@ class CartPopup extends Component {
     super(props);
 
     this.onShowCartPopup = bindActionCreators(showCartPopupActs, props.dispatch);
+    this.onCart = bindActionCreators(cartsActs, props.dispatch);
     this.onClosePopup = this.onShowCartPopup.hidden.bind(this);
+  }
+
+  componentDidMount() {
+    this.onCart.getCart();
   }
 
   render() {

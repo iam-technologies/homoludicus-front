@@ -52,6 +52,7 @@ class Checkout extends Component {
 
   componentDidMount() {
     this.onCart.getCart();
+    console.log('checkout')
   }
 
   componentWillUnmount() {

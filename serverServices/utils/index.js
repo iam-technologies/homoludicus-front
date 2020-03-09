@@ -5,7 +5,6 @@ import session from './session';
 import sessionCart from './sessionCart';
 import isClient from './isClient';
 
-
 export {
   addHeaders,
   catchErrors,
