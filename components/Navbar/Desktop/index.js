@@ -12,7 +12,7 @@ const NavBarDesktop = (props) => {
       <div className="logo-div">
         <Link href="/">
           <a>
-            <img src="/logos/homoludicus_logo.png" alt="foodeka-logo" />
+            <img src="/logos/homolud_fond.svg" alt="homoludicus-logo" />
           </a>
         </Link>
       </div>

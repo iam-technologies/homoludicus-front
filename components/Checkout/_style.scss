@@ -113,10 +113,6 @@
   .app_checkout-right {
     max-width: 470px;
     width    : 470px;
-    height   : 100%;
-    position: fixed;
-    right: 0;
-  
 
     @media #{$sm} {
       display: none;

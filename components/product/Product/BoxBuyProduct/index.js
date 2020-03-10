@@ -120,7 +120,9 @@ class BoxBuyProduct extends Component {
     const isPack = _.get(item, 'type') === 'pack';
     const btnText = index >= 0 ? 'Actualizar producto' : 'Añadir al carrito';
     const price = parseFloat(item.price);
-    const totalPrice = (price * 1.21).toFixed(2);
+    const tax = parseFloat(item.taxRate * 0.01);
+    const totalPrice = (price + (price * tax)).toFixed(2);
+    const shortDescription = _.get(item, 'shortDesc.es', '');
 
     const featureTitles = [
       'Referència',
@@ -169,13 +171,7 @@ class BoxBuyProduct extends Component {
               </div>
             </div>
             <p className="a_p-buy_p-small_info" itemProp="disambiguatingDescription">
-              {_.get(item, 'shortDesc.es', '').substr(0, 110)}...
-              <p
-                className="link_to_info_product"
-                onClick={this.onClickMoreInfo}
-              >
-                (+info)
-              </p>
+              {shortDescription}
             </p>
             <div className="product-price-sum">
               <div className="quantity-selector-div">
