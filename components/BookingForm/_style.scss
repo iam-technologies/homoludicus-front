@@ -5,6 +5,8 @@
     input, button, textarea {
         width: 100%;
         resize: none;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     button {
@@ -14,10 +16,12 @@
     .dates-wrapper {
         display: flex;
         justify-content: space-around;
+        margin-bottom: 20px;
         
         .start-date, .end-date {
             width: 40%;
             margin-top: 10px;
         }
     }
+
 }

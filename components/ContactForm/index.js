@@ -54,7 +54,7 @@ const ContactForm = () => {
           onKeyDown={e => handleKeyPress(e, nameRef)}
           ref={nameRef}
         />
-        {formErrors}
+        <p className="form-error">{formErrors}</p>
         <input
           type="text"
           {...useInput('email', 'isEmail,isRequired')}
@@ -62,7 +62,7 @@ const ContactForm = () => {
           onKeyDown={e => handleKeyPress(e, emailRef)}
           ref={emailRef}
         />
-        {formErrors}
+        <p className="form-error">{formErrors}</p>
         <input
           type="text"
           {...useInput('matter', 'isRequired')}
@@ -70,14 +70,14 @@ const ContactForm = () => {
           onKeyDown={e => handleKeyPress(e, issueRef)}
           ref={issueRef}
         />
-        {formErrors}
+        <p className="form-error">{formErrors}</p>
         <textarea
           className="message"
           {...useInput('message', 'isRequired')}
           placeholder="Escriu el teu missatge"
           ref={messageRef}
         />
-        {formErrors}
+        <p className="form-error">{formErrors}</p>
         <div className="button-div">
           {isValid && (
             <button

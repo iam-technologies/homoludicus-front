@@ -50,26 +50,29 @@ const BookingForm = (props) => {
     <div className="booking-form-div">
       <form onSubmit={handleSubmit}>
         <input
-          type="text" {...useInput('name', 'isRequired')}
+          type="text"
+          {...useInput('name', 'isRequired')}
           placeholder="Escriu el teu nom"
           ref={nameRef}
           onKeyDown={e => handleKeyPress(e, nameRef)}
         />
-        {formErrors}
+        <p className="form-error">{formErrors}</p>
         <input
-          type="text" {...useInput('email', 'isEmail,isRequired')}
+          type="text"
+          {...useInput('email', 'isEmail,isRequired')}
           placeholder="El teu email"
           onKeyDown={e => handleKeyPress(e, emailRef)}
           ref={emailRef}
         />
-        {formErrors}
+        <p className="form-error">{formErrors}</p>
         <textarea
           type="text"
-          className="message" {...useInput('message', 'isRequired')}
+          className="message"
+          {...useInput('message', 'isRequired')}
           placeholder="Escriu el teu missatge"
           ref={messageRef}
         />
-        {formErrors}
+        <p className="form-error">{formErrors}</p>
         <div className="dates-wrapper">
           <div className="start-date">
             <label>Inici</label>
