@@ -45,11 +45,9 @@ HomePage.getInitialProps = async () => {
 
   const imgUrl = await getImageUrl(content);
 
-  const selection = content.selections || [];
+  const selection = _get(content, 'selections', '');
 
   return { content, selection, loaded: true, imgUrl };
 };
 
 export default HomePage;
-
-

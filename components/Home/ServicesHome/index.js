@@ -15,7 +15,7 @@ const ServicesHome = () => {
         <BonusSection />
         <div className="games-div">
           <h4>Zona de Jocs</h4>
-          <Link href="/game-zone">
+          <Link href="/zona-de-jocs">
             <a>
               <button className="button-black">Veure més</button>
             </a>

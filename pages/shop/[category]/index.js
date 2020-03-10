@@ -1,4 +1,5 @@
 import React from 'react';
+import _get from 'lodash/get';
 import { api, getImageUrl } from '../../../serverServices';
 import { Layout } from '../../../components';
 import ShopRender from '../../../components/shopComponents/ShopRender';
@@ -23,7 +24,7 @@ shop.getInitialProps = async ({ query, asPath }) => {
     return res ? res.data : null;
   });
   const imgUrl = await getImageUrl(content);
-  const selection = content.selections || [];
+  const selection = _get(content, 'selections', '');
   const categories = await api.categories.getAll({ query: { idFather: '0' } }, (err, res) => {
     return res ? res.data : null;
   });

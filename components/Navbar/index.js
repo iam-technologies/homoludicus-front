@@ -38,19 +38,19 @@ class Navbar extends Component {
     let styles = {};
 
     const mainMenu = [{
-      title: 'Qui som', url: '/about-us'
+      title: 'Qui som', url: '/qui-som'
     },
     {
       title: 'Botiga online', url: '/shop/todos'
     },
     {
-      title: 'Activitats', url: '/activities'
+      title: 'Activitats', url: '/activitats'
     },
     {
-      title: 'Serveis', url: '/services'
+      title: 'Serveis', url: '/serveis'
     },
     {
-      title: 'Contacte', url: '/contact'
+      title: 'Contacte', url: '/contacte'
     }];
 
     if (screen === 'lg') {
