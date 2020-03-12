@@ -11,15 +11,15 @@
     font-weight: normal;
   }
   
-  @media #{$xs} {
-    text-align: center;
-    padding: 60px 14% 90px;
-  }
+  // @media #{$xs} {
+  //   text-align: center;
+  //   padding: 60px 14% 90px;
+  // }
 
   .flex_box {
-    @media #{$gt-xs} {
-      @include flex-complete(space-between);
-    }
+    // @media #{$gt-xs} {
+    //   @include flex-complete(space-between);
+    // }
     margin   : 0 auto;
     max-width: 1036px;
    
@@ -39,29 +39,30 @@
         margin: 20px;
       }
       
-      .footer-legal{
-        display: flex;
-        flex-direction: row;
-      }
+    }
+          
+    .footer-legal{
+      display: flex;
+      flex-direction: row;
     }
 
-    .right {
-      @media #{$xs} {
-        margin-top: 45px;
-      }
-      p { 
-        @media #{$gt-xs} {
-          text-align: right;
-        }
-      }
-    }
+    // .right {
+    //   @media #{$xs} {
+    //     margin-top: 45px;
+    //   }
+    //   p { 
+    //     @media #{$gt-xs} {
+    //       text-align: right;
+    //     }
+    //   }
+    // }
 
     .contact {
       margin-top: 20px;
 
-      @media #{$xs} {
-        margin-top: 40px;
-      }
+      // @media #{$xs} {
+      //   margin-top: 40px;
+      // }
     }
 
   }
@@ -189,17 +190,17 @@
     box-sizing: border-box;
     box-shadow: 0 1px 8px rgba(0,0,0,0.5);
 
-    @media #{$xs} {
-      padding: 10px 15px 35px;
-    }
+    // @media #{$xs} {
+    //   padding: 10px 15px 35px;
+    // }
   }
 
 }
 
 .app_footer-mailchimp {
-  @media #{$xs} {
-    text-align: center;
-  }
+  // @media #{$xs} {
+  //   text-align: center;
+  // }
   #mc_embed_signup {
     form {
       display: block;
@@ -275,5 +276,62 @@
         }
       }
     }
+  }
+}
+
+//MOBILE
+
+@include respond(phone) {
+  .app_footer {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+
+    .flex_box {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+
+        .footer-list {
+          flex-direction: column;
+        }
+      }
+
+      .footer-legal {
+        order: 3;
+        flex-wrap: wrap;
+
+        p {
+          width: max-content;
+        }
+
+        .vertical-line {
+          margin-left: auto;
+        }
+      }
+
+      .right {
+
+        .app_footer-mailchimp {
+          margin-bottom: 0;
+        }
+
+        .app_footer-social {
+          margin-top: 0;
+          margin-bottom: 40px;
+        }
+      }
+
+      .app_footer-title {
+        text-align: left;
+      }
+
+    }
+
   }
 }

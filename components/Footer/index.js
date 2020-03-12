@@ -1,11 +1,11 @@
 // import _ from 'lodash';
 import React, { Component } from 'react';
 
+import Link from 'next/link';
 import { api } from '../../serverServices';
 import { withWindowResize } from '../hoc';
 import { Rating } from '../common';
 import MailChimpForm from './MailChimpForm';
-import Link from 'next/link';
 
 import infoSource from '../../utils/infoSource';
 
@@ -140,31 +140,31 @@ class Footer extends Component {
                 </Link>
               </div>
             </div>
-            <div className="footer-legal">
-              <Link href="/legal/refunds">
-                <a>
-                  <p>AVÍS LEGAL</p>
-                </a>
-              </Link>
-              <p className="vertical-line">|</p>
-              <Link href="/legal/cookies">
-                <a>
-                  <p>POLITICA DE COOKIES</p>
-                </a>
-              </Link>
-              <p className="vertical-line">|</p>
-              <Link href="/legal/privacitat">
-                <a>
-                  <p>POLÍTICA DE PRIVACITAT</p>
-                </a>
-              </Link>
-              <p className="vertical-line">|</p>
-              <Link href="/legal/terms-and-conditions">
-                <a>
-                  <p>CONDICIONS D'ÚS</p>
-                </a>
-              </Link>
-            </div>
+          </div>
+          <div className="footer-legal">
+            <Link href="/legal/refunds">
+              <a>
+                <p>AVÍS LEGAL</p>
+              </a>
+            </Link>
+            <p className="vertical-line">|</p>
+            <Link href="/legal/cookies">
+              <a>
+                <p>POLITICA DE COOKIES</p>
+              </a>
+            </Link>
+            <p className="vertical-line">|</p>
+            <Link href="/legal/privacitat">
+              <a>
+                <p>POLÍTICA DE PRIVACITAT</p>
+              </a>
+            </Link>
+            <p className="vertical-line">|</p>
+            <Link href="/legal/terms-and-conditions">
+              <a>
+                <p>CONDICIONS D'ÚS</p>
+              </a>
+            </Link>
           </div>
           <div className="right">
             <div className="app_footer-mailchimp">
