@@ -1,0 +1,16 @@
+@import './HamburgerMenu/style';
+
+.mobile-navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+
+    .logo-div {
+        width: 129px;
+        height: 41px;
+    }
+
+    .cart_nav_ui {
+        margin-left: auto;
+    }
+}

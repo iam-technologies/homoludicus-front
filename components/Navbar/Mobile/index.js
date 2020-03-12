@@ -1,59 +1,36 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import CartNavBtn from '../../shoppingCart/CartNavBtn';
+import Hamburger from './HamburgerMenu';
+import MobileMenu from './MobileMenu';
 
-import { navMobileActs } from '../../../redux/actions';
-import NavFooter from './NavFooter';
-import ListCategories from './ListCategories';
-import infoSource from '../../../utils/infoSource';
-
-
-class NavbarMobile extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.onNavMobile = bindActionCreators(navMobileActs, props.dispatch);
-    this.onCloseNav = this.onNavMobile.hidden.bind(this);
-    this.onClickNav = this.onClickNav.bind(this);
-  }
-
-  onClickNav({ target }) {
-    if (target && target.className.indexOf('nav_mobile') !== -1) {
-      this.onCloseNav();
-    }
-  }
-
-
-  render() {
-    const { items, show, pathname } = this.props;
-
+const NavBarMobile = (props) => {
+    const { mainMenu } = props;
+    const [showMenu, setMenu] = useState(false);
+    const menuActive = (menuState) => {
+        const newMenuState = !menuState;
+        return newMenuState;
+    };
+    const activateMenu = () => {
+        setMenu(menu => menuActive(menu));
+    };
 
     return (
-      <header
-        className={`nav_mobile_ui${show ? '-show' : ''}`}
-        onClick={this.onClickNav}
-      >
-        <nav className="nav_left">
-          <div className="logo" onClick={this.onCloseNav}>
-            <Link href="/">
-              <a>
-                <img src="/logos/homoludicus_logo.png" alt={infoSource.companyName} />
-              </a>
-            </Link>
-          </div>
-
-          <ListCategories
-            onCloseNav={this.onCloseNav}
-            items={items}
-          />
-
-          <NavFooter onCloseNav={this.onCloseNav} pathname={pathname} />
-        </nav>
-      </header>
+        <>
+            <div className="mobile-navbar">
+                <div className="logo-div">
+                    <Link href="/">
+                        <a>
+                            <img src="/logos/homolud_fond.svg" alt="homoludicus-logo" />
+                        </a>
+                    </Link>
+                </div>
+                <CartNavBtn />
+                <Hamburger activateMenu={activateMenu} showMenu={showMenu} />
+            </div>
+            <MobileMenu showMenu={showMenu} mainMenu={mainMenu} />
+        </>
     );
-  }
-}
+};
 
-
-export default connect(state => ({ show: state.navMobile.show }))(NavbarMobile);
+export default NavBarMobile;

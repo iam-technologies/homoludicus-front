@@ -16,17 +16,17 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
   }, [loaded]);
 
   const carouselItems = _get(content, 'slider', []);
-  console.log("TCL: Home -> content", content)
+  console.log('TCL: Home -> content', content);
   const desc = _get(selection, 'desc.es', '');
   const products = _get(selection, 'products', []);
-  console.log("TCL: Home -> selection", selection)
+  console.log('TCL: Home -> selection', selection);
 
   const seoHeading = _get(content, 'seoHeading.es', '');
   const seoText = _get(content, 'seoText.es', '');
 
   return (
     <section className={`app-home animation_opacity${show ? '-remove' : ''}`}>
-      <MobileHeader home logo />
+      {/* <MobileHeader home logo /> */}
       {
         (screen === 'xs') ? <div className="app-home_hero" style={{ backgroundImage: `url(${imgUrl})` }} />
           : <Carousel items={carouselItems} />
