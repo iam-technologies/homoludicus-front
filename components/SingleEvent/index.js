@@ -51,6 +51,10 @@ const SingleEvent = () => {
       >
         <div className="darken" />
       </header>
+      <div className="event-title">
+        <h1>Liga Age of Sigmar: Estación de Guerra</h1>
+        <h3>Las fuerzas de Orden deben defender el Reino de la Vida</h3>
+      </div>
       <div className="event-content-div">
         <div className="event-data">
           <h2>{eventDate.month}</h2>
@@ -62,8 +66,6 @@ const SingleEvent = () => {
           </div>
         </div>
         <div className="event-description">
-          <h1>Liga Age of Sigmar: Estación de Guerra</h1>
-          <h3>Las fuerzas de Orden deben defender el Reino de la Vida</h3>
           <p className="p-title">Context</p>
           <div className="text">
             {contextText}

@@ -13,6 +13,18 @@
 
     }
 
+    .event-title {
+        width: fit-content;
+        margin-left: 37%;
+        margin-right: 5%;
+        
+        .p-title {
+                font-size: 18px;
+                font-weight: bold;
+                margin: 10px 0 10px 0;
+        }
+    }
+
     .event-content-div {
         display: flex;
         justify-content: center;
@@ -46,11 +58,15 @@
             display: flex;
             flex-direction: column;
 
-            .p-title {
-                font-size: 18px;
-                font-weight: bold;
-                margin: 10px 0 10px 0;
-            }
         }
+    }
+}
+
+//MOBILE
+
+@include respond(phone) {
+    .event-content-div {
+        flex-direction: column;
+        align-items: center;
     }
 }
