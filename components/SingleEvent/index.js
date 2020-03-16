@@ -57,10 +57,10 @@ const SingleEvent = () => {
       </div>
       <div className="event-content-div">
         <div className="event-data">
-          <h2>{eventDate.month}</h2>
-          <h1>{eventDate.day}</h1>
-          <h2>{eventDate.hour}</h2>
-          <p>{eventDate.place}</p>
+          <h2 className="month">{eventDate.month}</h2>
+          <h1 className="day">{eventDate.day}</h1>
+          <h2 className="hour">{eventDate.hour}</h2>
+          <p className="place">{eventDate.place}</p>
           <div className="button-div">
             <button className="button-yellow">Asistir-hi</button>
           </div>
