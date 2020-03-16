@@ -54,3 +54,36 @@
         }
     }
 }
+
+//MOBILE
+
+@include respond(phone) {
+    .about-us-sec {
+        height: fit-content;
+
+        .about-text-wrapper {
+            width: 100%;
+            padding: 20px;
+
+            h1 {
+                font-size: 20px;
+            }
+
+        }
+    }
+    .contact-us-sec {
+        margin: 0;
+        padding: 30px;
+
+        .contact-wrapper {
+            flex-direction: column;
+            margin-top: 0;
+            width: 100%;
+
+            .contact-column {
+                margin-top: 30px;
+                width: 100%;
+            }
+        }
+    }
+}
