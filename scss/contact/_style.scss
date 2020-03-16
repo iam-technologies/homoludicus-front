@@ -57,3 +57,35 @@
         }
     }
 }
+
+//MOBILE
+
+@include respond(phone) {
+    .contact-page {
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+
+        .contact-left-sec {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .contact-right-sec {
+            width: 100%;
+
+            .contact-info {
+                flex-direction: column;
+                padding: 20px;
+
+                .contact-column {
+                    margin: 0;
+
+                    .address-div, .tel-div {
+                        margin-bottom: 40px;
+                    }
+                }
+            }
+        }
+    }
+}

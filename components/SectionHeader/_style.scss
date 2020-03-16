@@ -19,3 +19,22 @@
         }
     }
 }
+
+//MOBILE
+
+@include respond(phone) {
+    .section-header {
+        .text-wrapper {
+            width: 100%;
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                width: 80%;
+            }
+        }
+
+    }
+}
