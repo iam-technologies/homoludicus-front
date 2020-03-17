@@ -82,3 +82,11 @@
       }
   }  
 }
+
+//MOBILE
+
+@include respond(phone) {
+  .shop-product_list_ui {
+    margin: 20px 0;
+  }
+}

@@ -7,6 +7,7 @@ import { withWindowResize } from '../../components/hoc';
 
 const gameZone = (props) => {
   const { screen } = props;
+  console.log(screen)
   const calendarSettings = {
     defaultView: 'timeGridWeek',
     header: {

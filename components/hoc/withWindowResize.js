@@ -20,5 +20,4 @@ const withWindowResize = (WrappedComponent) => {
   return connect(state => ({ screen: state.windowResize.screen }))(windowResize);
 };
 
-
 export default withWindowResize;

@@ -20,13 +20,14 @@ const ShopRender = ({
     asPath,
     category = 'todos',
     newFilters,
-    totalPages
+    totalPages,
 }) => {
 
     const carouselItems = _get(content, 'slider', []);
     const genericLoad = useSelector(state => state.generic.load);
     const generics = useSelector(state => state.generic.doc);
-
+    const screen = useSelector(state => state.windowResize.screen);
+    console.log('shop -> screen', screen);
     const router = useRouter();
 
     const dispatch = useDispatch();
@@ -141,51 +142,75 @@ const ShopRender = ({
         getData();
     }, [options, category, filters]);
 
-    const numProducts = filteredProducts.numProducts;
-    const productList = filteredProducts.products;
+    // const numProducts = filteredProducts.numProducts;
+    const numProducts = _get(filteredProducts, 'numProducts', '')
+    // const productList = filteredProducts.products;
+    const productList = _get(filteredProducts, 'products', '')
     const productList1 = productList.slice(0, 6)
     const productList2 = productList.slice(6, 13)
+    const productList1Mobile = productList.slice(0, 4)
+    const productList2Mobile = productList.slice(4, 8)
     console.log('filters', filters)
-    return (
-        <>
-            <Carousel items={carouselItems} />
-            <SearchByAge
-                generics={generics}
-                onSetAge={onSetAge}
-                ageSelected={ageSelected}
-                onDeleteFilter={onDeleteFilter}
-            />
-            <ShopLayout
-                inputValue={inputValue}
-                handleInputChange={handleInputChange}
-                categories={categories}
-                onSetCategory={onSetCategory}
-                categorySelected={categorySelected}
-                generics={generics}
-                onSetHability={onSetHability}
-                onSetAge={onSetAge}
-                ageSelected={ageSelected}
-                onSetPlayers={onSetPlayers}
-                onDeleteFilter={onDeleteFilter}
-                filterSelected={filterSelected}
-                setFilterSelected={setFilterSelected}
-                habilitySelected={habilitySelected}
-                playersSelected={playersSelected}
-            >
-                <ProductListHeader
-                    numProducts={numProducts}
-                    arrayPages={arrayPages}
-                    setCurrentPage={setCurrentPage}
-                    page={page}
+
+    if (screen === 'lg') {
+        return (
+            <>
+                <Carousel items={carouselItems} />
+                <SearchByAge
+                    generics={generics}
+                    onSetAge={onSetAge}
+                    ageSelected={ageSelected}
+                    onDeleteFilter={onDeleteFilter}
                 />
-                <ShopList products={productList1} />
+                <ShopLayout
+                    inputValue={inputValue}
+                    handleInputChange={handleInputChange}
+                    categories={categories}
+                    onSetCategory={onSetCategory}
+                    categorySelected={categorySelected}
+                    generics={generics}
+                    onSetHability={onSetHability}
+                    onSetAge={onSetAge}
+                    ageSelected={ageSelected}
+                    onSetPlayers={onSetPlayers}
+                    onDeleteFilter={onDeleteFilter}
+                    filterSelected={filterSelected}
+                    setFilterSelected={setFilterSelected}
+                    habilitySelected={habilitySelected}
+                    playersSelected={playersSelected}
+                >
+                    <ProductListHeader
+                        numProducts={numProducts}
+                        arrayPages={arrayPages}
+                        setCurrentPage={setCurrentPage}
+                        page={page}
+                    />
+                    <ShopList products={productList1} />
+                    <div className="bonus-section">
+                        <BonusSection />
+                    </div>
+                    <ShopList products={productList2} />
+                </ShopLayout>
+            </>
+        );
+    } else {
+        return (
+            <>
+                <Carousel items={carouselItems} />
+                <div className="filter-menu-div">
+                    <div className="icon-div">
+                        <img src="/icon/icon-filter-white.svg" alt="icon-filter" />
+                    </div>
+                </div>
+                <ShopList products={productList1Mobile} />
                 <div className="bonus-section">
                     <BonusSection />
                 </div>
-                <ShopList products={productList2} />
-            </ShopLayout>
-        </>
-    );
+                <ShopList products={productList2Mobile} />
+            </>
+        )
+    }
+
 };
 
 export default ShopRender;

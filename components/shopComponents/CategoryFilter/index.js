@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from '../../SearchBar';
+import _get from 'lodash/get';
 
 const CategoryFilter = (props) => {
   const {
@@ -20,9 +21,12 @@ const CategoryFilter = (props) => {
     playersSelected
   } = props;
 
-  const hability = generics.productTags || [];
-  const ages = generics.age || [];
-  const players = generics.players || [];
+  // const hability = generics.productTags || [];
+  const hability = _get(generics, 'productTags', [])
+  // const ages = generics.age || [];
+  const ages = _get(generics, 'age', [])
+  // const players = generics.players || [];
+  const players = _get(generics, 'players', [])
 
   const allSelected = categorySelected === 'todos' ? '-selected' : '';
   const allAges = ageSelected === 'todos' ? 'selected' : '';
