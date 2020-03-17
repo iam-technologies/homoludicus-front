@@ -23,5 +23,20 @@
             margin-top: 10px;
         }
     }
+}
 
+//MOBILE
+
+@include respond(phone) {
+    .booking-form-div {
+        width: 100%;
+
+        .dates-wrapper {
+            flex-direction: column;
+            
+            .start-date, .end-date {
+                width: 70%;
+            }
+        }
+    }
 }

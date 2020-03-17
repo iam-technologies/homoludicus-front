@@ -9,7 +9,11 @@ import list from '@fullcalendar/list';
 class Calendar extends Component {
   constructor(props) {
     super(props);
-    const { calendarSettings, onClicked } = this.props;
+    const {
+      calendarSettings,
+      onClicked,
+      screen
+    } = this.props;
     const { header, events, defaultView } = calendarSettings;
 
     this.state = {
@@ -18,7 +22,8 @@ class Calendar extends Component {
       defaultView,
       calendarWeekends: true,
       buttonText: { list: 'Llista' },
-      onClicked
+      onClicked,
+      screen
     };
   }
 
@@ -34,10 +39,18 @@ class Calendar extends Component {
   //   }
   // }
 
-
-
   render() {
-    const { events, defaultView, header, calendarWeekends, buttonText, onClicked } = this.state;
+    const {
+      events,
+      defaultView,
+      header,
+      calendarWeekends,
+      buttonText,
+      onClicked,
+      screen
+    } = this.state;
+    console.log(header.right);
+    console.log(screen);
     return (
       <FullCalendar
         onClick={onClicked}
@@ -66,5 +79,4 @@ class Calendar extends Component {
     );
   }
 }
-
 export default Calendar;

@@ -40,3 +40,34 @@
         }
     }
 }
+
+//MOBILE
+
+@include respond(phone) {
+    .booking-modal {
+        .modal-layer {
+            .center-modal {
+                width: 100%;
+                margin-top: 20px;
+
+                .modal-header {
+                    height: fit-content;
+                    padding: 0;
+                    flex-direction: column;
+                    margin-top: 20px;
+
+                    .modal-title {
+                        font-size: 20px;
+                        order: 2;
+                        margin-top: 20px;
+                    }
+                }
+
+                .close-icon-div {
+                    align-self: flex-end;
+                }
+            }
+        }
+    }
+
+}

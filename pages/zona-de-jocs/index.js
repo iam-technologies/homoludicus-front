@@ -3,8 +3,10 @@ import { Layout } from '../../components';
 import SectionHeader from '../../components/SectionHeader';
 import Calendar from '../../components/common/Calendar/dynamic';
 import Modal from '../../components/common/Modal';
+import { withWindowResize } from '../../components/hoc';
 
-const gameZone = () => {
+const gameZone = (props) => {
+  const { screen } = props;
   const calendarSettings = {
     defaultView: 'timeGridWeek',
     header: {
@@ -58,7 +60,10 @@ const gameZone = () => {
         <SectionHeader title={title} text={text} />
         <div className="calendar-page-wrapper">
           <div className="calendar-div">
-            <Calendar calendarSettings={calendarSettings} onClicked={onBook} />
+            <Calendar
+              calendarSettings={calendarSettings}
+              onClicked={onBook}
+            />
           </div>
         </div>
       </Layout>
@@ -66,4 +71,4 @@ const gameZone = () => {
   );
 };
 
-export default gameZone;
+export default withWindowResize(gameZone);
