@@ -11,6 +11,7 @@ import BonusSection from '../../BonusSection';
 import getBrowserUrl from '../../common/helpers';
 import { api } from '../../../serverServices';
 import ProductListHeader from '../ProductListHeader';
+import MobileFilters from '../MobileFilters';
 
 const ShopRender = ({
     content,
@@ -150,7 +151,24 @@ const ShopRender = ({
     const productList2 = productList.slice(6, 13)
     const productList1Mobile = productList.slice(0, 4)
     const productList2Mobile = productList.slice(4, 8)
-    console.log('filters', filters)
+
+    //MOBILE
+    const onDeleteAllFilters = () => {
+        delete filters.age;
+        delete filters.productTags;
+        delete filters.players;
+        setCategory('todos')
+    }
+
+    const [filtersMenuState, setFiltersMenuState] = useState(false);
+
+    const handleFiltersMenuState = (state) => {
+        setFiltersMenuState(!state)
+        console.log(filtersMenuState)
+    }
+
+    const menuState = filtersMenuState ? '-open' : '';
+
 
     if (screen === 'lg') {
         return (
@@ -198,15 +216,60 @@ const ShopRender = ({
             <>
                 <Carousel items={carouselItems} />
                 <div className="filter-menu-div">
-                    <div className="icon-div">
-                        <img src="/icon/icon-filter-white.svg" alt="icon-filter" />
+                    <div
+                        className="icon-div"
+                        onClick={() => handleFiltersMenuState(filtersMenuState)}
+                    >
+                        <img
+                            src="/icon/icon-filter-white.svg"
+                            alt="icon-filter"
+                        />
                     </div>
                 </div>
-                <ShopList products={productList1Mobile} />
-                <div className="bonus-section">
-                    <BonusSection />
+                <div className={`dropdown-filters${menuState}`}>
+                    <MobileFilters
+                        handleInputChange={handleInputChange}
+                        inputValue={inputValue}
+                        inputValue={inputValue}
+                        children={inputValue}
+                        categories={categories}
+                        categorySelected={categorySelected}
+                        onSetCategory={onSetCategory}
+                        generics={generics}
+                        onSetHability={onSetHability}
+                        onSetAge={onSetAge}
+                        onSetPlayers={onSetPlayers}
+                        onDeleteFilter={onDeleteFilter}
+                        category={category}
+                        filterSelected={filterSelected}
+                        setFilterSelected={setFilterSelected}
+                        ageSelected={ageSelected}
+                        habilitySelected={habilitySelected}
+                        playersSelected={playersSelected}
+                        onDeleteAllFilters={onDeleteAllFilters}
+                        setFiltersMenuState={setFiltersMenuState}
+                    />
                 </div>
-                <ShopList products={productList2Mobile} />
+                <div className={`shop-mobile-div${menuState}`}>
+                    <div className="mobile-results">
+                        <p>Resultats:</p>
+                        <p className="numProducts-p">{numProducts}</p>
+                    </div>
+                    <ShopList products={productList1Mobile} />
+                    <div className="bonus-section">
+                        <BonusSection />
+                    </div>
+                    <ShopList products={productList2Mobile} />
+                    <div className="see-all-button-div">
+                        {/*setear lista con allproducts,
+                        cambiar el boton a una clase con display none,
+                        mostrar lista que vaya des del 8 hasta el último
+                        */}
+                        <button className="button-yellow">
+                            Veure tots
+                        </button>
+                    </div>
+                </div>
             </>
         )
     }

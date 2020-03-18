@@ -48,3 +48,23 @@
     background-color: $brand01;
   }
 }
+
+//MOBILE
+
+@include respond(phone) {
+  .carousel_home {
+    picture {
+      img {
+        width: fit-content;
+      }
+    }
+
+    h1 {
+      left: 20px;
+    }
+
+    a {
+      left: 160px;
+    }
+  }
+}

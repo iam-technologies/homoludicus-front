@@ -47,7 +47,7 @@ const Carousel = ({ items }) => {
 
   return (
     <ImageGallery
-      autoPlay
+      // autoPlay
       disableArrowKeys
       items={images}
       showFullscreenButton={false}
