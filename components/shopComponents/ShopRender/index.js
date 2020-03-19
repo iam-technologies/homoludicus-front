@@ -23,7 +23,6 @@ const ShopRender = ({
     newFilters,
     totalPages,
 }) => {
-
     const carouselItems = _get(content, 'slider', []);
     const genericLoad = useSelector(state => state.generic.load);
     const generics = useSelector(state => state.generic.doc);
@@ -47,7 +46,6 @@ const ShopRender = ({
     const [filters, setFilters] = useState(newFilters);
 
     const [filteredProducts, setProducts] = useState(allProducts);
-    // console.log("filteredProducts", filteredProducts)
 
     const defaultOptions = { limit: 12, skip: 0 };
     const [options, setOptions] = useState(defaultOptions);
@@ -143,14 +141,16 @@ const ShopRender = ({
         getData();
     }, [options, category, filters]);
 
-    // const numProducts = filteredProducts.numProducts;
     const numProducts = _get(filteredProducts, 'numProducts', '')
-    // const productList = filteredProducts.products;
     const productList = _get(filteredProducts, 'products', '')
     const productList1 = productList.slice(0, 6)
     const productList2 = productList.slice(6, 13)
     const productList1Mobile = productList.slice(0, 4)
     const productList2Mobile = productList.slice(4, 8)
+    const productList3Mobile = productList.slice(8, productList.length + 1)
+    console.log("products", productList3Mobile.length + productList1Mobile.length + productList2Mobile.length)
+    console.log('filtered', filteredProducts.products.length)
+    console.log('all', allProducts.products)
 
     //MOBILE
     const onDeleteAllFilters = () => {
@@ -161,14 +161,23 @@ const ShopRender = ({
     }
 
     const [filtersMenuState, setFiltersMenuState] = useState(false);
+    const menuState = filtersMenuState ? '-open' : '';
+    const [buttonState, setButtonState] = useState('');
+    const [list3state, setList3State] = useState('-hidden');
 
-    const handleFiltersMenuState = (state) => {
-        setFiltersMenuState(!state)
-        console.log(filtersMenuState)
+    const seeAllFunction = () => {
+        setProducts(allProducts);
+        setButtonState('-hidden');
+        onDeleteAllFilters();
+        setList3State('');
+        setButtonState('');
     }
 
-    const menuState = filtersMenuState ? '-open' : '';
-
+    const handleFiltersMenuState = (state) => {
+        setFiltersMenuState(!state);
+        setList3State('-hidden');
+        setButtonState('');
+    }
 
     if (screen === 'lg') {
         return (
@@ -260,14 +269,16 @@ const ShopRender = ({
                         <BonusSection />
                     </div>
                     <ShopList products={productList2Mobile} />
-                    <div className="see-all-button-div">
-                        {/*setear lista con allproducts,
-                        cambiar el boton a una clase con display none,
-                        mostrar lista que vaya des del 8 hasta el último
-                        */}
+                    <div
+                        className={`see-all-button-div${buttonState}`}
+                        onClick={() => seeAllFunction()}
+                    >
                         <button className="button-yellow">
                             Veure tots
                         </button>
+                    </div>
+                    <div className={`list3-div${list3state}`}>
+                        <ShopList products={productList3Mobile} />
                     </div>
                 </div>
             </>

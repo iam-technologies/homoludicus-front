@@ -126,6 +126,9 @@
     button {
         width: 80%;
     }
+    &-hidden {
+        display: none;
+    }
 }
 
 .mobile-results {
@@ -136,6 +139,14 @@
         margin-left: 5px;
     }
 }
+
+.list3-div {
+
+    &-hidden {
+        display: none;
+    }
+}
+
 
 @include respond(phone) {
     .bonus-section {
