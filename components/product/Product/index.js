@@ -95,13 +95,13 @@ class Product extends React.Component {
           <meta name="description" content={_.get(product, 'seoDesc.es', productDesc)} />
         </Helmet> */}
 
-        <MobileHeader
+        {/* <MobileHeader
           hiddenSandwich
           hiddenSearch
           showCart
           lastLocation={_.get(location, 'state.lastLocation', '')}
-          text={_.get(product, 'name.es', '')}
-        />
+          text='{_.get(product, 'name.es', '')}'
+        /> */}
 
         <div className="product-header">
           <h1>

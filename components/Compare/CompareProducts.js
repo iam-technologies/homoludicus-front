@@ -21,10 +21,10 @@ class CompareProducts extends PureComponent {
     return (
       <section className="app-compare">
 
-        <MobileHeader
+        {/* <MobileHeader
           green
           text={title}
-        />
+        /> */}
 
         <div className="app-compare-info">
           {

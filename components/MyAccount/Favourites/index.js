@@ -60,10 +60,10 @@ export default class Favourites extends Component {
 
     return (
       <section className="app-my_account my_favourites">
-        <MobileHeader
+        {/* <MobileHeader
           green
           logo
-        />
+        /> */}
 
         <p className="title">Mis Favoritos</p>
 

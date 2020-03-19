@@ -118,7 +118,7 @@ class BoxBuyProduct extends Component {
     const typeNotAvailable = typeof notAvailable === 'string';
 
     const isPack = _.get(item, 'type') === 'pack';
-    const btnText = index >= 0 ? 'Actualizar producto' : 'Añadir al carrito';
+    const btnText = index >= 0 ? 'Actualitzar producte' : 'Afegir a la cistella';
     const price = parseFloat(item.price);
     const tax = parseFloat(item.taxRate * 0.01);
     const totalPrice = (price + (price * tax)).toFixed(2);

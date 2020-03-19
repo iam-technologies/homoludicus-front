@@ -115,10 +115,10 @@ class Order extends Component {
 
     return (
       <section className="app-my_account my_order_item">
-        <MobileHeader
+        {/* <MobileHeader
           green
           logo
-        />
+        /> */}
 
         {
           !loading && (

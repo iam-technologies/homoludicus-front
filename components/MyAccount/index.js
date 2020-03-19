@@ -22,10 +22,10 @@ class MyAccount extends PureComponent {
     const title = 'Mi cuenta';
     return (
       <section className="app-my_account">
-        <MobileHeader
+        {/* <MobileHeader
           green
           logo
-        />
+        /> */}
 
         <SectionHeader title={title} />
 

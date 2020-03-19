@@ -86,20 +86,20 @@ class Category extends React.Component {
           <meta name="description" content={_.get(category, 'descSeo.es', {`categoría de productos de ${infoSource.compNameCap}`})} />
         </Helmet> */}
 
-        <MobileHeader
+        {/* <MobileHeader
           green
           text={_.get(category, 'name.es', '')}
-        />
+        /> */}
 
         <div className="app-category-info">
           {
             screen === 'lg' && (
-              <h1 className="app-category-title-h1">{ _.get(category, 'name.es', '') }</h1>
+              <h1 className="app-category-title-h1">{_.get(category, 'name.es', '')}</h1>
             )
           }
           {
             descMain && (
-              <p className="app-category-description">{ _.get(category, 'descMain.es', '') }</p>
+              <p className="app-category-description">{_.get(category, 'descMain.es', '')}</p>
             )
           }
 

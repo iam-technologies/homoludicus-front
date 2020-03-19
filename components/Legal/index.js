@@ -17,7 +17,6 @@ export default class Legal extends Component {
     };
 
     this.getContent = this.getContent.bind(this);
-
   }
 
   componentDidMount() {
@@ -62,10 +61,10 @@ export default class Legal extends Component {
 
     return (
       <section className="app-legal">
-        <MobileHeader
+        {/* <MobileHeader
           green
           logo
-        />
+        /> */}
 
         <div className="app-legal-info">
           <h1 className="app-legal-title-h1">{_.get(content, 'title.es', '')}</h1>

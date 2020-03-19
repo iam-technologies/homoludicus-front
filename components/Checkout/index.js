@@ -237,9 +237,9 @@ class Checkout extends Component {
 
     return (
       <section className="app_checkout" ref={this.refCheckout}>
-        <MobileHeader
+        {/* <MobileHeader
           text={this.getTitle(indexTab)}
-        />
+        /> */}
 
         <div className="app_checkout-left">
 

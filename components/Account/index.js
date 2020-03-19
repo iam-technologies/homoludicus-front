@@ -15,10 +15,10 @@ const Account = (props) => {
 
   return (
     <section className="app_account">
-      <MobileHeader
+      {/* <MobileHeader
         green
         logo
-      />
+      /> */}
 
       {
         pathname.indexOf('/forgot-password') !== -1 && <ForgotPassword {...props} />

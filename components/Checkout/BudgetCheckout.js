@@ -176,9 +176,9 @@ class BudgetCheckout extends Component {
 
     return (
       <section className="app_checkout" ref={this.refCheckout}>
-        <MobileHeader
+        {/* <MobileHeader
           text={this.getTitle(indexTab)}
-        />
+        /> */}
 
         <div className="app_checkout-left">
           <header className="app_checkout-header">

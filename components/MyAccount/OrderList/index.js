@@ -53,10 +53,10 @@ export default class OrderList extends Component {
 
     return (
       <section className="app-my_account my_orders">
-        <MobileHeader
+        {/* <MobileHeader
           green
           logo
-        />
+        /> */}
 
         <SectionHeader title={title} />
 
