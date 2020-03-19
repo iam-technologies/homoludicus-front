@@ -148,9 +148,6 @@ const ShopRender = ({
     const productList1Mobile = productList.slice(0, 4)
     const productList2Mobile = productList.slice(4, 8)
     const productList3Mobile = productList.slice(8, productList.length + 1)
-    console.log("products", productList3Mobile.length + productList1Mobile.length + productList2Mobile.length)
-    console.log('filtered', filteredProducts.products.length)
-    console.log('all', allProducts.products)
 
     //MOBILE
     const onDeleteAllFilters = () => {
@@ -167,10 +164,9 @@ const ShopRender = ({
 
     const seeAllFunction = () => {
         setProducts(allProducts);
-        setButtonState('-hidden');
         onDeleteAllFilters();
         setList3State('');
-        setButtonState('');
+        setButtonState('-hidden');
     }
 
     const handleFiltersMenuState = (state) => {
