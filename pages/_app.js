@@ -44,7 +44,7 @@ class MyApp extends App {
     return (
       <Provider store={store}>
         <SearchPopup />
-        {/* <CartPopup /> */}
+        <CartPopup />
         {/* <CookiesPopup /> */}
         <Login />
         <Alert position="top-left" stack timeout={3000} effect="slide" />
