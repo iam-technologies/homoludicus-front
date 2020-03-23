@@ -32,7 +32,6 @@ class RelatedProduct extends Component {
 
   componentDidMount() {
     this.getItems();
-    console.log('props', this.props);
   }
 
   componentDidUpdate() {

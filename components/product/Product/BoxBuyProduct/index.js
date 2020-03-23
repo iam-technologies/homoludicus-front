@@ -110,7 +110,7 @@ class BoxBuyProduct extends Component {
   render() {
     const { index, loading, count } = this.state;
     const { item, cart, config, screen, alt, src } = this.props;
-    console.log('count', count);
+
     const productAvailable = _.get(item, 'available');
 
     const oldPrice = priceCalc.showPriceNotOffer(item);

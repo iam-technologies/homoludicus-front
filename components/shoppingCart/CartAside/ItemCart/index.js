@@ -66,7 +66,6 @@ export default class ItemCart extends Component {
   render() {
     const { open } = this.state;
     const { item, index, removeBtns } = this.props;
-    console.log('ItemCart -> render -> index', index);
 
     const configs = dataFormat.getTextConfigCart(item);
     const numItems = configs.length;

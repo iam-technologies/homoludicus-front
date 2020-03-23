@@ -49,8 +49,7 @@ class Calendar extends Component {
       onClicked,
       screen
     } = this.state;
-    console.log(header.right);
-    console.log(screen);
+
     return (
       <FullCalendar
         onClick={onClicked}

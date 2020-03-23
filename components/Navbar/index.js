@@ -10,9 +10,6 @@ import NavbarMobile from './Mobile';
 
 const Navbar = (props) => {
   const { screen, pathname } = props;
-  console.log('Navbar -> screen', screen);
-  // const loading = true;
-  console.log('mainMenu', mainMenu);
 
   if (screen === 'lg') {
 

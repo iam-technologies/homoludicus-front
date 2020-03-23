@@ -11,7 +11,6 @@ const ProductListHeader = (props) => {
     const [translate, setTranslate] = useState(0);
     const [countPages, setCountPages] = useState(1);
     const length = Math.ceil(arrayPages.length / 4);
-    console.log('length', length)
 
     const translateRight = () => {
         if (length > countPages) {

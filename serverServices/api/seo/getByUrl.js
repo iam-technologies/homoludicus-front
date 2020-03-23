@@ -9,12 +9,10 @@ export default (path = 'home', callback) => {
   const headers = addHeaders();
 
   return axios({ method: 'get', url, headers })
-    .then(response => {
-      console.log('axios ​response', response);
-      catchResponse.api(response, callback)
+    .then((response) => {
+      catchResponse.api(response, callback);
     })
-    .catch(error => {
-      console.log('axios ​error', error);
-      catchErrors.api(error, callback)
+    .catch((error) => {
+      catchErrors.api(error, callback);
     });
 };
