@@ -41,3 +41,51 @@
         }
     }
 }
+
+//MOBILE 
+
+@include respond(phone) {
+
+    .services-div {
+        height: 100%;
+
+        .services-titles {
+            width: 100%;
+            margin: 30px;
+        }
+
+        .bonus-games-div {
+            flex-direction: column;
+            height: auto;
+            margin-bottom: 30px;
+
+            .bonus-div {
+                margin-bottom: 30px;
+                width: 100%;
+                height: 341px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: top;                
+
+                h4 {
+                    width: 80%;
+                }
+
+                button {
+                    width: 100%;
+                }
+            }
+
+            .games-div {
+                width: 100%;
+                height: 341px;     
+                background-size: cover;
+                background-repeat: no-repeat; 
+                
+                h4 {
+                    width: 80%;
+                }                
+            }
+        }
+    }
+}

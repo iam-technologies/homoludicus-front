@@ -21,6 +21,41 @@
         .scheduled-event {
             display: flex;
             flex-direction: row;
+
+            .event-data {
+                display: flex;
+                align-items: center;
+            }
         }
     }   
 }   
+
+//MOBILE 
+
+@include respond(phone) {
+
+    .schedule-div {
+        padding: 30px;
+        height: auto;
+        margin-bottom: 30px;
+
+        .scheduled-events {
+            width: 100%;
+
+            .scheduled-event {
+                flex-direction: column;
+
+                .event-data {
+                    display: flex;
+                }
+
+
+                button {
+                    width: 100%;
+                    margin: 20px 0;
+                }
+
+            }
+        }
+    }
+}

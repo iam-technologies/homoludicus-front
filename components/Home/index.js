@@ -26,16 +26,15 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
 
   return (
     <section className={`app-home animation_opacity${show ? '-remove' : ''}`}>
-      {/* <MobileHeader home logo /> */}
-      {
-        (screen === 'xs') ? <div className="app-home_hero" style={{ backgroundImage: `url(${imgUrl})` }} />
-          : <Carousel items={carouselItems} />
-      }
+      <Carousel items={carouselItems} />
       <div className="middle-page-div">
-        {/* events */}
         <FeaturedEvents />
-        {/* featured */}
         <FeaturedProducts products={products} />
+        <div className="see-more-button-div">
+          <button className="button-yellow">
+            Veure més
+          </button>
+        </div>
       </div>
       <ServicesHome />
       <ScheduleHome />

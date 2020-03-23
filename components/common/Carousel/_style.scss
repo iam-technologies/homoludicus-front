@@ -52,19 +52,24 @@
 //MOBILE
 
 @include respond(phone) {
+
   .carousel_home {
+
     picture {
+
       img {
-        width: fit-content;
+        object-fit: cover;
       }
+    }
+
+    .carousel_btn {
+      left: 160px;
+      text-align: center;
     }
 
     h1 {
       left: 20px;
     }
 
-    a {
-      left: 160px;
-    }
   }
 }

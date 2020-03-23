@@ -165,14 +165,45 @@
     height: 601px;
     margin: 100px;
     justify-content: center;
+
+    .see-more-button-div {
+      display: none;
+    }
   }
 }
 
 .app-home.animation_opacity-remove {
   padding-bottom: 0;
+  overflow: hidden;
 }
 
 img.imagen_ui.imagen_ui-show {
     height: 100%;
     max-height: 460px;
+}
+
+//MOBILE
+
+@include respond(phone) {
+
+  .app-home {
+
+    .middle-page-div {
+      margin: 30px 0;
+      flex-direction: column;
+      height: 100%;
+
+      .see-more-button-div {
+        display: flex;
+        order: 2;
+        width: 90%;
+        margin-left: 25px;
+        margin-bottom: 30px;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

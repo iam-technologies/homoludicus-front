@@ -27,9 +27,11 @@ const ScheduleHome = () => {
         {events.map((event) => {
           return (
             <div key={event.title} className="scheduled-event">
-              <p>{event.title}</p>
-              <p>{event.date}</p>
-              <p>{event.hour}</p>
+              <div className="event-data">
+                <p>{event.title}</p>
+                <p>{event.date}</p>
+                <p>{event.hour}</p>
+              </div>
               <Link href="/erizos-a-la-carrera">
                 <a>
                   <button className="button-ghost-black">Asistir</button>

@@ -45,9 +45,10 @@ const Carousel = ({ items }) => {
 
   const images = items.map(elem => ({ renderItem: () => getSlide(elem) }));
 
+
   return (
     <ImageGallery
-      // autoPlay
+      autoPlay
       disableArrowKeys
       items={images}
       showFullscreenButton={false}
