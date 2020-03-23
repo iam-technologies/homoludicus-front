@@ -49,3 +49,12 @@
 //added provisional
   display: block;
 }
+
+//MOBILE
+
+@include respond(phone) {
+  .app_cart_aside.cart_popup-aside_show {
+    position: relative;
+    width: min-content;
+  }
+}
