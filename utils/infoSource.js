@@ -22,24 +22,21 @@ const infoSource = {
   emailInfoAddress: 'info@cocholate.es',
   emailPurcahseAddress: 'pedidos@cocholate.es',
 
-  // common>Instagram>index
-  instaUrl: 'cocholate',
-  instaRef: '@cocholate',
+  // // common>Instagram>index
+  // instaUrl: 'cocholate',
+  // instaRef: '@cocholate',
 
   // components>common>SEO.js
   siteName: 'Homoludicus',
-  title: `Canastillas y cestas regalo bebé | Regalos
-  personalizados recién nacidos - Cocholate Decoración S.L.`,
-  compDesc: `Canastillas y cestas regalo personalizadas para bebé, 
-  regalos para recién nacidos y para la familia, cesta gemelar, 
-  cuadros nombre, detalles bordados,...y mucho más`,
+  title: 'Juegos de Mesa | Editorial propia | Organización de partidas | Espacio de juegos - Homoludicus Juegos S.L.',
+  compDesc: 'Moderna tienda de juegos de mesa con editorial propia que organiza partidas en un espacioso salón adjunto.',
   content: '',
   rootUrl: 'www.homoludicus.org',
   path: '',
 
   // components>common>socialNav/index.js
-  itemText: '@COCHOLATE',
-  socialUrl: 'cocholate.es',
+  itemText: '@HOMOLUDICUS',
+  socialUrl: 'homoludicus.org',
 
   // components>CookiesPopup>index.js  ATENCION VER ESTE CASO ! ! ! ! !
   name: 'Homoludicus',
@@ -47,10 +44,10 @@ const infoSource = {
   // components>Footer>index.js // components>Checkout>StepOne>SendOffice.js
   tel: '930 138 610',
   address: 'Carrer de Sant Jaume, 73, 08400 Granollers - Barcelona',
-  fbUrl: 'https://www.facebook.com/',
-  twitterUrl: 'https://twitter.com/',
+  fbUrl: 'https://www.facebook.com/hludicusgranollers/',
+  twitterUrl: 'https://twitter.com/homoludicus',
   googleUrl: 'https://www.google.com/',
-  linkedinUrl: 'https://www.linkedin.com/',
+  linkedinUrl: 'https://www.linkedin.com/company/38920615',
 
   // components>Footer>MailChimpForm.js
   action: 'https://cocholate.us6.list-manage.com/subscribe/post',

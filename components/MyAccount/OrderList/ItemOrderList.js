@@ -14,7 +14,7 @@ export default ({ item, onClickBill }) => {
   const billUrl = _.get(item, 'bill.url', '');
 
   return (
-    <Link href={`/orders/${item._id}`}>
+    <Link href="/orders/[id]" as={`/orders/${item._id}`}>
       <a className="orders_item">
         <p className="cell">{orderNumber}</p>
 

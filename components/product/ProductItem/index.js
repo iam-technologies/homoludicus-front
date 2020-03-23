@@ -17,6 +17,7 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
   const oldPrice = priceCalc.showPriceNotOffer(item);
   const textBadge = texts.getStates(state);
   const desc = _.get(item, 'shortDesc.es', '');
+  const path = urlUtils.linkToProduct(location, item);
 
   return (
     <div className="relative">
@@ -28,12 +29,13 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
           />
         )
       }
-      <Link
+      <Link href="/[entity]" as={`/${path}`}>
+        {/* <Link
         href={{
           pathname: urlUtils.linkToProduct(location, item)
           // state: { lastLocation: location } // checar
         }}
-      >
+      > */}
         <a className={`product_box_ui${isSearch ? '-s_p' : ''}`} onClick={onClick}>
           {
             textBadge || badgePrice ? (
@@ -75,7 +77,7 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
         </div>
         <p className="desc">{desc}</p>
         <Link
-          href={{pathname: urlUtils.linkToProduct(location, item)}}
+          href={{ pathname: urlUtils.linkToProduct(location, item) }}
         >
           <a onClick={onClick}>
             <p className="see-more">Veure més > </p>

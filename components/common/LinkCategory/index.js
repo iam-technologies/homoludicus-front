@@ -7,7 +7,7 @@ import { urlUtils } from '../../../utils';
 const LinkCategory = ({ id, className, children, onClick }) => {
   const pathname = urlUtils.linkToCategory(id);
   return (
-    <Link href={`${pathname}`}>
+    <Link href={`${pathname}`} as={`${pathname}`}>
       <a
         className={className}
         onClick={onClick}

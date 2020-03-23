@@ -77,7 +77,8 @@ export default class FindResults extends React.PureComponent {
         <Link
           key={elem._id}
           onClick={this.onClose}
-          href={routes.getRoute(_.get(elem, '_id', ''))}
+          href="/[entity]"
+          as={routes.getRoute(_.get(elem, '_id', ''))}
         >
           <a className="app-s_p-find-categories_btn">
             {_.get(elem, 'name.es', '')}
@@ -104,11 +105,12 @@ export default class FindResults extends React.PureComponent {
           <div key="show_more">
             <Link
               onClick={this.onClose}
-              href={`/search/${encodeURI(text)}`}
+              href="/search/[key]"
+              as={`/search/${encodeURI(text)}`}
             >
               <a className="product_box_ui-s_p app-s_p-not_result">
                 <p className="product_box_ui-s_p-more_result">Ver más resultados</p>
-              </a> 
+              </a>
             </Link>
           </div>
         );

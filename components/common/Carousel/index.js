@@ -32,7 +32,7 @@ const Carousel = ({ items }) => {
         {
           (link && btnText)
           && (
-            <Link href={link}>
+            <Link href="/[entity]" as={`/${link}`}>
               <a className="carousel_btn">{btnText}</a>
             </Link>
           )
