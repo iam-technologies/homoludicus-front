@@ -160,15 +160,23 @@
   }
 
   .middle-page-div {
-    width: 100%;
+    width: 90%;
+    justify-content: center;
     display: flex;
     height: 601px;
+    margin-left: 20%;
     margin: 100px;
-    justify-content: center;
+    position: relative;
+    margin-bottom: 200px;
+
 
     .see-more-button-div {
       display: none;
     }
+  }
+
+  .featured-list {
+    width: 601px;
   }
 }
 
