@@ -18,6 +18,7 @@ import Profile from './MyAccount/Profile';
 import Search from './search/Search';
 import SearchByBudget from './search/SearchByBudget';
 import SearchPopup from './search/SearchPopup';
+import Page404 from './Page404';
 
 export {
   Address,
@@ -38,5 +39,6 @@ export {
   Profile,
   Search,
   SearchByBudget,
-  SearchPopup
+  SearchPopup,
+  Page404
 };

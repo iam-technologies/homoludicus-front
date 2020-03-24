@@ -1,5 +1,6 @@
 import React from 'react';
 import _get from 'lodash/get';
+import Error from './_error';
 import Layout from '../components/Layout';
 import Product from '../components/product/Product';
 import { api } from '../serverServices';
@@ -11,6 +12,8 @@ const dynamicPage = ({ content = {}, serverUrl, categoryId = '', categories }) =
   const title = _get(content, categoryId ? 'titleSeo.es' : 'seoTitle.es', '');
   const desc = _get(content, categoryId ? 'descSeo.es' : 'seoDesc.es', '');
   const attachment = _get(content, 'seoImg.attachment', '');
+
+  if (!content) return <Error errorCode={404} categories={categories} />;
 
   const getItems = (id) => {
     if (id) return <Category id={categoryId} pathname={serverUrl} />;
