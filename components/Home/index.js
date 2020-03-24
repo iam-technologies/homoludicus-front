@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import _get from 'lodash/get';
+import Link from 'next/link';
 import { withWindowResize } from '../hoc';
 import Carousel from '../common/Carousel';
 import { MobileHeader } from '../common';
@@ -29,9 +30,11 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
         <FeaturedEvents />
         <FeaturedProducts products={products} />
         <div className="see-more-button-div">
-          <button className="button-yellow">
-            Veure tot
-          </button>
+          <Link href="/shop/todos/">
+            <button className="button-yellow">
+              Veure tot
+            </button>
+          </Link>
         </div>
       </div>
       <ServicesHome />

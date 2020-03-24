@@ -88,5 +88,11 @@
 @include respond(phone) {
   .shop-product_list_ui {
     margin: 20px 0;
+    width: 100%;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -6px;
   }
 }

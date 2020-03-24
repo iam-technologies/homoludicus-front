@@ -99,13 +99,10 @@
 //MOBILE
 
 @include respond(phone) {
-  .featured-list {
-    width: 100%;
-    order: 1;
 
-    .featured-list-div {
-      margin-bottom: 30px;
-      justify-content: center;      
-    }
+  .featured-list-div {
+    width: min-content;
+    margin: 20px;
+    justify-content: center;      
   }
 }
