@@ -44,15 +44,15 @@ class Search extends Component {
           <div className="app-s_p-container">
             <header className="app-s_p-header">
               <div className="app-s_p-div_hidden" />
-              <Link
-                href="/"
-                onClick={this.onClose}
-              >
-                <a className="app-s_p-logo" href="/">
-                  <img src="/images/logo_search.png" style={{ color: 'gray' }} alt={infoSource.companyName} />
-                </a>
-              </Link>
-
+              <div onClick={this.onClose}>
+                <Link
+                  href="/"
+                >
+                  <a className="app-s_p-logo" href="/">
+                    <img src="/images/logo_search.png" style={{ color: 'gray' }} alt={infoSource.companyName} />
+                  </a>
+                </Link>
+              </div>
               <button
                 className="app-s_p-right_btn-close"
                 onClick={this.onClose}

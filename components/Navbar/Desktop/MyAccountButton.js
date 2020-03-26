@@ -32,21 +32,19 @@ class MyAccountButton extends Component {
       // <div onClick={this.onClick}>
       //   <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" />
       // </div>
-
-      <Link
-        onClick={isLogin ? () => { } : this.onClick}
-        href="/my-account"
-      >
-        <div className="user-icon">
-          {/* <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" /> */}
-          {isLogin && (
-            <img src="/icon/icon-account-selected.svg" alt="account" />
-          )}
-          {!isLogin && (
-            <img src="/icon/icon-account.svg" alt="account" />
-          )}
-        </div>
-      </Link>
+      <div onClick={isLogin ? () => { } : this.onClick}>
+        <Link href="/my-account">
+          <div className="user-icon">
+            {/* <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" /> */}
+            {isLogin && (
+              <img src="/icon/icon-account-selected.svg" alt="account" />
+            )}
+            {!isLogin && (
+              <img src="/icon/icon-account.svg" alt="account" />
+            )}
+          </div>
+        </Link>
+      </div>
     );
   }
 }

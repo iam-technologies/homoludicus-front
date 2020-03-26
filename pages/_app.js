@@ -43,7 +43,7 @@ class MyApp extends App {
 
     return (
       <Provider store={store}>
-        <SearchPopup />
+        {/* <SearchPopup /> */}
         <CartPopup />
         {/* <CookiesPopup /> */}
         <Login />

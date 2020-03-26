@@ -14,17 +14,6 @@ const MobileMenu = ({ showMenu, mainMenu, isLogin }) => {
   return (
     <div className="mobile-menu-div">
       <div className={`mobile-menu${menuState}`}>
-        {isLogin && (
-          <div className="logo-menu-div">
-            <div className="logo-div">
-              <Link href="/">
-                <a>
-                  <img src="/logos/homolud_fond.svg" alt="homoludicus-logo" />
-                </a>
-              </Link>
-            </div>
-          </div>
-        )}
         {mainMenu.map((item) => {
           return (
             <Link key={item.title} href={item.url}>
