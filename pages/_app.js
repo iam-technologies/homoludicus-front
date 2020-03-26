@@ -18,7 +18,7 @@ import 'odometer/themes/odometer-theme-default.css';
 import '../scss/_main.scss';
 import api from '../serverServices/api';
 import { routes as utilsRoutes } from '../utils';
-import { CookiesPopup, CartPopup, Login, SearchPopup } from '../components';
+import { CookiesPopup, CartPopup, Login } from '../components';
 import makeStore from '../redux';
 
 class MyApp extends App {
@@ -43,7 +43,6 @@ class MyApp extends App {
 
     return (
       <Provider store={store}>
-        {/* <SearchPopup /> */}
         <CartPopup />
         {/* <CookiesPopup /> */}
         <Login />

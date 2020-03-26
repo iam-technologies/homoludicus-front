@@ -15,9 +15,6 @@ import Order from './MyAccount/Order';
 import PrivateRoute from './PrivateRoute';
 import Product from './product/Product';
 import Profile from './MyAccount/Profile';
-import Search from './search/Search';
-import SearchByBudget from './search/SearchByBudget';
-import SearchPopup from './search/SearchPopup';
 import Page404 from './Page404';
 
 export {
@@ -37,8 +34,5 @@ export {
   PrivateRoute,
   Product,
   Profile,
-  Search,
-  SearchByBudget,
-  SearchPopup,
   Page404
 };
