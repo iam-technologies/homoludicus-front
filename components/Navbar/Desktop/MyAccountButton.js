@@ -27,7 +27,7 @@ class MyAccountButton extends Component {
 
   render() {
     const { isLogin } = this.props;
-    console.log('isLogin', isLogin);
+
     return (
       // <div onClick={this.onClick}>
       //   <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" />
@@ -39,7 +39,12 @@ class MyAccountButton extends Component {
       >
         <div className="user-icon">
           {/* <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" /> */}
-          <img src="/icon/icon-account.svg" alt="cart" />
+          {isLogin && (
+            <img src="/icon/icon-account-selected.svg" alt="account" />
+          )}
+          {!isLogin && (
+            <img src="/icon/icon-account.svg" alt="account" />
+          )}
         </div>
       </Link>
     );
