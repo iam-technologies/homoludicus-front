@@ -5,8 +5,8 @@ import CartPopup from '../../shoppingCart/CartPopup';
 import MyAccountButton from './MyAccountButton';
 
 const NavBarDesktop = (props) => {
-  const { mainMenu } = props;
-
+  const { mainMenu, isLogin } = props;
+  console.log('isLogin', isLogin);
   return (
     <div className="navbar-div">
       <div className="logo-div">

@@ -1,9 +1,14 @@
 @import './HamburgerMenu/style';
+@import './MobileMenu/style';
 
 .mobile-navbar {
     display: flex;
     align-items: center;
     padding: 10px 20px;
+
+    p {
+        margin-left: 10px;
+    }
 
     .logo-div {
         width: 129px;

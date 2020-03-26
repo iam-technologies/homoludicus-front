@@ -143,6 +143,7 @@ class BoxBuyProduct extends Component {
 
     return (
       <div className="a_p-buy_p">
+        <span itemProp="category" className="hidden_prop-seo">{_.get(item, 'mainCategory.name.es', '')}</span>
         <div className="img-features-div">
           <div className="a_p-buy_img">
             <Image alt={alt} src={src} />

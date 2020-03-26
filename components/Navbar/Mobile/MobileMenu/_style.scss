@@ -3,6 +3,16 @@
     position: absolute;
     z-index: 40;
 
+    button {
+        height: 100%;
+        width: 100%;
+        font-size: 13px;
+        color: $dark-grey;
+        background: none;
+        border: none;
+        font-weight: bold;
+    }
+
     .mobile-menu {
         background-color: white;
         height: 0;
@@ -19,15 +29,46 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px;
+            padding-top: 30px;
             height: auto;
             transition: height 0.25s;
-            border-bottom: 1px solid black;
-            border-top: 1px solid black;
+            border-bottom: 1px solid $middle-grey;
+            border-top: 1px solid $middle-grey;
             flex-wrap: nowrap;
 
             a {
                 margin-bottom: 10px;
+                color: $dark-grey;
+            }
+
+            .lang-div {
+                margin-top: 20px;
+            }
+
+            .mobile-menu-footer {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                margin-top: 30px;
+                align-items: center;
+                height: 60px;
+                border-top: 1px solid $middle-grey;
+
+                .inici-div, .log-in-out-div {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .inici-div {
+                    border-right: 1px solid $middle-grey;
+
+                    a {
+                        margin: 0;
+                    }
+                }
             }
         }
 

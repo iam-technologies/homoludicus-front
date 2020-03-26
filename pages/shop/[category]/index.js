@@ -3,6 +3,8 @@ import _get from 'lodash/get';
 import { api, getImageUrl } from '../../../serverServices';
 import { Layout } from '../../../components';
 import ShopRender from '../../../components/shopComponents/ShopRender';
+import { userActs } from '../../../redux/actions';
+
 
 const shop = (props) => {
   return (

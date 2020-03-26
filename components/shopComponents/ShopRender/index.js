@@ -27,14 +27,13 @@ const ShopRender = ({
     const genericLoad = useSelector(state => state.generic.load);
     const generics = useSelector(state => state.generic.doc);
     const screen = useSelector(state => state.windowResize.screen);
-
     const router = useRouter();
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         if (!genericLoad) {
-            dispatch(getGeneric());
+            () => dispatch(getGeneric());
         }
     }, []);
 

@@ -27,7 +27,7 @@ class MyAccountButton extends Component {
 
   render() {
     const { isLogin } = this.props;
-
+    console.log('isLogin', isLogin);
     return (
       // <div onClick={this.onClick}>
       //   <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" />

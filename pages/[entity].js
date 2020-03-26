@@ -1,8 +1,7 @@
 import React from 'react';
 import _get from 'lodash/get';
 import Error from './_error';
-import Layout from '../components/Layout';
-import Product from '../components/product/Product';
+import { Product, Category, Layout } from '../components';
 import { api } from '../serverServices';
 import { routes as utilsRoutes } from '../utils';
 import { SEO } from '../components/common';
@@ -13,7 +12,7 @@ const dynamicPage = ({ content = {}, serverUrl, categoryId = '', categories }) =
   const desc = _get(content, categoryId ? 'descSeo.es' : 'seoDesc.es', '');
   const attachment = _get(content, 'seoImg.attachment', '');
 
-  if (!content) return <Error errorCode={404} categories={categories} />;
+  // if (!content) return <Error errorCode={404} categories={categories} />;
 
   const getItems = (id) => {
     if (id) return <Category id={categoryId} pathname={serverUrl} />;
