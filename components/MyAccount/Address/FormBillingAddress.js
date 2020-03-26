@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { api } from '../../../serverServices';
 import { msgUI, checkFields, espProvincies, countries } from '../../../utils';
-import { TextInput, SelectInput, ButtonInput } from '../../common';
+import { TextInput, SelectInputBis, ButtonInput } from '../../common';
 
 export default class FormBillingAddress extends Component {
   constructor(props) {
@@ -131,7 +131,7 @@ export default class FormBillingAddress extends Component {
           value={_.get(address, 'address', '')}
         />
 
-        <SelectInput
+        <SelectInputBis
           className="select_input"
           error={msgUI.get(errors, 'country')}
           items={countries}
@@ -143,7 +143,7 @@ export default class FormBillingAddress extends Component {
 
         {
           country === 'España' && (
-            <SelectInput
+            <SelectInputBis
               className="select_input"
               error={msgUI.get(errors, 'state')}
               items={this.provincies}
