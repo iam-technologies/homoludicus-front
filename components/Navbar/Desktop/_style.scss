@@ -26,6 +26,11 @@
 
     .user-icon {
       margin: 0 10px;
+      cursor: pointer;
+    }
+
+    p.name {
+      margin-right: 10px;
     }
 
     @include flex-complete(

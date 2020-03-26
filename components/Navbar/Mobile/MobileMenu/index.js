@@ -2,11 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import Logout from '../../../Account/Logout';
-import LoginTo from '../../../Account/Login/LoginTo';
 
 const MobileMenu = ({ showMenu, mainMenu, isLogin }) => {
-  console.log('MobileMenu -> isLogin', isLogin);
-
   const showLogin = useSelector(state => state.showLogin);
   const { toMyAccount, show } = showLogin;
 

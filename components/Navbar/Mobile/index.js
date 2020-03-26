@@ -8,7 +8,7 @@ import MobileMenu from './MobileMenu';
 import MyAccountButton from '../Desktop/MyAccountButton';
 
 const NavBarMobile = (props) => {
-    const { mainMenu, isLogin } = props;
+    const { mainMenu, isLogin, name } = props;
     console.log("NavBarMobile -> isLogin", isLogin)
     const [showMenu, setMenu] = useState(false);
     const menuActive = (menuState) => {
@@ -18,8 +18,8 @@ const NavBarMobile = (props) => {
     const activateMenu = () => {
         setMenu(menu => menuActive(menu));
     };
-    const user = useSelector(state => state.user)
-    const name = _get(user, 'user.profile.name', '')
+    // const user = useSelector(state => state.user)
+    // const name = _get(user, 'user.profile.name', '')
 
     return (
         <>

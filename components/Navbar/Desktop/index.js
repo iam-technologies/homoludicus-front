@@ -5,8 +5,8 @@ import CartPopup from '../../shoppingCart/CartPopup';
 import MyAccountButton from './MyAccountButton';
 
 const NavBarDesktop = (props) => {
-  const { mainMenu, isLogin } = props;
-  console.log('isLogin', isLogin);
+  const { mainMenu, isLogin, name } = props;
+
   return (
     <div className="navbar-div">
       <div className="logo-div">
@@ -30,6 +30,9 @@ const NavBarDesktop = (props) => {
           <CartNavBtn />
         </div>
         <MyAccountButton />
+        {isLogin && (
+          <p className="name">{name}</p>
+        )}
         <div className="lang-div">
           <p>cat</p>
           <p className="vertical-lign">|</p>
