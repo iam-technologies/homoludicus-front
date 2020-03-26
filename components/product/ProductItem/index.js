@@ -11,7 +11,7 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
   const maxChecked = selected.length >= 3;
 
   const { img, state, alt } = item;
-  console.log('ProductItem -> img', img);
+
   const name = _.get(item, 'name.es', '');
 
   const badgePrice = priceCalc.getBadgePrice(item);

@@ -17,7 +17,10 @@ import TextArea from './TextArea';
 import TextInput from './TextInput';
 import SocialNav from './SocialNav';
 import SEO from './SEO';
-
+import Carousel from './Carousel';
+import Modal from './Modal';
+import SelectAddressBis from './SelectAddressBis';
+import SelectInputBis from './SelectAddressBis';
 
 export {
   AddressBillingBox,
@@ -25,15 +28,19 @@ export {
   ArrowTop,
   Badge,
   ButtonInput,
+  Carousel,
   CheckInput,
   FavouritesBtn,
   Image,
   LinkCategory,
   MobileHeader,
+  Modal,
   RadioInput,
   Rating,
   RatingsForm,
   SelectAddress,
+  SelectAddressBis,
+  SelectInputBis,
   SelectInput,
   SocialNav,
   SEO,

@@ -1,10 +1,7 @@
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
-
 import { dataFormat } from '../../../utils';
-// import SelectInput from '../SelectInput';
 import SelectInputBis from '../SelectInputBis';
 
 
@@ -15,9 +12,7 @@ export default class SelectAddressBis extends Component {
     this.onChange = this.onChange.bind(this);
   }
 
-
   onChange(path, key) {
-
     const { items, onChange } = this.props;
 
     const value = _.get(items, key, {});
@@ -29,7 +24,6 @@ export default class SelectAddressBis extends Component {
     onChange('', { item: { [selectedAddress]: key, [path]: value, [addressType]: newAddress }, errors: [] }, 'updateProduct');
   }
 
-
   render() {
     const { className, items, label, path, value } = this.props;
 
@@ -40,7 +34,8 @@ export default class SelectAddressBis extends Component {
       <SelectInputBis
         address
         className={className}
-        items={[...newItems, 'Nueva dirección']}
+        // items={[...newItems, 'Nueva dirección']}
+        items={items}
         label={label}
         onChange={this.onChange}
         path={path}
