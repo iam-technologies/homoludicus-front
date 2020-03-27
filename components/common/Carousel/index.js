@@ -24,7 +24,7 @@ const Carousel = ({ items }) => {
     return (
       <div className="carousel_home">
         <picture>
-          {imgFormat == 'webp' && <source srcSet={imgServices.getUrl(imgUrl)} type="image/webp" />}
+          {imgFormat === 'webp' && <source srcSet={imgServices.getUrl(imgUrl)} type="image/webp" />}
           <img src={imgServices.getHomeUrl(imgFallback)} alt={imgUrl} />
         </picture>
         <h1>{titleImg}</h1>
@@ -32,7 +32,7 @@ const Carousel = ({ items }) => {
         {
           (link && btnText)
           && (
-            <Link href="/[entity]" as={`${link}`}>
+            <Link href="/[entity]" as={link}>
               <a className="carousel_btn">{btnText}</a>
             </Link>
           )

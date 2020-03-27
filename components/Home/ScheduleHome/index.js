@@ -32,7 +32,7 @@ const ScheduleHome = () => {
                 <p>{event.date}</p>
                 <p>{event.hour}</p>
               </div>
-              <Link href="/erizos-a-la-carrera">
+              <Link href="/#">
                 <a>
                   <button className="button-ghost-black">Asistir</button>
                 </a>

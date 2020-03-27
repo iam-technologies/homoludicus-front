@@ -37,7 +37,7 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
         </div>
       </div>
       <ServicesHome />
-      <ScheduleHome />
+      {/* <ScheduleHome /> */}
       <div className="app-home-info app-home-more_info">
         <div dangerouslySetInnerHTML={{ __html: seoHeading }} />
         <div dangerouslySetInnerHTML={{ __html: seoText }} />
