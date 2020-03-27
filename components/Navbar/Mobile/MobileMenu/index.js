@@ -32,7 +32,7 @@ const MobileMenu = ({ showMenu, mainMenu, isLogin }) => {
               <div className="inici-div">
                 <Link href="/my-account">
                   <a>
-                    <p>El meu compte</p>
+                    <p className="my-account-p">El meu compte</p>
                   </a>
                 </Link>
               </div>
@@ -47,7 +47,7 @@ const MobileMenu = ({ showMenu, mainMenu, isLogin }) => {
             <div className="log-in-div">
               <Link href="/my-account">
                 <a>
-                  <p>Iniciar sessió</p>
+                  <p className="log-in-p">Iniciar sessió</p>
                 </a>
               </Link>
             </div>
