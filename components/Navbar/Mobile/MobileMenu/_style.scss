@@ -62,11 +62,56 @@
                     justify-content: center;
                 }
 
+                .log-out-div {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &::before {
+                        content: url("/icon/icon-logout.svg");
+                        margin: 10px;
+                    }
+
+                    button {
+                        margin-left: 0;
+                        width: 60%;
+                    }
+                }
+
+                .log-in-div {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &::before {
+                        content: url("/icon/icon-account-selected.svg");
+                        margin: 0 10px;
+                    }
+
+                    a {
+                        margin: 0;
+                    }
+                }
+
                 .inici-div {
                     border-right: 1px solid $middle-grey;
 
                     a {
                         margin: 0;
+                    }
+
+                    .my-account-p {
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        
+                        &::before {
+                            content: url("/icon/icon-account-selected.svg");
+                            margin: 10px;
+                        }
                     }
                 }
             }

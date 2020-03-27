@@ -1,19 +1,12 @@
 import _ from 'lodash';
-import Alert from 'react-s-alert';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import Link from 'next/link';
 import Router from 'next/router';
 import { api } from '../../../serverServices';
-import { MobileHeader } from '../../common';
-import BoxSlider from './BoxSlider';
 import BoxBuyProduct from './BoxBuyProduct';
-import BoxDetails from './BoxDetails';
-import BoxRatings from './BoxRatings';
 import RelatedProduct from './RelatedProduct';
 import InfoSwitcher from './InfoSwitcher';
-import ShopLayout from '../../shopComponents/ShopLayout';
 
 class Product extends React.Component {
   constructor(props) {
@@ -102,6 +95,5 @@ class Product extends React.Component {
     );
   }
 }
-
 
 export default connect(state => ({ user: state.user.user }))(Product);

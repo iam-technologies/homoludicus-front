@@ -87,7 +87,7 @@ export default function PrivacyBis() {
         >
           <DialogTitle id="scroll-dialog-title">
             <div className="app-legal-info">
-              <h1 className="app-legal-title-h1">{ _.get(content, 'title.es', '') }</h1>
+              <h1 className="app-legal-title-h1">{_.get(content, 'title.es', '')}</h1>
             </div>
           </DialogTitle>
           <DialogContent dividers={scroll === 'paper'}>
@@ -101,7 +101,7 @@ export default function PrivacyBis() {
 
           <DialogActions>
             <Button onClick={handleClose} color="primary">
-            Cerrar
+              Cerrar
             </Button>
           </DialogActions>
 

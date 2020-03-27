@@ -1,11 +1,17 @@
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
-import { msgUI, espProvincies, countries } from '../../../utils';
-import { TextInput, AddressBillingBox } from '../../common';
-import SelectInputBis from '../../common/SelectInputBis';
-import SelectAddressBis from '../../common/SelectAddressBis';
+import {
+  msgUI,
+  espProvincies,
+  countries
+} from '../../../utils';
+import {
+  TextInput,
+  AddressBillingBox,
+  SelectInputBis,
+  SelectAddressBis
+} from '../../common';
 
 
 export default class FormBusiness extends Component {
@@ -29,7 +35,7 @@ export default class FormBusiness extends Component {
 
       return (
         <React.Fragment>
-          { error.length > 0 && <p className="msg-error">Dirección incompleta, por favor elija otra.</p> }
+          {error.length > 0 && <p className="msg-error">Dirección incompleta, por favor elija otra.</p>}
           <AddressBillingBox
             hiddenBtnChange
             hiddenSaveAddress

@@ -24,22 +24,13 @@ const NavBarMobile = (props) => {
     return (
         <>
             <div className="mobile-navbar">
-                {!isLogin && (
-                    <div className="logo-div">
-                        <Link href="/">
-                            <a>
-                                <img src="/logos/homolud_fond.svg" alt="homoludicus-logo" />
-                            </a>
-                        </Link>
-                    </div>
-                )}
-
-                {isLogin && (
-                    <>
-                        <MyAccountButton />
-                        <p>{name}</p>
-                    </>
-                )}
+                <div className="logo-div">
+                    <Link href="/">
+                        <a>
+                            <img src="/logos/homolud_fond.svg" alt="homoludicus-logo" />
+                        </a>
+                    </Link>
+                </div>
                 <CartNavBtn />
                 <Hamburger activateMenu={activateMenu} showMenu={showMenu} />
             </div>

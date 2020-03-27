@@ -1,14 +1,12 @@
 import _ from 'lodash';
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-
 import { msgUI, espProvincies, countries } from '../../../utils';
 import {
-  TextInput, CheckInput, TextArea, AddressBox
+  TextInput, CheckInput, TextArea, AddressBox,
+  SelectInputBis, SelectAddressBis
 } from '../../common';
 
-import SelectInputBis from '../../common/SelectInputBis';
-import SelectAddressBis from '../../common/SelectAddressBis';
 
 export default class SendToOther extends Component {
   constructor(props) {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Layout } from '../../components';
 import SectionHeader from '../../components/SectionHeader';
 import Calendar from '../../components/common/Calendar/dynamic';
-import Modal from '../../components/common/Modal';
+import { Modal } from '../../components/common';
 import { withWindowResize } from '../../components/hoc';
 
 const gameZone = (props) => {

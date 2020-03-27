@@ -14,17 +14,6 @@ const MobileMenu = ({ showMenu, mainMenu, isLogin }) => {
   return (
     <div className="mobile-menu-div">
       <div className={`mobile-menu${menuState}`}>
-        {isLogin && (
-          <div className="logo-menu-div">
-            <div className="logo-div">
-              <Link href="/">
-                <a>
-                  <img src="/logos/homolud_fond.svg" alt="homoludicus-logo" />
-                </a>
-              </Link>
-            </div>
-          </div>
-        )}
         {mainMenu.map((item) => {
           return (
             <Link key={item.title} href={item.url}>
@@ -34,33 +23,35 @@ const MobileMenu = ({ showMenu, mainMenu, isLogin }) => {
             </Link>
           );
         })}
-        <div className="lang-div">
+        {/* <div className="lang-div">
           <p>cat|cast</p>
-        </div>
+        </div> */}
         <div className="mobile-menu-footer">
-          <div className="inici-div">
-            <Link href="/">
-              <a>
-                <p>Inici</p>
-              </a>
-            </Link>
-          </div>
-          <div className="log-in-out-div">
-            {isLogin && (
-              <div className="log-out-div">
-                <Logout />
-              </div>
-            )}
-            {!isLogin && (
-              <div className="log-in-div">
+          {isLogin && (
+            <>
+              <div className="inici-div">
                 <Link href="/my-account">
                   <a>
-                    <p>iniciar sessió</p>
+                    <p className="my-account-p">El meu compte</p>
                   </a>
                 </Link>
               </div>
-            )}
-          </div>
+              <div className="log-in-out-div">
+                <div className="log-out-div">
+                  <Logout />
+                </div>
+              </div>
+            </>
+          )}
+          {!isLogin && (
+            <div className="log-in-div">
+              <Link href="/my-account">
+                <a>
+                  <p className="log-in-p">Iniciar sessió</p>
+                </a>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

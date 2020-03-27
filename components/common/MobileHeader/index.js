@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 import { navMobileActs } from '../../../redux/actions';
 import { withWindowResize } from '../../hoc';
-import SearchNavBtn from '../../search/SearchNavBtn';
 import CartNavBtn from '../../shoppingCart/CartNavBtn';
 import infoSource from '../../../utils/infoSource';
 
@@ -66,9 +65,6 @@ class MobileHeader extends Component {
               {subText && <p className="header_mobile_ui-subtext">{subText}</p>}
             </div>
           ) : null
-        }
-        {
-          !hiddenSearch && <SearchNavBtn />
         }
         {
           showCart && <CartNavBtn iconGrey />

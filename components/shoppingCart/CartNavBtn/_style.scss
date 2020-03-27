@@ -32,3 +32,21 @@
   }
 
 }
+
+//MOBILE 
+
+@include respond(phone) {
+
+  .cart_nav_ui {
+    .cart_nav-badge {
+
+      p {
+        width: 100%;
+        height: 100%;
+        color: black;
+        margin: 0;
+        font-weight: bold;
+      }
+    }
+  }
+}

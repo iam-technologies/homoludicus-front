@@ -1,6 +1,6 @@
 // import _ from 'lodash';
 import React, { Component } from 'react';
-
+import _get from 'lodash/get';
 import Link from 'next/link';
 import { api } from '../../serverServices';
 import { withWindowResize } from '../hoc';
@@ -74,7 +74,8 @@ class Footer extends Component {
 
   render() {
     const { avg, total, loading, legal } = this.state;
-    const { screen } = this.props;
+    const { screen, selection } = this.props;
+    const products = _get(selection, 'products', []);
 
     return (
       <footer className="app_footer">
@@ -83,8 +84,7 @@ class Footer extends Component {
           <div className="left">
             <div className="footer-list">
               <div className="column">
-                <h5>Destacats</h5>
-                <Link href="/legal/refunds">
+                <Link href="/avis-legal">
                   <a>
                     <p>Ús de la plataforma</p>
                   </a>
@@ -101,21 +101,16 @@ class Footer extends Component {
                 </Link>
               </div>
               <div className="column">
-                <Link href="">
-                  <a>
-                    <p>JOC DESTACAT</p>
-                  </a>
-                </Link>
-                <Link href="">
-                  <a>
-                    <p>JOC DESTACAT</p>
-                  </a>
-                </Link>
-                <Link href="">
-                  <a>
-                    <p>JOC DESTACAT</p>
-                  </a>
-                </Link>
+                <h5>Destacats</h5>
+                {products.map((product) => {
+                  return (
+                    <Link key={product.name.es} href="/[entity]" as={`/${product.url.es}`}>
+                      <a>
+                        <p>{product.name.es}</p>
+                      </a>
+                    </Link>
+                  );
+                })}
               </div>
               <div className="column">
                 <h5>Serveis</h5>
@@ -132,12 +127,12 @@ class Footer extends Component {
               </div>
               <div className="column">
                 <h5>Sobre nosaltres</h5>
-                <Link href="">
+                <Link href="/qui-som">
                   <a>
                     <p>Qui som</p>
                   </a>
                 </Link>
-                <Link href="">
+                <Link href="/">
                   <a>
                     <p>Events</p>
                   </a>
@@ -146,25 +141,29 @@ class Footer extends Component {
             </div>
           </div>
           <div className="footer-legal">
-            <Link href="/legal/refunds">
+            <Link href="/avis-legal">
+              {/* <Link href="/[legal]" as="/refunds"> */}
               <a>
                 <p>AVÍS LEGAL</p>
               </a>
             </Link>
             <p className="vertical-line">|</p>
-            <Link href="/legal/cookies">
+            <Link href="/politica-cookies">
+              {/* <Link href="/[legal]" as="/cookies"> */}
               <a>
                 <p>POLITICA DE COOKIES</p>
               </a>
             </Link>
             <p className="vertical-line">|</p>
-            <Link href="/legal/privacitat">
+            <Link href="/politica-privacitat">
+              {/* <Link href="/[legal]" as="/privacitat"> */}
               <a>
                 <p>POLÍTICA DE PRIVACITAT</p>
               </a>
             </Link>
             <p className="vertical-line">|</p>
-            <Link href="/legal/terms-and-conditions">
+            <Link href="">
+              {/* <Link href="/[legal]" as="/terms-and-conditions"> */}
               <a>
                 <p>CONDICIONS D'ÚS</p>
               </a>
