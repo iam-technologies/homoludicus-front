@@ -81,7 +81,6 @@ class Footer extends Component {
           <div className="left">
             <div className="footer-list">
               <div className="column">
-                <h5>Destacats</h5>
                 <Link href="/legal/refunds">
                   <a>
                     <p>Ús de la plataforma</p>
@@ -99,6 +98,7 @@ class Footer extends Component {
                 </Link>
               </div>
               <div className="column">
+                <h5>Destacats</h5>
                 {products.map((product) => {
                   return (
                     <Link key={product.name.es} href="/[entity]" as={`/${product.url.es}`}>
