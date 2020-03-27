@@ -8,14 +8,9 @@ import Link from 'next/link';
 import Router from 'next/router';
 import { api } from '../../../serverServices';
 // import { urlUtils } from '../../../utils';
-import { MobileHeader } from '../../common';
-import BoxSlider from './BoxSlider';
 import BoxBuyProduct from './BoxBuyProduct';
-import BoxDetails from './BoxDetails';
-import BoxRatings from './BoxRatings';
 import RelatedProduct from './RelatedProduct';
 import InfoSwitcher from './InfoSwitcher';
-import ShopLayout from '../../shopComponents/ShopLayout';
 
 class Product extends React.Component {
   constructor(props) {
@@ -89,20 +84,10 @@ class Product extends React.Component {
 
     return (
       <section className="app-product" itemScope itemType="http://schema.org/Product">
-        {/*
-        <Helmet>
+        {/* <Helmet>
           <title>{_.get(product, 'seoTitle.es', productName)}</title>
           <meta name="description" content={_.get(product, 'seoDesc.es', productDesc)} />
         </Helmet> */}
-
-        {/* <MobileHeader
-          hiddenSandwich
-          hiddenSearch
-          showCart
-          lastLocation={_.get(location, 'state.lastLocation', '')}
-          text='{_.get(product, 'name.es', '')}'
-        /> */}
-
         <div className="product-header">
           <h1>
             {product.name.es}
@@ -117,11 +102,6 @@ class Product extends React.Component {
           </Link>
         </div>
         <section className="app-product-box_product">
-          {/* <BoxSlider
-            badge={_.get(product, 'state', '')}
-            images={_.get(product, 'img', [])}
-            item={product}
-          /> */}
           <BoxBuyProduct
             item={product}
             index={indexEdit === '' ? -1 : Number(indexEdit)}
@@ -129,20 +109,7 @@ class Product extends React.Component {
             src={img}
           />
         </section>
-
-        {/* <section className="app-product-box_information">
-          <BoxDetails
-            item={product}
-            refundsText={refundsText}
-          /> */}
-
-        {/* <BoxRatings
-            productId={product._id}
-          />
-        </section> */}
-
         <InfoSwitcher product={product} />
-
         <RelatedProduct
           key={_.get(product, '_id', 'newkey')}
           item={product}
@@ -154,6 +121,6 @@ class Product extends React.Component {
 }
 
 
-Product.propTypes = { location: PropTypes.object.isRequired };
+// Product.propTypes = { location: PropTypes.object.isRequired };
 
 export default connect(state => ({ user: state.user.user }))(Product);
