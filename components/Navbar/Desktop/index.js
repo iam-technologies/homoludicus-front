@@ -33,11 +33,11 @@ const NavBarDesktop = (props) => {
         {isLogin && (
           <p className="name">{name}</p>
         )}
-        <div className="lang-div">
+        {/* <div className="lang-div">
           <p>cat</p>
           <p className="vertical-lign">|</p>
           <p>esp</p>
-        </div>
+        </div> */}
         <CartPopup />
       </div>
     </div>

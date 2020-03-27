@@ -23,9 +23,9 @@ const MobileMenu = ({ showMenu, mainMenu, isLogin }) => {
             </Link>
           );
         })}
-        <div className="lang-div">
+        {/* <div className="lang-div">
           <p>cat|cast</p>
-        </div>
+        </div> */}
         <div className="mobile-menu-footer">
           <div className="inici-div">
             <Link href="/">
