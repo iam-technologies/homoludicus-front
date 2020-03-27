@@ -27,29 +27,31 @@ const MobileMenu = ({ showMenu, mainMenu, isLogin }) => {
           <p>cat|cast</p>
         </div> */}
         <div className="mobile-menu-footer">
-          <div className="inici-div">
-            <Link href="/">
-              <a>
-                <p>Inici</p>
-              </a>
-            </Link>
-          </div>
-          <div className="log-in-out-div">
-            {isLogin && (
-              <div className="log-out-div">
-                <Logout />
-              </div>
-            )}
-            {!isLogin && (
-              <div className="log-in-div">
+          {isLogin && (
+            <>
+              <div className="inici-div">
                 <Link href="/my-account">
                   <a>
-                    <p>iniciar sessió</p>
+                    <p>El meu compte</p>
                   </a>
                 </Link>
               </div>
-            )}
-          </div>
+              <div className="log-in-out-div">
+                <div className="log-out-div">
+                  <Logout />
+                </div>
+              </div>
+            </>
+          )}
+          {!isLogin && (
+            <div className="log-in-div">
+              <Link href="/my-account">
+                <a>
+                  <p>Iniciar sessió</p>
+                </a>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

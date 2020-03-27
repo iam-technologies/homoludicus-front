@@ -32,7 +32,7 @@ class Logout extends Component {
         className={className}
         onClick={this.logout}
         type="button"
-      >Cerrar sesión
+      >Tancar sessió
       </button>
     );
   }
