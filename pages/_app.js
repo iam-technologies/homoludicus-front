@@ -47,7 +47,7 @@ class MyApp extends App {
         <CookiesPopup />
         <Login />
         <Alert position="top-left" stack timeout={3000} effect="slide" />
-        <MuiThemeProvider>
+        <MuiThemeProvider theme={{}}>
           <Component {...pageProps} />
         </MuiThemeProvider>
       </Provider>

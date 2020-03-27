@@ -1,6 +1,6 @@
 // import _ from 'lodash';
 import React, { Component } from 'react';
-
+import _get from 'lodash/get';
 import Link from 'next/link';
 import { api } from '../../serverServices';
 import { withWindowResize } from '../hoc';
@@ -70,7 +70,9 @@ class Footer extends Component {
 
   render() {
     const { avg, total, loading, legal } = this.state;
-    const { screen } = this.props;
+    const { screen, selection } = this.props;
+    const products = _get(selection, 'products', []);
+    console.log('Footer -> render -> products', products);
 
     return (
       <footer className="app_footer">
@@ -97,21 +99,15 @@ class Footer extends Component {
                 </Link>
               </div>
               <div className="column">
-                <Link href="">
-                  <a>
-                    <p>JOC DESTACAT</p>
-                  </a>
-                </Link>
-                <Link href="">
-                  <a>
-                    <p>JOC DESTACAT</p>
-                  </a>
-                </Link>
-                <Link href="">
-                  <a>
-                    <p>JOC DESTACAT</p>
-                  </a>
-                </Link>
+                {products.map((product) => {
+                  return (
+                    <Link key={product.name.es} href="/[entity]" as={`/${product.url.es}`}>
+                      <a>
+                        <p>{product.name.es}</p>
+                      </a>
+                    </Link>
+                  );
+                })}
               </div>
               <div className="column">
                 <h5>Serveis</h5>

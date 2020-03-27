@@ -14,7 +14,10 @@ const HomePage = ({ content = {}, selection = {}, loaded = true, imgUrl = '' }) 
   const pathname = '/';
   // console.log('selection', selection);
   return (
-    <Layout pathname={pathname}>
+    <Layout
+      pathname={pathname}
+      selection={selection}
+    >
       <SEO
         title={title}
         description={desc}

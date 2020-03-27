@@ -22,12 +22,12 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { children, pathname } = this.props;
+    const { children, pathname, layout, selection } = this.props;
     return (
       <>
         <NavBar pathname={pathname} />
         {children}
-        <Footer />
+        <Footer selection={selection} />
       </>
     );
   }
