@@ -54,7 +54,7 @@ Image.propTypes = {
   className: PropTypes.string,
   fitContent: PropTypes.bool,
   size: PropTypes.string,
-  src: PropTypes.string
+  src: PropTypes.array
 };
 
 Image.defaultProps = {

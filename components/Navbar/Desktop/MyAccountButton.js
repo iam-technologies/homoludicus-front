@@ -33,11 +33,8 @@ class MyAccountButton extends Component {
       //   <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" />
       // </div>
 
-      <Link
-        onClick={isLogin ? () => { } : this.onClick}
-        href="/my-account"
-      >
-        <div className="user-icon">
+      <Link href="/my-account">
+        <div className="user-icon" onClick={isLogin ? () => { } : this.onClick}>
           {/* <img src={`/images/icon_my-account${isLogin ? '_login' : ''}.png`} alt="User's My account" /> */}
           {isLogin && (
             <img src="/icon/icon-account-selected.svg" alt="account" />

@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import Link from 'next/link';
 import React, { Component } from 'react';
 
-// import { showSearchActs } from '../reducer';  // version anterior con reducer en la misma carpeta
-
 import { showSearchActs } from '../../../redux/actions';
 import FormSearch from './FormSearch';
 import FindResults from './FindResults';
@@ -44,11 +42,8 @@ class Search extends Component {
           <div className="app-s_p-container">
             <header className="app-s_p-header">
               <div className="app-s_p-div_hidden" />
-              <Link
-                href="/"
-                onClick={this.onClose}
-              >
-                <a className="app-s_p-logo" href="/">
+              <Link href="/">
+                <a className="app-s_p-logo" onClick={this.onClose}>
                   <img src="/images/logo_search.png" style={{ color: 'gray' }} alt={infoSource.companyName} />
                 </a>
               </Link>

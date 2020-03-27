@@ -11,7 +11,6 @@ const FeaturedList = (props) => {
           <ProductItem
             key={product._id}
             item={product}
-            location={product.mainCategory.url}
           />
         );
       })}

@@ -13,6 +13,7 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
   const { img, state, alt } = item;
   const name = _.get(item, 'name.es', '');
 
+
   const badgePrice = priceCalc.getBadgePrice(item);
   const oldPrice = priceCalc.showPriceNotOffer(item);
   const textBadge = texts.getStates(state);
@@ -96,7 +97,6 @@ export default React.memo(ProductItem);
 ProductItem.propTypes = {
   isSearch: PropTypes.bool,
   item: PropTypes.object.isRequired,
-  location: PropTypes.string,
   onClick: PropTypes.func,
   clickCompare: PropTypes.bool,
   onSelect: PropTypes.func,
@@ -106,7 +106,6 @@ ProductItem.propTypes = {
 
 ProductItem.defaultProps = {
   isSearch: false,
-  location: '',
   onClick: () => { },
   clickCompare: false,
   onSelect: () => { },

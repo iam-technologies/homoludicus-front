@@ -48,23 +48,27 @@ class Footer extends Component {
   }
 
   getData() {
-    api.ratings.avg((error, res) => {
-      if (res) {
-        const { total, avg } = res.data;
+    try {
+      api.ratings.avg((error, res) => {
+        if (res) {
+          const { total, avg } = res.data;
 
-        this.setState({ avg, total, loading: false });
-      }
+          this.setState({ avg, total, loading: false });
+        }
 
-      this.setState({ loading: false });
-    });
+        this.setState({ loading: false });
+      });
 
-    api.contents.getByKey('privacy-first', (error, res) => {
-      if (res) {
-        const legal = res.data;
+      api.contents.getByKey('privacy-first', (error, res) => {
+        if (res) {
+          const legal = res.data;
 
-        this.setState({ legal });
-      }
-    });
+          this.setState({ legal });
+        }
+      });
+    } catch (err) {
+      console.log("Footer -> getData -> err", err)
+    }    
   }
 
 
