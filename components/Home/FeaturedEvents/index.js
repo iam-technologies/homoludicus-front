@@ -16,7 +16,7 @@ const FeaturedEvents = () => {
         </div>
         <div className="event-contact-share">
           <div className="event-contact">
-            <Link href="/erizos-a-la-carrera">
+            <Link href="#">
               <a>
                 <button className="button button-yellow">Apunta't</button>
               </a>

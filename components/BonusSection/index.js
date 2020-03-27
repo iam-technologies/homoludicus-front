@@ -5,7 +5,7 @@ const BonusSection = () => {
   return (
     <div className="bonus-div">
       <h4>Bonus per a escoles, associacions i professionals</h4>
-      <Link href="/erizos-a-la-carrera">
+      <Link href="#">
         <a>
           <button className="button-black">Veure més</button>
         </a>
