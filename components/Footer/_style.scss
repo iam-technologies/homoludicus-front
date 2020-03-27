@@ -287,6 +287,10 @@
     display: flex;
     flex-direction: column;
 
+    .column {
+      width: 100%;
+    }
+
     .flex_box {
       display: flex;
       flex-direction: column;

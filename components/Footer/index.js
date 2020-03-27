@@ -72,7 +72,6 @@ class Footer extends Component {
     const { avg, total, loading, legal } = this.state;
     const { screen, selection } = this.props;
     const products = _get(selection, 'products', []);
-    console.log('Footer -> render -> products', products);
 
     return (
       <footer className="app_footer">
@@ -124,12 +123,12 @@ class Footer extends Component {
               </div>
               <div className="column">
                 <h5>Sobre nosaltres</h5>
-                <Link href="">
+                <Link href="/qui-som">
                   <a>
                     <p>Qui som</p>
                   </a>
                 </Link>
-                <Link href="">
+                <Link href="/">
                   <a>
                     <p>Events</p>
                   </a>
@@ -138,25 +137,29 @@ class Footer extends Component {
             </div>
           </div>
           <div className="footer-legal">
-            <Link href="/legal/refunds">
+            <Link href="">
+              {/* <Link href="/[legal]" as="/refunds"> */}
               <a>
                 <p>AVÍS LEGAL</p>
               </a>
             </Link>
             <p className="vertical-line">|</p>
-            <Link href="/legal/cookies">
+            <Link href="">
+              {/* <Link href="/[legal]" as="/cookies"> */}
               <a>
                 <p>POLITICA DE COOKIES</p>
               </a>
             </Link>
             <p className="vertical-line">|</p>
-            <Link href="/legal/privacitat">
+            <Link href="">
+              {/* <Link href="/[legal]" as="/privacitat"> */}
               <a>
                 <p>POLÍTICA DE PRIVACITAT</p>
               </a>
             </Link>
             <p className="vertical-line">|</p>
-            <Link href="/legal/terms-and-conditions">
+            <Link href="">
+              {/* <Link href="/[legal]" as="/terms-and-conditions"> */}
               <a>
                 <p>CONDICIONS D'ÚS</p>
               </a>
