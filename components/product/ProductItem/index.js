@@ -30,7 +30,7 @@ const ProductItem = ({ isSearch, item, location, clickCompare, onSelect, onClick
           />
         )
       }
-      <Link href="/[entity]" as={`/${path}`}>
+      <Link href="/[entity]" as={path}>
         {/* <Link
         href={{
           pathname: urlUtils.linkToProduct(location, item)

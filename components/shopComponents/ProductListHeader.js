@@ -31,35 +31,33 @@ const ProductListHeader = (props) => {
     }
 
     return (
-        <>
-            <div className="product-list-header">
-                <div className="order">
-                    <p>Ordenar per</p>
-                </div>
-                <div className="results">
-                    <p>Resultats:</p>
-                    <p className="num-results">
-                        {numProducts} articles
-                    </p>
-                </div>
-                <div className="pagination-div">
-                    <button className='pagination-arrow' onClick={() => translateLeft()} >
-                        <img src="/icon/left.svg" />
-                    </button>
-                    <div className="page-numbers-cont">
-                        <div className="page-numbers-div" style={divStyle}>
-                            {arrayPages.map(pg => {
-                                const selected = page === pg ? 'selected' : '';
-                                return <p className={`page-number ${selected}`} onClick={() => setCurrentPage(pg)}>{`${pg} - `}</p>
-                            })}
-                        </div>
-                    </div>
-                    <button className='pagination-arrow' onClick={() => translateRight()} >
-                        <img src="/icon/right.svg" />
-                    </button>
-                </div>
+        <div className="product-list-header">
+            <div className="order">
+                <p>Ordenar per</p>
             </div>
-        </>
+            <div className="results">
+                <p>Resultats:</p>
+                <p className="num-results">
+                    {numProducts} articles
+                </p>
+            </div>
+            <div className="pagination-div">
+                <button className='pagination-arrow' onClick={() => translateLeft()} >
+                    <img src="/icon/left.svg" />
+                </button>
+                <div className="page-numbers-cont">
+                    <div className="page-numbers-div" style={divStyle}>
+                        {arrayPages.map(pg => {
+                            const selected = page === pg ? 'selected' : '';
+                            return <p key={pg} className={`page-number ${selected}`} onClick={() => setCurrentPage(pg)}>{`${pg} - `}</p>
+                        })}
+                    </div>
+                </div>
+                <button className='pagination-arrow' onClick={() => translateRight()} >
+                    <img src="/icon/right.svg" />
+                </button>
+            </div>
+        </div>
     );
 };
 

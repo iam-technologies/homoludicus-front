@@ -41,7 +41,6 @@ const CategoryFilter = (props) => {
   return (
     <>
       <SearchBar inputValue={inputValue} handleInputChange={handleInputChange} />
-
       <div className="categories-div">
         <h5>Filtrar per categoria</h5>
         <div className="category-div">
@@ -58,25 +57,23 @@ const CategoryFilter = (props) => {
         {categories.map((category, i) => {
           const selected = category.url.es === categorySelected ? '-selected' : '';
           return (
-            <>
-              <div className="category-div">
-                <input
-                  type="checkbox"
-                  className="category-in"
-                  id={category.name.es}
-                  onClick={() => onSetCategory(category.url.es)}
-                />
-                <label className={`tab-label${selected}`} htmlFor={category.name.es}>
-                  {category.name.es}
-                </label>
-                <div className="tab-content">
-                  {category.childrens.map((child) => {
-                    const selected = child.url.es === categorySelected ? 'selected' : '';
-                    return <p className={`${selected}`} onClick={() => onSetCategory(child.url.es)} >{child.name.es}</p>;
-                  })}
-                </div>
+            <div key={category.url.es} className="category-div">
+              <input
+                type="checkbox"
+                className="category-in"
+                id={category.name.es}
+                onClick={() => onSetCategory(category.url.es)}
+              />
+              <label className={`tab-label${selected}`} htmlFor={category.name.es}>
+                {category.name.es}
+              </label>
+              <div className="tab-content">
+                {category.childrens.map((child) => {
+                  const selected = child.url.es === categorySelected ? 'selected' : '';
+                  return <p className={`${selected}`} onClick={() => onSetCategory(child.url.es)} >{child.name.es}</p>;
+                })}
               </div>
-            </>
+            </div>
           );
         })}
         <div className="category-div">
