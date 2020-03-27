@@ -80,7 +80,7 @@ class Footer extends Component {
           <div className="left">
             <div className="footer-list">
               <div className="column">
-                <Link href="/legal/refunds">
+                <Link href="/avis-legal">
                   <a>
                     <p>Ús de la plataforma</p>
                   </a>
@@ -137,21 +137,21 @@ class Footer extends Component {
             </div>
           </div>
           <div className="footer-legal">
-            <Link href="">
+            <Link href="/avis-legal">
               {/* <Link href="/[legal]" as="/refunds"> */}
               <a>
                 <p>AVÍS LEGAL</p>
               </a>
             </Link>
             <p className="vertical-line">|</p>
-            <Link href="">
+            <Link href="/politica-cookies">
               {/* <Link href="/[legal]" as="/cookies"> */}
               <a>
                 <p>POLITICA DE COOKIES</p>
               </a>
             </Link>
             <p className="vertical-line">|</p>
-            <Link href="">
+            <Link href="/politica-privacitat">
               {/* <Link href="/[legal]" as="/privacitat"> */}
               <a>
                 <p>POLÍTICA DE PRIVACITAT</p>
