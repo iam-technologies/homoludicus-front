@@ -39,17 +39,19 @@ class Footer extends Component {
       loading: true,
       legal: ''
     };
-
+    this._isMounted = false;
     this.getData = this.getData.bind(this);
   }
 
   componentDidMount() {
+    this._isMounted = true;
     this.getData();
   }
 
   getData() {
     try {
       api.ratings.avg((error, res) => {
+        if (!this._isMounted) return;
         if (res) {
           const { total, avg } = res.data;
 
@@ -60,6 +62,7 @@ class Footer extends Component {
       });
 
       api.contents.getByKey('privacy-first', (error, res) => {
+        if (!this._isMounted) return;
         if (res) {
           const legal = res.data;
 
