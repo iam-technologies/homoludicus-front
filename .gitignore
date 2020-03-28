@@ -3,4 +3,5 @@
 node_modules
 .env
 .serverless_nextjs
+.serverless
 serverless.yml
