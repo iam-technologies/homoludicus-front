@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { Layout, SearchByBudget } from '../../components';
+import { Layout } from '../../components';
 
 const searchByBudget = ({ price }) => (
   <Layout>
-    <SearchByBudget price={price} />
+    <div>no disponible</div>
+    {/* <SearchByBudget price={price} /> */}
   </Layout>
 );
 

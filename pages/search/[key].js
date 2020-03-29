@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { Search, Layout } from '../../components';
+import { Layout } from '../../components';
 
 const search = ({ keyword, serverUrl }) => {
   return (
     <Layout>
-      <Search query={keyword} pathname={serverUrl} />
+      <div>no disponible</div>
+      {/* <Search query={keyword} pathname={serverUrl} /> */}
     </Layout>
   );
 };

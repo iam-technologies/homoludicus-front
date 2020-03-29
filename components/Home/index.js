@@ -22,9 +22,12 @@ const Home = ({ content, selection, imgUrl = '', loaded, screen = 'm' }) => {
   const seoHeading = _get(content, 'seoHeading.es', '');
   const seoText = _get(content, 'seoText.es', '');
 
+  const mode = process.env.NODE_ENV;
+
   return (
     <section className={`app-home animation_opacity${show ? '-remove' : ''}`}>
       <Carousel items={carouselItems} />
+      {mode}
       <div className="middle-page-div">
         <FeaturedEvents />
         <FeaturedProducts products={products} />

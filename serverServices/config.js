@@ -1,11 +1,7 @@
-import infoSource from '../utils/infoSource';
-
-const port = process.env.NODE_ENV === 'production' ? 4001 : 4000;
-
 // Config API.
 export default {
   authRequire: true,
-  baseUrl: `http://ec2-3-122-75-193.eu-central-1.compute.amazonaws.com:${port}/api`,
+  baseUrl: process.env.NODE_ENV === 'production' ? 'https://admin-homoludicus.admin-iam.com/api' : 'https://admin-homoludicus-staging.admin-iam.com/api',
 
   // producción =>
   // baseUrl: 'https://admin-homoludicus.admin-iam.com/api',
