@@ -77,7 +77,7 @@
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
-    "serverless-next.js": "^1.9.0",
+    "serverless-next.js": "^1.9.7",
     "url-loader": "^2.0.1"
   }
 }
